@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Search } from 'lucide-react';
-import { getLatestNews, sortedNewsData } from '../data/newsData';
+import { getLatestNews, sortedNewsData, getLastWeekNews, getTodayNews } from '../data/newsData';
 
 // 热门搜索关键词
 const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
@@ -9,17 +9,19 @@ const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 获取上周快讯（4月8日-4月14日）
-  const lastWeekNews = sortedNewsData.filter(news => {
-    const date = new Date(news.publishDate);
-    return date >= new Date('2026-04-08') && date <= new Date('2026-04-14');
-  }).sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+  // 获取当前日期信息
+  const todayDate = new Date();
+  const isMonday = todayDate.getDay() === 1;
+  const todayStr = todayDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
 
-  // 获取近期动态（最近5条，排除上周新闻）
-  const recentNews = getLatestNews(30).filter(news => {
-    const date = new Date(news.publishDate);
-    return date < new Date('2026-04-08') || date > new Date('2026-04-14');
-  }).slice(0, 5);
+  // 获取上周快讯数据 (周一特供)
+  const lastWeekNews = isMonday ? getLastWeekNews(todayDate) : [];
+
+  // 获取当日新增数据 (平日为主)
+  const todayNews = !isMonday ? getTodayNews() : [];
+
+  // 获取近期动态 (备选展示，最近一个月)
+  const recentNews = getLatestNews(30, todayDate).slice(0, 5);
 
   // 搜索功能 - 实时筛选
   const searchResults = searchQuery.trim()
@@ -152,7 +154,7 @@ export default function LatestNews() {
             聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
           </p>
           <p className="mt-2 text-gray-400 text-xs">
-            网站更新于：2026年4月15日
+            {isMonday ? '上周快讯汇总模式' : '当日新增实时模式'} · 今日：{todayStr}
           </p>
         </div>
 
@@ -233,60 +235,69 @@ export default function LatestNews() {
           </div>
         )}
 
-        {/* 上周快讯一览 - 仅在无搜索时显示 */}
+        {/* 主内容区域 - 仅在无搜索时显示 */}
         {!searchQuery && (
-          <div className="mb-10">
-            <div className="mb-4 border-b border-gray-200 pb-2">
-              <h3 className="font-bold text-lg">
-                上周快讯一览
-              </h3>
-            </div>
-
-            {lastWeekNews.length > 0 ? (
-              <div className="space-y-4 md:space-y-6">
-                {lastWeekNews.map((news) => renderNewsCard(news, true))}
+          <div className="space-y-10">
+            {isMonday ? (
+              /* 周一展示：上周快讯一览 */
+              <div>
+                <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-2">
+                  <h3 className="font-bold text-lg flex items-center gap-2">
+                    <span className="w-2 h-6 bg-black"></span>
+                    上周快讯一览
+                  </h3>
+                  <span className="text-xs text-gray-400">Monday Weekly Digest</span>
+                </div>
+                {lastWeekNews.length > 0 ? (
+                  <div className="space-y-4 md:space-y-6">
+                    {lastWeekNews.map((news) => renderNewsCard(news, true))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 bg-white rounded-lg border border-dashed border-gray-300">
+                    <p className="text-gray-500">上周暂无深度分析报快讯</p>
+                  </div>
+                )}
               </div>
             ) : (
-              <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
-                <p className="text-gray-500">
-                  上周无快讯
-                </p>
+              /* 平日展示：当日新增 */
+              <div>
+                <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-2">
+                  <h3 className="font-bold text-lg flex items-center gap-2">
+                    <span className="w-2 h-6 bg-blue-600"></span>
+                    今日新增动态
+                  </h3>
+                  <span className="text-xs text-blue-500 font-medium">Daily Updates</span>
+                </div>
+                {todayNews.length > 0 ? (
+                  <div className="space-y-4 md:space-y-6">
+                    {todayNews.map((news) => renderNewsCard(news, true))}
+                  </div>
+                ) : (
+                  <div className="py-8 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col items-center justify-center text-center px-4">
+                    <p className="text-blue-800 font-medium mb-1">今日暂无实时频率新增</p>
+                    <p className="text-blue-600 text-xs">我们将持续为您监测最新的行业动态，请查看下方的近期动态。</p>
+                  </div>
+                )}
               </div>
             )}
-          </div>
-        )}
 
-        {/* 近期动态 - 仅在无搜索时显示 */}
-        {!searchQuery && (
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-2">
-              <h3 className="font-bold text-lg">
-                近期动态
-              </h3>
-              <div className="flex gap-2">
-                <Link
-                  to="/app-ecosystem"
-                  className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-md font-medium transition-colors text-sm"
-                >
-                  应用生态
-                </Link>
-                <Link
-                  to="/payment-ecosystem"
-                  className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-md font-medium transition-colors text-sm"
-                >
-                  支付生态
-                </Link>
-                <Link
-                  to="/summit"
-                  className="px-3 py-1.5 md:px-4 md:py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-md font-medium transition-colors text-sm"
-                >
-                  峰会动态
-                </Link>
+            {/* 近期动态 - 通用模块 */}
+            <div className="pt-4">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 border-b border-gray-200 pb-2 gap-4">
+                <h3 className="font-bold text-lg flex items-center gap-2">
+                  <span className="w-2 h-6 bg-gray-400"></span>
+                  近期热点动态
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Link to="/app-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">应用生态</Link>
+                  <Link to="/payment-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">支付生态</Link>
+                  <Link to="/summit" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">峰会动态</Link>
+                </div>
               </div>
-            </div>
 
-            <div className="space-y-4 md:space-y-6">
-              {recentNews.map((news) => renderNewsCard(news, false))}
+              <div className="space-y-4 md:space-y-6">
+                {recentNews.map((news) => renderNewsCard(news, false))}
+              </div>
             </div>
           </div>
         )}

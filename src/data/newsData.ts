@@ -639,9 +639,8 @@ export const appEcosystemNews = sortedNewsData.filter((item) => {
 });
 
 // 获取最近一个月的新闻（用于最新动态）
-export const getLatestNews = (days: number = 30) => {
-  const now = new Date('2026-04-07');
-  const cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+export const getLatestNews = (days: number = 30, referenceDate: Date = new Date('2026-04-14')) => {
+  const cutoffDate = new Date(referenceDate.getTime() - days * 24 * 60 * 60 * 1000);
 
   return sortedNewsData.filter((item) => {
     const itemDate = new Date(item.publishDate);
@@ -649,7 +648,30 @@ export const getLatestNews = (days: number = 30) => {
   });
 };
 
+// 获取上周快讯（从上周一到上周日）
+export const getLastWeekNews = (referenceDate: Date = new Date()) => {
+  const date = new Date(referenceDate);
+  const day = date.getDay(); // 0 (Sun) to 6 (Sat)
+  
+  // 计算上周日的位移 (如果是周一(1), 位移是 -1; 如果是周日(0), 位移是 -7)
+  const diffToLastSunday = day === 0 ? -7 : -day;
+  const lastSunday = new Date(date);
+  lastSunday.setDate(date.getDate() + diffToLastSunday);
+  lastSunday.setHours(23, 59, 59, 999);
+
+  // 计算上周一的位移
+  const lastMonday = new Date(lastSunday);
+  lastMonday.setDate(lastSunday.getDate() - 6);
+  lastMonday.setHours(0, 0, 0, 0);
+
+  return sortedNewsData.filter((item) => {
+    const itemDate = new Date(item.publishDate);
+    return itemDate >= lastMonday && itemDate <= lastSunday;
+  });
+};
+
 // 获取当日新增新闻（用于首页当日新增版块）
-export const getTodayNews = (today: string = '2026-04-07') => {
-  return sortedNewsData.filter((item) => item.publishDate === today);
+export const getTodayNews = (today?: string) => {
+  const dateStr = today || new Date().toISOString().split('T')[0];
+  return sortedNewsData.filter((item) => item.publishDate === dateStr);
 };
