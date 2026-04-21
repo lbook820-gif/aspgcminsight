@@ -4,7 +4,7 @@ import { ExternalLink, TrendingUp, Minus, TrendingDown, Search } from 'lucide-re
 import { paymentEcosystemNews } from '../data/newsData';
 
 // 热门搜索关键词
-const hotKeywords = ['佣金', 'IAP', '第三方支付', 'Google Play', 'App Store', '韩国'];
+const hotKeywords = ['GDPR', 'IAP', '第三方支付', 'Google Play', 'App Store', '韩国'];
 
 export default function PaymentEcosystemPage() {
   useEffect(() => {
@@ -17,12 +17,12 @@ export default function PaymentEcosystemPage() {
   // 搜索过滤
   const filteredNews = searchQuery.trim()
     ? paymentEcosystemNews.filter(
-        (news) =>
-          news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          news.source.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      (news) =>
+        news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        news.source.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : paymentEcosystemNews;
 
   const handleKeywordClick = (keyword: string) => {
@@ -50,13 +50,13 @@ export default function PaymentEcosystemPage() {
           <div className="flex items-center gap-2 mb-4 text-gray-500 text-sm">
             <Link to="/" className="hover:text-black">首页</Link>
             <span>/</span>
-            <span className="text-black">支付生态新闻</span>
+            <span className="text-black">执法动态</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            支付生态新闻
+            执法动态
           </h1>
           <p className="text-gray-600">
-            支付政策、佣金调整、第三方支付动态
+            聚焦全球数字化监管前沿，追踪欧盟DMA、美国数字市场法、数据跨境传输、反垄断审查等最新动态
           </p>
         </div>
       </div>

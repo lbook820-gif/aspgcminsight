@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ExternalLink, TrendingUp, Minus, TrendingDown } from 'lucide-react';
 import { sortedNewsData } from '../data/newsData';
 
@@ -170,16 +169,6 @@ export default function IntelligenceList() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  {/* 详细分析按钮 - 仅Meta新闻显示 */}
-                  {news.id === '2' && (
-                    <Link
-                      to="/meta-analysis"
-                      className="inline-flex items-center gap-2 font-medium text-blue-600 hover:text-blue-700 text-sm"
-                    >
-                      详细分析
-                      <ExternalLink className="w-4 h-4" />
-                    </Link>
-                  )}
                   <a
                     href={news.sourceUrl}
                     target="_blank"

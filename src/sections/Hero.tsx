@@ -68,13 +68,13 @@ export default function Hero({ onSearch }: HeroProps) {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4"
             style={{ fontFamily: 'Oswald, sans-serif' }}
           >
-            欧洲移动应用生态洞察平台
+            欧洲移动应用合规洞察
           </h1>
           <p
             className="text-base sm:text-lg md:text-xl text-white/70 font-light tracking-wide"
             style={{ fontFamily: 'Barlow, sans-serif' }}
           >
-            一览全球应用生态 · 深度分析解读
+            聚焦欧盟法律法规、执法案例的洞察；
           </p>
         </div>
 

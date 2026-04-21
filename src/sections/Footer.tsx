@@ -4,9 +4,8 @@ import { Mail, MapPin } from 'lucide-react';
 export default function Footer() {
   const quickLinks = [
     { name: '首页', href: '/' },
-    { name: '应用生态', href: '/app-ecosystem' },
-    { name: '支付生态', href: '/payment-ecosystem' },
-    { name: '生态峰会', href: '/summit' },
+    { name: '法律法规动态', href: '/app-ecosystem' },
+    { name: '执法动态', href: '/payment-ecosystem' },
   ];
 
   return (
@@ -16,10 +15,10 @@ export default function Footer() {
           {/* About Column */}
           <div className="md:col-span-2">
             <Link to="/" className="font-bold mb-4 block text-xl">
-              欧洲移动应用生态洞察平台
+              欧洲移动应用合规洞察
             </Link>
             <p className="leading-relaxed max-w-md text-gray-600 text-sm">
-              专注于欧美移动应用市场情报收集与分析，为开发者和决策者提供专业、及时、全面的生态洞察服务。
+              专注于欧美移动应用市场合规情报收集与分析，为开发者和决策者提供专业、及时、全面的合规洞察服务。
             </p>
           </div>
 
@@ -65,7 +64,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-200">
           <p className="text-gray-500 text-sm">
-            © 2026 欧洲移动应用生态洞察平台. All rights reserved.
+            © 2026 欧洲移动应用合规洞察. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-gray-500 hover:text-black text-sm">

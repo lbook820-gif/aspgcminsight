@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             <span className="text-black">隐私声明</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            关于移动应用生态洞察与隐私的声明
+            关于移动应用合规洞察与隐私的声明
           </h1>
           <p className="text-gray-600">
             更新日期：2026.3.20
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         {/* Introduction */}
         <div className="mb-8">
           <p className="leading-relaxed mb-4 text-gray-700">
-            移动应用生态洞察 是由 <strong>李晓晴</strong>（以下简称"我们"）为您提供的，用于新闻聚合分析的元服务。本隐私声明由我们为处理您的个人信息而制定。
+            移动应用合规洞察 是由 <strong>李晓晴</strong>（以下简称"我们"）为您提供的，用于新闻聚合分析的元服务。本隐私声明由我们为处理您的个人信息而制定。
           </p>
           <p className="leading-relaxed text-gray-700">
             我们非常重视您的个人信息和隐私保护，将会按照法律要求和业界成熟的安全标准，为您的个人信息提供相应的安全保护措施。
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
           </div>
           <div className="space-y-4 pl-14">
             <div className="bg-gray-50 rounded-lg p-4 md:p-5">
-              <p className="font-semibold mb-2 text-black">欧洲移动应用生态洞察平台</p>
+              <p className="font-semibold mb-2 text-black">欧洲移动应用合规洞察</p>
               <p className="text-gray-600">电子邮箱：lbook820@gmail.com</p>
               <p className="text-gray-600">地址：Dublin, Ireland</p>
             </div>

@@ -4,7 +4,7 @@ import { ExternalLink, TrendingUp, Minus, TrendingDown, Search } from 'lucide-re
 import { appEcosystemNews } from '../data/newsData';
 
 // 热门搜索关键词
-const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta', '苹果'];
+const hotKeywords = ['Apple', 'Google', '反垄断', 'GDPR', '金融合规', 'Meta', '数据跨境', 'Tiktok'];
 
 export default function AppEcosystemPage() {
   useEffect(() => {
@@ -17,12 +17,12 @@ export default function AppEcosystemPage() {
   // 搜索过滤
   const filteredNews = searchQuery.trim()
     ? appEcosystemNews.filter(
-        (news) =>
-          news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          news.source.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      (news) =>
+        news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        news.source.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : appEcosystemNews;
 
   const handleKeywordClick = (keyword: string) => {
@@ -50,13 +50,13 @@ export default function AppEcosystemPage() {
           <div className="flex items-center gap-2 mb-4 text-gray-500 text-sm">
             <Link to="/" className="hover:text-black">首页</Link>
             <span>/</span>
-            <span className="text-black">应用生态新闻</span>
+            <span className="text-black">法律法规动态</span>
           </div>
           <h1 className="font-bold mb-2 text-gray-900 text-xl md:text-2xl">
-            应用生态新闻
+            法律法规动态
           </h1>
           <p className="text-gray-600">
-            应用商店政策、平台更新、开发者动态
+            聚焦全球数字化监管前沿，追踪欧盟DMA、美国数字市场法、数据跨境传输、反垄断审查等最新动态
           </p>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function AppEcosystemPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="搜索应用生态新闻..."
+              placeholder="搜索法律法规动态..."
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);

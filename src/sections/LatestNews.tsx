@@ -4,7 +4,7 @@ import { ExternalLink, Search } from 'lucide-react';
 import { getLatestNews, sortedNewsData, getLastWeekNews, getTodayNews } from '../data/newsData';
 
 // 热门搜索关键词
-const hotKeywords = ['DMA', 'Google Play', 'App Store', '反垄断', 'Epic Games', 'WhatsApp', 'Meta'];
+const hotKeywords = ['DMA', 'Google', 'Apple', '反垄断', 'Meta', 'WhatsApp', 'Tiktok', 'GDPR', '数据跨境'];
 
 export default function LatestNews() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,12 +26,12 @@ export default function LatestNews() {
   // 搜索功能 - 实时筛选
   const searchResults = searchQuery.trim()
     ? sortedNewsData.filter(
-        (news) =>
-          news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          news.source.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      (news) =>
+        news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        news.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        news.source.toLowerCase().includes(searchQuery.toLowerCase())
+    )
     : [];
 
   const handleKeywordClick = (keyword: string) => {
@@ -62,11 +62,10 @@ export default function LatestNews() {
           <span className="text-gray-400 text-xs">
             {news.publishDate}
           </span>
-          <span className={`px-2 py-0.5 rounded font-medium text-xs ${
-            news.score >= 8 ? 'text-green-600 bg-green-50' :
-            news.score >= 6 ? 'text-amber-600 bg-amber-50' :
-            'text-red-600 bg-red-50'
-          }`}>
+          <span className={`px-2 py-0.5 rounded font-medium text-xs ${news.score >= 8 ? 'text-green-600 bg-green-50' :
+              news.score >= 6 ? 'text-amber-600 bg-amber-50' :
+                'text-red-600 bg-red-50'
+            }`}>
             热度 {news.score}
           </span>
         </div>
@@ -115,16 +114,6 @@ export default function LatestNews() {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* 详细分析按钮 - 仅Meta新闻显示 */}
-          {news.id === '2' && (
-            <Link
-              to="/meta-analysis"
-              className="inline-flex items-center gap-2 font-medium text-blue-600 hover:text-blue-700 text-sm"
-            >
-              详细分析
-              <ExternalLink className="w-4 h-4" />
-            </Link>
-          )}
           <a
             href={news.sourceUrl}
             target="_blank"
@@ -145,13 +134,13 @@ export default function LatestNews() {
         {/* Section Header */}
         <div className="mb-8">
           <h2 className="font-bold text-gray-900 mb-1 md:mb-2 text-xl md:text-2xl">
-            欧洲移动应用生态洞察
+            欧洲移动应用合规洞察
           </h2>
           <p className="text-gray-500 mb-1 text-sm">
             European Mobile App Ecosystem Insights
           </p>
           <p className="text-gray-500 text-sm mt-2">
-            聚焦欧盟DMA政策、应用商店监管与欧洲数字市场动态
+            聚焦欧盟法律法规、执法案例的洞察
           </p>
           <p className="mt-2 text-gray-400 text-xs">
             {isMonday ? '上周快讯汇总模式' : '当日新增实时模式'} · 今日：{todayStr}
@@ -263,19 +252,17 @@ export default function LatestNews() {
               <div>
                 <div className="flex items-center justify-between mb-4 border-b border-gray-200 pb-2">
                   <h3 className="font-bold text-lg flex items-center gap-2">
-                    <span className="w-2 h-6 bg-blue-600"></span>
+                    <span className="w-2 h-6 bg-gray-400"></span>
                     今日新增动态
                   </h3>
-                  <span className="text-xs text-blue-500 font-medium">Daily Updates</span>
                 </div>
                 {todayNews.length > 0 ? (
                   <div className="space-y-4 md:space-y-6">
                     {todayNews.map((news) => renderNewsCard(news, true))}
                   </div>
                 ) : (
-                  <div className="py-8 bg-blue-50/50 rounded-lg border border-blue-100 flex flex-col items-center justify-center text-center px-4">
-                    <p className="text-blue-800 font-medium mb-1">今日暂无实时频率新增</p>
-                    <p className="text-blue-600 text-xs">我们将持续为您监测最新的行业动态，请查看下方的近期动态。</p>
+                  <div className="py-8 bg-gray-50/50 rounded-lg border border-gray-100 flex flex-col items-center justify-center text-center px-4">
+                    <p className="text-gray-400 text-sm">今日暂无实时新增</p>
                   </div>
                 )}
               </div>
@@ -289,9 +276,8 @@ export default function LatestNews() {
                   近期热点动态
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  <Link to="/app-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">应用生态</Link>
-                  <Link to="/payment-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">支付生态</Link>
-                  <Link to="/summit" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">峰会动态</Link>
+                  <Link to="/app-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">法律法规动态</Link>
+                  <Link to="/payment-ecosystem" className="px-3 py-1 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 rounded text-xs transition-colors">执法动态</Link>
                 </div>
               </div>
 

@@ -17,9 +17,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: '首页', href: '/' },
-    { name: '应用生态', href: '/app-ecosystem' },
-    { name: '支付生态', href: '/payment-ecosystem' },
-    { name: '生态峰会', href: '/summit' },
+    { name: '法律法规动态', href: '/app-ecosystem' },
+    { name: '执法动态', href: '/payment-ecosystem' },
   ];
 
   const isActive = (path: string) => {
@@ -42,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="font-bold text-xl">
-            生态洞察
+            合规洞察
           </Link>
 
           {/* Desktop Navigation */}
