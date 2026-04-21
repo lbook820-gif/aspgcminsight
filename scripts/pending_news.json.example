@@ -1,0 +1,16 @@
+[
+  {
+    "title": "示例新闻标题",
+    "source": "Reuters",
+    "sourceUrl": "https://www.reuters.com/example-news",
+    "summary": "这是新闻摘要，简要描述新闻内容。",
+    "aiComment": {
+      "overallImpact": "这是整体影响分析。",
+      "huaweiImpact": "这是对华为的影响分析。"
+    },
+    "publishDate": "2026-04-04",
+    "score": 7,
+    "category": "appstore",
+    "tags": ["苹果", "App Store", "AI"]
+  }
+]

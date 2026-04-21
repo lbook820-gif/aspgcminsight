@@ -1,0 +1,45 @@
+# 简化版自动更新工作流
+# 每天自动构建部署，如需添加新闻请手动触发
+
+name: Daily Build
+
+on:
+  # 每天北京时间 08:00 执行
+  schedule:
+    - cron: '0 0 * * *'
+  
+  # 代码推送时自动构建
+  push:
+    branches: [ main, master ]
+  
+  # 手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build website
+        run: npm run build
+        
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
