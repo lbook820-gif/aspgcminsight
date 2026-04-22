@@ -6,27 +6,12 @@ import NewsCard from '@/components/NewsCard';
 import type { NewsItem, DynamicCard } from '@/types';
 
 // 当日新增快讯 - 2026年4月22日检索更新（已验证原文链接）
+// 注：移除了"欧盟DMA罚单"新闻，因该新闻实际发生于2025年4月，非2026年新闻
 const todayNews: NewsItem[] = [
   {
     id: '1',
-    source: '欧盟委员会 / 36氪',
-    date: '2026-04-23',
-    heat: 10,
-    title: '欧盟首次动用DMA开出7亿欧元罚单，苹果5亿欧元、Meta2亿欧元',
-    summary:
-      '2026年4月23日，欧盟委员会宣布根据《数字市场法案》(DMA)对苹果和Meta分别处以5亿欧元和2亿欧元罚款，总计7亿欧元。这是DMA自2024年3月生效以来开出的首张罚单。苹果因App Store违反DMA引导限制条款被罚，欧盟调查显示苹果设置多重限制致使开发者无法自由告知用户其他付费渠道。Meta则因"同意数据收集或付费订阅"二选一模式违反DMA规定。',
-    overallImpact:
-      '此次处罚标志着DMA执法进入实质性阶段，向所有守门人平台传递强烈信号。欧盟委员会强调处罚旨在确保科技巨头遵守DMA规则，维护数字市场公平竞争环境。这是继2024年3月DMA全面实施后，欧盟首次对违规企业开出罚单，具有里程碑意义。',
-    industryImpact:
-      '对中国出海企业的关键影响：\n\n**战略层面**：\n- 苹果被罚意味着App Store引导限制被认定违法，开发者可更自由地告知用户替代支付渠道\n- Meta的"付费或同意"模式被否定，广告变现模式需重新设计\n- 建议评估在欧盟区的商业模式是否符合DMA要求\n\n**技术层面**：\n- iOS应用可考虑添加外部支付引导功能\n- 广告系统需提供"低数据使用量广告服务"选项\n- 数据收集需获得用户明确同意\n\n**合规层面**：\n- 审查App Store应用是否符合引导条款要求\n- 评估广告系统的数据使用模式\n- 关注欧盟委员会后续执法动态\n\n**风险提示**：DMA违规最高可处全球年营业额10%罚款，重复违规可达20%，需高度重视合规风险。',
-    tags: ['DMA', '苹果', 'Meta', '欧盟委员会', '数字市场法'],
-    link: 'https://www.36kr.com/p/3263607955078913',
-    isNew: true,
-  },
-  {
-    id: '2',
     source: '腾讯新闻',
-    date: '2026-04-22',
+    date: '2026-04-11',
     heat: 9,
     title: '两年被罚70亿美元！特朗普政府怒斥欧盟罚款是"对美国科技巨头的关税"',
     summary:
@@ -40,9 +25,9 @@ const todayNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '3',
+    id: '2',
     source: '中国经济网',
-    date: '2026-04-22',
+    date: '2026-03-13',
     heat: 8,
     title: '中国反垄断监管出手：苹果应用商店佣金降至全球最低水平',
     summary:
@@ -56,9 +41,9 @@ const todayNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '4',
+    id: '3',
     source: '复旦大学复旦发展研究院',
-    date: '2026-04-22',
+    date: '2026-03-26',
     heat: 8,
     title: '欧盟《人工智能法》首次修法：高风险AI义务延期至2027-2028年',
     summary:
@@ -72,9 +57,9 @@ const todayNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '5',
+    id: '4',
     source: 'CSDN / 中央网信办',
-    date: '2026-04-22',
+    date: '2026-04-07',
     heat: 9,
     title: '中国2026年个人信息保护专项行动启动：七大战役严打数据违规',
     summary:
@@ -88,9 +73,9 @@ const todayNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '6',
+    id: '5',
     source: 'CSDN / Google Play',
-    date: '2026-04-22',
+    date: '2026-01-01',
     heat: 7,
     title: 'Google Play年龄信号新规2026年1月生效：出海游戏必须接入Age Signals API',
     summary:
@@ -112,7 +97,7 @@ const dynamicCards: DynamicCard[] = [
     articleTitle:
       '欧盟《人工智能法》首次修法：高风险AI合规期限延期',
     source: '复旦大学',
-    date: '2026-04-22',
+    date: '2026-03-26',
     heat: 8,
     link: '/laws',
   },
@@ -122,7 +107,7 @@ const dynamicCards: DynamicCard[] = [
     articleTitle:
       '中国反垄断监管成效显现：苹果应用商店佣金降至全球最低',
     source: '中国经济网',
-    date: '2026-04-22',
+    date: '2026-03-13',
     heat: 8,
     link: '/laws',
   },
@@ -130,10 +115,10 @@ const dynamicCards: DynamicCard[] = [
     id: '3',
     title: '执法动态',
     articleTitle:
-      '欧盟首次动用DMA开出7亿欧元罚单，苹果Meta双双被罚',
-    source: '欧盟委员会',
-    date: '2026-04-23',
-    heat: 10,
+      '中国2026年个人信息保护专项行动启动',
+    source: '中央网信办',
+    date: '2026-04-07',
+    heat: 9,
     link: '/enforcement',
   },
 ];
