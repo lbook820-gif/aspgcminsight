@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 
 const hotTags = [
   'DMA',
@@ -11,8 +11,27 @@ const hotTags = [
   'Google Play',
 ];
 
-export default function SearchSection() {
-  const [searchValue, setSearchValue] = useState('');
+interface SearchSectionProps {
+  onSearchChange?: (keyword: string) => void;
+  searchValue?: string;
+}
+
+export default function SearchSection({ onSearchChange, searchValue = '' }: SearchSectionProps) {
+  const [internalSearchValue, setInternalSearchValue] = useState(searchValue);
+  
+  // 使用外部控制或内部控制
+  const currentValue = onSearchChange ? searchValue : internalSearchValue;
+  const setCurrentValue = onSearchChange 
+    ? onSearchChange 
+    : setInternalSearchValue;
+
+  const handleClear = () => {
+    setCurrentValue('');
+  };
+
+  const handleTagClick = (tag: string) => {
+    setCurrentValue(tag);
+  };
 
   return (
     <section className="bg-[#fafafa] px-6 pb-6">
@@ -25,11 +44,20 @@ export default function SearchSection() {
           />
           <input
             type="text"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
+            value={currentValue}
+            onChange={(e) => setCurrentValue(e.target.value)}
             placeholder="搜索合规关键词..."
-            className="w-full h-12 pl-11 pr-4 bg-white border border-[#e5e5e5] rounded-lg text-sm text-[#171717] placeholder:text-[#a3a3a3] focus:outline-none focus:border-[#2563eb] transition-colors duration-200"
+            className="w-full h-12 pl-11 pr-10 bg-white border border-[#e5e5e5] rounded-lg text-sm text-[#171717] placeholder:text-[#a3a3a3] focus:outline-none focus:border-[#2563eb] transition-colors duration-200"
           />
+          {currentValue && (
+            <button
+              onClick={handleClear}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#737373] hover:text-[#171717] transition-colors duration-150"
+              title="清除搜索"
+            >
+              <X size={16} />
+            </button>
+          )}
         </div>
 
         {/* Hot Search Tags */}
@@ -38,8 +66,12 @@ export default function SearchSection() {
           {hotTags.map((tag) => (
             <button
               key={tag}
-              onClick={() => setSearchValue(tag)}
-              className="bg-[#f5f5f5] text-[#404040] text-xs px-3 py-1.5 rounded-full hover:bg-[#e5e5e5] transition-colors duration-150"
+              onClick={() => handleTagClick(tag)}
+              className={`text-xs px-3 py-1.5 rounded-full transition-colors duration-150 ${
+                currentValue === tag
+                  ? 'bg-[#2563eb] text-white'
+                  : 'bg-[#f5f5f5] text-[#404040] hover:bg-[#e5e5e5]'
+              }`}
             >
               {tag}
             </button>

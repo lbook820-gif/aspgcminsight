@@ -1,6 +1,15 @@
 import { ExternalLink } from 'lucide-react';
 import type { NewsItem } from '@/types';
 
+// 简单的 Markdown 渲染函数
+function renderMarkdown(text: string) {
+  // 处理粗体 **text**
+  let result = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // 处理换行
+  result = result.replace(/\n/g, '<br />');
+  return result;
+}
+
 export default function NewsCard({ news }: { news: NewsItem }) {
   return (
     <div className="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-shadow duration-200">
@@ -44,14 +53,15 @@ export default function NewsCard({ news }: { news: NewsItem }) {
             </p>
           </div>
 
-          {/* Industry Impact Block */}
+          {/* Industry Impact Block - 支持 Markdown 渲染 */}
           <div className="bg-[#fff7ed] border border-[#ffedd5] rounded-lg p-4 mb-4">
             <div className="inline-block bg-[#f97316] text-white text-xs font-medium px-2 py-0.5 rounded mb-2">
               行业影响
             </div>
-            <p className="text-sm text-[#525252] leading-relaxed">
-              {news.industryImpact}
-            </p>
+            <div 
+              className="text-sm text-[#525252] leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: renderMarkdown(news.industryImpact) }}
+            />
           </div>
 
           {/* Footer Row */}
