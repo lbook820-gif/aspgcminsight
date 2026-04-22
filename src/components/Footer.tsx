@@ -1,57 +1,58 @@
-import { Link } from 'react-router-dom';
+import { Heart, Github, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[#e5e5e5]">
-      <div className="max-w-[800px] mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          {/* Left: Platform Info */}
-          <div className="md:w-[60%]">
-            <h3 className="text-base font-semibold text-[#171717] mb-3">
-              欧洲移动应用合规洞察平台
-            </h3>
-            <p className="text-sm text-[#525252] leading-relaxed">
-              专注于欧盟移动应用市场合规情报收集与分析，为开发者和决策者提供专业、及时、全面的合规洞察服务。
+    <footer className="bg-slate-900 text-gray-400 py-12 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* 关于 */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">关于本项目</h3>
+            <p className="text-sm leading-relaxed">
+              欧洲移动应用合规洞察平台，聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态，为中国出海企业提供专业的合规参考。
             </p>
           </div>
-
-          {/* Right: Links & Contact */}
-          <div className="md:w-[40%] flex flex-col gap-6">
-            <div>
-              <h4 className="text-sm font-semibold text-[#171717] mb-2">快速链接</h4>
-              <div className="flex flex-col gap-1">
-                <Link
-                  to="/"
-                  className="text-sm text-[#525252] hover:text-[#2563eb] transition-colors duration-150"
-                >
-                  首页
-                </Link>
-                <Link
-                  to="/laws"
-                  className="text-sm text-[#525252] hover:text-[#2563eb] transition-colors duration-150"
-                >
-                  法律法规
-                </Link>
-                <Link
-                  to="/enforcement"
-                  className="text-sm text-[#525252] hover:text-[#2563eb] transition-colors duration-150"
-                >
-                  执法动态
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-[#171717] mb-2">联系我们</h4>
-              <p className="text-sm text-[#737373]">compliance@insights.eu</p>
-              <p className="text-sm text-[#737373] mt-1">Brussels, Belgium</p>
+          
+          {/* 法规追踪 */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">重点追踪法规</h3>
+            <ul className="text-sm space-y-2">
+              <li className="hover:text-white transition-colors cursor-pointer">• 数字市场法 (DMA)</li>
+              <li className="hover:text-white transition-colors cursor-pointer">• 数字服务法 (DSA)</li>
+              <li className="hover:text-white transition-colors cursor-pointer">• 通用数据保护条例 (GDPR)</li>
+              <li className="hover:text-white transition-colors cursor-pointer">• 人工智能法 (AI Act)</li>
+            </ul>
+          </div>
+          
+          {/* 联系 */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">联系我们</h3>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/lbook820-gif/aspgcminsight"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:contact@example.com"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
-
-        <div className="mt-8 pt-6 border-t border-[#e5e5e5]">
-          <p className="text-xs text-[#737373]">
-            &copy; 2026 欧洲移动应用合规洞察平台. All rights reserved.
+        
+        {/* 底部 */}
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm">
+            © 2026 欧洲移动应用合规洞察. All rights reserved.
+          </p>
+          <p className="text-sm flex items-center gap-1">
+            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by OpenClaw
           </p>
         </div>
       </div>

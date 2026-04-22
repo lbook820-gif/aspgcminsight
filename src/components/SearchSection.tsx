@@ -1,79 +1,63 @@
-import { useState } from 'react';
-import { Search, X } from 'lucide-react';
-
-const hotTags = [
-  'DMA',
-  'GDPR',
-  '数字市场法',
-  '数据保护',
-  '反垄断',
-  'App Store',
-  'Google Play',
-];
+import { Search, X, TrendingUp } from 'lucide-react';
 
 interface SearchSectionProps {
-  onSearchChange?: (keyword: string) => void;
-  searchValue?: string;
+  searchValue: string;
+  onSearchChange: (value: string) => void;
 }
 
-export default function SearchSection({ onSearchChange, searchValue = '' }: SearchSectionProps) {
-  const [internalSearchValue, setInternalSearchValue] = useState(searchValue);
-  
-  // 使用外部控制或内部控制
-  const currentValue = onSearchChange ? searchValue : internalSearchValue;
-  const setCurrentValue = onSearchChange 
-    ? onSearchChange 
-    : setInternalSearchValue;
+const hotKeywords = [
+  { text: 'TikTok', icon: '🔥' },
+  { text: 'Meta', icon: '📱' },
+  { text: 'Google', icon: '🔍' },
+  { text: '苹果', icon: '🍎' },
+  { text: 'SHEIN', icon: '🛍️' },
+  { text: 'Temu', icon: '📦' },
+  { text: 'DSA', icon: '📋' },
+  { text: 'GDPR', icon: '🔒' },
+];
 
-  const handleClear = () => {
-    setCurrentValue('');
-  };
-
-  const handleTagClick = (tag: string) => {
-    setCurrentValue(tag);
-  };
-
+export default function SearchSection({ searchValue, onSearchChange }: SearchSectionProps) {
   return (
-    <section className="bg-[#fafafa] px-6 pb-6">
-      <div className="max-w-[800px] mx-auto">
-        {/* Search Input */}
-        <div className="relative">
-          <Search
-            size={18}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#737373]"
-          />
+    <section className="sticky top-16 z-20 bg-white/80 backdrop-blur-lg border-b border-gray-200 px-6 py-4">
+      <div className="max-w-4xl mx-auto">
+        {/* 搜索框 */}
+        <div className="relative mb-4">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
           <input
             type="text"
-            value={currentValue}
-            onChange={(e) => setCurrentValue(e.target.value)}
-            placeholder="搜索合规关键词..."
-            className="w-full h-12 pl-11 pr-10 bg-white border border-[#e5e5e5] rounded-lg text-sm text-[#171717] placeholder:text-[#a3a3a3] focus:outline-none focus:border-[#2563eb] transition-colors duration-200"
+            placeholder="搜索新闻、企业、法规..."
+            value={searchValue}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="w-full pl-12 pr-12 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition-all"
           />
-          {currentValue && (
+          {searchValue && (
             <button
-              onClick={handleClear}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#737373] hover:text-[#171717] transition-colors duration-150"
-              title="清除搜索"
+              onClick={() => onSearchChange('')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-gray-200 transition-colors"
             >
-              <X size={16} />
+              <X className="w-4 h-4 text-gray-400" />
             </button>
           )}
         </div>
-
-        {/* Hot Search Tags */}
-        <div className="flex items-center gap-2 mt-4 flex-wrap">
-          <span className="text-xs text-[#737373]">热门搜索：</span>
-          {hotTags.map((tag) => (
+        
+        {/* 热门搜索 */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <span className="flex items-center gap-1.5 text-xs font-medium text-gray-500">
+            <TrendingUp className="w-3.5 h-3.5" />
+            热门搜索
+          </span>
+          {hotKeywords.map((keyword) => (
             <button
-              key={tag}
-              onClick={() => handleTagClick(tag)}
-              className={`text-xs px-3 py-1.5 rounded-full transition-colors duration-150 ${
-                currentValue === tag
-                  ? 'bg-[#2563eb] text-white'
-                  : 'bg-[#f5f5f5] text-[#404040] hover:bg-[#e5e5e5]'
+              key={keyword.text}
+              onClick={() => onSearchChange(keyword.text)}
+              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                searchValue === keyword.text
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {tag}
+              <span>{keyword.icon}</span>
+              {keyword.text}
             </button>
           ))}
         </div>
