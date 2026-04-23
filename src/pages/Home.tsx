@@ -9,6 +9,54 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-010',
+    source: 'Politico Europe',
+    date: '2026-04-16',
+    heat: 9,
+    title: '欧盟拒绝 Meta 的 WhatsApp AI 开放方案，称其"变相收费"',
+    summary:
+      '2026年4月16日，欧盟委员会正式拒绝了 Meta 提出的关于第三方 AI 助手接入 WhatsApp 的商业补偿方案。Meta 原计划对每次互操作性查询收取费用，但欧盟认定这种"按次计费"模式实质上构成了对竞争对手的准入壁垒，违反了 DMA 关于互操作性的公平原则。欧盟已准备实施临时措施，强制 Meta 免费或按成本价开放接口。',
+    overallImpact:
+      '此举展示了欧盟在 AI 互操作性上的强硬立场。监管机构不希望守门人利用其社交生态优势，通过商业门槛限制 AI 领域的竞争。这可能迫使 Meta 调整其全球 AI 开放策略。',
+    industryImpact:
+      '对中国 AI 出海企业的启示：\n\n**技术机会**：\n- 关注 WhatsApp 接口的开放进度，这为第三方 AI 助手进入欧洲社交生态打开了大门\n- 评估低成本接入大型社交平台的可能性\n\n**风险提示**：\n- 虽然接口可能开放，但数据合规要求（GDPR）依然极其严格\n- 需评估 Meta 可能会采取的其他非技术性限制措施',
+    tags: ['Meta', 'WhatsApp', 'AI', 'DMA', '互操作性'],
+    link: 'https://www.politico.eu/article/eu-rejects-meta-ai-whatsapp-access-proposal/',
+    isNew: true,
+  },
+  {
+    id: '2026-003',
+    source: 'European Commission News',
+    date: '2026-03-26',
+    heat: 8,
+    title: '欧盟启动对 Snapchat 的正式 DSA 调查，聚焦未成年人保护',
+    summary:
+      '2026年3月26日，欧盟委员会宣布对 Snapchat 启动正式调查，评估其是否违反了《数字服务法》（DSA）中关于未成年人保护和算法透明度的规定。调查重点在于 Snapchat 的算法推荐系统是否诱导了未成年人的成瘾行为，以及平台在识别和限制非法内容传播方面的机制是否有效。',
+    overallImpact:
+      'Snapchat 成为继 TikTok 之后又一个因未成年人保护问题受到 DSA 严厉监管的大型平台。这表明欧盟对社交平台的监管重心正全面转向保护弱势群体。',
+    industryImpact:
+      '所有面向年轻人的社交应用，特别是具有高度互动性和算法分发特性的应用，必须立即升级其年龄验证和内容过滤机制。不合规将面临最高全球营收 6% 的罚款。',
+    tags: ['Snapchat', 'DSA', '未成年人保护', '算法透明度'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_26_326',
+    isNew: true,
+  },
+  {
+    id: '2026-011',
+    source: 'Euractiv',
+    date: '2026-04-18',
+    heat: 7,
+    title: '欧盟推进"数字综合法案"（Digital Omnibus），试图简化监管框架',
+    summary:
+      '2026年4月18日，欧盟委员会披露了正在推进的"数字综合法案"（Digital Omnibus）细节。该法案旨在整合并简化 GDPR、Data Act 和 AI Act 之间重叠的合规要求，以降低企业（尤其是中小企业）的合规成本。然而，多个人权组织批评此举可能导致监管标准缩水，削弱对个人数据的保护。',
+    overallImpact:
+      '这是欧盟数字监管政策的一次重大调整，旨在平衡"强力监管"与"数字竞争力"。若法案通过，企业将面临更统一但可能更复杂的综合合规体系。',
+    industryImpact:
+      '中国企业应密切关注法案的三方会谈（Trilogue）进展。简化可能意味着某些合规流程的合并，但也可能引入新的跨法规交叉审查要求。',
+    tags: ['Digital Omnibus', '监管简化', 'GDPR', 'AI Act', '欧盟'],
+    link: 'https://www.euractiv.com/section/digital/news/eu-digital-omnibus-regulatory-simplification-latest/',
+    isNew: true,
+  },
+  {
     id: '2026-008',
     source: '路透社',
     date: '2026-04-22',

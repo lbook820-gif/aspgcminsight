@@ -10,6 +10,36 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e8',
+    source: '欧盟委员会',
+    date: '2026-04-16',
+    heat: 9,
+    title: '欧盟拒绝 Meta 的 WhatsApp AI 开放方案，称其"变相收费"',
+    summary:
+      '2026年4月16日，欧盟委员会正式拒绝了 Meta 提出的关于第三方 AI 助手接入 WhatsApp 的商业补偿方案。Meta 原计划对每次互操作性查询收取费用，但欧盟认定这种"按次计费"模式实质上构成了对竞争对手的准入壁垒，违反了 DMA 关于互操作性的公平原则。欧盟已准备实施临时措施，强制 Meta 免费或按成本价开放接口。',
+    overallImpact:
+      '此举展示了欧盟在 AI 互操作性上的强硬立场。监管机构不希望守门人利用其社交生态优势，通过商业门槛限制 AI 领域的竞争。',
+    industryImpact:
+      '中国 AI 出海企业应关注 WhatsApp 接口的开放进度，这为第三方 AI 助手进入欧洲社交生态打开了大门，但需严格遵守 GDPR 要求。',
+    tags: ['Meta', 'WhatsApp', 'AI', 'DMA', '互操作性'],
+    isNew: true,
+  },
+  {
+    id: 'e9',
+    source: '欧盟委员会',
+    date: '2026-03-26',
+    heat: 8,
+    title: '欧盟启动对 Snapchat 的正式 DSA 调查，聚焦未成年人保护',
+    summary:
+      '2026年3月26日，欧盟委员会宣布对 Snapchat 启动正式调查，评估其是否违反了《数字服务法》（DSA）中关于未成年人保护和算法透明度的规定。调查重点在于 Snapchat 的算法推荐系统是否诱导了未成年人的成瘾行为，以及平台在识别和限制非法内容传播方面的机制是否有效。',
+    overallImpact:
+      'Snapchat 成为继 TikTok 之后又一个因未成年人保护问题受到 DSA 严厉监管的大型平台。这表明欧盟对社交平台的监管重心正全面转向保护弱势群体。',
+    industryImpact:
+      '所有面向年轻人的社交应用必须立即升级其年龄验证和内容过滤机制。不合规将面临最高全球营收 6% 的罚款。',
+    tags: ['Snapchat', 'DSA', '未成年人保护', '算法透明度'],
+    isNew: true,
+  },
+  {
     id: 'e7',
     source: '欧盟委员会',
     date: '2026-04-22',
