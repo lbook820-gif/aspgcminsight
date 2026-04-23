@@ -9,7 +9,7 @@
 - **时间**：每天北京时间 00:00（午夜）
 - **方式**：OpenClaw Cron 任务（isolated session）
 - **搜索的主要内容**
-  关注欧盟的合规动态，包括法律法规立法动态，执法案例，以及一些大厂企业的新闻
+  关注欧盟数字法的合规动态，包括法律法规立法动态，执法案例，以及一些大厂企业的新闻
   大厂包括 Apple、Google、Meta、Amazon、Microsoft、ByteDance、X 等
   也包括中国出海的大厂，如 tiktok， SHEIN，小米，OPPO，vivo，传音，
   法律法规动态主要 GDPR，DMA，DSA, NIS2, AI Act, Data Act, 消费者权益等
