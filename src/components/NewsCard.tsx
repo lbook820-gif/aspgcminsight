@@ -84,7 +84,7 @@ export default function NewsCard({ news }: { news: NewsItem }) {
         {/* Impact Sections */}
         <div className="space-y-3 mb-4">
           {/* Overall Impact */}
-          <details className="group/impact bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl overflow-hidden">
+          <details className="group/impact bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl overflow-hidden" open>
             <summary className="flex items-center gap-2 px-4 py-3 cursor-pointer select-none hover:bg-blue-100/50 transition-colors">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-600 text-white text-xs font-semibold">
                 <TrendingUp size={12} />
