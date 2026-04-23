@@ -17,6 +17,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '出海企业需自查：隐私通知是否简洁明了？是否在收集数据时即时告知？对第三方 SDK 的穿透式告知是否合规？',
     tags: ['EDPB', '透明度', '协同执法', 'GDPR'],
+    link: 'https://www.edpb.europa.eu/news/news/2024/edpb-launches-coordinated-enforcement-transparency_en',
     isNew: true,
   },
   {
@@ -32,6 +33,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '涉及高风险场景的中国 AI 企业（如智能安防、人力资源软件）必须对照指南进行技术对标，确保 8 月前完成所有合规准备。',
     tags: ['AI Office', 'AI Act', '高风险系统', '人工智能'],
+    link: 'https://digital-strategy.ec.europa.eu/en/policies/ai-office',
     isNew: true,
   },
   {
@@ -47,6 +49,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '云服务、在线市场及社交平台提供商应关注所在国依据 NCAF 2.0 制定的国家标准，加强网络安全韧性建设。',
     tags: ['ENISA', 'NIS2', '网络安全', 'NCAF'],
+    link: 'https://www.enisa.europa.eu/news',
     isNew: true,
   },
   {
@@ -62,6 +65,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '为欧洲银行提供技术服务的中国支付、云服务企业，必须配合银行客户完成 RoI 登记，并证明自身的业务连续性及风险管理能力。',
     tags: ['EBA', 'DORA', '金融科技', '第三方风险'],
+    link: 'https://www.eba.europa.eu/news-press',
     isNew: true,
   },
 
@@ -79,6 +83,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '中国短视频及社交应用在英国必须立即上线可靠的年龄验证技术，否则将面临类似 TikTok 在美英遭遇的高压监管风险。',
     tags: ['ICO', '未成年人保护', '年龄验证', '英国'],
+    link: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/',
     isNew: true,
   },
   {
@@ -94,6 +99,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '中国智能穿戴硬件商在瑞士及周边市场应强化“默认隐私”设计，并确保存储在云端的数据符合瑞士跨境传输要求。',
     tags: ['FDPIC', '智能硬件', '隐私设计', '瑞士'],
+    link: 'https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/links/news.html',
     isNew: true,
   },
   {
@@ -109,6 +115,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '在德经营的中国企业（如联网汽车、工业互联网商）需建立跨部门合规团队，同时对接数据流通监管与个人隐私监管。',
     tags: ['BfDI', 'Data Act', '德国', '执法协作'],
+    link: 'https://www.bfdi.bund.de/EN/Service/Press/Press_node.html',
     isNew: true,
   },
   {
@@ -124,6 +131,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '中国 AI 企业进入土耳其市场需特别关注其对“推断数据”的严苛定义，确保算法透明度符合 KVKK 的最新解释。',
     tags: ['KVKK', 'Agentic AI', '人工智能', '土耳其'],
+    link: 'https://www.kvkk.gov.tr/En/',
     isNew: true,
   },
   {
@@ -139,6 +147,7 @@ const dpaUpdates: NewsItem[] = [
     industryImpact:
       '中国手机厂商及软件分发商在土耳其市场需审视预装协议，避免被认定为损害市场公平竞争的行为。',
     tags: ['RK', '反垄断', '土耳其', '应用分发'],
+    link: 'https://www.rekabet.gov.tr/en',
     isNew: true,
   },
 ];

@@ -64,6 +64,7 @@ const industryNews: NewsItem[] = [
     industryImpact:
       '中国出海开发者可以考虑集成Adyen等欧洲本地支付方案，在欧盟区提供更有竞争力的支付体验和更低的交易成本。',
     tags: ['Adyen', '第三方支付', 'DMA', '应用商店'],
+    link: 'https://www.adyen.com/newsroom',
     isNew: true,
   },
   {
@@ -79,6 +80,7 @@ const industryNews: NewsItem[] = [
     industryImpact:
       '中国游戏出海企业应密切关注此立法动向。15%佣金上限若实现，将显著提升在欧盟区的游戏发行利润率。建议相关企业参与或支持类似的行业倡议，同时评估不同佣金率对定价策略的影响。',
     tags: ['游戏开发者', '应用商店佣金', 'EGDF', 'DMA'],
+    link: 'https://www.egdf.eu/news/',
     isNew: true,
   },
   {
@@ -94,6 +96,7 @@ const industryNews: NewsItem[] = [
     industryImpact:
       '面向儿童或青少年的中国出海应用需要提前评估业务模式转型。建议探索基于订阅(家长付费)的模式替代应用内购买，并研发不依赖个性化推荐的内容发现机制。',
     tags: ['儿童数字权利', '应用内购买', '数字健康', '欧盟立法'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1689',
     isNew: true,
   },
 ];

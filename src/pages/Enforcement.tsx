@@ -22,6 +22,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '开发者获得了绕过平台支付并直接与用户沟通价格的权利，显著降低了订阅类应用的渠道成本。',
     tags: ['苹果', '反垄断', '音乐流媒体', '欧盟'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1161',
     isNew: false,
   },
   {
@@ -37,6 +38,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国出海电商需建立更完备的商品合规审核机制，应对欧盟日益严格的消费者安全保护要求。',
     tags: ['Temu', 'DSA', '跨境电商', '产品安全'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_5622',
     isNew: true,
   },
   {
@@ -52,6 +54,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国出海开发者应关注数字广告产业链的透明化趋势，评估未来广告变现渠道多样化的可能性，减少对单一平台的路径依赖。',
     tags: ['谷歌', '反垄断', 'AdTech', '欧盟'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_4512',
     isNew: false,
   },
   {
@@ -67,6 +70,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '在英国市场运营的中国企业将受益于更透明的平台审核流程，有助于降低合规风险和运营成本。',
     tags: ['苹果', '谷歌', '英国 CMA', 'DMCC'],
+    link: 'https://www.gov.uk/government/news/cma-accepts-commitments-from-google-and-apple',
     isNew: true,
   },
   {
@@ -82,6 +86,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国 AI 出海企业应关注 WhatsApp 接口的开放进度，这为第三方 AI 助手进入欧洲社交生态打开了大门，但需严格遵守 GDPR 要求。',
     tags: ['Meta', 'WhatsApp', 'AI', 'DMA', '互操作性'],
+    link: 'https://www.politico.eu/article/eu-rejects-meta-ai-whatsapp-access-proposal/',
     isNew: true,
   },
   {
@@ -97,6 +102,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '所有面向年轻人的社交应用必须立即升级其年龄验证和内容过滤机制。不合规将面临最高全球营收 6% 的罚款。',
     tags: ['Snapchat', 'DSA', '未成年人保护', '算法透明度'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_23_4227',
     isNew: true,
   },
   {
@@ -112,6 +118,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国出海开发者应关注苹果后续开放的底层API，尤其是NFC和浏览器引擎，并积极提交互操作性请求以争取技术优势。',
     tags: ['苹果', 'DMA', '互操作性', '欧盟委员会'],
+    link: 'https://fsfe.org/news/2024/news-20240322-01.en.html',
     isNew: true,
   },
   {
@@ -127,6 +134,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国iOS应用在欧盟区将直接受益于苹果的整改措施。开发者应准备好在应用内添加外部支付引导链接，并评估12%佣金率对收入的提升。建议法务团队与苹果开发者支持沟通，确保第一时间启用新政策。',
     tags: ['苹果', 'DMA', '欧盟委员会', '罚款'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1689',
     isNew: true,
   },
   {
@@ -142,6 +150,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '采用广告模式的中国出海应用应立即审查在欧盟区的数据处理法律依据。建议从"合法利益"转向明确的用户"同意"模式，虽然短期可能影响广告收入，但长期有助于避免巨额罚款。',
     tags: ['Meta', 'GDPR', '爱尔兰DPC', '定向广告'],
+    link: 'https://www.dataprotection.ie/en/news-media/press-releases',
     isNew: true,
   },
   {
@@ -157,6 +166,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '所有在欧盟运营且数据存储在中国的应用应立即进行数据跨境传输审计。建议将欧盟用户数据本地化存储在欧盟境内，或确保签署最新版SCC并实施补充技术措施(如端到端加密)。',
     tags: ['CNIL', '跨境数据传输', '跨境电商', 'GDPR'],
+    link: 'https://www.cnil.fr/en/news',
     isNew: true,
   },
   {
@@ -172,6 +182,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '对在欧洲运营的中国科技企业有四点关键启示：第一，任何通过英国银行处理支付的实体，无论注册地在哪里，都须遵守英国制裁法规；第二，仅依赖第三方制裁筛查工具和开发者自我认证是不够的，企业必须建立自主的风险评估机制；第三，对高风险司法管辖区（如俄罗斯）的合作方，应主动、持续地监控其所有权变更；第四，发现违规后立即主动披露并配合调查，可显著降低罚款金额（最高可获30%折扣）。建议所有涉及跨境支付的出海应用尽快审计现有的制裁合规框架。',
     tags: ['苹果', 'OFSI', '俄罗斯制裁', '金融制裁'],
+    link: 'https://www.gov.uk/government/news/ofsi-imposes-fine-on-apple-subsidiary-for-financial-sanctions-breaches',
     isNew: true,
   },
   {
@@ -187,6 +198,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '中国出海Android应用长期面临在Google Play上可见度不足的挑战。此案若促成算法透明化，将为所有第三方应用创造更公平的竞争环境。建议相关企业收集自身应用在Play Store搜索排名的数据，为未来可能的集体行动做准备。',
     tags: ['Google Play', '德国BKA', '反垄断', '搜索算法'],
+    link: 'https://www.bundeskartellamt.de/SharedDocs/Meldung/EN/Pressemitteilungen/2023/21_06_2023_Google_Play_Store.html',
     isNew: true,
   },
   {
@@ -202,6 +214,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '面向年轻用户的中国社交和内容应用必须立即审视其年龄验证和家长同意机制。建议实施更严格的年龄验证技术，默认设置最高隐私保护级别，并在获得家长明确同意前限制数据收集。',
     tags: ['TikTok', '儿童隐私', '荷兰AP', 'GDPR'],
+    link: 'https://www.autoriteitpersoonsgegevens.nl/en/news',
     isNew: true,
   },
 ];
