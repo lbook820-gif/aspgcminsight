@@ -162,7 +162,7 @@ export default function DPAs() {
           </h2>
 
           <div className="flex flex-col gap-6">
-            {dpaUpdates.map((update) => (
+            {[...dpaUpdates].sort((a, b) => b.date.localeCompare(a.date)).map((update) => (
               <NewsCard key={update.id} news={update} />
             ))}
           </div>

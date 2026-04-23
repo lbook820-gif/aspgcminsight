@@ -540,7 +540,8 @@ export default function Home() {
   const [searchKeyword, setSearchKeyword] = useState('');
   
   const filteredNews = useMemo(() => {
-    return filterNews(allNews, searchKeyword);
+    const filtered = filterNews(allNews, searchKeyword);
+    return [...filtered].sort((a, b) => b.date.localeCompare(a.date));
   }, [searchKeyword]);
 
   // 按年份分组

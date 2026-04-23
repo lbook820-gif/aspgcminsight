@@ -252,7 +252,7 @@ export default function Enforcement() {
             </span>
           </h2>
           <div className="flex flex-col gap-6">
-            {enforcementCases.map((news) => (
+            {[...enforcementCases].sort((a, b) => b.date.localeCompare(a.date)).map((news) => (
               <NewsCard key={news.id} news={news} />
             ))}
           </div>
@@ -274,7 +274,7 @@ export default function Enforcement() {
               <div className="absolute left-[68px] top-0 bottom-0 w-px bg-[#e5e5e5]" />
 
               <div className="flex flex-col gap-6">
-                {regulatoryCalendar.map((event, index) => (
+                {[...regulatoryCalendar].sort((a, b) => b.date.localeCompare(a.date)).map((event, index) => (
                   <div key={index} className="flex items-start gap-4 relative">
                     {/* Date */}
                     <div className="w-16 text-xs text-[#737373] font-medium text-right shrink-0 pt-1">

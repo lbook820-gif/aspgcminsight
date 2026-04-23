@@ -132,7 +132,7 @@ export default function Laws() {
             </span>
           </h2>
           <div className="flex flex-col gap-4">
-            {legislationItems.map((item) => (
+            {[...legislationItems].sort((a, b) => b.updateTime.localeCompare(a.updateTime)).map((item) => (
               <div
                 key={item.id}
                 className="bg-white border border-[#e5e5e5] rounded-xl p-6 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-shadow duration-200"
@@ -178,7 +178,7 @@ export default function Laws() {
             </span>
           </h2>
           <div className="flex flex-col gap-6">
-            {industryNews.map((news) => (
+            {[...industryNews].sort((a, b) => b.date.localeCompare(a.date)).map((news) => (
               <NewsCard key={news.id} news={news} />
             ))}
           </div>
