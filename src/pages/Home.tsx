@@ -9,6 +9,22 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2025-012',
+    source: 'TechCrunch',
+    date: '2025-07-28',
+    heat: 9,
+    title: '欧盟初步认定 Temu 违反 DSA，涉及非法商品风险管控失效',
+    summary:
+      '2025年7月，欧盟委员会发布针对跨境电商平台 Temu 的初步调查结果。欧盟认定 Temu 未能有效评估和减轻其平台上非法商品传播的风险，且在卖家资质审核及推荐系统透明度方面存在缺陷。若最终确认违规，Temu 将面临最高其全球年营收 6% 的罚款。',
+    overallImpact:
+      '这是 DSA 对新兴跨境电商巨头的一次全面合规审计。监管机构通过打击非法商品，旨在保护欧洲消费者安全并维护本土零售商的公平竞争环境。',
+    industryImpact:
+      '所有经营欧洲市场的中国电商平台必须全面升级其供应链审核体系。建议实行更严格的卖家准入制度，并建立自动化的合规检测工具以识别禁售商品。',
+    tags: ['Temu', 'DSA', '跨境电商', '非法商品', '欧盟'],
+    link: 'https://techcrunch.com/2025/07/28/eu-temu-dsa-investigation/',
+    isNew: true,
+  },
+  {
     id: '2026-014',
     source: '英国 OFSI',
     date: '2026-03-30',
@@ -250,6 +266,22 @@ const allNews: NewsItem[] = [
   },
 
   // ==================== 2025年新闻 ====================
+  {
+    id: '2024-001',
+    source: 'European Commission',
+    date: '2024-03-04',
+    heat: 10,
+    title: '欧盟对苹果处以 18.4 亿欧元反垄断罚款，涉及音乐流媒体市场',
+    summary:
+      '2024年3月4日，欧盟委员会宣布对苹果公司处以 18.4 亿欧元罚款。调查发现，苹果利用其在通过 App Store 向 iOS 用户分发音乐流媒体应用市场中的支配地位，限制开发者告知用户应用外更便宜的订阅选择（反引导条款）。这是苹果首次遭遇欧盟巨额反垄断罚单。',
+    overallImpact:
+      '该裁决确立了移动平台必须允许开发者与用户进行自由价格沟通的原则。它直接推动了后续 DMA 中关于反引导义务的制定，是全球应用商店反垄断的里程碑事件。',
+    industryImpact:
+      '音乐流媒体和订阅类应用开发者获得了更大的定价自主权。中国出海应用应利用此裁决，在 iOS 版本中积极测试非 IAP 支付引导，以提升利润率。',
+    tags: ['苹果', '反垄断', '音乐流媒体', '欧盟'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_1161',
+    isNew: false,
+  },
   {
     id: '2025-011',
     source: 'European Commission',
