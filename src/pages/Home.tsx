@@ -9,6 +9,38 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-008',
+    source: '路透社',
+    date: '2026-04-22',
+    heat: 9,
+    title: '欧盟委员会抨击苹果DMA互操作性进展：56项请求无一落实',
+    summary:
+      '2026年4月22日，欧盟委员会在一份内部评估报告中批评苹果公司在《数字市场法》（DMA）下的互操作性义务落实进度极其缓慢。报告指出，自DMA全面生效以来，第三方开发者已向苹果提交了56项正式的互操作性请求，涉及浏览器引擎、近场通信（NFC）和应用商店分发等核心领域，但截至目前尚未有一项请求得到实质性解决。欧盟警告称，若苹果继续采取"拖延战术"，将面临新一轮更高金额的处罚。',
+    overallImpact:
+      '互操作性是DMA的核心支柱，旨在打破大型平台的封闭生态。苹果目前的"请求制"被证明效率低下，欧盟可能介入干预，强制实施更透明、标准化的互操作性流程。这对于希望在iOS上提供差异化服务的浏览器厂商和支付机构至关重要。',
+    industryImpact:
+      '对中国出海企业的启示：\n\n**技术机会**：\n- 关注苹果后续开放的底层API，尤其是NFC和浏览器引擎\n- 积极提交互操作性请求，虽然目前进展慢，但这是法定权利\n\n**战略布局**：\n- 评估在欧盟区推出独立支付或独立应用分发渠道的可行性\n- 与欧洲本土开发者组织合作，共同向监管机构施压\n\n**风险提示**：苹果的合规方案仍具高度复杂性，需法务与技术团队深度协作解析。',
+    tags: ['苹果', 'DMA', '互操作性', '欧盟委员会', '反垄断'],
+    link: 'https://www.reuters.com/technology/apple-dma-compliance-scrutiny-2026-04-22/',
+    isNew: true,
+  },
+  {
+    id: '2026-009',
+    source: 'Mastercard Newsroom',
+    date: '2026-04-23',
+    heat: 8,
+    title: '万事达卡在欧盟区全面支持Apple Pay跨境支付互操作性',
+    summary:
+      '2026年4月23日，万事达卡宣布已完成技术升级，在欧盟全境支持Apple Pay的跨境支付互操作性。此举旨在配合DMA的要求，允许欧洲消费者更顺畅地使用Apple Pay在不同成员国间进行数字支付，同时也为第三方支付应用接入苹果NFC芯片提供了技术标准参考。',
+    overallImpact:
+      '支付生态的互联互通是欧盟数字主权的重要组成部分。万事达卡的动作将加速苹果支付生态的开放进程，降低跨境交易的壁垒。',
+    industryImpact:
+      '中国跨境支付和金融科技公司应关注万事达卡提供的技术接口，评估如何利用现有的Apple Pay架构提升在欧洲市场的支付成功率。',
+    tags: ['Mastercard', 'Apple Pay', '跨境支付', 'DMA', '金融科技'],
+    link: 'https://www.mastercard.com/news/europe/en-us/newsroom/press-releases/2026/april/mastercard-apple-pay-interoperability/',
+    isNew: true,
+  },
+  {
     id: '2026-001',
     source: '东方财富网',
     date: '2026-02-06',
@@ -351,7 +383,7 @@ export default function Home() {
         title="欧洲移动应用合规洞察"
         subtitle="European Mobile App Compliance Insights"
         description="聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态"
-        updateDate="2026年4月22日"
+        updateDate="2026年4月23日"
       />
 
       <SearchSection 
