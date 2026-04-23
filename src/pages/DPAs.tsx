@@ -3,64 +3,142 @@ import NewsCard from '@/components/NewsCard';
 import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
+  // ==================== 欧盟级别机构 ====================
   {
-    id: 'dpa-001',
-    source: 'Irish DPC',
-    date: '2026-04-12',
-    heat: 9,
-    title: '爱尔兰 DPC 对 X (原 Twitter) 启动新一轮数据处理安全调查',
-    summary:
-      '2026年4月12日，爱尔兰数据保护委员会 (DPC) 宣布对 X 平台启动正式调查。调查重点在于该平台在处理数千万欧洲用户个人数据时，是否采取了足够的技术和组织措施来应对日益严峻的网络安全威胁。DPC 指出，此前发现的多起小规模漏洞可能暗示其核心架构存在系统性合规风险。',
-    overallImpact:
-      '爱尔兰 DPC 作为众多大厂在欧盟的领先监管机构，其执法风向标作用显著。此案可能引发对大厂"降本增效"下合规投入是否缩水的全行业审计。',
-    industryImpact:
-      '中国社交媒体和内容出海企业应以此为鉴，在欧洲运营时必须确保安全基建的持续投入。建议定期进行第三方合规审计，并向监管机构主动报备重大架构调整。',
-    tags: ['爱尔兰 DPC', 'X', '数据安全', 'GDPR'],
-    isNew: true,
-  },
-  {
-    id: 'dpa-002',
-    source: 'French CNIL',
-    date: '2026-04-05',
-    heat: 8,
-    title: '法国 CNIL 启动 2026 年度协同执法：聚焦透明度与信息告知义务',
-    summary:
-      '配合欧洲数据保护委员会 (EDPB) 的统一部署，法国国家信息与自由委员会 (CNIL) 于2026年4月5日正式启动年度协同执法行动。本次行动将针对移动应用中的隐私政策、数据收集知情权及第三方 SDK 告知义务进行大规模审计。CNIL 明确表示，透明度是 GDPR 的基石，不完整的告知将面临重罚。',
-    overallImpact:
-      '全欧盟范围内的协同执法意味着监管尺度将高度统一。针对透明度的专项整治将迫使大量应用更新其隐私协议，并规范第三方代码的数据收集行为。',
-    industryImpact:
-      '出海应用需立即自查：1. 隐私政策是否包含所有必要的告知项；2. 告知语言是否简洁明了；3. 对第三方 SDK 的数据处理行为是否做到了穿透式披露。',
-    tags: ['CNIL', '透明度', '协同执法', 'GDPR'],
-    isNew: true,
-  },
-  {
-    id: 'dpa-003',
-    source: 'Spanish AEPD',
-    date: '2026-04-18',
-    heat: 7,
-    title: '西班牙 AEPD 针对中小企业数据违规开出多笔高额罚单',
-    summary:
-      '西班牙数据保护局 (AEPD) 在2026年4月中旬公布了多起执法结果，与以往聚焦大厂不同，本次处罚涉及多个行业的非科技类中小企业。处罚原因多为缺乏合法的处理依据以及在未获得用户同意的情况下进行营销电话拨打。AEPD 强调，GDPR 的合规义务不分企业规模。',
-    overallImpact:
-      '这标志着监管颗粒度正向全行业、各规模企业渗透。不仅是大厂，所有在西班牙经营的实体都必须建立基础的合规防火墙。',
-    industryImpact:
-      '中小规模出海企业（如电商卖家、小型 SaaS）不可抱有侥幸心理。应至少完成用户同意管理系统 (CMP) 的部署，并确保所有营销活动都有明确的法律依据记录。',
-    tags: ['AEPD', '西班牙', '营销合规', '中小企业'],
-    isNew: true,
-  },
-  {
-    id: 'dpa-004',
-    source: 'EDPB / 各国监管机构',
-    date: '2026-04-20',
+    id: 'dpa-eu-001',
+    source: 'EDPB (欧洲数据保护委员会)',
+    date: '2026-03-19',
     heat: 10,
-    title: '数据跨境传输新红线：TRAs 风险评估成为强制审计重点',
+    title: 'EDPB 启动 2026 年度协同执法行动，聚焦 GDPR 透明度义务',
     summary:
-      '2026年4月，欧盟各主要监管机构（包括爱尔兰、法国、西班牙）在联合声明中明确：所有涉及向非充分性认定国家（如中国、美国、印度等）传输数据的行为，必须具备书面且详尽的传输风险评估 (TRA)。监管机构指出，单纯签署标准合同条款 (SCCs) 而未进行实地风险评估的行为，将被视为严重不合规。',
+      '2026年3月19日，EDPB 宣布启动本年度协同执法框架（CEF）行动。本次行动由 25 个成员国监管机构参与，重点审计企业是否履行了 GDPR 第 12-14 条规定的透明度和信息告知义务。调查范围涵盖移动应用、在线平台及智能硬件。',
     overallImpact:
-      '数据跨境的门槛实质性抬高。TRAs 不再是可选项，而是必须随时备查的法律文档。这增加了跨国运营的合规文书成本和技术对标压力。',
+      '这是全欧盟范围内的“大考”。透明度不仅仅是写好隐私政策，还包括交互设计是否让用户真正理解数据流向。',
     industryImpact:
-      '中国出海企业核心动作：1. 建立完善的 TRA 模板和评估流程；2. 针对中国服务器存储的数据，必须实施端到端加密、去标识化等补充技术措施；3. 确保一旦监管机构调阅，能立即提供完整的合规链条证明。',
-    tags: ['数据跨境', 'TRA', 'SCCs', '传输风险评估'],
+      '出海企业需自查：隐私通知是否简洁明了？是否在收集数据时即时告知？对第三方 SDK 的穿透式告知是否合规？',
+    tags: ['EDPB', '透明度', '协同执法', 'GDPR'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-002',
+    source: 'European AI Office (欧洲人工智能办公室)',
+    date: '2026-04-01',
+    heat: 9,
+    title: '欧洲 AI 办公室发布《AI Act 高风险系统合规指南》草案',
+    summary:
+      '随着 2026 年 8 月 2 日高风险 AI 系统合规死线的临近，欧洲 AI 办公室发布了针对开发者和部署者的详细指南。指南明确了生物识别、关键基础设施及教育就业领域 AI 系统的具体技术文档要求和风险评估标准。',
+    overallImpact:
+      'AI Office 正在从政策制定转向硬性监督。该指南是企业通过合规审计的“标准答案”，不符合要求的系统将被禁止在欧盟上线。',
+    industryImpact:
+      '涉及高风险场景的中国 AI 企业（如智能安防、人力资源软件）必须对照指南进行技术对标，确保 8 月前完成所有合规准备。',
+    tags: ['AI Office', 'AI Act', '高风险系统', '人工智能'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-003',
+    source: 'ENISA (欧洲网络安全局)',
+    date: '2026-04-10',
+    heat: 8,
+    title: 'ENISA 发布 NCAF 2.0 框架，协助成员国评估 NIS2 成熟度',
+    summary:
+      '为确保 NIS2 指令在各国的统一度，ENISA 发布了国家能力评估框架 (NCAF 2.0)。该框架为各国关键基础设施运营商（含数字服务提供商）设定了网络安全成熟度基准。',
+    overallImpact:
+      '这强化了欧盟网络安全的底层一致性。对于在多个欧盟国家运营的服务商，意味着合规门槛正趋于统一。',
+    industryImpact:
+      '云服务、在线市场及社交平台提供商应关注所在国依据 NCAF 2.0 制定的国家标准，加强网络安全韧性建设。',
+    tags: ['ENISA', 'NIS2', '网络安全', 'NCAF'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-004',
+    source: 'EBA (欧洲银行管理局)',
+    date: '2026-02-15',
+    heat: 9,
+    title: 'EBA 发布 DORA 指令 Q&A，明确第三方信息登记簿 (RoI) 报送要求',
+    summary:
+      '欧洲银行管理局 (EBA) 联合其他监管机构发布了 DORA 指令的最新问答，详细说明了金融机构在 2026 年初必须提交的第三方服务信息登记簿 (RoI) 格式。重点强调了对支撑关键功能的云服务商的监控责任。',
+    overallImpact:
+      'DORA 进入实操监管阶段。金融机构与技术服务商的边界被打破，技术服务商将直接暴露在金融监管的穿透式审计之下。',
+    industryImpact:
+      '为欧洲银行提供技术服务的中国支付、云服务企业，必须配合银行客户完成 RoI 登记，并证明自身的业务连续性及风险管理能力。',
+    tags: ['EBA', 'DORA', '金融科技', '第三方风险'],
+    isNew: true,
+  },
+
+  // ==================== 国家级别机构 ====================
+  {
+    id: 'dpa-uk-001',
+    source: 'UK ICO (英国信息专员办公室)',
+    date: '2026-03-25',
+    heat: 9,
+    title: '英国 ICO 就“年龄保证”机制发布最后通牒，要求平台 4 月底前提交方案',
+    summary:
+      '英国 ICO 联合 Ofcom 发布声明，要求社交媒体及视频平台必须采取严于“自我声明”的年龄验证手段。所有受监管平台必须在 2026 年 4 月 30 日前提交具体整改报告，否则将面临正式执法。',
+    overallImpact:
+      '英国在未成年人保护上采取了比欧盟更激进的节奏。年龄验证不再是“勾选框”，而是需要实名或技术识别的“硬门槛”。',
+    industryImpact:
+      '中国短视频及社交应用在英国必须立即上线可靠的年龄验证技术，否则将面临类似 TikTok 在美英遭遇的高压监管风险。',
+    tags: ['ICO', '未成年人保护', '年龄验证', '英国'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-ch-001',
+    source: 'Switzerland FDPIC (瑞士联邦数据保护与信息专员)',
+    date: '2026-04-05',
+    heat: 7,
+    title: '瑞士 FDPIC 发布可穿戴设备隐私风险提示与合规指南',
+    summary:
+      '瑞士 FDPIC 针对日益普及的智能手表、健身追踪器发布指南，强调生物识别数据的高度敏感性，要求厂商必须默认关闭敏感权限，并提供详尽的数据本地化处理选项。',
+    overallImpact:
+      '瑞士虽非欧盟成员，但其 FADP 法律体系与 GDPR 高度对齐。其对硬件隐私的关注代表了非传统互联网设备监管的新趋势。',
+    industryImpact:
+      '中国智能穿戴硬件商在瑞士及周边市场应强化“默认隐私”设计，并确保存储在云端的数据符合瑞士跨境传输要求。',
+    tags: ['FDPIC', '智能硬件', '隐私设计', '瑞士'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-de-001',
+    source: 'Germany BfDI (德国联邦数据保护局)',
+    date: '2026-03-26',
+    heat: 8,
+    title: '德国通过《数据法》执行法案，确立 BfDI 与联邦网络局的双轨执法',
+    summary:
+      '德国联邦议院通过 DADG 法案，明确联邦网络局 (BNetzA) 负责《数据法》(Data Act) 的合规监督，而 BfDI 保持对涉及个人数据的跨领域监管权。',
+    overallImpact:
+      '德国监管架构的复杂化对企业提出了更高要求。同一数据处理行为可能需要向两个不同的联邦机构报备。',
+    industryImpact:
+      '在德经营的中国企业（如联网汽车、工业互联网商）需建立跨部门合规团队，同时对接数据流通监管与个人隐私监管。',
+    tags: ['BfDI', 'Data Act', '德国', '执法协作'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-tr-001',
+    source: 'Turkey KVKK (土耳其个人数据保护局)',
+    date: '2026-04-15',
+    heat: 8,
+    title: '土耳其 KVKK 发布“智能体 AI (Agentic AI)”数据保护指南',
+    summary:
+      '土耳其 KVKK 发布专门指南，明确 Agentic AI 系统在自主决策过程中的问责机制。强调了对衍生数据、推断数据的处理必须具备明确法律依据，且开发者需承担穿透式责任。',
+    overallImpact:
+      '土耳其正在迅速对齐全球最前沿的 AI 监管趋势。这对于在土运营的 AI 应用商设定了清晰的合规底线。',
+    industryImpact:
+      '中国 AI 企业进入土耳其市场需特别关注其对“推断数据”的严苛定义，确保算法透明度符合 KVKK 的最新解释。',
+    tags: ['KVKK', 'Agentic AI', '人工智能', '土耳其'],
+    isNew: true,
+  },
+  {
+    id: 'dpa-tr-002',
+    source: 'Turkey RK (土耳其竞争管理局)',
+    date: '2026-04-20',
+    heat: 7,
+    title: '土耳其 RK 扩大对大型科技平台捆绑销售行为的调查',
+    summary:
+      '土耳其 RK（竞争管理局）宣布对多家跨国科技平台展开新调查，重点审查其利用主导地位在土耳其市场实施的应用预装和数据强行共享行为。',
+    overallImpact:
+      '土耳其正效仿欧盟 DMA，通过竞争法手段对大厂生态实施拆解和限制。',
+    industryImpact:
+      '中国手机厂商及软件分发商在土耳其市场需审视预装协议，避免被认定为损害市场公平竞争的行为。',
+    tags: ['RK', '反垄断', '土耳其', '应用分发'],
     isNew: true,
   },
 ];
@@ -69,21 +147,21 @@ export default function DPAs() {
   return (
     <div className="min-h-screen bg-[#fafafa]">
       <HeroSection
-        title="各国数据保护局动态"
-        subtitle="Data Protection Authorities (DPAs) Updates"
-        description="追踪欧盟各国监管机构（爱尔兰 DPC、法国 CNIL、西班牙 AEPD 等）的最新执法趋势与合规要求"
+        title="各国监管机构动态"
+        subtitle="Regulatory Authorities Directory & Updates"
+        description="一站式追踪欧盟级别（EDPB, AI Office, ENISA, EBA）及各国（英国 ICO, 瑞士 FDPIC, 德国 BfDI, 土耳其 KVKK 等）监管机构的最新政策与执法风向"
       />
 
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
-            最新动态与执法快讯
+            机构动态与政策快讯
             <span className="text-sm font-normal text-[#737373] ml-2">
               共 {dpaUpdates.length} 条
             </span>
           </h2>
 
-          <div className="mt-6 flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             {dpaUpdates.map((update) => (
               <NewsCard key={update.id} news={update} />
             ))}
