@@ -12,10 +12,12 @@
   关注欧盟的合规动态，包括法律法规立法动态，执法案例，以及一些大厂企业的新闻
   大厂包括 Apple、Google、Meta、Amazon、Microsoft、ByteDance、X 等
   也包括中国出海的大厂，如 tiktok， SHEIN，小米，OPPO，vivo，传音，
-  法律法规动态主要GDPR，DMA，DSA,NIS2, AI Act,Data ACT, 消费者权益等
+  法律法规动态主要 GDPR，DMA，DSA, NIS2, AI Act, Data Act, 消费者权益等
+  也包括各国数据保护局（如爱尔兰 DPC, 法国 CNIL, 西班牙 AEPD）的专项执法与协同执法行动
+  重点关注数据跨境传输合规（TRA, SCCs, 补充加密措施等）
 
 ### 2. 内容生成
-- 读取 `src/pages/Home.tsx` 等文件，提取已有新闻去重
+- 读取 `src/pages/Home.tsx`, `src/pages/DPAs.tsx` 等文件，提取已有新闻去重
 - 搜索最新动态，按格式生成 JSON 对象
 - 新新闻追加到数组末尾，id 递增
 - **注意**：不收录纯华为产品报道，聚焦行业动态和监管政策
@@ -38,3 +40,4 @@
 ## 更新历史
 - 2026-04-21：初始化工作流
 - 2026-04-23：更新搜索关键词，重点转向欧盟合规与大厂动态
+- 2026-04-23：新增各国监管局（DPAs）频道，补充数据跨境传输（TRA/SCCs）专项合规洞察
