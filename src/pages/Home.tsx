@@ -25,22 +25,6 @@ const allNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '2025-012',
-    source: 'TechCrunch',
-    date: '2025-07-28',
-    heat: 9,
-    title: '欧盟初步认定 Temu 违反 DSA，涉及非法商品风险管控失效',
-    summary:
-      '2025年7月，欧盟委员会发布针对跨境电商平台 Temu 的初步调查结果。欧盟认定 Temu 未能有效评估和减轻其平台上非法商品传播的风险，且在卖家资质审核及推荐系统透明度方面存在缺陷。若最终确认违规，Temu 将面临最高其全球年营收 6% 的罚款。',
-    overallImpact:
-      '这是 DSA 对新兴跨境电商巨头的一次全面合规审计。监管机构通过打击非法商品，旨在保护欧洲消费者安全并维护本土零售商的公平竞争环境。',
-    industryImpact:
-      '所有经营欧洲市场的中国电商平台必须全面升级其供应链审核体系。建议实行更严格的卖家准入制度，并建立自动化的合规检测工具以识别禁售商品。',
-    tags: ['Temu', 'DSA', '跨境电商', '非法商品', '欧盟'],
-    link: 'https://techcrunch.com/2025/07/28/eu-temu-dsa-investigation/',
-    isNew: true,
-  },
-  {
     id: '2026-014',
     source: '英国 OFSI',
     date: '2026-03-30',
@@ -201,7 +185,7 @@ const allNews: NewsItem[] = [
     isNew: true,
   },
   {
-    id: '2026-003',
+    id: '2026-016',
     source: '腾讯新闻',
     date: '2026-02-17',
     heat: 9,
@@ -282,6 +266,22 @@ const allNews: NewsItem[] = [
   },
 
   // ==================== 2025年新闻 ====================
+  {
+    id: '2025-012',
+    source: 'TechCrunch',
+    date: '2025-07-28',
+    heat: 9,
+    title: '欧盟初步认定 Temu 违反 DSA，涉及非法商品风险管控失效',
+    summary:
+      '2025年7月，欧盟委员会发布针对跨境电商平台 Temu 的初步调查结果。欧盟认定 Temu 未能有效评估和减轻其平台上非法商品传播的风险，且在卖家资质审核及推荐系统透明度方面存在缺陷。若最终确认违规，Temu 将面临最高其全球年营收 6% 的罚款。',
+    overallImpact:
+      '这是 DSA 对新兴跨境电商巨头的一次全面合规审计。监管机构通过打击非法商品，旨在保护欧洲消费者安全并维护本土零售商的公平竞争环境。',
+    industryImpact:
+      '所有经营欧洲市场的中国电商平台必须全面升级其供应链审核体系。建议实行更严格的卖家准入制度，并建立自动化的合规检测工具以识别禁售商品。',
+    tags: ['Temu', 'DSA', '跨境电商', '非法商品', '欧盟'],
+    link: 'https://techcrunch.com/2025/07/28/eu-temu-dsa-investigation/',
+    isNew: true,
+  },
   {
     id: '2024-001',
     source: 'European Commission',
@@ -547,6 +547,7 @@ export default function Home() {
   // 按年份分组
   const news2026 = filteredNews.filter(n => n.date.startsWith('2026'));
   const news2025 = filteredNews.filter(n => n.date.startsWith('2025'));
+  const news2024 = filteredNews.filter(n => n.date.startsWith('2024'));
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
@@ -599,6 +600,30 @@ export default function Home() {
           {news2025.length > 0 ? (
             <div className="mt-6 flex flex-col gap-6">
               {news2025.map((news) => (
+                <NewsCard key={news.id} news={news} />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-6 py-8 text-center">
+              <p className="text-[#737373]">未找到相关新闻</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 2024年新闻 */}
+      <section className="bg-[#fafafa] px-6 py-6">
+        <div className="max-w-[800px] mx-auto">
+          <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
+            2024年合规快讯
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {news2024.length} 条
+            </span>
+          </h2>
+          
+          {news2024.length > 0 ? (
+            <div className="mt-6 flex flex-col gap-6">
+              {news2024.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
             </div>
