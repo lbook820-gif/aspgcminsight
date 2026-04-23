@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Scale, AlertTriangle, BookOpen, Menu, X } from 'lucide-react';
+import { Scale, AlertTriangle, BookOpen, Menu, X, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinks = [
   { to: '/', label: '首页', icon: BookOpen },
   { to: '/laws', label: '法律法规', icon: Scale },
   { to: '/enforcement', label: '执法动态', icon: AlertTriangle },
+  { to: '/dpas', label: '监管局动态', icon: ShieldCheck },
 ];
 
 export default function Navbar() {

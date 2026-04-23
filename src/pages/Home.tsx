@@ -9,6 +9,22 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-012',
+    source: 'Irish DPC',
+    date: '2026-04-12',
+    heat: 9,
+    title: '爱尔兰 DPC 对 X (原 Twitter) 启动新一轮数据处理安全调查',
+    summary:
+      '2026年4月12日，爱尔兰数据保护委员会 (DPC) 宣布对 X 平台启动正式调查。调查重点在于该平台在处理数千万欧洲用户个人数据时，是否采取了足够的技术和组织措施。',
+    overallImpact:
+      '爱尔兰 DPC 作为领头监管机构，此举暗示其将对大型社交平台在"降本增效"背景下的合规投入进行深度审计。',
+    industryImpact:
+      '中国出海企业应强化安全基建投入，定期进行第三方合规审计，确保符合 GDPR 关于数据处理安全性的要求。',
+    tags: ['爱尔兰 DPC', 'X', '数据安全', 'GDPR'],
+    link: '/dpas',
+    isNew: true,
+  },
+  {
     id: '2026-010',
     source: 'Politico Europe',
     date: '2026-04-16',
@@ -394,6 +410,16 @@ const dynamicCards: DynamicCard[] = [
     date: '2026-04-07',
     heat: 9,
     link: '/enforcement',
+  },
+  {
+    id: '4',
+    title: '监管局动态',
+    articleTitle:
+      '数据跨境传输新红线：TRAs 风险评估成为强制审计重点',
+    source: 'EDPB',
+    date: '2026-04-20',
+    heat: 10,
+    link: '/dpas',
   },
 ];
 

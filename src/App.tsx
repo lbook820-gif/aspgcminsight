@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Home from '@/pages/Home'
 import Laws from '@/pages/Laws'
 import Enforcement from '@/pages/Enforcement'
+import DPAs from '@/pages/DPAs'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/laws" element={<Laws />} />
           <Route path="/enforcement" element={<Enforcement />} />
+          <Route path="/dpas" element={<DPAs />} />
         </Routes>
       </main>
       <Footer />
