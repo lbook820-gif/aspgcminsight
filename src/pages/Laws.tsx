@@ -126,7 +126,10 @@ export default function Laws() {
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
-            重点法规追踪
+            关键法规概览
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {legislationItems.length} 条
+            </span>
           </h2>
           <div className="flex flex-col gap-4">
             {legislationItems.map((item) => (
@@ -170,6 +173,9 @@ export default function Laws() {
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
             行业动态
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {industryNews.length} 条
+            </span>
           </h2>
           <div className="flex flex-col gap-6">
             {industryNews.map((news) => (

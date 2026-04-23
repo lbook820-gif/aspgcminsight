@@ -76,10 +76,12 @@ export default function DPAs() {
 
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
-          <div className="flex items-center justify-between pb-3 border-b border-[#e5e5e5]">
-            <h2 className="text-xl font-bold text-[#171717]">最新动态与执法快讯</h2>
-            <span className="text-xs text-[#737373]">共 {dpaUpdates.length} 条</span>
-          </div>
+          <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
+            最新动态与执法快讯
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {dpaUpdates.length} 条
+            </span>
+          </h2>
 
           <div className="mt-6 flex flex-col gap-6">
             {dpaUpdates.map((update) => (

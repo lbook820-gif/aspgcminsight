@@ -548,14 +548,12 @@ export default function Home() {
       {/* 2026年新闻 */}
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
-          <div className="flex items-center justify-between pb-3 border-b border-[#e5e5e5]">
-            <h2 className="text-xl font-bold text-[#171717]">
-              2026年合规快讯
-            </h2>
-            <span className="text-xs text-[#737373]">
+          <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
+            2026年合规快讯
+            <span className="text-sm font-normal text-[#737373] ml-2">
               共 {news2026.length} 条
             </span>
-          </div>
+          </h2>
           
           {news2026.length > 0 ? (
             <div className="mt-6 flex flex-col gap-6">
@@ -574,14 +572,12 @@ export default function Home() {
       {/* 2025年新闻 */}
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
-          <div className="flex items-center justify-between pb-3 border-b border-[#e5e5e5]">
-            <h2 className="text-xl font-bold text-[#171717]">
-              2025年合规快讯
-            </h2>
-            <span className="text-xs text-[#737373]">
+          <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
+            2025年合规快讯
+            <span className="text-sm font-normal text-[#737373] ml-2">
               共 {news2025.length} 条
             </span>
-          </div>
+          </h2>
           
           {news2025.length > 0 ? (
             <div className="mt-6 flex flex-col gap-6">
@@ -616,7 +612,10 @@ export default function Home() {
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
-            近期动态
+            近期动态专栏
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {dynamicCards.length} 条
+            </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {dynamicCards.map((card) => (

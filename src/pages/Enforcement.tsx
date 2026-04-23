@@ -247,6 +247,9 @@ export default function Enforcement() {
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
             重大执法案例
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {enforcementCases.length} 条
+            </span>
           </h2>
           <div className="flex flex-col gap-6">
             {enforcementCases.map((news) => (
@@ -261,6 +264,9 @@ export default function Enforcement() {
         <div className="max-w-[800px] mx-auto">
           <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
             监管日历
+            <span className="text-sm font-normal text-[#737373] ml-2">
+              共 {regulatoryCalendar.length} 条
+            </span>
           </h2>
           <div className="bg-white border border-[#e5e5e5] rounded-xl p-6">
             <div className="relative">
