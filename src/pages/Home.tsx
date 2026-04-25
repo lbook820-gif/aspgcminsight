@@ -672,9 +672,9 @@ export default function Home() {
     return [...filtered].sort((a, b) => b.date.localeCompare(a.date));
   }, [searchKeyword]);
 
-  // 当日快讯逻辑
-  const today = '2026-04-25';
-  const newsToday = filteredNews.filter(n => n.date === today);
+  // 本月动态逻辑
+  const currentMonth = '2026-04';
+  const newsThisMonth = filteredNews.filter(n => n.date.startsWith(currentMonth));
 
   // 按年份分组
   const news2026 = filteredNews.filter(n => n.date.startsWith('2026'));
@@ -695,25 +695,25 @@ export default function Home() {
         onSearchChange={setSearchKeyword}
       />
 
-      {/* 当日快讯版块 */}
+      {/* 本月动态版块 */}
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
           <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-xl font-bold text-[#171717]">当日快讯</h2>
-            <span className="px-2 py-0.5 rounded bg-red-100 text-red-600 text-xs font-bold animate-pulse">
-              LIVE
+            <h2 className="text-xl font-bold text-[#171717]">本月动态</h2>
+            <span className="px-2 py-0.5 rounded bg-blue-100 text-blue-600 text-xs font-bold">
+              {newsThisMonth.length} 条
             </span>
           </div>
           
-          {newsToday.length > 0 ? (
+          {newsThisMonth.length > 0 ? (
             <div className="flex flex-col gap-6">
-              {newsToday.map((news) => (
+              {newsThisMonth.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
             </div>
           ) : (
             <div className="bg-white border border-dashed border-[#e5e5e5] rounded-xl py-12 text-center">
-              <p className="text-[#737373] text-sm">今日暂无新增合规快讯</p>
+              <p className="text-[#737373] text-sm">本月暂无新增合规动态</p>
             </div>
           )}
         </div>
