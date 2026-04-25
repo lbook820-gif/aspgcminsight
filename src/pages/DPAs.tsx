@@ -120,6 +120,54 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-ie-004',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2026-03-02',
+    heat: 7,
+    title: '爱尔兰DPC对利默里克大学处以9.8万欧元罚款,因数据泄露违规',
+    summary:
+      '2026年3月2日,爱尔兰数据保护委员会(DPC)公布了对利默里克大学(University of Limerick)的最终决定。该决定源于DPC对2018年11月至2020年1月期间发生的一系列个人数据泄露事件的自主调查。DPC认定利默里克大学违反了GDPR多项规定,包括未实施适当的技术和组织措施确保个人数据安全、未及时通知高风险数据泄露的受影响人员、未及时向DPC报告数据泄露等。',
+    overallImpact:
+      '此次处罚凸显了DPC对数据安全义务的严格执行。即使是教育机构,也必须确保数据安全措施的充分性,并及时履行数据泄露通知义务。DPC对利默里克大学的配合态度表示认可,最终罚款反映了该校接受大部分调查发现并主动改进系统的努力。',
+    industryImpact:
+      '对教育机构和数据控制者的合规要求:\n\n**数据安全措施**:\n- 实施适当的技术和组织措施(GDPR第5、32条)\n- 确保个人数据的保密性、完整性、可用性\n- 定期评估和更新安全措施\n\n**数据泄露应对**:\n- 及时向DPC报告数据泄露(72小时内)\n- 及时通知高风险数据泄露的受影响人员\n- 记录所有数据泄露事件\n\n**记录保存义务**:\n- 维护完整的处理活动记录(GDPR第30条)\n- 确保记录的准确性和完整性\n\n**风险提示**:数据泄露不仅导致罚款,还会损害机构声誉。教育机构需建立完善的数据保护管理体系。',
+    tags: ['DPC', '数据泄露', '教育机构', 'GDPR', '爱尔兰', '数据安全'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-publishes-final-decision-following-inquiry-university-limerick',
+    isNew: true,
+  },
+  {
+    id: 'dpa-ie-005',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2026-02-27',
+    heat: 6,
+    title: '爱尔兰DPC欢迎爱尔兰国家数字与AI战略2030发布',
+    summary:
+      '2026年2月27日,爱尔兰数据保护委员会(DPC)作为数字监管机构集团(DRG)成员,欢迎爱尔兰政府发布《数字爱尔兰——连接人民,保障未来》国家数字与AI战略2030。该战略旨在推动爱尔兰数字化转型,同时确保数据保护和AI伦理。',
+    overallImpact:
+      '该战略体现了爱尔兰在推动数字创新与数据保护之间的平衡。作为欧盟主要数据保护监管机构,DPC将在国家数字战略实施中发挥重要作用,确保AI和数字技术的发展符合GDPR要求。',
+    industryImpact:
+      '对在爱尔兰运营的企业的启示:\n\n**数字战略机遇**:\n- 爱尔兰将继续作为欧盟数字创新中心\n- 企业可利用政策支持推动数字化转型\n- 需确保创新符合数据保护要求\n\n**AI合规要求**:\n- AI系统开发需符合GDPR原则\n- 进行数据保护影响评估(DPIA)\n- 确保AI决策的透明度和可解释性\n\n**监管趋势**:\n- DPC将加强对AI技术的监管\n- 数字监管机构集团将协调跨部门监管\n- 企业需关注监管动态,及时调整合规策略',
+    tags: ['DPC', '数字战略', 'AI', '爱尔兰', '数字化转型'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/digital-regulators-group-drg-welcomes-publication-digital-ireland-connecting-our-people-securing-our',
+    isNew: true,
+  },
+  {
+    id: 'dpa-ie-006',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2026-02-20',
+    heat: 7,
+    title: '爱尔兰DPC欢迎EDPB发布"被遗忘权"CEF实施报告',
+    summary:
+      '2026年2月20日,爱尔兰数据保护委员会(DPC)欢迎欧洲数据保护委员会(EDPB)发布关于"被遗忘权"(删除权)协同执法框架(CEF)行动的实施报告。该报告总结了欧盟各监管机构对GDPR第17条删除权执行情况的调查结果和建议。',
+    overallImpact:
+      '该报告为企业在欧盟范围内统一理解和执行删除权提供了重要指导。DPC作为主要监管机构,将根据报告建议加强对删除权执行的监督,确保数据主体权利得到有效保护。',
+    industryImpact:
+      '对企业的合规要求:\n\n**删除权执行**:\n- 建立完善的删除请求处理流程\n- 在法定期限内(通常30天)响应删除请求\n- 确保删除的彻底性,包括备份和第三方\n\n**例外情形处理**:\n- 明确删除权的合法例外情形\n- 记录拒绝删除请求的理由\n- 向数据主体说明拒绝原因\n\n**技术实现**:\n- 建立数据删除的技术机制\n- 确保删除操作的不可逆性\n- 保留删除操作的审计记录\n\n**风险提示**:删除权是数据主体的基本权利,企业需建立高效的响应机制,避免因处理不当引发投诉。',
+    tags: ['DPC', 'EDPB', '被遗忘权', '删除权', 'GDPR', '协同执法'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/dpc-welcomes-publication-edpb-cef-implementation-report-right-be-forgotten',
+    isNew: true,
+  },
+  {
     id: 'dpa-uk-001',
     source: 'UK ICO (英国信息专员办公室)',
     date: '2026-03-25',
