@@ -673,7 +673,9 @@ export default function Home() {
   }, [searchKeyword]);
 
   // 本月动态逻辑
-  const currentMonth = '2026-04';
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = `${currentYear}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`;
   const newsThisMonth = filteredNews.filter(n => n.date.startsWith(currentMonth));
 
   // 按年份分组
@@ -715,22 +717,22 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-[#171717] mb-3">2026年4月合规动态综述</h3>
+                  <h3 className="text-lg font-bold text-[#171717] mb-3">{currentYear}年{currentDate.getMonth() + 1}月合规动态综述</h3>
                   <div className="text-sm text-[#525252] leading-relaxed space-y-2">
                     <p>
-                      <strong>监管执法持续收紧：</strong>本月爱尔兰DPC对利默里克大学处以9.8万欧元罚款，因数据泄露违规；同时继续推进对TikTok、X平台等大型科技公司的调查。EDPB启动2026年度协同执法行动，聚焦GDPR透明度义务，25个成员国监管机构参与。
+                      <strong>AI监管框架加速落地：</strong>欧洲AI办公室发布《AI Act高风险系统合规指南》草案，为8月2日合规死线做准备。ENISA发布NCAF 2.0框架，协助成员国评估NIS2成熟度。
                     </p>
                     <p>
-                      <strong>AI监管框架加速落地：</strong>欧洲AI办公室发布《AI Act高风险系统合规指南》草案，为8月2日合规死线做准备。爱尔兰发布国家数字与AI战略2030，强调数据保护与AI伦理的平衡发展。
+                      <strong>未成年人保护升级：</strong>英国ICO联合Ofcom要求社交媒体平台在4月底前提交年龄验证方案，采取严于"自我声明"的验证手段，否则将面临正式执法。
                     </p>
                     <p>
-                      <strong>未成年人保护升级：</strong>英国ICO联合Ofcom要求社交媒体平台在4月底前提交年龄验证方案，采取严于"自我声明"的验证手段。
+                      <strong>反垄断执法持续：</strong>土耳其竞争管理局(RK)对Google启动反垄断调查，涉及应用预装和支付系统。欧盟委员会对Apple和Meta开出巨额罚单，DMA执法进入实质性阶段。
                     </p>
                     <p>
-                      <strong>数据权利保障强化：</strong>EDPB发布"被遗忘权"CEF实施报告，为企业在欧盟范围内统一执行删除权提供指导。土耳其RK对Google启动反垄断调查，涉及应用预装和支付系统。
+                      <strong>数据保护执法动态：</strong>瑞士FDPIC对智能玩具制造商Simplicity启动调查，涉及儿童数据保护。德国BfDI呼吁在Data Act实施中加强数据主权保护。
                     </p>
                     <p className="text-[#737373] italic mt-3">
-                      💡 出海企业需重点关注：透明度义务合规、AI系统风险评估、年龄验证技术部署、数据删除权执行机制。
+                      💡 出海企业需重点关注：AI系统风险评估、年龄验证技术部署、应用预装合规审查、儿童数据保护措施。
                     </p>
                   </div>
                 </div>
