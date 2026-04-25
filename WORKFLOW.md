@@ -13,9 +13,29 @@
   大厂重点包括 Apple、Google、Meta、Amazon、Microsoft、ByteDance (TikTok)、Temu (Pinduoduo)、X 等
   也包括中国出海的大厂，如希音 (SHEIN)、小米、OPPO、vivo、传音等
   法律法规动态主要 GDPR, DMA, DSA, NIS2, AI Act, Data Act, 消费者权益等
-  **监管机构覆盖**：
-  - 欧盟级别：EDPB (欧洲数据保护委员会), European AI Office (AI 办公室), ENISA (网安局), EBA (银行管理局)
-  - 国家级别：英国 ICO, 瑞士 FDPIC, 德国 BfDI, 土耳其 KVKK (数据保护) 与 RK (竞争局)
+  
+  **监管机构官网动态检索（强制）**：
+  每次执行必须访问以下监管机构官网获取最新动态：
+  
+  - **爱尔兰 DPC**：https://www.dataprotection.ie/en/news-media/latest-news
+    - 重点：Meta、TikTok、X 等大型科技平台执法案例
+    - 关注：数据跨境传输、数据泄露、透明度义务等
+    
+  - **EDPB**：https://www.edpb.europa.eu/news_en
+    - 重点：协同执法行动、指导意见、一致性决定
+    
+  - **英国 ICO**：https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/
+    - 重点：未成年人保护、年龄验证、数据泄露
+    
+  - **其他监管机构**：
+    - AI Office: https://digital-strategy.ec.europa.eu/en/policies/ai-office
+    - ENISA: https://www.enisa.europa.eu/news
+    - EBA: https://www.eba.europa.eu/news-press
+    - 瑞士 FDPIC: https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/links/news.html
+    - 德国 BfDI: https://www.bfdi.bund.de/EN/Service/Press/Press_node.html
+    - 土耳其 KVKK: https://www.kvkk.gov.tr/En/
+    - 土耳其 RK: https://www.rekabet.gov.tr/en
+  
   **重点领域**：
   - 数据合规：跨境传输 (TRA/SCCs), 透明度义务, 未成年人保护, 算法治理
   - 金融与市场：金融制裁 (OFSI), 反洗钱 (AML), 反垄断 (Antitrust), 支付互操作性
@@ -23,6 +43,11 @@
 
 ### 2. 内容生成
 - 读取 `src/pages/Home.tsx`, `src/pages/DPAs.tsx` 等文件，提取已有新闻去重
+- **访问监管机构官网获取最新动态**：
+  1. 使用 `web_fetch` 工具访问各监管机构官网新闻页面
+  2. 提取最新发布的新闻和执法决定
+  3. 优先使用官网链接，避免使用二手媒体报道
+  4. 特别关注爱尔兰DPC的最新执法动态
 - 搜索最新动态，按格式生成 JSON 对象
 - **数据验证与链接检查**：
   - **新闻源核实**：必须优先采用官方机构（如欧委会 presscorner, 各国 DPA 官网）或顶级财经/科技媒体（路透社, TechCrunch, Politico）的源头报道
@@ -85,6 +110,8 @@
 - 2026-04-23：**强化链接有效性验证与 ID 唯一性审计，增加排序规范**
 - 2026-04-25：**新增自动化链接验证脚本 `scripts/validate-links.js`，强制要求构建前验证所有链接**
 - 2026-04-25：**增加日期准确性检查要求，禁止使用当前日期填充历史新闻**
+- 2026-04-25：**新增监管机构官网动态检索要求，每次执行必须访问官网获取最新动态**
+- 2026-04-25：**特别强调爱尔兰DPC官网检索，确保Meta、TikTok等执法案例及时更新**
 
 ## 常见问题与解决方案
 
