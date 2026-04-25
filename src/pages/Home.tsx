@@ -704,6 +704,39 @@ export default function Home() {
               {newsThisMonth.length} 条
             </span>
           </div>
+
+          {/* 本月综述 */}
+          {newsThisMonth.length > 0 && (
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-6">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-[#171717] mb-3">2026年4月合规动态综述</h3>
+                  <div className="text-sm text-[#525252] leading-relaxed space-y-2">
+                    <p>
+                      <strong>监管执法持续收紧：</strong>本月爱尔兰DPC对利默里克大学处以9.8万欧元罚款，因数据泄露违规；同时继续推进对TikTok、X平台等大型科技公司的调查。EDPB启动2026年度协同执法行动，聚焦GDPR透明度义务，25个成员国监管机构参与。
+                    </p>
+                    <p>
+                      <strong>AI监管框架加速落地：</strong>欧洲AI办公室发布《AI Act高风险系统合规指南》草案，为8月2日合规死线做准备。爱尔兰发布国家数字与AI战略2030，强调数据保护与AI伦理的平衡发展。
+                    </p>
+                    <p>
+                      <strong>未成年人保护升级：</strong>英国ICO联合Ofcom要求社交媒体平台在4月底前提交年龄验证方案，采取严于"自我声明"的验证手段。
+                    </p>
+                    <p>
+                      <strong>数据权利保障强化：</strong>EDPB发布"被遗忘权"CEF实施报告，为企业在欧盟范围内统一执行删除权提供指导。土耳其RK对Google启动反垄断调查，涉及应用预装和支付系统。
+                    </p>
+                    <p className="text-[#737373] italic mt-3">
+                      💡 出海企业需重点关注：透明度义务合规、AI系统风险评估、年龄验证技术部署、数据删除权执行机制。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           
           {newsThisMonth.length > 0 ? (
             <div className="flex flex-col gap-6">
