@@ -6,8 +6,32 @@
     <meta name="description" content="欧洲移动应用合规洞察 - 聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态" />
     <meta name="keywords" content="欧盟,DMA,DSA,GDPR,AI Act,合规,数据保护,反垄断" />
     <title>欧洲移动应用合规洞察</title>
-    <script type="module" crossorigin src="./assets/index-BNX8lf5c.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-PAcoBhDU.css">
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct URL and adds it to the browser's history
+      // using window.history.replaceState(...), which won't cause the browser to
+      // attempt to load the new URL.
+
+      var pathSegmentsToKeep = 1; // Keep one segment for the repo name
+
+      var l = window.location;
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded +
+          l.hash
+        );
+      }
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <script type="module" crossorigin src="/aspgcminsight/assets/index-BNX8lf5c.js"></script>
+    <link rel="stylesheet" crossorigin href="/aspgcminsight/assets/index-PAcoBhDU.css">
   </head>
   <body>
     <div id="root"></div>
