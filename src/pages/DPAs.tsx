@@ -72,6 +72,54 @@ const dpaUpdates: NewsItem[] = [
 
   // ==================== 国家级别机构 ====================
   {
+    id: 'dpa-ie-001',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2025-04-30',
+    heat: 10,
+    title: '爱尔兰DPC对TikTok处以5.3亿欧元罚款，认定数据跨境传输违规',
+    summary:
+      '2025年4月30日，爱尔兰数据保护委员会（DPC）正式公布针对TikTok跨境数据传输案件的调查结论和处罚决定。DPC认定TikTok违反GDPR第46条，未能确保欧洲用户数据经远程访问传输至中国时获得与欧盟要求实质等同的法律保护，且未向用户充分披露数据传输细节。DPC对TikTok处以5.3亿欧元罚款，并责令其在六个月内停止向中国传输欧洲用户数据。',
+    overallImpact:
+      '这是GDPR历史上针对数据跨境传输的重大罚单之一。DPC认定TikTok未能证明中国员工远程访问数据时获得与欧盟同等的保护，且未妥善解决中国当局根据《反恐怖主义法》、《反间谍法》等法律获取欧洲用户数据的可能性。',
+    industryImpact:
+      '对中国出海企业的数据合规要求：\n\n**数据跨境传输合规**：\n- 必须证明数据接收国具有与欧盟实质等同的保护水平\n- 采用标准合同条款（SCCs）时需进行传输影响评估\n- 建立数据本地化存储机制\n\n**透明度义务**：\n- 如实披露数据处理地点\n- 向用户明确告知数据跨境传输情况\n- 建立完善的数据传输记录\n\n**风险提示**：2025年11月，爱尔兰高等法院批准暂缓执行数据传输禁令，但处罚决定仍然有效。企业需密切关注上诉进展。',
+    tags: ['DPC', 'TikTok', '数据跨境', 'GDPR', '爱尔兰'],
+    link: 'https://www.secrss.com/articles/87171',
+    isNew: true,
+  },
+  {
+    id: 'dpa-ie-002',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2024-12-17',
+    heat: 9,
+    title: '爱尔兰DPC对Meta处以2.51亿欧元罚款，因数据泄露影响2900万账户',
+    summary:
+      '2024年12月17日，爱尔兰数据保护委员会宣布对Meta爱尔兰公司的调查结果及最终决定。Meta此前的数据泄露事件影响了全球约2900万个Facebook账户，其中约300万个账户位于欧盟/欧洲经济区，泄露信息包括用户姓名、邮件、电话等。DPC因此对Meta处以总额为2.51亿欧元的行政罚款。',
+    overallImpact:
+      '此次处罚凸显了在整个设计和开发周期中未能纳入数据保护要求，是如何将个人暴露于非常严重的风险和危害之中的。Facebook个人资料可能包含有关宗教或政治信仰、性生活或性取向等敏感信息，数据泄露造成了滥用这些类型数据的严重风险。',
+    industryImpact:
+      '对社交媒体平台的合规要求：\n\n**数据安全设计**：\n- 在产品设计阶段即纳入数据保护要求\n- 建立完善的数据安全防护机制\n- 定期进行安全漏洞检测\n\n**数据泄露应对**：\n- 及时向监管机构报告数据泄露事件\n- 通知受影响的用户\n- 采取有效补救措施\n\n**风险提示**：DPC已累计对Meta开出超过40亿欧元罚单，企业需高度重视数据安全合规。',
+    tags: ['DPC', 'Meta', '数据泄露', 'GDPR', '爱尔兰'],
+    link: 'https://www.jiemian.com/article/12134032.html',
+    isNew: true,
+  },
+  {
+    id: 'dpa-ie-003',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2023-05-22',
+    heat: 10,
+    title: '爱尔兰DPC对Meta处以创纪录12亿欧元罚款，因非法向美国传输数据',
+    summary:
+      '2023年5月22日，爱尔兰数据保护委员会对Meta处以12亿欧元罚款，创下GDPR生效以来的罚款记录。DPC认定Meta将欧洲用户的Facebook数据非法转移到美国，且未充分确保相关数据安全，违反了GDPR。DPC要求Meta在5个月内暂停向美国传输任何个人数据，并在6个月内完成整改。',
+    overallImpact:
+      '这是欧盟对违反数据保护条例企业开出的最重罚单。由于Meta的欧洲总部设在爱尔兰，故由爱尔兰DPC负责监管其在欧盟市场的数据保护事宜。此次处罚标志着欧盟对数据跨境传输监管的全面收紧。',
+    industryImpact:
+      '对数据跨境传输的合规要求：\n\n**充分性认定**：\n- 只有获得欧盟委员会"充分性认定"的国家才能自由接收欧盟数据\n- 目前仅15个国家获得充分性认定\n- 中国不在充分性认定名单内\n\n**替代传输机制**：\n- 标准合同条款（SCCs）\n- 绑定企业规则（BCRs）\n- 但需进行传输影响评估\n\n**风险提示**：美欧数据传输协议（如Privacy Shield）多次被判定无效，企业需建立独立的数据合规体系。',
+    tags: ['DPC', 'Meta', '数据跨境', 'GDPR', '爱尔兰', '美国'],
+    link: 'http://fr.china-embassy.gov.cn/ljfg/202305/t20230526_11084425.htm',
+    isNew: false,
+  },
+  {
     id: 'dpa-uk-001',
     source: 'UK ICO (英国信息专员办公室)',
     date: '2026-03-25',
@@ -160,6 +208,7 @@ const REGULATORY_AGENCIES = [
   { id: 'AI Office', name: 'AI Office', fullName: '欧洲人工智能办公室', region: '欧盟' },
   { id: 'ENISA', name: 'ENISA', fullName: '欧洲网络安全局', region: '欧盟' },
   { id: 'EBA', name: 'EBA', fullName: '欧洲银行管理局', region: '欧盟' },
+  { id: 'DPC', name: 'DPC', fullName: '爱尔兰数据保护委员会', region: '爱尔兰' },
   { id: 'ICO', name: 'ICO', fullName: '英国信息专员办公室', region: '英国' },
   { id: 'FDPIC', name: 'FDPIC', fullName: '瑞士联邦数据保护与信息专员', region: '瑞士' },
   { id: 'BfDI', name: 'BfDI', fullName: '德国联邦数据保护局', region: '德国' },
@@ -255,7 +304,7 @@ export default function DPAs() {
 
           {/* 快捷筛选标签 */}
           <div className="flex flex-wrap gap-2 mt-3">
-            {REGULATORY_AGENCIES.slice(1, 6).map((agency) => (
+            {REGULATORY_AGENCIES.slice(1, 7).map((agency) => (
               <button
                 key={agency.id}
                 onClick={() => setSelectedAgency(agency.id)}
