@@ -10,6 +10,38 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e15',
+    source: '欧盟委员会',
+    date: '2026-04-25',
+    heat: 10,
+    title: '希音 (SHEIN) 正式被欧盟指定为 DSA 下的超大型在线平台 (VLOP)',
+    summary:
+      '欧盟委员会于2026年4月25日正式宣布指定 SHEIN 为 VLOP。自此，SHEIN 必须在四个月内全面履行 DSA 框架下最严格的合规义务，包括年度风险评估、算法透明度审计及针对非法商品的强制治理措施。',
+    overallImpact:
+      'SHEIN 正式进入欧盟委员会的直接监管名单，标志着中国出海电商全面步入“高压合规”时代。',
+    industryImpact:
+      '企业需立即构建符合 DSA 要求的系统性合规体系，尤其是供应链审核和商品安全治理。',
+    tags: ['SHEIN', 'DSA', 'VLOP', '跨境电商'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2326',
+    isNew: true,
+  },
+  {
+    id: 'e14',
+    source: '欧盟委员会',
+    date: '2026-04-23',
+    heat: 10,
+    title: '欧盟对 TikTok Lite 启动 DSA 正式调查，聚焦其“任务与奖励”机制',
+    summary:
+      '2026年4月23日，欧盟委员会开启针对 TikTok Lite 的正式调查。调查重点在于其奖励机制是否具有致瘾性，以及 TikTok 是否违反了在上线新功能前提交风险评估的程序义务。',
+    overallImpact:
+      '这是 DSA 历史上首个针对 product 功能设计逻辑而非内容的正式调查案件，具有极强的先例意义。',
+    industryImpact:
+      '出海 App 需自查所有“任务、签到、积分”等游戏化设计，确保符合 DSA 关于未成年人保护的要求。',
+    tags: ['TikTok', 'DSA', '成瘾性设计', '未成年人保护'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2244',
+    isNew: true,
+  },
+  {
     id: 'e12',
     source: '欧盟委员会',
     date: '2024-03-04',

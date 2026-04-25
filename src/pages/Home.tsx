@@ -9,6 +9,70 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-020',
+    source: '欧洲议会',
+    date: '2026-04-24',
+    heat: 8,
+    title: '欧洲议会高票通过《维修权指令》，推动电子产品可持续消费',
+    summary:
+      '2026年4月24日，欧洲议会正式通过《维修权指令》（Right to Repair）。该指令要求制造商在法律保修期后仍需提供价格合理且及时的维修服务，并推动二手和翻新零部件的使用，旨在减少电子垃圾并降低消费者的维修成本。',
+    overallImpact:
+      '该指令将显著改变电子产品的售后生态。不仅苹果、三星等硬件大厂面临更严苛的零件供应要求，第三方维修市场也将迎来重大利好。这也是欧盟绿色协议（Green Deal）在数字领域的延伸。',
+    industryImpact:
+      '中国消费电子出海企业需重新评估其产品设计（易维修性）和备件供应链。建议在产品设计阶段引入模块化理念，并建立在欧本土化的维修服务网络，以符合新规要求。',
+    tags: ['维修权', '电子垃圾', '硬件合规', '欧洲议会'],
+    link: 'https://www.europarl.europa.eu/news/en/press-room/20240419IPR20590/right-to-repair-making-repair-easier-and-more-appealing-to-consumers',
+    isNew: true,
+  },
+  {
+    id: '2026-019',
+    source: 'GOV.UK',
+    date: '2026-04-25',
+    heat: 9,
+    title: '英国《数字市场、竞争和消费者法案》(DMCC) 正式通过',
+    summary:
+      '英国议会于 2026 年 4 月底正式通过了里程碑式的《数字市场、竞争和消费者法案》。该法案赋予英国 CMA 旗下的数字市场小组 (DMU) 直接监管科技巨头的权力，违规处罚最高可达全球年营收的 10%。',
+    overallImpact:
+      '这标志着英国在后脱欧时代对大型科技平台监管的全面收紧，确立了与欧盟 DMA 相似但更具灵活性的“战略市场地位”（SMS）监管框架。',
+    industryImpact:
+      '在英国拥有大量用户的中国平台可能被指定为具有 SMS 地位。企业需密切关注 CMA 随后发布的特定行为守则（Conduct Requirements），并加强与英国监管机构的日常沟通。',
+    tags: ['英国 CMA', 'DMCC', '反垄断', '科技监管'],
+    link: 'https://www.gov.uk/government/news/new-laws-to-tackle-online-rip-offs-and-boost-digital-competition-passed',
+    isNew: true,
+  },
+  {
+    id: '2026-018',
+    source: '欧盟委员会',
+    date: '2026-04-25',
+    heat: 10,
+    title: '希音 (SHEIN) 正式被欧盟指定为超大型在线平台 (VLOP)',
+    summary:
+      '2026年4月25日，欧盟委员会根据《数字服务法》(DSA) 正式指定 SHEIN 为超大型在线平台。由于其在欧盟的月活跃用户已远超 4500 万，SHEIN 现在必须在 4 个月内履行最严格的合规义务，包括系统性风险评估和年度外部审计。',
+    overallImpact:
+      '这是 DSA 对中国跨境电商监管的又一重大节点。SHEIN 与 TikTok、Temu、AliExpress 等共同进入了“最高合规等级”名单，意味着其在欧洲的每一步运营都将受到欧盟委员会的直接穿透式监管。',
+    industryImpact:
+      'SHEIN 必须立即加强对其平台上非法商品（如侵权、不安全产品）的打击力度，并公开其算法推荐逻辑。其他快速成长的中国电商应以此为鉴，提前按 VLOP 标准储备合规资源。',
+    tags: ['SHEIN', 'DSA', 'VLOP', '跨境电商', '合规审计'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2326',
+    isNew: true,
+  },
+  {
+    id: '2026-017',
+    source: '欧盟委员会',
+    date: '2026-04-23',
+    heat: 10,
+    title: '欧盟对 TikTok Lite 启动 DSA 正式调查，聚焦其成瘾性奖励机制',
+    summary:
+      '2026年4月23日，欧盟委员会宣布对 TikTok Lite 启动正式调查。监管机构担心其在法国和西班牙推出的“任务与奖励”计划可能诱导未成年人成瘾，且 TikTok 未能在上线前提交必要的风险评估报告。',
+    overallImpact:
+      '这是欧盟首次针对平台功能设计的“成瘾性”风险启动正式调查，显示了 DSA 执法已从单纯的内容安全转向对产品机制安全性的深层介入。',
+    industryImpact:
+      '所有具有“签到、积分、任务”等游戏化奖励机制的应用，在欧盟上线前必须进行严格的未成年人保护风险评估。建议暂停或大幅调整针对欧盟用户的此类高风险诱导机制。',
+    tags: ['TikTok', 'DSA', '成瘾性设计', '未成年人保护', '欧盟'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_24_2244',
+    isNew: true,
+  },
+  {
     id: '2026-015',
     source: 'EDPB',
     date: '2026-03-19',
@@ -555,7 +619,7 @@ export default function Home() {
         title="欧洲移动应用合规洞察"
         subtitle="European Mobile App Compliance Insights"
         description="聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态"
-        updateDate="2026年4月23日"
+        updateDate="2026年4月25日"
       />
 
       <SearchSection 

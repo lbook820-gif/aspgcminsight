@@ -41,6 +41,24 @@ const legislationItems: LegislationItem[] = [
   },
   {
     id: '5',
+    name: '《数字市场、竞争和消费者法案》(DMCC) — 英国科技监管新标杆',
+    status: '已生效',
+    summary:
+      '2026年4月正式通过。赋予英国 CMA 直接监管具有“战略市场地位”企业的权力，违规处罚最高可达全球营收的 10%。重点针对应用商店、搜索引擎及在线广告的竞争公平性。',
+    impactScope: '所有在英国拥有重要市场地位的科技巨头及其生态系统',
+    updateTime: '2026-04-25',
+  },
+  {
+    id: '6',
+    name: '《维修权指令》（Right to Repair） — 硬件可持续性新规',
+    status: '已生效',
+    summary:
+      '2026年4月正式通过。要求电子产品制造商在保修期后仍需提供平价维修服务，并推动零部件市场的开放。旨在打击计划性报废，促进绿色循环经济。',
+    impactScope: '所有在欧盟销售的消费电子硬件厂商',
+    updateTime: '2026-04-24',
+  },
+  {
+    id: '7',
     name: '《数字综合法案》（Digital Omnibus） — 监管简化框架',
     status: '审议中',
     summary:
