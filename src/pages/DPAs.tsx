@@ -1,3 +1,4 @@
+import { useState, useMemo } from 'react';
 import HeroSection from '@/components/HeroSection';
 import NewsCard from '@/components/NewsCard';
 import type { NewsItem } from '@/types';
@@ -152,7 +153,65 @@ const dpaUpdates: NewsItem[] = [
   },
 ];
 
+// 监管机构列表
+const REGULATORY_AGENCIES = [
+  { id: 'all', name: '全部机构', region: '' },
+  { id: 'EDPB', name: 'EDPB', fullName: '欧洲数据保护委员会', region: '欧盟' },
+  { id: 'AI Office', name: 'AI Office', fullName: '欧洲人工智能办公室', region: '欧盟' },
+  { id: 'ENISA', name: 'ENISA', fullName: '欧洲网络安全局', region: '欧盟' },
+  { id: 'EBA', name: 'EBA', fullName: '欧洲银行管理局', region: '欧盟' },
+  { id: 'ICO', name: 'ICO', fullName: '英国信息专员办公室', region: '英国' },
+  { id: 'FDPIC', name: 'FDPIC', fullName: '瑞士联邦数据保护与信息专员', region: '瑞士' },
+  { id: 'BfDI', name: 'BfDI', fullName: '德国联邦数据保护局', region: '德国' },
+  { id: 'KVKK', name: 'KVKK', fullName: '土耳其个人数据保护局', region: '土耳其' },
+  { id: 'RK', name: 'RK', fullName: '土耳其竞争管理局', region: '土耳其' },
+];
+
+// 搜索过滤函数
+function filterDPAUpdates(
+  updates: NewsItem[],
+  keyword: string,
+  agency: string
+): NewsItem[] {
+  let filtered = updates;
+
+  // 按机构筛选
+  if (agency && agency !== 'all') {
+    filtered = filtered.filter((item) => {
+      return item.source.includes(agency) || item.tags.includes(agency);
+    });
+  }
+
+  // 按关键词搜索
+  if (keyword.trim()) {
+    const lowerKeyword = keyword.toLowerCase();
+    filtered = filtered.filter((item) => {
+      if (item.title.toLowerCase().includes(lowerKeyword)) return true;
+      if (item.summary.toLowerCase().includes(lowerKeyword)) return true;
+      if (item.tags.some((tag) => tag.toLowerCase().includes(lowerKeyword))) return true;
+      if (item.source.toLowerCase().includes(lowerKeyword)) return true;
+      if (item.overallImpact.toLowerCase().includes(lowerKeyword)) return true;
+      if (item.industryImpact.toLowerCase().includes(lowerKeyword)) return true;
+      return false;
+    });
+  }
+
+  return filtered;
+}
+
 export default function DPAs() {
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [selectedAgency, setSelectedAgency] = useState('all');
+
+  const filteredUpdates = useMemo(() => {
+    return filterDPAUpdates(dpaUpdates, searchKeyword, selectedAgency);
+  }, [searchKeyword, selectedAgency]);
+
+  // 按日期倒序排序
+  const sortedUpdates = [...filteredUpdates].sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
+
   return (
     <div className="min-h-screen bg-[#fafafa]">
       <HeroSection
@@ -161,20 +220,106 @@ export default function DPAs() {
         description="一站式追踪欧盟级别（EDPB, AI Office, ENISA, EBA）及各国（英国 ICO, 瑞士 FDPIC, 德国 BfDI, 土耳其 KVKK 等）监管机构的最新政策与执法风向"
       />
 
+      {/* 搜索和筛选区域 */}
+      <section className="bg-white border-b border-[#e5e5e5] px-6 py-4 sticky top-0 z-10">
+        <div className="max-w-[800px] mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3">
+            {/* 关键词搜索 */}
+            <div className="flex-1">
+              <input
+                type="text"
+                placeholder="搜索新闻标题、摘要、标签..."
+                value={searchKeyword}
+                onChange={(e) => setSearchKeyword(e.target.value)}
+                className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent"
+              />
+            </div>
+
+            {/* 机构筛选 */}
+            <div className="sm:w-64">
+              <select
+                value={selectedAgency}
+                onChange={(e) => setSelectedAgency(e.target.value)}
+                className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] focus:border-transparent bg-white"
+              >
+                {REGULATORY_AGENCIES.map((agency) => (
+                  <option key={agency.id} value={agency.id}>
+                    {agency.name}
+                    {agency.fullName && ` - ${agency.fullName}`}
+                    {agency.region && ` (${agency.region})`}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* 快捷筛选标签 */}
+          <div className="flex flex-wrap gap-2 mt-3">
+            {REGULATORY_AGENCIES.slice(1, 6).map((agency) => (
+              <button
+                key={agency.id}
+                onClick={() => setSelectedAgency(agency.id)}
+                className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+                  selectedAgency === agency.id
+                    ? 'bg-[#2563eb] text-white border-[#2563eb]'
+                    : 'bg-white text-[#525252] border-[#e5e5e5] hover:border-[#2563eb] hover:text-[#2563eb]'
+                }`}
+              >
+                {agency.name}
+              </button>
+            ))}
+            {selectedAgency !== 'all' && (
+              <button
+                onClick={() => setSelectedAgency('all')}
+                className="px-3 py-1 text-sm text-[#737373] hover:text-[#2563eb]"
+              >
+                清除筛选 ×
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#fafafa] px-6 py-6">
         <div className="max-w-[800px] mx-auto">
-          <h2 className="text-xl font-bold text-[#171717] pb-3 border-b border-[#e5e5e5] mb-6">
-            机构动态与政策快讯
-            <span className="text-sm font-normal text-[#737373] ml-2">
-              共 {dpaUpdates.length} 条
+          <div className="flex items-center justify-between pb-3 border-b border-[#e5e5e5] mb-6">
+            <h2 className="text-xl font-bold text-[#171717]">
+              机构动态与政策快讯
+            </h2>
+            <span className="text-sm text-[#737373]">
+              共 {sortedUpdates.length} 条
+              {selectedAgency !== 'all' && (
+                <span className="ml-2 text-[#2563eb]">
+                  · {REGULATORY_AGENCIES.find(a => a.id === selectedAgency)?.name}
+                </span>
+              )}
             </span>
-          </h2>
-
-          <div className="flex flex-col gap-6">
-            {[...dpaUpdates].sort((a, b) => b.date.localeCompare(a.date)).map((update) => (
-              <NewsCard key={update.id} news={update} />
-            ))}
           </div>
+
+          {sortedUpdates.length > 0 ? (
+            <div className="flex flex-col gap-6">
+              {sortedUpdates.map((update) => (
+                <NewsCard key={update.id} news={update} />
+              ))}
+            </div>
+          ) : (
+            <div className="py-12 text-center">
+              <p className="text-[#737373] mb-3">
+                未找到相关新闻
+                {searchKeyword && ` (关键词: "${searchKeyword}")`}
+                {selectedAgency !== 'all' && ` (机构: ${REGULATORY_AGENCIES.find(a => a.id === selectedAgency)?.name})`}
+              </p>
+              <button
+                onClick={() => {
+                  setSearchKeyword('');
+                  setSelectedAgency('all');
+                }}
+                className="text-sm text-[#2563eb] hover:underline"
+              >
+                清除所有筛选
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>
