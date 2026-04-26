@@ -4,6 +4,22 @@ import NewsCard from '@/components/NewsCard';
 import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
+  {
+    id: 'dpa-uk-002',
+    source: 'UK ICO (英国信息专员办公室)',
+    date: '2026-04-26',
+    heat: 9,
+    title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
+    summary:
+      '2026年4月26日，英国 ICO 发布报告批评部分移动应用利用“暗黑模式”诱导用户同意数据收集。报告强调，交互设计必须遵循“默认隐私”原则，否则将面临正式执法行动。',
+    overallImpact:
+      'ICO 正在将监管重点转向用户交互设计，这对所有面向英国用户的应用提出了新的 UI 合规要求。',
+    industryImpact:
+      '开发者需审计其 Cookie 弹窗和注销流程，确保没有任何诱导性设计。',
+    tags: ['ICO', '隐私设计', '暗黑模式', '英国'],
+    link: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/',
+    isNew: true,
+  },
   // ==================== 欧盟级别机构 ====================
   {
     id: 'dpa-eu-001',

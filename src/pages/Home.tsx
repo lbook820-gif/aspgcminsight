@@ -9,6 +9,22 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-021',
+    source: '英国 ICO',
+    date: '2026-04-26',
+    heat: 9,
+    title: '英国 ICO 发布“设计即隐私”审计报告，严厉打击移动应用“暗黑模式”',
+    summary:
+      '2026年4月26日，英国信息专员办公室 (ICO) 发布专项审计报告，点名批评了多家社交与电商应用在隐私设置中使用的“暗黑模式”（Dark Patterns），如诱导性按钮设计和隐蔽的账号注销路径。ICO 明确表示，任何违背“设计即隐私”原则的行为都将面临高额罚款。',
+    overallImpact:
+      '这是 ICO 在 2026 年针对用户交互设计（UX/UI）合规性的首次大规模整治，意味着合规已从后台逻辑延伸至前端视觉设计。',
+    industryImpact:
+      '中国出海应用需立即自查：Cookie 弹窗是否具有对等的“全部拒绝”选项？广告关闭按钮是否清晰可见？账号注销流程是否与注册同样简便？建议参照 ICO 指南重新设计关键交互流程。',
+    tags: ['ICO', '隐私设计', '暗黑模式', '英国', '合规审计'],
+    link: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/',
+    isNew: true,
+  },
+  {
     id: '2026-020',
     source: '欧洲议会',
     date: '2026-04-24',
@@ -704,6 +720,10 @@ export default function Home() {
     return [...filtered].sort((a, b) => b.date.localeCompare(a.date));
   }, [searchKeyword]);
 
+  // 当日快讯逻辑
+  const today = '2026-04-26';
+  const newsToday = filteredNews.filter(n => n.date === today);
+
   // 本月动态逻辑
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
@@ -721,13 +741,37 @@ export default function Home() {
         title="欧洲移动应用合规洞察"
         subtitle="European Mobile App Compliance Insights"
         description="聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态"
-        updateDate="2026年4月25日"
+        updateDate="2026年4月26日"
       />
 
       <SearchSection
         searchValue={searchKeyword}
         onSearchChange={setSearchKeyword}
       />
+
+      {/* 当日快讯版块 */}
+      <section className="bg-[#fafafa] px-6 py-6 pb-2">
+        <div className="max-w-[800px] mx-auto">
+          <div className="flex items-center gap-2 mb-6">
+            <h2 className="text-xl font-bold text-[#171717]">当日快讯</h2>
+            <span className="px-2 py-0.5 rounded bg-red-100 text-red-600 text-xs font-bold animate-pulse">
+              LIVE
+            </span>
+          </div>
+          
+          {newsToday.length > 0 ? (
+            <div className="flex flex-col gap-6">
+              {newsToday.map((news) => (
+                <NewsCard key={news.id} news={news} />
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white border border-dashed border-[#e5e5e5] rounded-xl py-8 text-center">
+              <p className="text-[#737373] text-sm">今日暂无新增合规快讯</p>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* 本月动态版块 */}
       <section className="bg-[#fafafa] px-6 py-6">
