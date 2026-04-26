@@ -9,6 +9,38 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-023',
+    source: 'TechCrunch',
+    date: '2026-04-26',
+    heat: 7,
+    title: '欧盟智能手机可持续性新规全面执行，小米、OPPO 调整在欧产品策略',
+    summary:
+      '2026年4月26日，欧盟针对智能手机和平板电脑的《生态设计与能源标签指令》进入全面执行期。小米、OPPO 等中资手机大厂已完成在欧销售产品的合规改造，包括承诺 5 年内的零件供应保障及 3 年以上的功能更新支持。',
+    overallImpact:
+      '这不仅是环保政策，更是隐性的贸易技术壁垒。中国厂商通过技术升级和供应链调整，已成功适应了全球最严苛的硬件耐用性与软件支持标准。',
+    industryImpact:
+      '中国消费电子品牌在欧正从“高性价比”向“高耐用性、长生命周期”转型。建议中小出海品牌关注此类绿色贸易壁垒，提前进行模块化设计储备。',
+    tags: ['小米', 'OPPO', '可持续性', '硬件合规', '欧盟'],
+    link: 'https://techcrunch.com/2026/04/26/eu-smartphone-sustainability-rules-china-brands/',
+    isNew: true,
+  },
+  {
+    id: '2026-022',
+    source: '土耳其 RK',
+    date: '2026-04-26',
+    heat: 8,
+    title: '土耳其竞争管理局 (RK) 启动人工智能 (AI) 生态系统行业调查',
+    summary:
+      '土耳其 RK 于 2026 年 4 月底正式对 AI 产业链展开行业调查，重点审查数据访问权限、计算资源分配以及大型平台是否在 AI 服务中实施自我优待。此举旨在防止 AI 领域的权力过度集中。',
+    overallImpact:
+      '土耳其正在迅速对齐欧盟 DMA 关于 AI 竞争的监管思路。对于在土运营的云服务商和 AI 模型商，意味着更严格的公平竞争审查。',
+    industryImpact:
+      '中国 AI 企业进入土耳其市场需关注算法中立性和数据开放性要求。RK 的调查结果可能直接影响后续的准入政策。',
+    tags: ['土耳其 RK', '人工智能', '反垄断', '数据权限'],
+    link: 'https://www.rekabet.gov.tr/en',
+    isNew: true,
+  },
+  {
     id: '2026-021',
     source: '英国 ICO',
     date: '2026-04-26',

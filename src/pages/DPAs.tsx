@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-tr-003',
+    source: 'Turkey RK (土耳其竞争管理局)',
+    date: '2026-04-26',
+    heat: 8,
+    title: '土耳其 RK 启动人工智能生态系统反垄断行业调查',
+    summary:
+      '土耳其竞争管理局 (RK) 于 2026 年 4 月 26 日发布公告，正式启动对生成式 AI 领域的深度行业调查。调查重点在于大型科技平台是否利用其在算力、算法和数据方面的优势实施封锁竞争对手的行为。',
+    overallImpact:
+      '这表明非欧盟国家正加速跟进 AI 领域的竞争监管。RK 可能会要求大型 AI 服务商实施更透明的资源分配机制。',
+    industryImpact:
+      '在土耳其开展 AI 业务的中国企业需做好应对反垄断合规审计的准备，特别是涉及算力租赁和 API 授权的环节。',
+    tags: ['RK', '人工智能', '反垄断', '土耳其'],
+    link: 'https://www.rekabet.gov.tr/en',
+    isNew: true,
+  },
+  {
     id: 'dpa-uk-002',
     source: 'UK ICO (英国信息专员办公室)',
     date: '2026-04-26',

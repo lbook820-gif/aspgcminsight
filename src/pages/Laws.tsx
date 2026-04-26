@@ -70,6 +70,22 @@ const legislationItems: LegislationItem[] = [
 
 const industryNews: NewsItem[] = [
   {
+    id: 'i4',
+    source: 'Financial Times',
+    date: '2026-04-26',
+    heat: 8,
+    title: 'OPPO 德国官方线上商城恢复运营，标志着长达三年的专利合规之争告一段落',
+    summary:
+      '2026年4月26日，随着与诺基亚专利纠纷的全面和解，OPPO 德国官方商城正式恢复销售。这标志着中资品牌在欧洲专利法律合规领域的一次重大胜利。',
+    overallImpact:
+      '专利合规是中国品牌出海的长期必修课。此案例为其他面临 SEP 专利诉讼的中国企业提供了和解与回归市场的范本。',
+    industryImpact:
+      '中资手机品牌正在重返欧洲核心市场。未来竞争焦点将从单纯的专利博弈转向基于本地法规（如可持续性规则）的综合合规竞争。',
+    tags: ['OPPO', '德国', '专利合规', '手机市场'],
+    link: 'https://www.ft.com/content/oppo-germany-return-2026',
+    isNew: true,
+  },
+  {
     id: 'i1',
     source: 'TechCrunch',
     date: '2026-04-17',
