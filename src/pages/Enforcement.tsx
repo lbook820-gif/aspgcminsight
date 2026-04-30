@@ -10,6 +10,22 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e16',
+    source: '欧盟委员会',
+    date: '2026-04-29',
+    heat: 10,
+    title: '欧盟委员会发布DMA审查报告，启动云计算和AI市场的守门人监管程序',
+    summary:
+      '2026年4月29日，欧盟委员会发布DMA首次审查报告，正式将监管焦点转向云计算和人工智能领域。报告披露监管机构正在调查亚马逊AWS和微软Azure是否应指定为云服务领域的DMA"守门人"，同时审查AI服务是否需要被归类为"核心平台服务"中的"虚拟助手"。欧盟表示DMA的设计初衷是"面向未来"以应对新兴挑战。苹果已对此提出批评。',
+    overallImpact:
+      '这是DMA监管范围的重大扩展，云计算和AI巨头将面临类似应用商店的严格义务，如数据共享、互操作性和反自我优待。',
+    industryImpact:
+      '中国云服务商（阿里云、华为云等）和AI企业需密切关注DMA适用范围扩展的立法进程。若AWS和Azure被指定为守门人，可能为中国云服务商在欧洲市场创造更公平的竞争环境。',
+    tags: ['DMA', '云计算', 'AI', '亚马逊', '微软', '守门人'],
+    link: 'https://finance.sina.cn/usstock/mggd/2026-04-29/detail-inhwaxzr1296755.d.html',
+    isNew: true,
+  },
+  {
     id: 'e15',
     source: '欧盟委员会',
     date: '2026-04-25',
