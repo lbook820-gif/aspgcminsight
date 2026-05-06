@@ -800,10 +800,6 @@ export default function Home() {
     return [...filtered].sort((a, b) => b.date.localeCompare(a.date));
   }, [searchKeyword]);
 
-  // 当日快讯逻辑
-  const today = '2026-04-30';
-  const newsToday = filteredNews.filter(n => n.date === today);
-
   // 本月动态逻辑
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
@@ -821,7 +817,7 @@ export default function Home() {
         title="欧洲移动应用合规洞察"
         subtitle="European Mobile App Compliance Insights"
         description="聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态"
-        updateDate="2026年4月26日"
+        updateDate="2026年5月6日"
       />
 
       <SearchSection
@@ -829,29 +825,6 @@ export default function Home() {
         onSearchChange={setSearchKeyword}
       />
 
-      {/* 当日快讯版块 */}
-      <section className="bg-[#fafafa] px-6 py-6 pb-2">
-        <div className="max-w-[800px] mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <h2 className="text-xl font-bold text-[#171717]">当日快讯</h2>
-            <span className="px-2 py-0.5 rounded bg-red-100 text-red-600 text-xs font-bold animate-pulse">
-              LIVE
-            </span>
-          </div>
-          
-          {newsToday.length > 0 ? (
-            <div className="flex flex-col gap-6">
-              {newsToday.map((news) => (
-                <NewsCard key={news.id} news={news} />
-              ))}
-            </div>
-          ) : (
-            <div className="bg-white border border-dashed border-[#e5e5e5] rounded-xl py-8 text-center">
-              <p className="text-[#737373] text-sm">今日暂无新增合规快讯</p>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* 本月动态版块 */}
       <section className="bg-[#fafafa] px-6 py-6">
