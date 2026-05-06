@@ -811,13 +811,22 @@ export default function Home() {
   const news2025 = filteredNews.filter(n => n.date.startsWith('2025'));
   const news2024 = filteredNews.filter(n => n.date.startsWith('2024'));
 
+  // 动态获取最新更新日期
+  const lastUpdateDate = useMemo(() => {
+    if (allNews.length === 0) return '';
+    const sorted = [...allNews].sort((a, b) => b.date.localeCompare(a.date));
+    const latest = sorted[0].date; // yyyy-mm-dd
+    const [year, month, day] = latest.split('-');
+    return `${year}年${parseInt(month)}月${parseInt(day)}日`;
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#fafafa]">
       <HeroSection
         title="欧洲移动应用合规洞察"
         subtitle="European Mobile App Compliance Insights"
         description="聚焦欧盟数字法规、应用合规监管与欧洲数据保护动态"
-        updateDate="2026年5月6日"
+        updateDate={lastUpdateDate}
       />
 
       <SearchSection
