@@ -9,6 +9,9 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  define: {
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString()),
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

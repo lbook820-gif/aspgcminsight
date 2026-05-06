@@ -1,3 +1,6 @@
+// 声明由 Vite 注入的全局变量
+declare const __BUILD_DATE__: string;
+
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '@/components/HeroSection';
@@ -811,13 +814,10 @@ export default function Home() {
   const news2025 = filteredNews.filter(n => n.date.startsWith('2025'));
   const news2024 = filteredNews.filter(n => n.date.startsWith('2024'));
 
-  // 动态获取最新更新日期
+  // 获取构建时的日期（即最后一次检索/更新的日期）
   const lastUpdateDate = useMemo(() => {
-    if (allNews.length === 0) return '';
-    const sorted = [...allNews].sort((a, b) => b.date.localeCompare(a.date));
-    const latest = sorted[0].date; // yyyy-mm-dd
-    const [year, month, day] = latest.split('-');
-    return `${year}年${parseInt(month)}月${parseInt(day)}日`;
+    const date = new Date(__BUILD_DATE__);
+    return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
   }, []);
 
   return (
