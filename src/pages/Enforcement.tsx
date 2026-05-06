@@ -10,6 +10,22 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e17',
+    source: '爱尔兰 DPC',
+    date: '2026-05-05',
+    heat: 10,
+    title: '爱尔兰 DPC 对 SHEIN Ireland 发起正式调查，聚焦欧盟用户数据跨境传输至中国',
+    summary:
+      '2026年5月5日，爱尔兰数据保护委员会（DPC）宣布对 SHEIN 爱尔兰子公司（Infinite Styles Services Co. Ltd.）发起正式调查。调查核心是 SHEIN Ireland 将欧盟数据主体的个人数据传输至中国是否遵守了 GDPR 的跨境传输规定。副专员 Graham Doyle 强调："当个人数据被传输到欧盟以外时，GDPR 要求给予实质同等的保护水平。"此案涉及 GDPR 第5条（原则）、第13条（透明度）和第五章（跨境传输）。DPC 的调查启动决定已于2026年4月30日发出。',
+    overallImpact:
+      '这是 DPC 将中国方向数据跨境传输列为战略重点后的又一重大行动。与 TikTok 案形成呼应，中国互联网企业在欧盟的数据处理行为正面临前所未有的监管审查。',
+    industryImpact:
+      '所有将欧盟用户数据传输至中国的企业应立即进行跨境传输审计，确保已签署有效 SCC 并实施补充保护措施。建议将欧盟数据本地化存储。',
+    tags: ['DPC', 'SHEIN', '数据跨境传输', 'GDPR', '爱尔兰'],
+    link: 'https://www.dataprotection.ie/en/news-media/dpc-opens-inquiry-infinite-styles-services-co-ltd-shein-ireland',
+    isNew: true,
+  },
+  {
     id: 'e16',
     source: '欧盟委员会',
     date: '2026-04-29',

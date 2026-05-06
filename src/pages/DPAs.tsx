@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-ie-007',
+    source: 'Ireland DPC (爱尔兰数据保护委员会)',
+    date: '2026-05-05',
+    heat: 10,
+    title: '爱尔兰 DPC 对 SHEIN Ireland 发起正式调查，聚焦欧盟用户数据跨境传输至中国',
+    summary:
+      '2026年5月5日，爱尔兰数据保护委员会（DPC）宣布对 SHEIN 爱尔兰子公司（Infinite Styles Services Co. Ltd.）发起正式调查。调查核心是 SHEIN Ireland 将欧盟/欧洲经济区数据主体的个人数据传输至中国是否遵守 GDPR 相关规定。DPC 的副专员 Graham Doyle 表示："当个人数据被传输到欧盟以外的国家时，GDPR 要求这些个人数据应获得与欧盟内部实质同等的保护水平。DPC 近期的执法行动以及向其他欧洲监管机构提出的投诉，已将数据向中国传输的问题置于聚光灯下。"调查涉及 GDPR 第5条（数据处理原则）、第13条（透明度义务）以及第五章的数据跨境传输要求。DPC 强调此次调查是重要的战略优先事项，并将与欧洲同行监管机构密切合作。',
+    overallImpact:
+      'DPC 明确将中国方向的数据跨境传输列为当前战略优先监管领域。此案与 DPC 此前的 TikTok 调查形成呼应，中国互联网企业的数据跨境传输面临欧盟监管的集中审查。DPC 强调没有充分性认定的第三国数据传输需要额外保障措施。',
+    industryImpact:
+      '中国出海电商及科技企业需立即自查：\n\n1. 数据跨境传输审计：欧盟用户数据是否存储在境内？是否有传输至第三国的情况？\n2. 法律依据审查：是否签署了最新版标准合同条款（SCC）？是否进行了传输影响评估（TIA）？\n3. 补充措施：是否实施了端到端加密、假名化等技术保护手段？\n4. 透明度义务：隐私政策是否充分披露了数据跨境传输的事实和保障措施？\n\n建议将欧盟用户数据优先本地化存储于欧盟境内，确保数据保护水平不因跨境传输而降低。',
+    tags: ['DPC', 'SHEIN', '数据跨境传输', 'GDPR', '爱尔兰', '中国'],
+    link: 'https://www.dataprotection.ie/en/news-media/dpc-opens-inquiry-infinite-styles-services-co-ltd-shein-ireland',
+    isNew: true,
+  },
+  {
     id: 'dpa-tr-003',
     source: 'Turkey RK (土耳其竞争管理局)',
     date: '2026-04-26',
