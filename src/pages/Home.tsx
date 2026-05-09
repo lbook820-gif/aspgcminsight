@@ -12,6 +12,22 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-027',
+    source: '爱尔兰 DPC',
+    date: '2026-05-08',
+    heat: 8,
+    title: '爱尔兰 DPC 对 Permanent TSB 数据泄露事件开出 27.75 万欧元罚单',
+    summary:
+      '2026年5月8日，爱尔兰数据保护委员会（DPC）公布了对 Permanent TSB（PTSB）数据泄露事件的最终调查决定。事件源于2022年5月起PTSB报告的一系列数据泄露，恶意分子通过致电PTSB的"Open24联系中心"，冒充客户获取账户访问权限并更改账户信息。DPC认定PTSB违反GDPR第5(1)(f)条（完整性与保密性原则）和第32(1)条（安全措施义务），对其处以25万欧元罚款；同时因未在72小时内及时通知DPC，违反第33(1)条，额外处以2.75万欧元罚款，合计27.75万欧元。',
+    overallImpact:
+      '此案是DPC对金融机构数据安全管控的重要执法行动，强调了银行等金融机构必须实施充分的技术和组织措施保护客户数据。同时，72小时内通知义务的严格执法对企业安全事件响应流程提出了更高要求。',
+    industryImpact:
+      '中国出海金融科技和电商企业需注意：\n\n1. 技术安全措施：必须实施严格的身份验证机制，包括多因素认证，防止社会工程学攻击。PTSB案例中，恶意分子仅凭客户信息就通过电话中心获得账户访问权，说明身份验证流程存在严重缺陷。\n2. 应急响应机制：发现数据泄露后须在72小时内向DPC报告（GDPR第33条），这对企业的安全事件检测和响应能力提出了硬性要求。\n3. 风险提示：金融机构的数据安全违规可能导致双重处罚——既有数据安全措施的罚款，也有未及时通知的罚款。',
+    tags: ['DPC', 'Permanent TSB', '数据泄露', 'GDPR', '爱尔兰', '金融机构'],
+    link: 'https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-in-pemanent-tsb-inquiry',
+    isNew: true,
+  },
+  {
     id: '2026-024',
     source: '欧盟委员会',
     date: '2026-04-29',
