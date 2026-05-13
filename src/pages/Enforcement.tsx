@@ -10,6 +10,54 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e21',
+    source: '欧盟委员会',
+    date: '2026-05-05',
+    heat: 8,
+    title: '欧盟与日本签署数字平台监管合作协议，DSA执法合作扩展至亚太',
+    summary:
+      '2026年5月5日，欧盟委员会与日本总务省签署合作协议，就数字平台监管执法建立正式的国际合作框架。同日，欧盟与日本宣布加速在AI、数据、量子计算和芯片领域的合作。这是欧盟在DSA/DMA监管框架下首次与亚太主要经济体建立正式的执法协作机制，标志着欧盟数字监管标准的全球影响力进一步扩大。该合作将涉及跨境数据共享、联合风险评估和执法信息互通。',
+    overallImpact:
+      '欧盟的数字监管标准正在通过双边协议向全球输出。日欧合作可能推动整个亚太地区的数字监管标准趋同于DSA框架，对在该地区运营的科技企业构成新的、更加复杂的合规环境。',
+    industryImpact:
+      '出海企业需关注日欧监管协作对区域合规标准的传导效应。日本可能参照DSA框架修订国内数字监管法律，形成"布鲁塞尔效应"的亚太版。建议同时在欧盟和日本运营的企业提前建立统一的合规策略。',
+    tags: ['欧盟', '日本', 'DSA', '数字平台监管', '国际合作'],
+    link: 'https://digital-strategy.ec.europa.eu/en',
+    isNew: true,
+  },
+  {
+    id: 'e20',
+    source: '欧盟委员会/新华网',
+    date: '2026-05-14',
+    heat: 10,
+    title: 'WhatsApp VLOP合规截止期至5月中旬，Meta面临DSA最严格监管审查',
+    summary:
+      '2026年1月27日被欧盟正式指定为VLOP的WhatsApp，须在5月中旬前全面履行DSA最严格的合规义务。这是继Facebook、Instagram之后，第三个Meta旗下平台进入VLOP名单。作为全球用户量最大的即时通讯应用，WhatsApp新增义务包括：系统性风险评估、年度外部审计、透明的内容审核机制、非法内容快速举报通道、限制基于用户画像的定向广告、允许用户退出推荐系统等。此次执法表明欧盟正将DSA监管范围从社交媒体扩展到通讯领域，违规罚款最高可达全球年营收6%。',
+    overallImpact:
+      'WhatsApp被纳入VLOP监管体系是DSA监管范围扩张的标志性事件。通讯应用的端到端加密特性与DSA的内容审核义务之间存在天然张力，Meta的合规方案对全球通讯类应用具有标杆意义。欧盟委员会明确表示将以"用户规模"而非"平台类型"为认定标准。',
+    industryImpact:
+      '中国出海通讯和社交应用（如Telegram的非俄语系竞品、出海通讯工具等）需密切关注：1）DSA对通讯平台的审核要求可能逐步明确；2）端到端加密与内容审核之间的合规平衡是核心挑战；3）建议在欧盟用户数接近3500万时主动启动VLOP预备合规方案。',
+    tags: ['WhatsApp', 'VLOP', 'DSA', 'Meta', '合规截止期'],
+    link: 'https://www.news.cn/world/20260127/1e0c18d2d0ca42e4a740a15c20e76d13/c.html',
+    isNew: true,
+  },
+  {
+    id: 'e19',
+    source: '欧盟委员会',
+    date: '2026-05-12',
+    heat: 10,
+    title: '冯德莱恩宣布欧盟将推出《数字公平法案》，整治社交平台成瘾性设计，对TikTok、X、Meta持续加压',
+    summary:
+      '2026年5月12日，欧盟委员会主席冯德莱恩发表重要讲话，宣布将推出《数字公平法案》（Digital Fairness Act），专门整治社交平台的成瘾性产品设计。冯德莱恩表示欧盟正依据DSA对TikTok展开成瘾性设计调查、对X平台因Grok生成色情图像提起诉讼、对Meta旗下Instagram和Facebook未执行13岁最低准入年龄展开调查。法案草案将于今年年底提交。',
+    overallImpact:
+      '这是欧盟从"事后处罚"向"事前设计规范"转型的标志性举措。监管正从内容层面延伸到产品设计层面。',
+    industryImpact:
+      '出海社交平台需立即审查成瘾性设计、年龄验证机制和AI应用合规性。',
+    tags: ['Digital Fairness Act', '冯德莱恩', '成瘾性设计', 'TikTok', 'X', 'Meta'],
+    link: 'https://ishare.ifeng.com/c/s/v002GiT9yuxO--b647Ka055gMHdZILW96ozGXL1VwN64A7yc__',
+    isNew: true,
+  },
+  {
     id: 'e18',
     source: '爱尔兰 DPC',
     date: '2026-05-08',
