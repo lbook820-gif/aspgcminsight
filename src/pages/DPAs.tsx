@@ -118,6 +118,22 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-eu-007',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-04-29',
+    heat: 10,
+    title: '欧盟初步认定Meta违反DSA，Instagram和Facebook未能阻止13岁以下未成年人访问',
+    summary:
+      '2026年4月29日，欧盟委员会发布初步调查结果，认定Meta旗下Instagram和Facebook违反DSA。欧盟技术主权事务执行副主席汉娜·维尔库宁指出Meta"几乎没有采取任何措施"阻止未达年龄限制的儿童访问平台。调查显示欧盟约10%至12%的13岁以下儿童仍在使用这两个平台。Meta的举报工具被批需多达七次点击才能报告未成年人用户。同日欧盟呼吁成员国推广EU年龄验证应用，并成立专家小组监督儿童网络安全。若违规确认，Meta面临最高全球年营收6%罚款（约121亿美元）。',
+    overallImpact:
+      '这是DSA最具代表性的未成年人保护执法，从事前预防和事后补救双维度施压，与冯德莱恩宣布的《数字公平法案》形成政策叠加。',
+    industryImpact:
+      '出海企业需升级年龄验证技术、优化举报机制、建立主动检测机制，并关注欧盟年龄验证应用技术标准。',
+    tags: ['欧盟委员会', 'Meta', 'DSA', '未成年人保护', '年龄验证'],
+    link: 'https://finance.sina.cn/usstock/mggd/2026-04-29/detail-inhwczpe7772974.d.html',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-006',
     source: 'European Commission (欧盟委员会)',
     date: '2026-05-05',
