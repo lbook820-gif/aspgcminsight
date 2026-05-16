@@ -37,6 +37,22 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-ie-009',
+    source: 'Ireland Coimisiún na Meán (爱尔兰媒体委员会)',
+    date: '2026-05-06',
+    heat: 9,
+    title: '爱尔兰媒体委员会调查Meta算法操控：暗黑模式涉嫌违反DSA',
+    summary:
+      '2026年5月6日，爱尔兰媒体委员会(Coimisiún na Meán)宣布对Meta旗下Facebook和Instagram正式展开两项调查，重点审查其是否通过算法设计和"暗黑模式"操控用户选择，涉嫌违反DSA。调查核心在于：根据DSA规定，大型在线平台必须为用户提供至少一种不基于用户画像的内容推荐选项。数字服务专员John Evans强调，算法可能通过反复推送有害内容对儿童和青少年造成潜在伤害。若认定违规，Meta将面临最高全球年营业额6%的罚款。',
+    overallImpact:
+      '这是爱尔兰过去六个月针对大型科技平台的系列DSA执法行动最新一例，标志着DSA执法从内容审核深入到产品交互设计层面。',
+    industryImpact:
+      '出海平台需自查推荐系统是否提供同等醒目的非个性化选项，确保不存在暗黑模式设计。',
+    tags: ['Coimisiún na Meán', 'Meta', '暗黑模式', 'DSA', '算法', '爱尔兰'],
+    link: 'https://finance.sina.cn/usstock/mggd/2026-05-06/detail-inhwwvwx6177004.d.html',
+    isNew: true,
+  },
+  {
     id: 'dpa-tr-003',
     source: 'Turkey RK (土耳其竞争管理局)',
     date: '2026-04-26',
