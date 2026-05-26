@@ -86,6 +86,70 @@ const dpaUpdates: NewsItem[] = [
   },
   // ==================== 欧盟级别机构 ====================
   {
+    id: 'dpa-eu-011',
+    source: 'EDPB (欧洲数据保护委员会)',
+    date: '2026-04-16',
+    heat: 9,
+    title: 'EDPB 加速匿名化指南终稿、明确科研数据处理规则，批准首个欧洲数据保护印章用于跨境传输',
+    summary:
+      '2026年4月16日，欧洲数据保护委员会（EDPB）在4月全体会议上取得多项里程碑进展：1）加速完成匿名化指南（Anonymisation Guidelines）终稿，为企业和机构提供区分匿名化与假名化的明确标准；2）发布声明为科研数据处理提供清晰的合规指引，明确GDPR第9(2)(j)条科研豁免的适用条件与扩展数据再使用场景的范围；3）批准首个欧洲数据保护印章（European Data Protection Seal）用于跨境数据传输——这是GDPR框架下跨境传输合规工具的重要补充，有望成为SCC和BCR之外的第三种选择。',
+    overallImpact:
+      '这是GDPR发布十周年（2026年4月27日纪念活动）前夕EDPB最具实践意义的一组决议。匿名化指南将解决长期困扰企业的"何种程度的去标识化构成匿名"争议；科研数据处理指引将对医疗AI、药物研发等领域的欧盟合作产生重大利好；数据保护印章则为企业跨境传输提供了全新工具。',
+    industryImpact:
+      '对出海企业的三重影响：\n\n1. 匿名化合规：EDPB指南将为数据产品的匿名化处理提供法定参照标准，建议对照终稿审查数据分析产品的合规性\n2. 科研数据合规：医疗AI、生物科技等领域可研究GDPR科研豁免条款的适用范围，简化研究数据处理合规路径\n3. 跨境传输新工具：首个欧洲数据保护印章获批，可作为SCC（标准合同条款）和BCR（有约束力的公司规则）之外的第三种跨境传输合规机制，建议法务团队评估其适用性',
+    tags: ['EDPB', '匿名化', '科研数据处理', '数据保护印章', '跨境传输', 'GDPR'],
+    link: 'https://www.edpb.europa.eu/news/news/2026/edpb-brings-clarity-data-processing-scientific-research-speeds-finalisation-anonymisation_en',
+    isNew: true,
+  },
+    {
+    id: 'dpa-eu-014',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-05-24',
+    heat: 10,
+    title: '欧盟评估将ChatGPT纳入DSA监管：1.204亿月活远超VLOP门槛，AI大模型首入平台监管视野',
+    summary:
+      '2026年5月，欧盟委员会发言人托马斯·雷尼尔证实，欧盟正评估将OpenAI旗下ChatGPT纳入《数字服务法》（DSA）管辖范围。OpenAI公布的数据显示截至2025年9月的6个月期间，ChatGPT在欧盟月均活跃用户约1.204亿，远超4500万VLOP认定门槛。认定将基于服务功能定量和定性评估及成员国协商。若被指定为VLOP，ChatGPT须履行DSA最严格合规义务：系统性风险评估、年度外部审计、算法透明度、非法内容管控、研究人员数据访问等。这是AI对话产品首次面临VLOP级别平台监管。',
+    overallImpact:
+      '这是DSA监管范围的里程碑式扩展——从社交媒体、电商正式扩展至生成式AI领域。ChatGPT若被指定为VLOP将成为全球首个被纳入平台监管框架的AI大模型，迫使AI服务商建立与社交平台同等级的内容审核和风险管理体系。',
+    industryImpact:
+      'AI出海企业需关注：1）月活超4500万的AI对话产品需提前准备VLOP合规方案；2）VLOP义务要求设立欧盟本地法律代表和接受年度外部审计；3）ChatGPT案为Claude、Grok、Gemini等后续认定提供先例；4）AI产品需同时满足AI Act和DSA双重合规要求。',
+    tags: ['ChatGPT', 'DSA', 'VLOP', 'AI大模型', 'OpenAI', '欧盟', '生成式AI'],
+    link: 'https://www.163.com/dy/article/KQDQS7E10511BE1V.html',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-013',
+    source: 'BEUC (欧洲消费者组织)',
+    date: '2026-05-21',
+    heat: 9,
+    title: 'BEUC联合29国消费者机构依DSA投诉谷歌、Meta、TikTok纵容金融诈骗广告',
+    summary:
+      '2026年5月21日，欧洲消费者组织（BEUC）联合27国29个成员机构，依据DSA向欧盟委员会正式投诉谷歌、Meta和TikTok，指其未有效防范平台金融诈骗广告。BEUC去年12月至今年3月举报近900条诈骗广告，平台仅删除27%，52%被拒绝或未处理。BEUC总干事批评平台不仅未主动清理诈骗广告，接到举报后应对也严重滞后。若认定违规，三家平台最高可面临全球年营业额6%罚款。谷歌声称投放前已拦截99%违规广告，Meta称已移除超1.59亿条诈骗广告（92%在举报前清除），TikTok未回应。',
+    overallImpact:
+      '这是DSA框架下规模最大的消费者组织集体投诉行动。若转化为正式调查，将是对DSA广告审核义务执行的全面检验，推动整个在线广告行业审核标准提升。',
+    industryImpact:
+      '出海广告平台需审视金融广告审核：1）建立投放前严格合规审查机制；2）完善用户举报响应流程；3）加强AI自动化审核与人工复核协同。',
+    tags: ['BEUC', '金融诈骗', 'DSA', '谷歌', 'Meta', 'TikTok', '广告审核'],
+    link: 'https://finance.sina.com.cn/stock/usstock/c/2026-05-21/doc-inhyshrk5764081.shtml',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-012',
+    source: 'ENISA (欧洲网络安全局)',
+    date: '2026-05-06',
+    heat: 6,
+    title: 'ENISA 新增四家 CVE 编号授权机构，欧洲漏洞管理体系迈出关键一步',
+    summary:
+      '2026年5月6日，ENISA宣布四家组织正式加入通用漏洞与暴露（CVE™）计划，成为ENISA Root下属的CVE编号授权机构（CNA）。截至目前，已有七家欧洲CNA从MITRE Root迁移至ENISA Root，加上新加入的四家机构，ENISA正在加速构建欧洲自主的漏洞管理能力。ENISA首席网络安全与运营官Hans de Vries表示，前沿AI模型正在加速漏洞发现和利用，欧洲的漏洞管理能力必须同步提升。',
+    overallImpact:
+      'ENISA作为欧洲CVE Root的角色进一步强化，为欧盟成员国提供了更可靠的漏洞识别和协调机制。随着数字监管框架（如NIS2、DORA）要求关键基础设施运营商加强漏洞管理，ENISA的CNA网络将为合规审计提供标准化的漏洞数据基础。',
+    industryImpact:
+      '在欧洲运营的云服务商和关键基础设施企业需关注：1）ENISA Root下的CVE编号管理体系将提升漏洞披露的时效性和协调性；2）欧盟网络安全监管（NIS2、DORA）对漏洞管理的合规要求将逐步细化；3）建议将ENISA CVE体系融入企业内部漏洞管理流程。',
+    tags: ['ENISA', 'CVE', '漏洞管理', '网络安全', '欧洲'],
+    link: 'https://www.enisa.europa.eu/news/new-cve-numbering-authorities-under-enisa-root',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-001',
     source: 'EDPB (欧洲数据保护委员会)',
     date: '2026-03-19',
@@ -147,6 +211,54 @@ const dpaUpdates: NewsItem[] = [
       '出海企业需升级年龄验证技术、优化举报机制、建立主动检测机制，并关注欧盟年龄验证应用技术标准。',
     tags: ['欧盟委员会', 'Meta', 'DSA', '未成年人保护', '年龄验证'],
     link: 'https://finance.sina.cn/usstock/mggd/2026-04-29/detail-inhwczpe7772974.d.html',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-008',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-05-18',
+    heat: 7,
+    title: '欧盟委员会启动版权框架现代化公众咨询，涉及AI训练数据与数字平台内容规则',
+    summary:
+      '2026年5月18日，欧盟委员会发布公众咨询，就欧盟版权框架现代化征集意见。重点包括AI训练中受版权保护内容的使用规则、数字平台内容版权责任、在线内容聚合法律定位。咨询截止2026年8月。此举旨在确保版权框架与DSA、AI Act等新法规的衔接。',
+    overallImpact:
+      '版权改革是欧盟数字监管版图重要拼图。AI训练数据版权与AI Act形成交叉监管，数字平台内容责任与DSA内容审核制度密切相关。',
+    industryImpact:
+      '出海AI企业需建训练数据版权追溯机制，内容平台需重新评估欧洲内容采买模式。',
+    tags: ['欧盟委员会', '版权', 'AI训练数据', 'DSA', '公众咨询'],
+    link: 'https://digital-strategy.ec.europa.eu/en/news/commission-launches-call-evidence-modernise-eu-copyright-framework',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-009',
+    source: 'European AI Office (欧洲人工智能办公室)',
+    date: '2026-05-19',
+    heat: 9,
+    title: '欧盟委员会/AI Office发布高风险AI系统分类指南草案，明确AI Act高风险认定标准与实践案例',
+    summary:
+      '2026年5月19日，欧盟委员会与AI Office联合发布高风险AI系统分类指南草案，提供详细的分类标准和丰富的实践案例，涵盖附件三所列的生物识别、关键基础设施、教育、就业、公共服务、执法、移民和司法等高风险领域。草案目前处于征求意见阶段。该指南的发布标志着AI Act高风险条款实施准备进入实质性阶段，为企业判定AI系统风险等级提供了明确的操作依据。',
+    overallImpact:
+      'AI Act高风险系统分类指南是欧盟AI监管落地的关键里程碑。指南为企业提供了明确的合规判定依据，帮助开发者在产品设计阶段即评估风险等级。',
+    industryImpact:
+      '中国AI出海企业需根据指南草案对自身AI系统进行风险等级判定，对照附件三清单和案例提前准备合规方案。各成员国须在5月31日前建成AI监管沙盒，建议优先利用沙盒进行合规测试。',
+    tags: ['AI Office', 'AI Act', '高风险系统', '人工智能', '分类指南'],
+    link: 'https://digital-strategy.ec.europa.eu/en/news',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-010',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-05-19',
+    heat: 8,
+    title: '欧盟委员会启动反网络欺凌行动计划，推出EU-wide举报应用保护青少年',
+    summary:
+      '2026年5月19日，欧盟委员会宣布启动反网络欺凌行动计划（Action Plan Against Cyberbullying），基于对6000多名儿童的针对性咨询制定。三大支柱：推出EU-wide反网络欺凌举报应用；协调各国应对在线有害行为；通过良好数字实践预防网络欺凌。该计划建立在DSA等现有法规基础上。',
+    overallImpact:
+      '反网络欺凌行动计划与DSA未成年人保护条款、DFA成瘾性设计禁令形成“三位一体”青少年数字保护体系，进一步强化了平台责任。',
+    industryImpact:
+      '出海平台需升级举报机制，确保清晰的网络欺凌举报通道；加强AI驱动的主动检测和预防能力。',
+    tags: ['欧盟委员会', '反网络欺凌', '未成年人保护', '青少年', 'DSA'],
+    link: 'https://digital-strategy.ec.europa.eu/en',
     isNew: true,
   },
   {
