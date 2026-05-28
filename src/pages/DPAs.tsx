@@ -150,6 +150,22 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-eu-016',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-05-28',
+    heat: 10,
+    title: '欧盟委员会依DSA对Temu开出2亿欧元创纪录罚单，认定风险评估严重不足',
+    summary:
+      '2026年5月28日，欧盟委员会宣布对中国跨境电商平台Temu处以2亿欧元罚款，理由是Temu未能有效遏制平台上非法商品销售，违反DSA。这是DSA框架下开出的第二张也是金额最高罚单。委员会认定Temu的风险评估"低估了具体风险、内容过于模糊、不完整"。调查还涉及推荐算法和网红推广项目放大非法商品风险。Temu表示不同意处罚并考虑上诉。欧盟要求8月28日前提交整改行动计划。',
+    overallImpact:
+      '这是DSA执法史上的里程碑，也是对中国跨境电商平台最严厉的DSA处罚。欧盟数字事务负责人明确表示"现在是Temu遵守法律的时候了"。与匈牙利GVH处罚和关税改革形成叠加监管效应。',
+    industryImpact:
+      '中国跨境电商核心警示：DSA风险评估必须实质性、数据驱动；非法商品管控须升级；算法风险纳入审查；8月28日前整改窗口期。',
+    tags: ['欧盟委员会', 'Temu', 'DSA', '罚款', '跨境电商', '非法商品'],
+    link: 'https://ishare.ifeng.com/c/s/v002exCtFEx5VnGjLJWEX1ci--3KZ5Z-_pxFmp1NSlTSItC0U__',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-015',
     source: 'ENISA (欧洲网络安全局)',
     date: '2026-05-26',
