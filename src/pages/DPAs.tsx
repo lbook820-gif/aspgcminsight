@@ -150,6 +150,22 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-eu-017',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-05-29',
+    heat: 8,
+    title: '欧盟发布DSA可信举报人指南草案并征求意见，为非法内容标记机制设定全欧盟统一标准',
+    summary:
+      '2026年5月29日，欧盟委员会发布《数字服务法》可信举报人（Trusted Flaggers）指南草案并公开征求意见。可信举报人是DSA框架下由各国数字服务协调员认定的专门识别在线非法内容的组织，其举报享有平台优先处理权。指南草案明确了可信举报人的认定标准、运作流程、撤销机制及权利义务边界，旨在建立全欧盟统一的治理框架。该指南是DSA内容审核体系的核心操作规范，将提升非法内容发现和移除的效率。',
+    overallImpact:
+      '可信举报人制度是DSA内容审核体系的支柱。统一指南将加速非法内容移除速度，与NIS2统一模板形成行政标准化的双轨推进。结合近期对Temu、Meta、TikTok的执法行动，欧盟正形成「标准制定+执法执行」的双轮驱动。',
+    industryImpact:
+      '平台需调整内容审核算法优先处理可信举报人标记；与目标市场可信举报人组织建立沟通渠道；升级自动化审核能力；保存完整处理记录以备年度审计。',
+    tags: ['DSA', '可信举报人', '非法内容', '指南', '欧盟'],
+    link: 'https://digital-strategy.ec.europa.eu/en/news',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-016',
     source: 'European Commission (欧盟委员会)',
     date: '2026-05-28',

@@ -314,6 +314,22 @@ const enforcementCases: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'e40',
+    source: '欧盟委员会/凤凰网',
+    date: '2026-05-29',
+    heat: 9,
+    title: 'G7数字与技术部长就未成年人数字安全共同原则达成一致，全球未成年人保护监管协同升级',
+    summary:
+      '2026年5月29日，欧盟委员会欢迎G7数字与技术部长就未成年人数字安全的共同原则（Common Set of Principles for a Safer and More Secure Digital Space for Minors）达成一致。该原则涵盖年龄验证标准化、有害内容识别与移除、算法对未成年人的保护性设计、家长控制工具互操作性以及数字素养教育等核心领域。G7此次共识是欧盟DFA立法（年底提交）和DSA未成年人执法（Meta案）的国际政策延伸，标志着G7主要经济体在未成年人网络保护领域首次形成统一政策行动框架。',
+    overallImpact:
+      'G7共同原则的达成与欧盟DSA执法和DFA立法形成多层协同。科技企业面临未成年人保护合规从区域要求升级为全球核心市场共同标准的趋势。G7原则中的保护性设计（algorithmic protection by design）等概念可能成为后续各国立法的参考基线。',
+    industryImpact:
+      '出海企业需建立全球未成年人保护合规基线，关注G7可能的统一年龄验证技术规范，在产品设计阶段融入保护性原则，并做好数字素养教育功能的产品布局。',
+    tags: ['G7', '未成年人保护', '数字安全', '共同原则', '年龄验证', '算法保护'],
+    link: 'https://digital-strategy.ec.europa.eu/en/news',
+    isNew: true,
+  },
+  {
     id: 'e39',
     source: '凤凰网/证券之星/欧盟委员会',
     date: '2026-05-28',
