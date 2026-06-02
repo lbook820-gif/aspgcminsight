@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-018',
+    source: 'EDPB (欧洲数据保护委员会)',
+    date: '2026-04-14',
+    heat: 8,
+    title: 'EDPB公布统一数据保护影响评估(DPIA)模板并启动公众咨询，欧盟数据合规走向设计问责',
+    summary:
+      '2026年4月14日，EDPB在第142次全体会议上公布统一DPIA模板并启动公众咨询（截至2026年6月9日）。统一模板旨在解决成员国DPIA模板差异大、跨国企业需维护多套评估文件的痛点。EDPB明确该模板将作为各成员国的统一模板或兼容的"元模板"。此前EDPB已加速完成匿名化指南终稿，为区分匿名化与假名化提供了明确标准。这是EDPB自《赫尔辛基声明》以来推动GDPR实施一致性的最具体成果。',
+    overallImpact:
+      'DPIA统一模板标志着欧盟数据合规从"各国分散实践"到"全欧盟协调实施"的转变。跨国企业可用统一评估标准满足所有成员国要求。EDPB同时推进的匿名化指南、科研数据指引和数据保护印章工具，正构建完整的GDPR落地工具箱。',
+    industryImpact:
+      '出海企业需在6月9日前审查现有DPIA文档与统一模板的兼容性，在产品设计早期嵌入DPIA流程，并考虑通过欧盟商会渠道提交对模板的反馈意见。',
+    tags: ['EDPB', 'DPIA', 'GDPR', '统一模板', '合规工具'],
+    link: 'https://www.edpb.europa.eu/news/news/2026/edpb-brings-clarity-data-processing-scientific-research-speeds-finalisation-anonymisation_en',
+    isNew: true,
+  },
+  {
     id: 'dpa-ie-008',
     source: 'Ireland DPC (爱尔兰数据保护委员会)',
     date: '2026-05-08',
@@ -50,6 +66,22 @@ const dpaUpdates: NewsItem[] = [
       '出海平台需自查推荐系统是否提供同等醒目的非个性化选项，确保不存在暗黑模式设计。',
     tags: ['Coimisiún na Meán', 'Meta', '暗黑模式', 'DSA', '算法', '爱尔兰'],
     link: 'https://finance.sina.cn/usstock/mggd/2026-05-06/detail-inhwwvwx6177004.d.html',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-018-2',
+    source: 'EDPS (欧洲数据保护监督局)',
+    date: '2026-06-08',
+    heat: 7,
+    title: 'EDPS与德国BfDI将于6月8日举行关于Omnibus提案对GDPR影响的高级别辩论',
+    summary:
+      '2026年6月8日，欧洲数据保护监督局（EDPS）与德国联邦数据保护专员（BfDI）及巴伐利亚数据保护专员（BayLfD）联合举办高级别辩论，讨论欧盟委员会"数字综合法案"（Digital Omnibus）提案对GDPR及更广泛的欧盟数字监管框架的影响。此举是欧盟在"简化监管"与"保护数据权利"之间寻求平衡的关键一步。EDPS负责人Wojciech Wiewiórowski此前曾在CPDP 2026闭幕词中强调"安全且符合伦理的AI是欧洲的全球理念"。',
+    overallImpact:
+      'Omnibus提案试图整合GDPR、Data Act和AI Act的重叠合规要求。EDPS与BfDI联合举办的辩论将直接反映数据保护监管机构对"监管简化"的立场——是否有信心在不降低保护标准的前提下实现简化，将是决定Omnibus走向的关键。',
+    industryImpact:
+      '出海企业需关注此辩论的结果信号，该辩论将预示GDPR在未来监管简化框架中的地位。若数据保护机构集体反对降低标准，则Omnibus的简化幅度可能受限。',
+    tags: ['EDPS', 'BfDI', 'Digital Omnibus', 'GDPR', '监管简化', '欧洲数据保护'],
+    link: 'https://www.edps.europa.eu/_en',
     isNew: true,
   },
   {
