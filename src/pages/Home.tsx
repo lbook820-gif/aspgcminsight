@@ -12,6 +12,22 @@ import type { NewsItem, DynamicCard } from '@/types';
 const allNews: NewsItem[] = [
   // ==================== 2026年新闻 ====================
   {
+    id: '2026-062',
+    source: '欧盟委员会/新浪财经/电子工程专辑',
+    date: '2026-06-03',
+    heat: 9,
+    title: '欧盟任命Jim Hagemann Snabe为工业人工智能特使，推动AI基础设施、算力与芯片自主供应链建设',
+    summary:
+      '2026年6月3日，欧盟委员会正式任命Jim Hagemann Snabe为工业人工智能特使（Special Envoy for Industrial Artificial Intelligence）。Snabe将直接向欧盟委员会主席冯德莱恩及技术主权事务执行副主席Virkkunen提供工业AI战略建议，核心聚焦AI基础设施，包括数据中心、高性能计算（HPC）和支撑AI部署的半导体供应链。还将就基础AI技术（LLM、生成式AI、云计算、高级AI软件）及各工业领域AI应用提供专业意见。Snabe曾任西门子监事会主席、SAP联合CEO，在数字化转型和工业软件领域拥有丰富经验。该任命与同日公布的CADA技术主权一揽子方案形成配套，是欧盟从AI监管走向AI产业能力建设的又一重要信号。',
+    overallImpact:
+      '任命工业AI特使是欧盟在产业AI战略层面的一次重要人事布局。Snabe兼具欧洲顶级工业集团（西门子、SAP）和AI产业视角的独特背景，其提交的工业AI报告将为欧盟的AI产业政策、基础设施投资和立法优先级提供关键决策依据。该任命与CADA、《芯片法案2.0》共同构成欧盟技术主权战略的三大支柱——云基础设施、AI产业、芯片制造。欧洲正从纯粹的AI监管者向AI产业建设者的双重角色转型。',
+    industryImpact:
+      '对中国AI和云计算企业的战略信号：\n\n1. 产业AI机遇：Snabe的工业AI报告将定义欧盟对自动驾驶、智能制造、医疗AI等领域的政策取向，建议在欧有AI业务布局的企业关注该报告的编制进展并适时提供行业意见\n\n2. 数据中心投资：欧盟将加速AI基础设施建设，中国云服务商可关注欧盟HPC和数据中心投资计划的合作窗口\n\n3. 芯片供应链：半导体供应链被列为工业AI基础设施的关键组成，可能与芯片法案2.0联动，影响对欧芯片出口格局\n\n4. 竞争格局：欧盟同时推进AI监管（AI Act）和AI产业能力建设，在欧AI企业既面临合规压力也将获得产业配套支持',
+    tags: ['Jim Hagemann Snabe', '工业AI', '欧盟', 'AI基础设施', '数据中心', 'HPC', '芯片', '产业政策'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1243',
+    isNew: true,
+  },
+  {
     id: '2026-061',
     source: '欧盟委员会/新浪财经/电子工程专辑',
     date: '2026-06-03',

@@ -3,12 +3,28 @@ import NewsCard from '@/components/NewsCard';
 import type { NewsItem, RegulatoryEvent } from '@/types';
 
 const enforcementStats = [
-  { value: '€ 28.5亿', label: '累计罚款金额 (2024-2026)' },
-  { value: '48', label: '已完成调查案件' },
+  { value: '€ 36.5亿', label: '累计罚款金额 (2024-2026)' },
+  { value: '49', label: '已完成调查案件' },
   { value: '12', label: '正在进行中的调查' },
 ];
 
 const enforcementCases: NewsItem[] = [
+  {
+    id: 'e42',
+    source: '欧盟委员会/新浪财经/IT之家',
+    date: '2026-06-01',
+    heat: 10,
+    title: '欧盟对Meta处以7.98亿欧元反垄断罚款：认定Facebook与Marketplace捆绑及滥用竞争对手数据，创Meta反垄断罚款新纪录',
+    summary:
+      '2026年6月1日，欧盟委员会宣布对Meta处以7.9772亿欧元（约8.41亿美元）的罚款，理由是Meta在在线分类广告市场滥用主导地位，通过将Facebook Marketplace与社交网络捆绑、对竞争对手施加不公平交易条件等从事反竞争行为。这是欧盟首次因反垄断违规对Meta处以罚款。调查始于2021年，欧盟认定Meta利用Facebook的主导地位自动向所有用户展示Marketplace服务，同时使用竞争对手分类广告平台的数据优化自身服务。欧盟责令Meta有效终止上述行为。Meta表示将遵守命令，但同时计划上诉，整个法律程序可能需要数年。此前Meta因跨境数据传输已被欧盟处以13亿美元破纪录罚款。',
+    overallImpact:
+      '这是Meta在欧盟面临的首个反垄断罚款，与DMA框架下已开出的罚单（DMA罚款2亿欧元）形成叠加，标志着Meta在欧盟同时面临反垄断法、DSA、DMA和GDPR的四重法律压力。7.98亿欧元虽然对Meta千亿美元营收影响有限，但此案确认了社交平台捆绑服务和不当利用竞争对手数据的反竞争性质，为后续DMA框架下的类似行为创设了先例。值得注意的是，欧盟在处罚反垄断违规的同时，DMA正在为类似行为提供更快速的执法通道。',
+    industryImpact:
+      '对中国出海社交和电商平台的启示：\n\n1. 生态捆绑风险：将不同服务组件强制关联展示（如社交+电商、社交+广告）可能构成反垄断违规，建议在平台设计中保持服务间的清晰边界和用户选择自由\n\n2. 竞争对手数据使用：不应利用竞争对手在平台上的业务数据优化自有竞争性服务，这将被认定为不公平交易条件\n\n3. 多法叠加风险：同一行为可能同时受反垄断法、DMA、DSA和GDPR审查，合规策略需跨法规整合\n\n4. 欧盟对社交平台的监管正从数字监管（DSA/DMA）扩展到传统竞争法领域，双线执法将成为常态',
+    tags: ['Meta', 'Facebook Marketplace', '反垄断', '欧盟', '捆绑销售', '分类广告', '7.98亿欧元'],
+    link: 'https://finance.sina.cn/2026-06-01/detail-inhzwuhp5228002.d.html',
+    isNew: true,
+  },
   {
     id: 'e41',
     source: '欧盟委员会/新浪财经/路透社',
