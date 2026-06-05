@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-fr-001',
+    source: 'France DGCCRF (法国竞争、消费与反欺诈总局)',
+    date: '2026-06-03',
+    heat: 9,
+    title: '法国DGCCRF对SHEIN开出2200万欧元罚单，消费者权利与环保信息披露双项违规',
+    summary:
+      '2026年6月3日，法国DGCCRF对SHEIN处以总计约2200万欧元罚单。处罚分两项：1670万欧元因订单确认邮件未标注价格、销售主体名称、交货时间等法定信息违反法国消费者法；580万欧元因未完整履行14天无理由退货告知义务及未披露合成纤维产品塑料微纤维释放的环境风险。这是SHEIN在法国第三次受罚，累计罚款超2.12亿欧元（含2025年7月虚构折扣4000万欧元、Cookie隐私违规1.5亿欧元）。法国中小企业事务部长表态将持续监管执法。SHEIN表示异议，准备提起行政上诉。此案是中国跨境电商在欧盟面临"全链条合规审查"的典型标志性案例。',
+    overallImpact:
+      '法国DGCCRF对SHEIN的系列执法行动实现了对跨境电商的全领域覆盖：产品安全（2024年11月违规玩偶问题）、营销合规（2025年7月虚构折扣）、数据保护（Cookie隐私违规）、消费者权利（订单信息与退货告知）和环保责任（微纤维披露）。这是欧盟成员国层面最系统、最全面的跨境电商执法案例，与欧盟委员会对Temu的DSA执法形成协同。法国中小企业事务部长的强硬表态释放了明确信号：中国跨境电商在法运营面临"零容忍"执法环境。',
+    industryImpact:
+      '所有在法运营的中国跨境电商需要立即完成五项合规审查：1）订单确认邮件内容是否包含法定的价格、卖方身份和交货时间信息；2）退货权利告知是否在购买流程中完整呈现；3）合成纤维产品是否披露了微塑料释放的环境风险信息；4）历史营销活动是否存在虚构折扣问题；5）Cookie和数据隐私合规是否存在历史漏洞。建议建立面向法国的专门合规审计团队。',
+    tags: ['DGCCRF', 'SHEIN', '法国', '消费者保护', '环保披露', '罚款'],
+    link: 'https://news.sohu.com/a/1032710831_121123800',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-018',
     source: 'EDPB (欧洲数据保护委员会)',
     date: '2026-04-14',
@@ -577,6 +593,7 @@ const REGULATORY_AGENCIES = [
   { id: 'ENISA', name: 'ENISA', fullName: '欧洲网络安全局', region: '欧盟' },
   { id: 'EBA', name: 'EBA', fullName: '欧洲银行管理局', region: '欧盟' },
   { id: 'DPC', name: 'DPC', fullName: '爱尔兰数据保护委员会', region: '爱尔兰' },
+  { id: 'DGCCRF', name: 'DGCCRF', fullName: '法国竞争、消费与反欺诈总局', region: '法国' },
   { id: 'ICO', name: 'ICO', fullName: '英国信息专员办公室', region: '英国' },
   { id: 'FDPIC', name: 'FDPIC', fullName: '瑞士联邦数据保护与信息专员', region: '瑞士' },
   { id: 'BfDI', name: 'BfDI', fullName: '德国联邦数据保护局', region: '德国' },
