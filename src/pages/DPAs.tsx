@@ -101,6 +101,38 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-uk-003',
+    source: 'UK CMA (英国竞争与市场管理局)',
+    date: '2026-06-04',
+    heat: 10,
+    title: '英国CMA勒令谷歌整改AI搜索服务：全球首个AI搜索系统性监管框架落地',
+    summary:
+      '2026年6月3日-4日，英国竞争与市场管理局（CMA）宣布对谷歌AI搜索服务实施强制性监管措施，要求谷歌允许英国网站运营商和出版商退出其AI概览（AI Overviews）模式。CMA依据DMCC法案在四个领域发布管控措施：1）出版商内容使用规则——允许选择退出AI训练/摘要且不降低传统搜索排名；2）公平排名——挑战谷歌内容分发控制权；3）用户搜索服务选择——削弱默认搜索优势；4）数据可移植性——降低切换成本。这是全球首个针对AI搜索功能的系统性监管框架。',
+    overallImpact:
+      'CMA的行动标志着全球AI搜索监管从无到有的分水岭。四项规则精准瞄准搜索业务的基础设施环节，可能成为澳大利亚、欧盟等其他辖区的监管模板。',
+    industryImpact:
+      '出海AI搜索和内容企业需建立出版商内容使用控制工具，关注英国出版商数据训练的合规风险。',
+    tags: ['UK CMA', '谷歌', 'AI搜索', 'AI Overviews', 'DMCC', '出版商'],
+    link: 'https://finance.sina.com.cn/stock/usstock/summary/2026-06-03/doc-iniachnr0907449.shtml',
+    isNew: true,
+  },
+  {
+    id: 'dpa-eu-019',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-06-05',
+    heat: 10,
+    title: '欧盟公布CADA四档主权分级：云计算服务商面临差异化合规门槛',
+    summary:
+      '2026年6月3日，欧盟委员会正式公布技术主权一揽子计划，包含CADA（云计算和人工智能发展法案）。CADA引入四档主权分级：第一级（70%公共数据）仅需欧盟境内存储；第二级（20%）要求外国政府无法访问；第三级（9%）要求欧盟所有权和控制权；第四级（1%国防数据）完全排除外部提供商。配套政策包括芯片法案2.0和开源战略。',
+    overallImpact:
+      'CADA分级框架务实平衡了安全与现实，为中国云服务商创造了非美国第三方差异化窗口。',
+    industryImpact:
+      '中国云服务商需评估各级合规要求，利用立法窗口期搭建欧盟本地架构。',
+    tags: ['欧盟委员会', 'CADA', '云计算', '技术主权', '四档分级'],
+    link: 'https://news.qq.com/rain/a/20260605A092CE',
+    isNew: true,
+  },
+  {
     id: 'dpa-tr-003',
     source: 'Turkey RK (土耳其竞争管理局)',
     date: '2026-04-26',
@@ -595,6 +627,7 @@ const REGULATORY_AGENCIES = [
   { id: 'DPC', name: 'DPC', fullName: '爱尔兰数据保护委员会', region: '爱尔兰' },
   { id: 'DGCCRF', name: 'DGCCRF', fullName: '法国竞争、消费与反欺诈总局', region: '法国' },
   { id: 'ICO', name: 'ICO', fullName: '英国信息专员办公室', region: '英国' },
+  { id: 'CMA', name: 'CMA', fullName: '英国竞争与市场管理局', region: '英国' },
   { id: 'FDPIC', name: 'FDPIC', fullName: '瑞士联邦数据保护与信息专员', region: '瑞士' },
   { id: 'BfDI', name: 'BfDI', fullName: '德国联邦数据保护局', region: '德国' },
   { id: 'KVKK', name: 'KVKK', fullName: '土耳其个人数据保护局', region: '土耳其' },
