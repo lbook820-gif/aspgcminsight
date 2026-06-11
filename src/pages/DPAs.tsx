@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-020',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-06-09',
+    heat: 10,
+    title: '欧盟委员会拒绝苹果Siri AI豁免申请：DMA互操作性义务不可谈判，苹果新版Siri AI无缘欧盟iOS 27首发',
+    summary:
+      '2026年6月8日-10日，欧盟委员会与苹果公司围绕新版Siri AI的DMA互操作性要求陷入监管僵局。苹果宣布新版Siri AI将随iOS 27发布，但欧盟用户无法在iPhone及iPad上使用。苹果曾向欧盟提交Trusted System Agent（可信系统智能体）中间层安全方案及18个月分阶段开放计划，均遭欧盟委员会拒绝。苹果指责欧盟要求其赋予第三方AI对用户设备的广泛访问权限（读短信、执行购买、跨应用操作）构成隐私安全风险。欧盟发言人Thomas Regnier回应称，DMA并不禁止苹果推出新产品，但任何守门人不得封闭市场，且欧盟法律不可谈判。这是DMA实施以来最具标志性的AI监管执法冲突，为AI时代的互操作性义务划定边界。',
+    overallImpact:
+      '此案是DMA在AI领域的标志性执法事件，确立了系统级AI能力必须向第三方开放的原则，且平台单方定义的安全策略不能成为拒绝DMA互操作义务的充分理由。苹果与欧盟的僵局将直接影响所有守门人平台在欧盟推出AI功能的合规策略。',
+    industryImpact:
+      '在欧盟运营的AI企业需提前设计DMA互操作性合规方案，不能以安全为由简单拒绝开放要求。建议AI助手月活接近4500万的企业尽早与欧盟监管机构建立技术沟通渠道。',
+    tags: ['欧盟委员会', '苹果', 'Siri AI', 'DMA', '互操作性', 'AI助手', 'iOS 27'],
+    link: 'https://finance.sina.com.cn/jjxw/2026-06-09/doc-iniavfsq3172762.shtml',
+    isNew: true,
+  },
+  {
     id: 'dpa-fr-001',
     source: 'France DGCCRF (法国竞争、消费与反欺诈总局)',
     date: '2026-06-03',

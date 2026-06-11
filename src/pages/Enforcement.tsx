@@ -4,16 +4,31 @@ import type { NewsItem, RegulatoryEvent } from '@/types';
 
 const enforcementStats = [
   { value: '€ 36.5亿', label: '累计罚款金额 (2024-2026)' },
-  { value: '49', label: '已完成调查案件' },
+  { value: '50', label: '已完成调查案件' },
   { value: '12', label: '正在进行中的调查' },
 ];
 
 const enforcementCases: NewsItem[] = [
   {
-    id: 'e44',
-    source: '法国DGCCRF/路透社/搜狐网',
-    date: '2026-06-03',
-    heat: 9,
+    id: 'e47',
+    source: '新浪财经/界面新闻/钛媒体/DoNews/路透社',
+    date: '2026-06-09',
+    heat: 10,
+    title: '苹果Siri AI因DMA互操作性合规冲突缺席欧盟iOS 27首发：欧盟拒绝18个月豁免申请，监管与安全僵局凸显AI监管核心矛盾',
+    summary:
+      '2026年6月8日-10日，苹果公司与欧盟委员会围绕新版Siri AI的欧盟发布深陷监管僵局。苹果宣布新版Siri AI将随iOS 27及iPadOS 27发布，但受DMA影响，欧盟用户无法在iPhone及iPad上使用该功能，watchOS 27亦受连带影响。欧盟用户仅可在macOS 27及visionOS 27上访问Siri AI。苹果副总裁Craig Federighi表示，苹果曾向欧盟提交包含Trusted System Agent（可信系统智能体）安全中间层及18个月分阶段开放计划在内的多项技术方案，但均遭欧盟委员会拒绝。苹果指出，欧盟要求其赋予第三方AI系统对用户设备的广泛访问权限——包括读写短信、执行购买、访问文件及跨应用操作，苹果认为此举对用户隐私和安全构成重大风险。欧盟发言人Thomas Regnier坚决回应：欧盟法律不可谈判，苹果未能开发出符合DMA要求的互操作性解决方案，DMA并不禁止苹果推出新产品，但任何守门人不得封闭市场。当前苹果尚无Siri AI在欧盟iOS及iPadOS上线的时间表。',
+    overallImpact:
+      '此案是DMA实施以来最具标志性的AI监管冲突，体现了欧盟互操作性义务与平台安全架构之间的根本矛盾。欧盟坚持系统级AI能力必须向第三方开放；苹果以隐私安全为由拒绝。最终结局——macOS可用而iOS不可用——暗示合规方案存在技术路径而非全有全无。此案与欧盟对谷歌Android AI系统级能力开放要求（7月底裁决）、强制Meta开放WhatsApp AI接口（6月9日）共同构成欧盟DMA在AI领域的三大前沿执法行动，正在划定AI时代平台开放的边界。',
+    industryImpact:
+      '中国AI出海企业启示：\n\n1. 互操作性必须提前布局：若AI助手在欧盟月活超4500万被认定为守门人，DMA要求其AI功能向竞争对手开放系统级能力，需提前设计合规的开放架构\n2. 隐私安全不能作为唯一理由：苹果以隐私为由的拒绝未被欧盟接受，说明合规需提出实质性的技术解决方案\n3. 架构灵活性：苹果在macOS/visionOS上线而在iOS/iPadOS不上线的分化策略提供了合规替代思路\n4. 合规投资必要性：苹果投入大量资源仍被拒绝，说明与欧盟监管机构的沟通需要更充分的技术准备和更早的启动时机',
+    tags: ['苹果', 'Siri AI', 'DMA', '欧盟', '互操作性', 'AI助手', 'iOS 27', '隐私安全'],
+    link: 'https://finance.sina.com.cn/jjxw/2026-06-09/doc-iniavfsq3172762.shtml',
+    isNew: true,
+  },
+  {
+    id: 'e46',
+    source: '英国CMA/新浪财经/腾讯新闻/钛媒体',
+    date: '2026-06-04',
     title: '法国DGCCRF对SHEIN开出2200万欧元罚单：订单信息缺失、退货告知不足与环保披露违规，累计罚款超2.12亿欧元',
     summary:
       '2026年6月3日，法国市场竞争、消费和反欺诈总局（DGCCRF）对快时尚跨境电商平台SHEIN开出总计约2200万欧元罚单。处罚分两项：1670万欧元因订单确认邮件缺少价格、销售主体名称、交货时间等关键信息违反法国消费者法；580万欧元因未完整履行14天无理由退货告知义务以及未披露合成纤维产品洗涤过程中微塑料释放的环境风险。法国中小企业事务部长公开表示将持续监管执法，否则将勒令整改或退出法国市场。SHEIN表示异议，认为处罚金额过高且存在歧视性，已着手准备行政上诉。这是SHEIN继2025年7月虚构折扣（4000万欧元）、Cookie数据隐私违规（1.5亿欧元）后在法国的第三轮重大处罚，累计罚款超2.12亿欧元。',
@@ -732,6 +747,7 @@ const enforcementCases: NewsItem[] = [
 ];
 
 const regulatoryCalendar: RegulatoryEvent[] = [
+  { date: '2026-06-10', title: '欧盟临时措施：强制Meta向竞争对手AI助手免费开放WhatsApp接口' },
   { date: '2026-05-01', title: '苹果外部支付新政策欧盟生效' },
   { date: '2026-05-15', title: 'DMA守门人合规报告提交截止' },
   { date: '2026-06-01', title: 'AI Act高风险AI系统禁令全面执行' },

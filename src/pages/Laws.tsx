@@ -17,9 +17,9 @@ const legislationItems: LegislationItem[] = [
     name: '《数字市场法》(DMA) — 守门人合规义务',
     status: '已生效',
     summary:
-      '2024年3月起全面生效，针对苹果、谷歌、Meta等守门人平台设定开放义务。2026年6月3日欧盟普通法院对Meta案做出混合裁决（支持Marketplace挑战但维持Messenger认定），创DMA判例。DMA执法范围正向云计算（AWS/Azure守门人认定调查）、AI助手（Android系统级AI能力开放）扩展。违反者最高可处全球营收10%罚款。',
+      '2024年3月起全面生效，针对苹果、谷歌、Meta等守门人平台设定开放义务。2026年6月3日欧盟普通法院对Meta案做出混合裁决（支持Marketplace挑战但维持Messenger认定），创DMA判例。DMA执法范围正向云计算（AWS/Azure守门人认定调查）、AI助手（Android系统级AI能力开放）扩展。2026年6月9日，欧盟通过17年来首项临时措施强制Meta向竞争对手AI助手免费开放WhatsApp，多法并用构建AI竞争监管网络。违反者最高可处全球营收10%罚款。',
     impactScope: '所有在欧盟运营的应用商店、社交媒体平台、搜索引擎',
-    updateTime: '2026-06-05',
+    updateTime: '2026-06-10',
   },
   {
     id: '2',
@@ -58,7 +58,7 @@ const legislationItems: LegislationItem[] = [
     updateTime: '2026-06-01',
   },
   {
-    id: '5',
+    id: '6',
     name: '《维修权指令》（Right to Repair） — 硬件可持续性新规',
     status: '已生效',
     summary:
