@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-021',
+    source: 'European Commission (欧盟委员会)',
+    date: '2026-06-12',
+    heat: 8,
+    title: '欧盟与巴西签署数字合作伙伴协议，DSA未成年人保护执法协作首次扩展至拉美',
+    summary:
+      '2026年6月12日，欧盟与巴西正式签署数字合作伙伴协议（EU-Brazil Digital Partnership）。同日，欧盟委员会DSA执法部门与巴西国家数据保护局（ANPD）签署行政安排，聚焦未成年人网络保护执法协作。这是欧盟DSA框架首次与拉美经济体建立正式跨境合作机制。欧盟科技主管维尔库宁表示欧盟正通过深化与巴西、韩国的合作降低对美技术依赖。此前欧盟已于5月5日与日本建立类似机制，现形成亚太-拉美的全球DSA执法协作网络。',
+    overallImpact:
+      '欧盟DSA合作网络全球化趋势明确，合规标准正通过双边协议输出至主要经济体。巴西作为拉美最大经济体与DSA对接将产生区域辐射效应。',
+    industryImpact:
+      '在巴西运营的中国企业需同时满足巴西本地数字保护法与欧盟DSA标准的双重合规要求。未成年人保护成为国际合作优先领域。',
+    tags: ['欧盟委员会', '巴西', 'DSA', '数字合作伙伴', '未成年人保护'],
+    link: 'https://digital-strategy.ec.europa.eu/en/news',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-020',
     source: 'European Commission (欧盟委员会)',
     date: '2026-06-09',
