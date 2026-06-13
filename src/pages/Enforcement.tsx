@@ -10,6 +10,22 @@ const enforcementStats = [
 
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e50',
+    source: '凤凰网/搜狐网/老虎社区/Reuters',
+    date: '2026-06-12',
+    heat: 8,
+    title: 'Meta与TikTok在欧盟法院赢得DSA监管费诉讼：法院判收费程序违规，欧盟首次在DSA相关诉讼中败诉',
+    summary:
+      '2026年6月12日，欧盟普通法院就Meta和TikTok对欧盟委员会依据DSA收取年度监管费所提出的挑战作出裁决，支持两家公司核心主张。根据DSA，欧盟委员会要求Meta、TikTok及其他16家公司支付相当于全球年度净收入0.05%的监管费，以覆盖DSA监督行政成本。费用计算基于月活跃用户数及盈亏情况。法院裁定欧盟委员会在确定费用前必须先制定明确的用户数量计算规则，程序违规，给予12个月时间修正方法，否则可能退还已缴费用。这是DSA生效以来欧盟委员会首次在该法案相关诉讼中败诉。Meta和TikTok均对判决表示欢迎。',
+    overallImpact:
+      '此案具有重要程序性判例意义——欧盟机构在行使权力前必须先建立清晰透明规则。但实质影响有限，不否定监管费合法性本身，仅要求程序更透明。被监管企业仍需履行DSA全部实体义务。Meta和TikTok的胜诉不改变其在DSA框架下的合规地位。',
+    industryImpact:
+      '中国出海企业启示：1）程序性救济权利可用——遭遇程序不合规的监管行为可参照此案例在欧盟法院主张程序性抗辩；2）DSA合规成本不可回避，监管费为行政执行体系组成部分；3）需建立精确可审计的欧盟月活用户数据统计体系，因为DSA费用与此直接挂钩。',
+    tags: ['Meta', 'TikTok', 'DSA', '欧盟法院', '监管费', '诉讼', '普通法院'],
+    link: 'https://ishare.ifeng.com/c/s/v002BQeFFMCNMTCLgTKHFU1MoDdOptxOnm2kITrQf8t9bCM__',
+    isNew: true,
+  },
+  {
     id: 'e47',
     source: '新浪财经/界面新闻/钛媒体/DoNews/路透社',
     date: '2026-06-09',
