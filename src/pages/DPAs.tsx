@@ -53,6 +53,22 @@ const dpaUpdates: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'dpa-eu-023',
+    source: 'ETSI/C114通信网/同花顺财经',
+    date: '2026-06-12',
+    heat: 8,
+    title: 'ETSI发布欧盟首批数字身份认证规范：eIDAS 2.0数字钱包基础设施标准出炉',
+    summary:
+      '2026年6月12日，欧洲电信标准化协会（ETSI）发布欧盟首批区域性数字身份认证规范，共24种以上标准。这些标准为eIDAS 2.0框架下的欧洲数字身份钱包（EUDI Wallet）提供技术基础，覆盖认证配置文件、信任列表格式、远程签名和身份验证协议。4.5亿欧盟公民将从该计划受益。ETSI将在18个月内继续制定更多规范。',
+    overallImpact:
+      'eIDAS 2.0数字钱包落地迈出实质性一步，VLOP须接受EUDI钱包用于用户身份验证。面向欧盟的数字平台需在2026年底前完成技术对接。',
+    industryImpact:
+      '出海企业需关注VLOP身份验证义务的扩展要求，评估EUDI钱包技术对接成本。金融科技、医疗、政务行业将率先受益于统一数字身份。',
+    tags: ['ETSI', 'eIDAS 2.0', '数字身份', 'EUDI Wallet', '数字钱包', '电子签名', '欧盟'],
+    link: 'https://www.c114.com.cn/4app/3542/a1312098.html',
+    isNew: true,
+  },
+  {
     id: 'dpa-fr-001',
     source: 'France DGCCRF (法国竞争、消费与反欺诈总局)',
     date: '2026-06-03',
