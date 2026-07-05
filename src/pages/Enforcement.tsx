@@ -792,6 +792,22 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.autoriteitpersoonsgegevens.nl/en/news',
     isNew: true,
   },
+  {
+    id: 'e51',
+    source: '欧盟法院（ECJ）/新华网/新浪财经',
+    date: '2026-07-02',
+    heat: 10,
+    title: '欧盟法院终审维持谷歌41.25亿欧元安卓反垄断罚款，确立预装协议滥用市场支配地位判例',
+    summary:
+      '2026年7月2日，欧盟法院（European Court of Justice）作出终审判决，驳回谷歌关于2018年EC安卓反垄断决定的上诉，维持41.25亿欧元罚款。法院确认谷歌通过安卓系统预装协议强制手机制造商预装Google Search和Chrome浏览器构成滥用市场支配地位。2022年欧盟普通法院（General Court）维持反垄断认定但将罚款从43.4亿减至41.25亿。法院强调排他性预装安排限制竞争、损害消费者选择权。此判决为终审且不可再上诉。',
+    overallImpact:
+      '此案是欧盟最高司法机构对数字平台反垄断执法首次作出的终审判决，创下了欧盟竞争法历史性判例：明确了"排他性预装协议"作为滥用市场支配地位的认定标准，确认了EC在数字反垄断领域的自由裁量权。此判决虽不直接影响已在运行的DMA，但为DMA框架下的守门人义务执法提供了司法正当性支撑。谷歌可能面临后续第三方损害赔偿请求。',
+    industryImpact:
+      '对移动生态核心启示：\n\n1. 安卓开源但预装不可强制：安卓系统虽开源，但GMS授权中的排他性预装要求在欧盟被认定为违法\n\n2. 中国手机厂商预警：小米、OPPO、vivo等若在欧盟市场达到守门人标准，须避免排他性预装安排\n\n3. 捆绑行为零容忍：操作系统+搜索+浏览器的捆绑已被判违法，类似硬件+软件+服务的捆绑模式面临同样风险\n\n4. 后续诉讼风险：Affected competitors may claim damages following final judgment',
+    tags: ['谷歌', '安卓', '反垄断', '欧盟法院', '终审', '预装协议', '41亿欧元'],
+    link: 'https://www.news.cn/20260702/c6021433c383440991410462dc0bbfe7/c.html',
+    isNew: true,
+  },
 ];
 
 const regulatoryCalendar: RegulatoryEvent[] = [
