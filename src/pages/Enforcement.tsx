@@ -793,6 +793,22 @@ const enforcementCases: NewsItem[] = [
     isNew: true,
   },
   {
+    id: 'e52',
+    source: 'noyb.eu/CNIL/法国最高行政法院',
+    date: '2026-03-15',
+    heat: 8,
+    title: '法国最高行政法院维持Criteo 4000万欧元GDPR罚款，确立假名化标识符≠匿名化判例',
+    summary:
+      '2026年3月，法国最高行政法院（Conseil d\'État）驳回法国广告科技公司Criteo的上诉，维持CNIL 2023年对其处以的4000万欧元GDPR罚款。Criteo是欧洲最大行为重定向广告公司（跟踪约3.7亿欧洲用户），其商业模式通过跨站追踪cookie收集用户浏览行为并定向投放广告。CNIL调查基于noyb和Privacy International 2018年投诉，发现Criteo在多项GDPR违规：未提供有效撤回同意选项、缺乏透明度、未满足删除权和访问权。核心法律争议：Criteo主张其使用的假名化标识符不构成个人数据。法院裁定：只有再识别风险"微不足道且实践中不可行"才视为匿名化，Criteo以广告为目的跨站追踪可交叉引用大量数据，其标识符构成个人数据。',
+    overallImpact:
+      '此判决确立欧盟数据保护重要判例：假名化≠匿名化。对法国广告科技行业影响深远——法国是欧洲最大广告科技市场之一，Criteo案件为RTB（实时竞价）生态的数据合规设定严格审查基准。判决恰逢Digital Omnibus立法辩论关键期，实质否定了欧盟委员会拟缩窄个人数据定义的改革方向。',
+    industryImpact:
+      '对出海广告技术企业：1) 假名化不能作为GDPR合规安全港，面向欧盟的广告技术需评估数据处理合法性基础；2) 行为广告面临日益严格审查；3) 建议建立基于第一方数据和上下文广告的替代方案',
+    tags: ['Criteo', 'CNIL', '法国最高行政法院', 'GDPR', '罚款', '假名化', '匿名化', '行为广告', '4000万欧元'],
+    link: 'https://noyb.eu/en/conseil-detat-upholds-criteos-eu40m-gdpr-fine',
+    isNew: true,
+  },
+  {
     id: 'e51',
     source: '欧盟法院（ECJ）/新华网/新浪财经',
     date: '2026-07-02',
