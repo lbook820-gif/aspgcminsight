@@ -2001,6 +2001,118 @@ const allNews: NewsItem[] = [
     link: 'https://news.qq.com/rain/a/20260709A029KI',
     isNew: true,
   },
+  {
+    id: '2026-109',
+    source: 'EDPB/欧洲数据保护委员会',
+    date: '2026-06-25',
+    heat: 7,
+    title: 'EDPB更新One-Stop-Shop判例摘要，聚焦反对权与删除权跨境执法实践',
+    summary:
+      '2026年6月25日，欧洲数据保护委员会（EDPB）更新了其One-Stop-Shop（OSS）判例摘要（Case Digest），新增关于反对权（第21条）和删除权（第17条）的跨境执法案例。该摘要是EDPB编制的系统性法律汇编，汇总了各成员国数据保护机构通过OSS机制处理的跨境GDPR执法案例，旨在为企业和监管机构提供统一的执法标准参考。本次更新反映了DPA在社交媒体数据删除和定向广告反对权方面的最新执法实践。',
+    overallImpact:
+      'OSS判例摘要的持续更新增强了GDPR跨境执法的透明度和可预见性。企业在评估跨境数据处理合规风险时，可通过该摘要了解各成员国DPA在同类案件中的执法倾向，降低欧盟内部法律解释不一致带来的合规不确定性。对于社交媒体、广告科技和数据处理密集型行业，反对权与删除权的判例积累尤其具有参考价值。',
+    industryImpact:
+      '1) 社交媒体和数据平台应关注判例中关于删除权适用的新标准，特别是搜索引擎和社交平台上"被遗忘权"的执行边界；2) 数字广告企业需关注反对权（Opt-out）的实施标准，确保用户的反对选择权得到有效保障；3) 建议法律合规团队定期跟踪EDPB判例摘要更新，将其作为跨境数据保护合规的内部指南',
+    tags: ['EDPB', 'One-Stop-Shop', '判例摘要', '反对权', '删除权', 'GDPR', '跨境执法'],
+    link: 'https://www.edpb.europa.eu/news/one-stop-shop-case-digest-right-object-and-right-erasure-updated_en',
+    isNew: true,
+  },
+  {
+    id: '2026-110',
+    source: 'EDPB/欧洲数据保护委员会',
+    date: '2026-06-24',
+    heat: 6,
+    title: 'EDPB推出一致性联络专用表单，加强GDPR跨境执行协调',
+    summary:
+      '2026年6月24日，EDPB推出专用联络表单（Dedicated Contact Form），供利益相关方报告GDPR在欧洲各国间解释和执行可能存在的分歧。该表单是EDPB《赫尔辛基声明》承诺的一部分，旨在加强利益相关方对话，确保GDPR跨境执行的一致性。EDPB将定期汇总提交信息，由委员会高层讨论可能的改进措施。此举回应了跨国企业对GDPR各国执法标准不一致的长期关切。',
+    overallImpact:
+      '这是一项程序性的但具有重要信号意义的举措。EDPB通过建立系统性反馈渠道，主动收集市场对执法不一致的投诉，将加速GDPR跨境执法的统一化进程。对跨国企业而言，这意味着此前因各国DPA执法差异而形成的"合规套利"空间将进一步收窄。',
+    industryImpact:
+      '1) 企业可通过该表单向EDPB报告在多个成员国遇到的执法解释差异问题，尤其是在数据跨境传输、同意机制和DPIA等领域的标准不统一；2) 建议出海企业合规团队熟悉该反馈机制，在遭遇成员国间执法冲突时及时利用该渠道；3) 表单的推出预示着EDPB将在未来更主动地推动各国监管标准对齐',
+    tags: ['EDPB', 'GDPR', '一致性', '联络表单', '跨境执行', '赫尔辛基声明'],
+    link: 'https://www.edpb.europa.eu/news/supporting-gdpr-consistency-edpb-launches-dedicated-form_en',
+    isNew: true,
+  },
+  {
+    id: '2026-111',
+    source: 'EDPB/欧洲数据保护委员会',
+    date: '2026-06-12',
+    heat: 6,
+    title: 'EDPB协同监管委员会扩展至Eurodac，欧盟庇护与移民数据监管升级',
+    summary:
+      '2026年6月12日，EDPB的协同监管委员会（Coordinated Supervision Committee, CSC）宣布将监管范围扩展至Eurodac系统。Eurodac是欧盟庇护和移民管理信息系统，最初用于比对庇护申请者和非法移民的指纹，现已发展为全面的移民管理系统，对落实《都柏林III条例》至关重要。该系统自2003年运行，涵盖所有欧盟成员国及冰岛、列支敦士登、挪威和瑞士。国家DPA监管国内机构的数据处理，EDPS监管中央单元，今后由CSC提供协同监管，确保数据保护标准的一致性。',
+    overallImpact:
+      'CSC监管范围的扩展反映了欧盟大规模IT系统数据保护治理的体系化趋势。随着Eurodac、SIS、VIS等欧盟级数据系统的数据共享和互操作性增强，协同监管机制确保了数据保护标准在不同系统间的协调一致。对处理移民数据和跨境身份信息的企业而言，这一变化意味着更严格的监管审查。',
+    industryImpact:
+      '1) 为欧盟移民和边境管理提供IT服务或数据处理支持的企业将面临更高的数据保护合规要求；2) 协同监管机制可能对生物识别数据和敏感个人数据的跨境处理提出更严格的约束；3) 涉及身份验证和生物识别技术的出海企业需关注CSC在Eurodac监管中的实践标准，作为未来合规参考',
+    tags: ['EDPB', 'CSC', '协同监管', 'Eurodac', '移民数据', '都柏林III', '数据保护'],
+    link: 'https://www.edpb.europa.eu/news/coordinated-supervision-committee-extends-scope-to-include-eurodac_en',
+    isNew: true,
+  },
+  {
+    id: '2026-112',
+    source: 'EDPB/欧洲数据保护委员会',
+    date: '2026-06-10',
+    heat: 8,
+    title: 'EDPB与欧盟专员McGrath会晤并采纳通用数据泄露通报模板，统一28国通报标准',
+    summary:
+      '2026年6月10日，EDPB与欧盟司法专员Michael McGrath会晤并正式通过新版通用数据泄露通报模板（Template for personal data breach notification）。该模板将GDPR第33条和第34条的通报义务转化为统一的结构化操作表单，涵盖泄露分类（保密性/完整性/可用性）、风险等级评估、数据主体告知触发条件等字段，征求意见截止至2026年8月5日。这是欧盟统一数据泄露通报实践的关键一步，此前28个成员国各有不同的通报格式和流程。',
+    overallImpact:
+      '统一数据泄露通报模板是GDPR操作层面协调化的重要里程碑。此前跨国企业在欧盟遭遇数据泄露时，需同时向多个成员国监管机构提交不同格式的通报，行政负担极高。统一模板将大幅降低合规成本，同时减少因格式差异导致的通报延迟或遗漏风险。模板长达30页，融合了EDPB过往指南和各国执法实务，将透明义务转化为可操作的标准。',
+    industryImpact:
+      '1) 在欧盟运营的企业应立即研究该统一模板，调整内部数据泄露应急响应流程和通报模板；2) 8月5日征求意见期为企业提供了政策反馈机会，建议通过行业组织提交意见；3) 中国出海企业应关注该模板中对泄露时间线、补救措施、跨境影响评估等字段的具体要求，提前建立符合标准的内控流程；4) 模板与国际主流数据泄露通报实践（如NIST框架）的差异值得关注',
+    tags: ['EDPB', '数据泄露通报', 'GDPR第33条', 'GDPR第34条', '统一模板', 'McGrath', '合规'],
+    link: 'https://www.edpb.europa.eu/news_en',
+    isNew: true,
+  },
+  {
+    id: '2026-113',
+    source: 'EDPB/EDPS',
+    date: '2026-05-19',
+    heat: 7,
+    title: 'EDPB与EDPS联合支持加强欧盟网络安全，强调数据保护与网络安全的协同',
+    summary:
+      '2026年5月19日，EDPB与EDPS联合发布关于欧盟网络安全法案2.0（CSA2）和NIS2指令修正提案的联合意见。EDPB和EDPS支持加强ENISA（欧盟网络信息安全局）的作用、推动网络安全认证、解决ICT供应链风险的目标，同时强调网络安全措施的实施不得削弱个人基本权利和自由。EDPS Wiewiórowski表示，安全与隐私必须并驾齐驱。联合意见还支持ENISA与EDPB之间建立正式的咨询协作机制。',
+    overallImpact:
+      '这是数据保护监管机构与网络安全监管协同的又一重要信号。联合意见明确了GDPR与NIS2/CSA2之间的合规边界：网络安全措施虽有助于数据保护，但不应成为无限制处理个人数据的理由。对于受NIS2和GDPR双重约束的数字基础设施运营者，该意见提供了跨法规合规的指导方向。',
+    industryImpact:
+      '1) 同时受NIS2和GDPR约束的云服务商、数字基础设施运营者需关注两法合规交叉点；2) 网络安全认证要求可能增加ICT供应链的合规成本，企业应评估现有供应商的认证状态；3) ENISA-EDPB咨询协作机制意味着未来网络安全认证和隐私认证可能形成统一框架',
+    tags: ['EDPB', 'EDPS', '网络安全', 'NIS2', 'CSA2', 'ENISA', '数据保护', '供应链安全'],
+    link: 'https://www.edpb.europa.eu/news/edpb-and-edps-support-strengthening-eus-cybersecurity-and-easing-compliance-while-protecting_en',
+    isNew: true,
+  },
+  {
+    id: '2026-114',
+    source: 'noyb.eu/EDPB/EDPS',
+    date: '2026-02-28',
+    heat: 10,
+    title: 'Digital Omnibus：EDPB与EDPS联合意见拒绝多项GDPR修改提案，称简化实为限制数据保护',
+    summary:
+      '2026年2月，EDPB与EDPS针对欧盟委员会数字综合简化法案（Digital Omnibus）发布联合意见，对多项核心GDPR修改提案提出严重关切并予以拒绝。意见明确反对缩小个人数据定义、限制访问权、以及赋予委员会自行判定假名化数据资格的扩权行为。对于AI训练基于合法利益的条款，意见指出现行草案并未解决实际问题，企业仍需进行三步测试。EDPB主席Anu Talus强调，拟议修改并非技术修正或简化措施，而是对欧盟居民数据保护权的实质性限制。',
+    overallImpact:
+      '这是Digital Omnibus立法博弈中的分水岭事件。EDPB作为最具影响力的独立数据保护机构，其联合意见在欧盟立法程序中具有重大权重。EDPB明确拒绝多项提案后，欧洲议会和理事会在后续谈判中极大概率会采纳其意见调整法案文本。对全球企业而言，这意味着GDPR的核心条款短期内不会发生实质性弱化，基于简化预期的合规战略调整需重新评估。',
+    industryImpact:
+      '1) AI企业合规策略：如果企业已基于Digital Omnibus提案中AI训练可基于合法利益的预期调整数据策略，现在需维持原有的GDPR合规框架；2) 数据定义变化风险消除：以非个人数据为由规避GDPR的实践将面临更大法律风险；3) 访问权保护：用户数据访问权（SAR）仍是企业必须严肃对待的核心合规义务；4) 建议出海企业以EDPB/EDPS联合意见为基准评估GDPR合规策略',
+    tags: ['Digital Omnibus', 'EDPB', 'EDPS', 'GDPR改革', '个人数据定义', '访问权', 'AI训练', '简化法案'],
+    link: 'https://noyb.eu/en/digital-omnibus-eu-dpas-reject-many-proposed-changes-gdpr',
+    isNew: true,
+  },
+  {
+    id: '2026-115',
+    source: 'noyb.eu',
+    date: '2026-05-05',
+    heat: 7,
+    title: 'noyb投诉LinkedIn将GDPR权利锁定在付费墙后，微软子公司面临奥地利DPA调查',
+    summary:
+      '2026年5月5日，noyb向奥地利数据保护机构（DSB）正式投诉微软旗下LinkedIn，指控其将GDPR数据主体权利行使锁定在付费墙之后。具体而言，LinkedIn要求用户必须登录账户并接受数据追踪才能行使访问权（Article 15 GDPR）和下载个人数据。noyb指出，GDPR第12条第5款明确规定数据主体权利的行使不得收取费用，LinkedIn的做法实质上是将基本权利货币化。此前，奥地利DPA已就LinkedIn类似的数据访问限制问题展开初步评估。',
+    overallImpact:
+      '此案聚焦于GDPR基本权利行使中的付费墙问题，具有广泛的行业影响。数字平台以付费或登录为条件限制用户行使数据权利的实践日益普遍，从Meta的付费或同意到LinkedIn的登录方可访问，再到新闻媒体的数据访问收费。奥地利DPA的裁决将为GDPR下数据主体权利是否可设定经济门槛提供重要判例。',
+    industryImpact:
+      '1) 出海社交和内容平台应确保用户行使GDPR权利（访问权、删除权、数据可携带权）时无需登录或付费；2) 建议审查当前数据主体请求处理流程中是否存在任何形式的经济障碍或登录要求；3) 此案与Schibsted、Meta的付费或同意案例形成系列诉讼链条',
+    tags: ['LinkedIn', 'noyb', '付费墙', '访问权', 'GDPR', '数据主体权利', '微软', '奥地利DPA'],
+    link: 'https://noyb.eu/en/linkedin-locks-your-gdpr-rights-behind-paywall',
+    isNew: true,
+  },
 ];
 
 const dynamicCards: DynamicCard[] = [
