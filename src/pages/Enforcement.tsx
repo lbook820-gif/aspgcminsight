@@ -972,9 +972,27 @@ const enforcementCases: NewsItem[] = [
     link: "https://noyb.eu/en/nordic-media-giant-schibsted-switches-pay-or-okay-complaint-filed",
     isNew: true,
   },
+  {
+    id: 'e59',
+    source: '欧盟委员会/路透社/彭博社/新浪科技',
+    date: '2026-07-20',
+    heat: 10,
+    title: '欧盟委员会对AliExpress开出5.5亿欧元DSA创纪录罚单：认定三大系统性风险管控失败',
+    summary:
+      '2026年7月20日，欧盟委员会对AliExpress处以5.5亿欧元DSA罚款，为DSA生效以来最高罚单。调查始于2024年3月，认定三项核心违规：1）系统风险评估不充分，内容审核人力配置严重不足；2）推荐与广告系统未能阻止假冒商品、不安全玩具及危险化妆品传播，违规商品被标记后仍持续在线；3）品牌审核、商家处罚及商品分类管理等风险缓释措施执行不到位。速卖通须于2026年10月20日前提交整改计划，并表示将评估上诉。',
+    overallImpact:
+      'DSA实施以来针对中国跨境电商平台的最高罚单，标志着从"引导合规"到"全面执法"的阶段转折。此前Temu被罚2亿欧元，处罚金额呈梯度攀升态势。本案核心法律贡献：DSA的系统性风险评估须经过欧盟委员会的实质性穿透审查，提交风险管理文档本身不足以满足合规要求。',
+    industryImpact:
+      '对中国跨境电商行业的标志性警示：1）DSA风险评估必须实质开展，不能敷衍了事；2）平台推荐算法对非法内容的传播效果须纳入风险评估范围；3）整改承诺不能替代实质合规；4）10月20日前速卖通须提交整改方案，其他VLOP应参照此案标准提前自查以规避同类风险。',
+    tags: ['AliExpress', '速卖通', 'DSA', '欧盟委员会', '罚款', '非法商品', '跨境电商', '系统性风险'],
+    link: 'https://finance.sina.com.cn/tech/roll/2026-07-21/doc-iniiqkpe4888748.shtml',
+    isNew: true,
+  },
 ];
 
 const regulatoryCalendar: RegulatoryEvent[] = [
+  { date: '2026-07-20', title: '欧盟对AliExpress开出5.5亿欧元DSA最高罚单' },
+
   { date: '2026-06-10', title: '欧盟临时措施：强制Meta向竞争对手AI助手免费开放WhatsApp接口' },
   { date: '2026-05-01', title: '苹果外部支付新政策欧盟生效' },
   { date: '2026-05-15', title: 'DMA守门人合规报告提交截止' },
