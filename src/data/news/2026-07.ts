@@ -618,7 +618,7 @@ export const news202607: NewsItem[] = [
     tags: ['AI Act', '透明度', 'AI生成内容', '标注', '行为准则', '人工智能', '欧盟', '深度伪造'],
     link: 'https://www.163.com/dy/article/L2D56CIO05118OGM.html',
     isNew: true,
-,
+  },
   {
     id: '2026-144',
     source: '新华网/新浪财经/腾讯新闻/中国新闻网',

@@ -987,6 +987,7 @@ const enforcementCases: NewsItem[] = [
     tags: ['AliExpress', '速卖通', 'DSA', '欧盟委员会', '罚款', '非法商品', '跨境电商', '系统性风险'],
     link: 'https://finance.sina.com.cn/tech/roll/2026-07-21/doc-iniiqkpe4888748.shtml',
     isNew: true,
+  },
   {
     id: 'e63',
     source: '欧盟委员会/新华网/新浪财经/路透社',
