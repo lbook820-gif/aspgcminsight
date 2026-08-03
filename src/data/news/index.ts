@@ -1,4 +1,5 @@
 import type { NewsItem } from '@/types';
+import { news202608 } from './2026-08';
 import { news202607 } from './2026-07';
 import { news202606 } from './2026-06';
 import { news202605 } from './2026-05';
@@ -11,6 +12,7 @@ import { news2024 } from './2024';
 import { news2022 } from './2022';
 
 export const allNews: NewsItem[] = [
+  ...news202608,
   ...news202607,
   ...news202606,
   ...news202605,
