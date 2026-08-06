@@ -289,4 +289,20 @@ export const news202608: NewsItem[] = [
     link: 'https://www.163.com/dy/article/L386HR9G05567I2C.html',
     isNew: true,
   },
+  {
+    id: '2026-175',
+    source: 'ENISA官网',
+    date: '2026-08-06',
+    heat: 6,
+    title: 'ENISA扩大CVE项目作用：北约NCIA与AI网络安全创新企业AISLE加入CVE编号机构，ENISA Root下CNA增至20家',
+    summary:
+      '2026年8月6日，欧洲网络安全局（ENISA）宣布进一步扩大其在全球CVE™漏洞披露项目中的作用。北约通信与信息局（NATO NCIA）以及人工智能与网络安全创新企业AISLE加入CVE编号机构（CNA），归入ENISA Root管理之下。ENISA在MITRE Root下持续保留欧盟能力，目前ENISA Root下已有20家CNA，其中8家从MITRE Root转入ENISA Root。ENISA首席网络安全与运营官Hans de Vries表示，全球网络安全形势的最新发展，叠加前沿AI模型对漏洞发现与利用的影响，凸显了构建强大漏洞管理基础设施与能力的必要性。新增CNA涵盖CSIRTs、供应商、国际联盟与安全研究机构等多个领域，进一步支持CVE项目扩大全球参与、提升质量与运营能力的目标。同日在黑帽安全大会（Black Hat）上，ENISA事件与漏洞服务部门主管与美CISA漏洞响应与协调部门负责人共同探讨了全球CVE项目的演进方向。',
+    overallImpact:
+      'ENISA作为CVE项目欧洲根节点角色进一步做实：自2025年11月成为欧洲实体CVE Root以来，ENISA持续扩容其下属CNA，此次纳入北约NCIA与AISLE，使欧盟在全球漏洞管理生态中的话语权与自主任命能力显著增强。叠加8月2日AI Act透明度执法启动、CRA 9月11日漏洞报告义务倒计时，欧盟正构筑"AI+漏洞管理+网络弹性"一体化网络安全防线。ENISA Root扩容也意味着在欧运营的各类IT/安全厂商、云服务商及关键基础设施机构，将更多直接接受ENISA主导的漏洞编号与披露节奏管理，需提前适应其CVE记录发布规则与时限。',
+    industryImpact:
+      '对出海欧盟的科技与安全企业：1) CVE漏洞披露节奏与规则正逐渐向ENISA Root集中，在欧有漏洞披露义务（尤其CRA 9月11日起）的企业应同步对接ENISA的CVE记录发布要求，避免因披露流程不一致造成合规缺口；2) 北约NCIA加入CNA反映CVE机制正嵌入跨大西洋与国防供应链安全合作，军事/政府级安全需求将传导至漏洞管理合规；3) 前沿AI模型加剧漏洞发现与利用的双向加速，企业需强化"设计阶段安全"并将漏洞管理纳入供应链安全审查。',
+    tags: ['ENISA', 'CVE', '漏洞管理', '网络安全', 'CRA', 'AI', '北约', '欧盟', '供应链安全'],
+    link: 'https://www.enisa.europa.eu/news/enisa-scales-up-its-role-in-the-cve-program',
+    isNew: true,
+  },
 ];
