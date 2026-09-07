@@ -1155,6 +1155,22 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-announces-final-decision-following-inquiry-health-service-executive-hse',
     isNew: true,
   },
+  {
+    id: 'e74',
+    source: '美国司法部/观察者网/新浪财经',
+    date: '2026-08-21',
+    heat: 8,
+    title: 'TikTok与字节跳动同美国司法部就儿童隐私案达成4亿美元和解：COPPA史上最大和解之一',
+    summary:
+      '2026年8月21日，美国司法部宣布TikTok、字节跳动及关联实体同意支付4亿美元（约26.89亿元人民币），了结一宗持续两年的儿童隐私诉讼，其中立即支付3亿美元、待法院撤销针对TikTok前身Musical.ly的旧同意令后再支付1亿美元，为美国《儿童在线隐私保护法》（COPPA）史上最大和解之一。诉讼始于2024年8月，FTC移送后DOJ起诉，指控TikTok在明知部分用户未满13岁情况下仍允许儿童开普通账户，未通知父母、未取得同意即收集保留个人信息，即使在Kids Mode中也被指曾收集儿童电子邮箱，家长删除请求未获及时处理，识别与删除未成年人账户机制存在缺陷。DOJ强调诉讼提起后TikTok的所有权、管理层、合规体系与隐私实践发生“重大变化”，已实质推进诉讼追求的公共利益。',
+    overallImpact:
+      '本案标志TikTok在美国监管路线从“被赶出”转向“被管起来”。2026年1月字节跳动完成TikTok美国业务重组（USDS合资公司，美国及全球投资者持股80.1%，字节跳动保留19.9%，数据与算法由美国云承载），叠加4亿美元和解，TikTok在美生存危机进一步消解。与Meta超百亿美元州和解、巴西ANPD对字节约3000万美元未成年人罚款叠加，未成年人数据保护成为全球平台监管最强执法抓手。',
+    industryImpact:
+      '中国出海社交平台启示：1) 未成年人（<13岁及青少年）数据保护是全球处罚最重领域，须建立严格年龄验证、家长同意、数据删除机制，避免Kids Mode等专项功能合规漏洞；2) 可通过“美国化合资”+本土云承载数据将高政治风险转化为可管理合规问题；3) 巨额和解伴随持续整改与报送义务，需预留长期合规投入。',
+    tags: ['TikTok', '字节跳动', '美国司法部', 'COPPA', '儿童隐私', '和解', '未成年人保护', 'USDS', '出海合规'],
+    link: 'https://www.guancha.cn/internation/2026_08_22_828252.shtml',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
