@@ -1171,6 +1171,22 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.guancha.cn/internation/2026_08_22_828252.shtml',
     isNew: true,
   },
+  {
+    id: 'e75',
+    source: '爱尔兰数据保护委员会(DPC)',
+    date: '2026-09-08',
+    heat: 5,
+    title: '爱尔兰DPC通过刑事公诉追究Brown Thomas Arnotts营销违法行为：长期发送未经同意营销通讯且退订功能失效，法院适用缓刑令并处罚金',
+    summary:
+      '2026年9月7日，爱尔兰都柏林城市地区法院在DPC提起的公诉案中对百货零售商Brown Thomas Arnotts Limited作出裁决。该公司对21项指控中的5项代表案件认罪，涉及违反《2011年第336号法定文书》第13条（ePrivacy条例）关于未经请求营销通讯的规定：3项为未向收件人提供有效退订地址（退订功能失败），2项为在无有效同意的情况下发送营销通讯。庭审揭示，第三方软件供应商的技术问题导致部分用户间歇性无法退订；部分投诉人此前已通过本人、电话等途径向Brown Thomas撤回直接营销同意却仍持续收到营销材料。鉴于认罪，法院依据《罪犯缓刑法》适用缓刑令，责令其捐款1000欧元（Little Flower Penny Dinners）并支付DPC法律费用1000欧元。DPC曾于2022年3月就另一起未经请求营销案对该公司发出警告。',
+    overallImpact:
+      '这是爱尔兰DPC在电子营销（ePrivacy）领域的公诉执法标本，印证其执法手段从行政罚款扩展到刑事公诉。本案即使处罚金额不大，也明确传递“技术故障不免责”“撤回同意后不得继续营销”等合规红线，对在欧盟B2C开展电子邮件/直邮营销的企业具有普遍警示意义。',
+    industryImpact:
+      '中国出海企业启示：在欧盟营销必须确保退订功能有效且可验证（含第三方供应商环节，不得以技术故障免责），用户撤回同意应即时停止营销并实时同步，建立可审计的同意与退订治理机制，防范DPC等监管机构通过行政罚款+刑事公诉双重手段追责。',
+    tags: ['DPC', '爱尔兰', 'ePrivacy', '营销', '退订', 'Brown Thomas', '公诉', '同意', '出海合规'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-welcomes-outcome-prosecution-marketing-offences-1',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
