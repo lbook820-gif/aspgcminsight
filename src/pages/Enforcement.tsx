@@ -11,7 +11,7 @@ const enforcementStats = [
 const enforcementCases: NewsItem[] = [
   {
     id: 'e78',
-    source: '爱尔兰数据保护委员会(DPC)/路透社/PA Media',
+    source: '爱尔兰数据保护委员会(DPC)官方公告',
     date: '2026-09-21',
     heat: 10,
     title: '爱尔兰DPC对谷歌开出4.03亿欧元GDPR罚单：位置数据处理缺乏合法依据、透明度失责，创DPC史上第四大罚单并要求6个月内整改',
@@ -22,7 +22,7 @@ const enforcementCases: NewsItem[] = [
     industryImpact:
       '对中国出海企业启示：1）涉及地图导航、本地生活、出行、外卖、社交、广告SDK等位置能力的产品，须重新审视处理的法律依据是否真实有效、告知能否让用户真正知晓，本案核心指控正是用户不知情；2）透明度举证不能只依赖隐私政策文本；3）留存期限须与目的严格挂钩，超期留存已被明确认定为加重情节；4）问责义务是独立违规项，须保留可自证文档；5）建议以本案为模板做欧盟位置数据专项自查。',
     tags: ['爱尔兰DPC', '谷歌', 'GDPR', '位置数据', '4.03亿欧元', '透明度', '问责义务', '出海合规'],
-    link: 'https://www.standard.co.uk/news/tech/google-gdpr-european-eea-press-association-b1297748.html',
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-fines-google-eu403-million-following-inquiry-googles-processing-location',
     isNew: true,
   },
   {

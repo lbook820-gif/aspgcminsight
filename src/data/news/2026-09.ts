@@ -419,7 +419,7 @@ export const news202609: NewsItem[] = [
   },
   {
     id: '2026-218',
-    source: '爱尔兰数据保护委员会(DPC)/路透社/PA Media',
+    source: '爱尔兰数据保护委员会(DPC)官方公告',
     date: '2026-09-21',
     heat: 10,
     title: '爱尔兰DPC对谷歌开出4.03亿欧元GDPR罚单：位置数据处理缺乏合法依据与透明度失责，创DPC史上第四大罚单并要求6个月内整改',

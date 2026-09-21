@@ -300,8 +300,10 @@ exit=0        ← 静默「通过」，质量门形同虚设
 
 > ⚠️ 请注意 `e78`/`dpa-ie-010`/`2026-218` 三条指向同一事件（DPC 谷歌罚单），
 > 这是仓库既有的跨板块复述模式（同一事件在不同板块按不同视角呈现），并非重复录入。
-> 另：DPC 官方对谷歌罚单的 press release 页面当时尚未上线，
-> 待其发布后建议将该条链接换为 DPC 官方页面（当前指向 PA Media/伦敦标准晚报报道）。
+>
+> ✅ 2026-09-21 追记：DPC 官方新闻稿已于当日上线，三条链接均已换为官方页面，
+> source 同步改为「爱尔兰数据保护委员会(DPC)官方公告」：
+> `https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-fines-google-eu403-million-following-inquiry-googles-processing-location`
 
 ---
 
