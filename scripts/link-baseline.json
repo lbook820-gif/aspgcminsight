@@ -1,0 +1,49 @@
+{
+  "_comment": "已知失效链接基线。仅用于隔离历史技术债：新增的失效链接不在其中，会导致 validate-links.js 退出码 1。修好一条请删一条。",
+  "updatedAt": "2026-09-21T10:09:30.228Z",
+  "count": 4,
+  "knownBroken": [
+    {
+      "url": "https://techcrunch.com/2025/07/28/eu-temu-dsa-investigation/",
+      "ids": [
+        "2025-012"
+      ],
+      "files": [
+        "src/data/news/2025.ts"
+      ],
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://fsfe.org/news/2024/news-20240322-01.en.html",
+      "ids": [
+        "2026-008",
+        "e7"
+      ],
+      "files": [
+        "src/data/news/2026-04.ts",
+        "src/pages/Enforcement.tsx"
+      ],
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://techcrunch.com/2026/04/26/eu-smartphone-sustainability-rules-china-brands/",
+      "ids": [
+        "2026-023"
+      ],
+      "files": [
+        "src/data/news/2026-04.ts"
+      ],
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "http://news.foodmate.net/2026/08/749969.html",
+      "ids": [
+        "2026-178"
+      ],
+      "files": [
+        "src/data/news/2026-08.ts"
+      ],
+      "reason": "HTTP 404"
+    }
+  ]
+}

@@ -30,7 +30,7 @@ export const news202603: NewsItem[] = [
     industryImpact:
       '对中国出海企业的关键启示:\n\n**合规红线**:\n- 必须建立自主的、主动的制裁筛查机制,不能仅依赖第三方工具\n- 任何涉及英国银行系统的跨境支付,无论主体所在地,均受英国法律管辖\n\n**风险应对**:\n- 发现违规后应立即主动披露,最高可获得 30% 的罚款折扣\n- 加强对高风险地区合作方的背景调查和持续监控\n\n**风险提示**:金融制裁违规属于"严重"级别,可能导致巨额罚金和严重的声誉受损。',
     tags: ['苹果', 'OFSI', '金融制裁', '俄罗斯', '跨境支付'],
-    link: 'https://www.gov.uk/government/news/ofsi-imposes-fine-on-apple-subsidiary-for-financial-sanctions-breaches',
+    link: 'https://www.gov.uk/government/publications/imposition-of-monetary-penalty-apple-distribution-international-limited',
     isNew: true,
   },
   {

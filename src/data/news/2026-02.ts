@@ -14,7 +14,7 @@ export const news202602: NewsItem[] = [
     industryImpact:
       '中国出海开发者在英国市场将迎来更透明的应用审核环境。建议开发者仔细研究 CMA 公布的承诺细节,利用新规争取更优的平台接入待遇,特别是在非游戏类应用的内购和分发方面。',
     tags: ['英国 CMA', '苹果', '谷歌', 'DMCC', '合规承诺'],
-    link: 'https://www.gov.uk/government/news/cma-accepts-commitments-from-google-and-apple',
+    link: 'https://www.gov.uk/government/news/cma-secures-commitments-from-apple-and-google-to-improve-fairness-in-app-store-processes-and-enhance-ios-interoperability',
     isNew: true,
   },
   {

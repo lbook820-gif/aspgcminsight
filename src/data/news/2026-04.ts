@@ -190,7 +190,7 @@ export const news202604: NewsItem[] = [
     industryImpact:
       '对中国 AI 出海企业的启示:\n\n**技术机会**:\n- 关注 WhatsApp 接口的开放进度,这为第三方 AI 助手进入欧洲社交生态打开了大门\n- 评估低成本接入大型社交平台的可能性\n\n**风险提示**:\n- 虽然接口可能开放,但数据合规要求(GDPR)依然极其严格\n- 需评估 Meta 可能会采取的其他非技术性限制措施',
     tags: ['Meta', 'WhatsApp', 'AI', 'DMA', '互操作性'],
-    link: 'https://www.politico.eu/article/eu-rejects-meta-ai-whatsapp-access-proposal/',
+    link: 'https://www.politico.eu/article/eu-orders-meta-to-reopen-whatsapp-to-ai-rivals-for-free',
     isNew: true,
   },
   {

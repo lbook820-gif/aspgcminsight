@@ -31,8 +31,10 @@
     - AI Office: https://digital-strategy.ec.europa.eu/en/policies/ai-office
     - ENISA: https://www.enisa.europa.eu/news
     - EBA: https://www.eba.europa.eu/news-press
-    - 瑞士 FDPIC: https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/links/news.html
-    - 德国 BfDI: https://www.bfdi.bund.de/EN/Service/Press/Press_node.html
+    - 瑞士 FDPIC: https://www.edoeb.admin.ch/en
+    - 德国 BfDI: https://www.bfdi.bund.de/EN/Home/home_node.html
+    - 德国联邦卡特尔局: https://www.bundeskartellamt.de/EN/Home/home_node.html
+    - 法国 CNIL: https://www.cnil.fr/fr/actualites
     - 土耳其 KVKK: https://www.kvkk.gov.tr/En/
     - 土耳其 RK: https://www.rekabet.gov.tr/en
   
@@ -83,19 +85,30 @@
   - 确保返回 200 状态码且有实际内容
   - 示例：`web_fetch(url="https://example.com/news")`
   
-  **方式二：使用验证脚本**
+  **方式二：使用验证脚本（推荐，覆盖全部数据源）**
   ```bash
-  # Bash 脚本（快速验证）
-  bash scripts/validate-links.sh
-  
-  # 或 Node.js 脚本（详细报告）
+  # Node.js 脚本（详细报告，推荐）
   node scripts/validate-links.js
+
+  # 冒烟测试（只验前 20 条）
+  node scripts/validate-links.js --limit 20
+
+  # Bash 脚本（薄封装，等价于上面）
+  bash scripts/validate-links.sh
   ```
-  
+
+  **脚本覆盖范围**：`src/data/news/*.ts` + `src/pages/Enforcement.tsx` + `src/pages/DPAs.tsx`
+  （新增数据源时请同步维护脚本顶部的 `SCAN_TARGETS`）
+
   **验证要求**：
-  - 验证通过才可继续构建
-  - 验证失败需修复所有无效链接后重新验证
-  - 修复方法：搜索替代链接或删除该新闻条目
+  - 验证通过（退出码 0）才可继续构建
+  - 脚本会区分三类结果：**有效** / **疑似受限（403/429，需人工用浏览器复核）** / **失效**
+  - **已知失效基线**：`scripts/link-baseline.json` 登记历史遗留的失效链接，
+    基线内的链接不阻断提交，但会在报告中单独列出；
+    **基线外的新增失效链接会导致退出码 1，必须修复**
+  - 因此该脚本只允许「不新增失效」，技术债不能扩大
+  - 修复方法：搜索替代链接（优先官方源）或删除该新闻条目
+  - 修好基线中的某条后，请手动从 `link-baseline.json` 中删除该条
   
 - `npm install`（如 node_modules 不存在）
 - `npm run build` 验证构建（检查是否存在未闭合标签或类型错误）
@@ -124,6 +137,13 @@
 - 2026-04-25：**新增监管机构官网动态检索要求，每次执行必须访问官网获取最新动态**
 - 2026-04-25：**特别强调爱尔兰DPC官网检索，确保Meta、TikTok等执法案例及时更新**
 - 2026-08-27：**新增大厂动态主动监控（强制）要求——重大执法/处罚/和解/合规调整需即时跟进并及时更新，不受每日定时窗口限制，覆盖跨法域重大动态**
+- 2026-09-21：**修复链接验证脚本严重缺陷**——原脚本仅扫描 `src/pages/Home.tsx`，而新闻数据早已迁移至 `src/data/news/*.ts`，导致脚本长期输出「未找到新闻条目」并以退出码 0 静默通过，质量门形同虚设。现扫描范围扩至全部数据源（news/*.ts + Enforcement.tsx + DPAs.tsx），改为并发验证、URL 去重、HEAD 被拒时自动降级 GET，并新增**已知失效基线**（`scripts/link-baseline.json`）机制：只拦截新增失效，不阻断历史技术债
+- 2026-09-21：**更新监管机构官网地址**——瑞士 FDPIC、德国 BfDI、德国联邦卡特尔局的原登记地址均已失效，已替换为当前有效地址；新增法国 CNIL 动态入口
+- 2026-09-21：**新增《数据法案》《欧盟儿童法案》等条目**，刷新 DMA / AI Act / DSA / GDPR / DMCC / 数字综合法 / CRA 的最新进展
+- 2026-09-21：**刷新全部四个板块**（首页/执法动态/各国监管局/法规库）至 2026-09-21，共新增新闻 1 条、执法 7 条、监管局 13 条、法规 5 部 + 行业动态 2 条
+- 2026-09-21：**清理失效链接**（18 条 → 替换 11 条、基线登记 4 条）。`2026-146`（谷歌 Play 开放第三方商店）链接换为 Google 官方页面，并修正原文「绕开谷歌 30% 抽成」等事实错误
+- 2026-09-21：**链接校验脚本第二轮加固**——HEAD 非 2xx 时用 GET 复核原始 URL（消除德国政府站点 303→400 的假阳性）；只对 `404/410/ENOTFOUND` 硬失败，`5xx/403/418/超时` 归入「疑似受限」；`--update-baseline` 改为合并语义，保证基线单调
+- 2026-09-21：**不再跟踪构建产物**——`dist/`、`.DS_Store`、`scripts/invalid-links-report.json` 加入 `.gitignore` 并取消入库（线上由 GitHub Actions 现场构建部署）
 
 ## 常见问题与解决方案
 

@@ -110,7 +110,7 @@ export const news202608: NewsItem[] = [
     industryImpact:
       '对中国出海企业的启示：1) DPC仍是欧盟对科技企业数据保护的最高频执法机构，建议持续关注DPC年度报告中的执法重点方向；2) 儿童数据保护是DPC的战略优先领域，"晒娃"调查提示企业需要关注社交平台上的未成年人数据保护设计；3) DPC已明确将中国方向数据跨境传输列为战略优先事项（SHEIN案/TikTok案），中国出海企业需强化数据跨境合规。',
     tags: ['DPC', '年度报告', '2025', 'Sharenting', '儿童数据', '爱尔兰', '数据保护', 'GDPR', '罚款'],
-    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-publishes-2025-annual-report',
+    link: 'https://www.dataprotection.ie/en/data-protection-commission-publishes-2025-annual-report',
     isNew: true,
   },
   {
