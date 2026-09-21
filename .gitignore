@@ -1,1 +1,10 @@
 node_modules
+
+# 构建产物（由 GitHub Actions 现场构建并部署，无需入库）
+dist/
+
+# 系统文件
+.DS_Store
+
+# 链接校验生成的报告（每次运行重新生成）
+scripts/invalid-links-report.json
