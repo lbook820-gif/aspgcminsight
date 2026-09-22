@@ -1347,6 +1347,38 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.cnil.fr/fr/sanction-non-respect-droits-personnes-extia',
     isNew: true,
   },
+  {
+    id: 'e86',
+    source: 'FTC公告/USA TODAY',
+    date: '2026-09-17',
+    heat: 6,
+    title: '美国FTC修订亚马逊Prime 25亿美元和解令：赔付上限提至200美元、10月1日起数百万新增用户自动获退款，消费者救济执行“用足”',
+    summary:
+      '2026年9月17日，美国联邦贸易委员会（FTC）宣布联邦法院批准其与亚马逊的联合动议，修订2025年9月达成的25亿美元和解（15亿美元消费者赔偿+10亿美元民事罚款，FTC史上最大民事罚款）：1) 赔付上限由每人51美元提高至总计200美元，若2027年2月前实际接受赔付未达门槛，已领款者将自动获得最高149美元追加赔付；2) 自动退款范围由“一年内使用少于10项Prime权益”扩大至11至20项权益的数百万消费者，2026年10月1日起自动发放，无需提交任何申请；3) 所有未来赔款经Venmo/PayPal或支票自动发放。截至2026年9月亚马逊已发放超8.45亿美元。和解源于FTC指控亚马逊未经同意将数百万人注册为Prime并蓄意设置取消障碍。',
+    overallImpact:
+      '监管对和解执行的“深度监督”样本：FTC通过修订法院命令扩大适格人群、强制自动打款并设追加补足机制，确保消费者救济不因索赔门槛而沉淀，违法的整改成本随执行阶段持续上升。“注册须明示同意、取消须轻而易举”标准经此修订进一步细化，全球订阅制商业模式面临的暗黑模式监管风险继续走高。',
+    industryImpact:
+      '中国出海企业启示：1) 面向美国的订阅制产品须自查注册明示同意、试用转付费提醒与取消便捷性三要素；2) 违法成本不止于一次性罚款，和解后的执行监督可能带来追加赔付义务；3) 暗黑模式（确认偏置、取消障碍）已是FTC与各州总检察长的重点执法对象，增长设计需前置合规评审。',
+    tags: ['亚马逊', 'FTC', 'Amazon Prime', '消费者保护', '和解修订', '自动续费', '美国', '出海合规'],
+    link: 'https://www.usatoday.com/story/money/consumer-protection/2026/09/18/amazon-settlement-expands-ftc/91822871007/',
+    isNew: true,
+  },
+  {
+    id: 'e87',
+    source: 'New York Post/Business Wire(原告律所公告)',
+    date: '2026-09-21',
+    heat: 6,
+    title: '苹果2.5亿美元Siri/Apple Intelligence虚假广告和解开启90天索赔通道：覆盖约3600万部iPhone 16/15 Pro，每台25-95美元',
+    summary:
+      '2026年9月21日，苹果Apple Intelligence虚假广告集体诉讼（Landsheft v. Apple）索赔通道开放，至2026年12月21日截止。加州北区联邦法院已于2026年7月17日初步批准该2.5亿美元和解，最终批准听证定于2027年2月24日。原告指控苹果在2024年WWDC将“个性化、跨应用理解与操作”的新Siri作为iPhone 16系列及iPhone 15 Pro的购买卖点宣传，但功能未随设备交付且大幅跳票，违反多州消费者保护法。适格用户为2024年6月10日至2025年3月29日在美购买上述机型的原始购买者，约3600万部设备，每台基础赔付25美元、可上调至最高95美元，经SmartphoneAISettlement.com提交。苹果否认指控，和解不构成对不当行为的承认。',
+    overallImpact:
+      '全球首例把“AI功能跳票”转化为大规模虚假广告赔偿的案件：在AI营销中将未交付能力作为购买决策卖点可构成欺骗性商业行为，即便功能事后补齐亦不豁免。原告援引美国全国广告部门（NAD）认定苹果误导的结论作为诉讼依据，广告自律审查与集体诉讼的联动路径成型。该案或成AI宣传争议的赔付结构模板。',
+    industryImpact:
+      '中国出海企业启示：1) AI功能宣传须严格区分已交付能力与路线图承诺，“AI洗白”在美欧均面临执法与诉讼升温；2) 营销物料应留存版本与时间戳以证明宣传与交付的对应关系；3) 涉及跨应用操作、个人情境理解等高预期卖点建议建立法务前置审核；4) 关注2027年2月最终批准结果，作为同类风险量化参照。',
+    tags: ['苹果', 'Apple Intelligence', 'Siri', '虚假广告', '集体诉讼', '和解', 'AI营销', '美国', '出海合规'],
+    link: 'https://nypost.com/2026/09/21/business/apple-customers-can-now-submit-claims-for-250m-settlement-in-deceptive-marketing-suit',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
