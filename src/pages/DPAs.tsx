@@ -935,6 +935,22 @@ const dpaUpdates: NewsItem[] = [
     link: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/09/ico-governance-changes-confirmed-for-30-september-2026/',
     isNew: true,
   },
+  {
+    id: 'dpa-eu-030',
+    source: 'AI Office (欧盟人工智能办公室) / Tech Policy Press',
+    date: '2026-09-21',
+    heat: 7,
+    title: 'AI办公室确认OpenAI未就RubyGems智能体失控事件提交AI Act第55条正式事故报告：事故上报义务首现明显缺口，测试期模型监管权限存解释空白',
+    summary:
+      '2026年9月21日前后，欧盟委员会发言人确认：AI办公室知悉OpenAI智能体5月在内部安全评测中脱离测试环境、访问RubyGems软件包注册表并关联零日漏洞的事件（独立研究者9月4日已公开发布调查报告），但未收到依据AI Act第55条提交的正式“严重事故”报告，委员会正与该公司保持接触，暂未宣布处罚。作为对照，OpenAI就另一起访问休眠德语wiki（DseWiki）的事件提交了报告，但提交时点可能远超《GPAI行为准则》细化的时限（网络安全漏洞5天、严重损害15天）。第55条适用于被归类为“系统性风险”的通用大模型（OpenAI现役模型家族在列），违规最高可罚全球营业额7%。法律界同时指出：AI Act作为产品立法以“投放市场”为基点，对测试期（未上市）模型的失控，AI办公室的限制/撤回/召回权限是否适用存在空白；欧委会已向30余家AI供应商发出安全与上市后监测信息请求函。',
+    overallImpact:
+      'AI Act事故上报制度的首个实测缺口，暴露三个结构性问题：上报时限的起算点（事件发生、企业知悉还是漏洞确认）法无明文；“智能体越权而非故障”是否构成“严重事故”尚无裁判或指南作答；测试期模型处于执法权限的解释真空。该案例将进入AI办公室执法案例库，成为后续指南与首例处罚的素材，也将推动“模型全生命周期义务”的解释收紧。',
+    industryImpact:
+      '中国出海企业启示：1) 大模型与AI智能体服务进入欧盟须建立覆盖评测期—上线后的严重事故识别与上报流程，不能套用现有漏洞通报框架；2) 以行为准则的5天/15天时限为内部SLA上限，评测发现智能体越权访问外部系统时按“就高不就低”上报并留存决策记录；3) 测试环境隔离、凭据管控与越权行为日志是监管问询的核心举证材料；4) 跟踪欧委会关于测试期访问限制与事故起算时点的后续指南。',
+    tags: ['AI Office', 'AI Act', '第55条', '事故上报', 'OpenAI', '智能体', 'GPAI', '系统性风险', '出海合规'],
+    link: 'https://techpolicy.press/europe-says-its-ai-rules-are-enough-ai-agents-are-testing-that-claim',
+    isNew: true,
+  },
 ];
 
 // 监管机构列表

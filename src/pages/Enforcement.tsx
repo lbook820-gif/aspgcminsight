@@ -1379,6 +1379,38 @@ const enforcementCases: NewsItem[] = [
     link: 'https://nypost.com/2026/09/21/business/apple-customers-can-now-submit-claims-for-250m-settlement-in-deceptive-marketing-suit',
     isNew: true,
   },
+  {
+    id: 'e88',
+    source: 'Insurance Journal(引用纽约时报)',
+    date: '2026-08-26',
+    heat: 9,
+    title: 'Meta与美国52州及领地总检察长达成最高约180亿美元和解：Facebook/Instagram诱导未成年成瘾案审前终结，附时限/宵禁/年龄核验等强制设计义务',
+    summary:
+      '2026年8月26日，Meta在奥克兰联邦法院被告席审判前夕，同意最高支付约180亿美元（10年分期）与52个州及领地总检察长和解，终结指控其将Facebook、Instagram设计为对未成年人有害且致瘾、并就平台安全误导公众的诉讼，系美国史上仅次于烟草总和解的州级消费者保护和解。结构：约167亿美元解决多州主体诉讼、4.59亿美元解决隐私索赔、7500万美元律师费，另与得州单独和解最高10亿美元；约30%金额以Snapchat、TikTok、YouTube采取同等措施并支付对等金额为条件（未触发则上限约127亿美元）。强制义务：13-17岁每日2小时上限、午夜至6点宵禁、上课时段通知静默、隐藏点赞、禁整容滤镜、可切换时间线信息流，并须部署可识别虚报生日的年龄核验工具，由独立审计监督。Meta不承认不当行为；算法信息流仍为默认。',
+    overallImpact:
+      '“平台设计责任”诉讼策略的里程碑：原告绕开《通信法》第230条免责、直接指控成瘾性设计，此前新墨西哥州3.75亿+5.67亿美元判决与加州陪审团担责裁决直接抬高和解筹码。和解的钱付给州政府而非受害家庭、核心算法架构未动，被批“商业化管理式退出”；但其青少年强制设计义务与欧盟DSA对Meta/TikTok成瘾设计的初步认定、EU KIDS Act形成跨大西洋共振——全球未成年人保护监管正式进入“强制设计义务+巨额金钱责任”阶段。',
+    industryImpact:
+      '中国出海企业启示：1) 面向美欧的社交/短视频/游戏产品须按“最严法域”预置青少年保护（时限、默认私密、宵禁、年龄核验）；2) “其他平台跟进则足额支付”的联动条款预示TikTok/YouTube/Snap将面临同构和解压力，行业性条款扩散快于立法；3) 年龄核验将成全球标配，需提前评估技术方案；4) 留存设计决策与安全评估文档备诉。',
+    tags: ['Meta', 'Facebook', 'Instagram', '未成年人保护', '和解', '成瘾性设计', '年龄核验', '美国', '跨法域', '出海合规'],
+    link: 'https://www.insurancejournal.com/news/national/2026/08/26/882971.htm',
+    isNew: true,
+  },
+  {
+    id: 'e89',
+    source: 'The Guardian/MediaNama',
+    date: '2026-09-20',
+    heat: 7,
+    title: 'Meta上诉反对Ofcom将WhatsApp/Instagram列为“一类服务”：主张私密消息不应适用《在线安全法》最严义务，TikTok/X/Roblox/Quora均在诉',
+    summary:
+      '2026年9月20日前后，据《卫报》报道，Meta就Ofcom将WhatsApp与Instagram列为《在线安全法》（OSA）“一类服务”向上级裁判所提起上诉。一类服务须履行OSA最严义务：更高透明度、更多用户控制、防范虚假广告、加强非法内容记录与报告。Meta主张一对一及小群组私密消息不应适用部分一类义务，强调其挑战的是Ofcom对法律的解释而非法律本身。这是Meta今年对Ofcom的第二起行动——5月已就OSA收费与罚款按“全球收入”计算的方法提起司法审查（OSA罚款上限为全球收入10%或1800万英镑取高者）。Roblox、Quora亦就一类服务认定上诉，TikTok与X则就数据调取要求起诉。Ofcom在线安全总监Oliver Griffiths对上议院委员会称该机构正“在高度诉讼化的环境中”工作；前大臣Damian Collins批评Meta发动“法律战”拖慢OSA落地。10月高等法院将审理此前的司法审查。',
+    overallImpact:
+      '英国OSA执法进入“平台以诉讼反制监管”深水区：若Meta在“私信豁免”上胜诉，将为消息型功能打开系统性豁免通道，削弱OSA对私域内容的覆盖；若“按全球收入计罚款”被推翻，OSA潜在罚金上限将被压缩逾95%，威慑经济基础动摇。Ofcom已表态“坚决捍卫其决定”，OSA全面生效时间表存在被诉讼拉长的风险。与欧盟DSA执行、美国州级诉讼形成三大法域并行施压格局。',
+    industryImpact:
+      '中国出海企业启示：1) OSA一类义务不因巨头诉讼而暂停，出海平台（TikTok、Snapchat、Reddit、Pinterest、Quora均在认定名单）须继续履行并跟踪10月庭审；2) “私信是否豁免内容审核”是各国共同争议点，含私信功能的产品应预留公域/私域差异化合规方案；3) 罚款计算基准之争将影响各国立法样本，可借监管咨询期提交意见；4) 关注Ofcom首张OSA执行通知（2026年8月对X）的后续作为执法力度风向标。',
+    tags: ['Meta', 'Ofcom', '在线安全法', 'WhatsApp', 'Instagram', '一类服务', '英国', '诉讼', '出海合规'],
+    link: 'https://www.medianama.com/2026/09/223-meta-ofcom-legal-challenge-whatsapp-instagram',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
