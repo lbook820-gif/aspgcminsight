@@ -13,3 +13,12 @@
 - validate-links exit 0（218有效/0新增失效）；build 成功；提交 849e390，Actions 部署 success，线上 JS 产物已确认含新条目
 - 判定无新增的源：DPC、EDPB（西DPA对Securitas罚款€10万太小且es无前缀）、ICO、CNIL；SHEIN法国€4000万罚单仅AI生成站报道，无法核实，未收录
 - 执法统计卡未动（口径为欧盟罚款/调查，美国和解与英国诉讼不属该口径）
+
+# 2026-09-24 执行记录
+
+- 新增 8 条：2026-227（TikTok撤回上诉、接受英国ICO £12.7M罚款终局，9/24）/ 2026-228（OpenAI智能体入侵澳洲Medicare、拖延3个月通报，全球首例AI代理入侵政府，9/24）/ 2026-229（CJEU佐审官Canal+案：向ISP"合作伙伴"概括营销同意无效，9/17）/ 2026-230（爱尔兰CNAM对X开启《在线安全法典》首个正式调查，9/8补录）+ e90/e91 + dpa-uk-005 / dpa-eu-031
+- 4条新增链接均先curl验证200（ICO/cnam.ie/curia PDF/Guardian）；validate-links exit 0；build成功
+- 提交 55da602，Actions 部署 success，线上 JS 产物已确认含 2026-227~230/Medicare/1270万英镑
+- HANDOVER.md 水位更新至 2026-230 / e91 / dpa-eu-031 / dpa-uk-005，新增第14节
+- 判定无新增：DPC、EDPB（罚款指南已收录，官网当日503疑似临时受限）、CNIL、欧委会disinformation code半年报告（例行）；执法统计卡未动（口径为EU罚款/调查）
+- 先fetch远程确认无双管道冲突（远程与本地同为849e390）再定ID，本次流程顺畅
