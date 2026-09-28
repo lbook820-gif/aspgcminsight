@@ -1491,10 +1491,44 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.gadgetreview.com/temus-962m-meta-ad-network-collapsed-after-fake-account-report',
     isNew: true,
   },
+  {
+    id: 'e95',
+    source: 'News From The States/Bars Across',
+    date: '2026-09-25',
+    heat: 9,
+    title: '美国新墨西哥州陪审团裁定Meta故意违规4389万项（不公平竞争法）：潜在罚金上限2195亿美元，法官将另行裁定金额',
+    summary:
+      '2026年9月25日，新墨西哥州第一司法地区法院陪审团裁定Facebook（Meta）故意违反州《不公平竞争法》，认定违规43,899,725项，覆盖用户数据控制、仇恨言论与虚假信息治理、社区标准一致性及剑桥分析丑闻后调查等五大类虚假陈述；依州法每项故意违规最高罚5,000美元，理论上限约219.5亿美元，最终罚金与禁令由法官Francis Mathew裁定。新墨西哥州系未加入Meta剑桥分析多州和解的法域之一。',
+    overallImpact:
+      '美国州级消费者保护法史上最大规模"按次计罚"胜诉：高管公开陈述被逐条拆分为数千万独立违规计数，为各州复制"陈述×用户规模"罚金放大器提供模板；叠加约180亿美元未成年人保护和解与加州成瘾算法系列审判，Meta美国法律敞口系统性上升，罚金裁定阶段结果将影响全美州级AG诉讼策略。',
+    industryImpact:
+      '中国出海企业启示：1) 美国各州消费者保护法独立追索，用户基数越大风险越大，对外数据/安全陈述须逐条可证；2) 高管发布会、博客、证词均为证据，绝对化表述须经合规审核；3) 未加入多州和解的州可单独追索历史事件，历史合规敞口应按州建立台账；4) 数据与算法表述须与内部实测一致，避免构成欺骗性商业行为。',
+    tags: ['Meta', 'Facebook', '新墨西哥州', '不公平竞争法', '剑桥分析', '陪审团裁决', '出海合规'],
+    link: 'https://www.barsacross.com/meta-219-5-billion-new-mexico-jury-verdict',
+    isNew: true,
+  },
+  {
+    id: 'e96',
+    source: 'MediaPost/路透',
+    date: '2026-09-21',
+    heat: 7,
+    title: '美国联邦法官正式拒绝撤销TikTok前身Musical.ly的2019年FTC同意令：4亿美元儿童隐私和解中1亿美元或有付款悬置，和解须修订重报',
+    summary:
+      '2026年9月21日，加州中区联邦法院法官George H. Wu正式采纳初步裁定，无prejudice驳回政府撤销2019年Musical.ly同意令的动议（该令要求报告与记录保存义务至2029年）：所有权重组、年龄验证升级与金钱和解均不足以证明终止构成"持久救济"，"拥有合规技术"不等于"证明合规有效"。司法部8月宣布的4亿美元和解（3亿立即支付＋1亿以撤销旧令为条件）须修订后重新报批。',
+    overallImpact:
+      '直接冲击TikTok 4亿美元和解结构：1亿美元或有付款悬置、和解时点推迟；法院为科技平台和解设定更高"持久救济"门槛——金钱支付不能置换持续监督，股权重组不解除监管义务。TikTok须在美国维持COPPA报告与监督义务至2029年，美国数据主权重组并未终结监管阴云。',
+    industryImpact:
+      '中国出海企业启示：1) 附条件和解的或有付款存在法院驳回风险，涉美和解现金流须计入该变量；2) FTC同意令约束企业须维持持续合规运行而非一次性了结；3) 股权重组不改变实体合规义务，架构调整应同步评估历史监管义务承继；4) TikTok在美英欧三地并行承担未成年人数据合规义务，建议建立跨法域未成年人保护合规基线。',
+    tags: ['TikTok', '字节跳动', 'Musical.ly', 'FTC', 'COPPA', '同意令', '儿童隐私', '出海合规'],
+    link: 'https://www.mediapost.com/publications/article/418158/judge-rejects-ftc-tiktok-settlement-over-children.html',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
   { date: '2026-12-31', title: 'DSA超大型平台义务履行截止：ChatGPT、Reddit、Roblox须完成系统性风险评估与审计' },
+  { date: '2026-09-25', title: '美国新墨西哥州陪审团裁定Meta故意违规4389万项，潜在罚金上限2195亿美元' },
+  { date: '2026-09-21', title: '美国联邦法官拒绝撤销TikTok前身Musical.ly的2019年FTC同意令，4亿美元和解须修订重报' },
   { date: '2026-09-26', title: 'ORL就Temu在Meta的疑似虚假创作者广告网络依DSA向欧盟监管提交系统性风险档案' },
   { date: '2026-09-25', title: '爱尔兰DPC发布《AI洞察报告》：2021-2025年介入约180个AI产品与服务' },
   { date: '2026-09-24', title: '美国司法部申请介入X的DSA上诉（T-114/26、T-121/26），挑战欧委会域外归责' },
