@@ -8,3 +8,7 @@ dist/
 
 # 链接校验生成的报告（每次运行重新生成）
 scripts/invalid-links-report.json
+
+# 服务端兜底流程的中间产物（每次运行重新生成）
+scripts/.fallback-result.json
+scripts/.fallback-candidates.json

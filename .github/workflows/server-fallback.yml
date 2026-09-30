@@ -1,0 +1,118 @@
+# 服务端兜底更新
+#
+# 定位：本地 WorkBuddy 自动化仍是内容主力（负责研究、撰写影响分析）。
+#       本流程是**断更保险**——只在本地流程超过 30 小时没产出时启动，
+#       从监管机构官方源收录事实条目，保证站点不断更。
+#
+# 为什么需要它：本地自动化依赖「电脑开机 + 客户端运行 + 登录态有效」，
+#       MacBook 合盖/关机时触发点无人接管，错过的档期只有 24 小时补跑窗口，
+#       超窗永久丢弃（2026-09-25、09-26 两档就是这么丢的）。
+#
+# 调度时间：UTC 02:00 = 北京时间 10:00，比本地自动化（北京 00:00）晚 10 小时。
+#       本地跑成功 → 本流程判断「内容新鲜」直接跳过；本地没跑 → 本流程补上。
+name: Server Fallback Update
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '忽略断更阈值，强制执行'
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: '只预演，不提交不部署'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 与 deploy.yml 共用 pages 组，避免两次 Pages 部署并发
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  fallback:
+    runs-on: ubuntu-latest
+    outputs:
+      action: ${{ steps.fallback.outputs.action }}
+      count: ${{ steps.fallback.outputs.count }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 断更判断依赖 git 提交时间，必须取全历史
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: 断更兜底收录（官方源）
+        id: fallback
+        env:
+          FORCE: ${{ inputs.force }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS="--apply --window 3 --max 3"
+          if [ "$FORCE" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "$DRY_RUN" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          node scripts/fallback-update.mjs $ARGS
+
+      # 以下四步只在「真的写入了内容」时执行
+      - name: 链接校验（非 0 退出码则中止，不提交）
+        if: steps.fallback.outputs.action == 'applied'
+        run: node scripts/validate-links.js --concurrency 8
+
+      - name: 构建（校验不通过则中止，不提交）
+        if: steps.fallback.outputs.action == 'applied'
+        run: npm run build
+
+      - name: 提交并推送
+        if: steps.fallback.outputs.action == 'applied'
+        run: |
+          git config user.name 'aspg-fallback-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add src/
+          if git diff --cached --quiet; then
+            echo "无实际内容变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore: 服务端兜底收录 ${{ steps.fallback.outputs.count }} 条官方公告（本地流程断更）"
+          git push
+
+      - name: Setup Pages
+        if: steps.fallback.outputs.action == 'applied'
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        if: steps.fallback.outputs.action == 'applied'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  # GITHUB_TOKEN 发起的 push 不会触发 deploy.yml（GitHub 防止递归的机制），
+  # 所以兜底流程必须自己带上部署，否则内容进库了站点却不更新。
+  deploy:
+    if: needs.fallback.outputs.action == 'applied'
+    needs: fallback
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

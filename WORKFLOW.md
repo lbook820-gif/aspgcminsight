@@ -116,12 +116,43 @@
 - `git commit -m "feat: daily update YYYY-MM-DD"`
 - `git push origin main`
 
+### 4. 服务端兜底（断更保险）
+
+本地自动化依赖「电脑开机 + 客户端运行 + 登录态有效」三个条件同时成立。三者任一不成立，
+触发点就无人接管；错过的档期只有 **24 小时补跑窗口**（客户端里的 `missedWindowMs`），
+超窗即永久丢弃。2026-09-25、09-26 两档就是这么丢的。
+
+为此加了一层**服务端兜底**：`.github/workflows/server-fallback.yml` +
+`scripts/fallback-update.mjs`。
+
+- **触发**：每天 UTC 02:00（北京时间 10:00），比本地自动化晚 10 小时
+- **判断**：以「内容文件最后一次 git 提交」为基准，距现在不足 30 小时则**直接跳过**
+  （本地成功 → 兜底不动）；超过 30 小时才启动
+- **取材**：只从官方源收录，**不编造、不解读**。当前登记的源（全部实测可用）：
+  欧盟委员会新闻中心、欧盟委员会数字战略总司、EDPB、法国 CNIL（英文版）、
+  法国竞争管理局、英国 CMA、英国 DSIT、爱尔兰 DPC（HTML 列表页）
+- **收录形态**：每条都带 `[自动收录]` 前缀、`source` 标注「官方公告·服务端自动收录」，
+  影响分析字段写明「待补写」，便于人工识别与替换
+- **把关**：链接校验退出码非 0 或构建失败 → **不提交**；同链接 / 同标题 /
+  同事件（大厂 + 法规主题指纹）三重去重；单次最多 3 条
+- **落盘开关**：脚本不传 `--apply` 一律只预演，避免误调用造成脏提交
+- **部署**：GITHUB_TOKEN 发起的 push **不会**触发 `deploy.yml`（GitHub 防递归机制），
+  所以该工作流自带 Pages 部署步骤，不能省
+
+手动验证：
+
+```bash
+node scripts/fallback-update.mjs                    # 预演，不改文件
+node scripts/fallback-update.mjs --verbose           # 预演 + 打印被过滤条目明细
+node scripts/fallback-update.mjs --apply --force     # 强制执行（会写文件）
+```
+
 ## 提交规范
 - **表单字段**：标题、链接 (必须有效)、来源、摘要、整体影响、行业影响、标签、热度
 - **排序要求**：所有页面（首页、执法、法律、监管局）的新闻列表必须按日期倒序排列（最新在前）
 
 ## 相关路径
-- 本地仓库：`/home/sandbox/.openclaw/workspace/repo/aspgcminsight/`
+- 本地仓库：`/Users/xiaoqingli/WorkBuddy/2026-09-21-10-32-44/aspgcminsight/`（macOS）
 - 远程仓库：`https://github.com/lbook820-gif/aspgcminsight`
 - 网站地址：`https://lbook820-gif.github.io/aspgcminsight/`
 
@@ -143,6 +174,7 @@
 - 2026-09-21：**清理失效链接**（18 条 → 替换 11 条、基线登记 4 条）。`2026-146`（谷歌 Play 开放第三方商店）链接换为 Google 官方页面，并修正原文「绕开谷歌 30% 抽成」等事实错误
 - 2026-09-21：**链接校验脚本第二轮加固**——HEAD 非 2xx 时用 GET 复核原始 URL（消除德国政府站点 303→400 的假阳性）；只对 `404/410/ENOTFOUND` 硬失败，`5xx/403/418/超时` 归入「疑似受限」；`--update-baseline` 改为合并语义，保证基线单调
 - 2026-09-21：**不再跟踪构建产物**——`dist/`、`.DS_Store`、`scripts/invalid-links-report.json` 加入 `.gitignore` 并取消入库（线上由 GitHub Actions 现场构建部署）
+- 2026-09-30：**新增服务端兜底流程**（`.github/workflows/server-fallback.yml` + `scripts/fallback-update.mjs`）。起因：本地自动化依赖客户端在线，2026-09-25/09-26 两档因电脑未唤醒而永久断更。兜底流程每天北京时间 10:00 检查断更时长，超过 30 小时才从 8 个官方源收录事实条目，三重去重、链接校验不过不提交，并自带 Pages 部署（GITHUB_TOKEN push 不触发 deploy.yml）。新增 Q4 断更排查手册
 
 ## 常见问题与解决方案
 
@@ -165,3 +197,25 @@
 - 报告保存在 `scripts/invalid-links-report.json`
 - 包含所有无效链接的详细信息
 - 可用于批量修复问题链接
+
+### Q4: 定时任务没跑/站点断更了怎么办？
+**A:** 先查这份调度日志，它记录每次触发与失败原因：
+
+```bash
+# 本机调度日志（每行含 run start / run finished / run failed）
+tail -40 ~/.workbuddy/logs/automation.log
+
+# 找出所有失败
+grep "run failed" ~/.workbuddy/logs/automation.log
+```
+
+常见三类失败，处置方式不同：
+
+1. **触发点没人在**（电脑休眠/关机/客户端退出）→ 日志只有 `scheduling resumed`，
+   没有对应时刻的 `run start`。24 小时内重新开机可自动补跑，超窗永久丢失。
+2. **后端 502 / 网络中断** → 日志有 `run start` 和一小时后的 `run failed`。
+   这类不是本机问题，重跑即可；注意它会白烧一小时。
+3. **连接器授权失效** → 日志显示「依赖的数据源（连接器）均未连接成功」并直接终止。
+   需重新登录授权对应连接器。
+
+断更超过 30 小时时，服务端兜底流程会在次日北京时间 10:00 自动补上（见上文第 4 节）。

@@ -439,3 +439,76 @@ exit=0        ← 静默「通过」，质量门形同虚设
 > 判定无新增的源：DPC（最新仍为 09-25 AI 洞察报告）、EDPB（最新 09-23）、ICO（最新为 09-30 转型 Information Commission 的既定事项，dpa-uk-004 已收录）、CNIL（官网「智能眼镜 vigilance」经核实为 2026-05-11 旧文）、欧委会 presscorner（窗口内无新数字类公告）。Temu 2 亿欧元 DSA 罚单经核实为 2026-05-28 发布（IP/26/1178），站内已多处引用，无重复收录。
 > 新增 2 条链接（barsacross / mediapost）先经 curl 验证 200（newsfromthestates 返回 403 弃用）；validate-links exit 0（新增失效 0）；build 成功；提交 `20715c7`，Actions 部署 success，线上 JS 产物已确认含 2026-235/236。
 > 执法统计卡未动（口径为欧盟罚款/调查；美国州法院裁决与和解审查不改变该口径）。
+
+## 17. 服务端兜底流程（2026-09-30 新增）
+
+### 起因：本地自动化的可靠性低于原先的云端方案
+
+接管前，这套更新跑在云端沙箱（`WORKFLOW.md` 原记载路径 `/home/sandbox/.openclaw/workspace/repo/`，
+OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 `+0800`，连续多日稳定。
+接管后改成本机 WorkBuddy 自动化，**可靠性反而下降**，因为桌面端调度要求
+「电脑开机 + 客户端运行 + 登录态有效」三者同时成立。
+
+### 失败模式（`~/.workbuddy/logs/automation.log` 实测）
+
+| 档期（北京） | 结果 | 日志证据 |
+|---|---|---|
+| 09-23 / 09-24 / 09-25 | ✅ | `run start` → 12~15 分钟后 `run finished: success=true` |
+| 09-26 / 09-27 | ❌ 永久丢失 | 无 `run start`；只有 `scheduling resumed`，错过时超 24h 补跑窗口 |
+| 09-28 | ⏱ 补跑 | 09-28 09:24 `scheduling resumed` 后立即 dispatch，补的是 09-27 17:00 档 |
+| 09-29 | ✅ | 正常 |
+| 09-30 | ❌ 跑满 1 小时后失败 | `16:00:27Z run start` → `16:59:58Z run failed: Network error: 502 canceled (target: https://www.workbuddy.cn)` |
+
+关键参数：客户端调度器的 `missedWindowMs=86400000`（24 小时）。错过的档期只有落在
+24 小时窗口内才会在客户端重启时补跑，超窗**永久丢弃**。
+
+> 教训：判断"任务是否执行"必须看 `~/.workbuddy/logs/automation.log`，
+> 不能只看 git 提交或 `audit-log`（审计日志并非实时落盘，容易得出错误结论）。
+
+### 兜底机制实现
+
+- 工作流：`.github/workflows/server-fallback.yml`
+- 脚本：`scripts/fallback-update.mjs`
+- 调度：`cron: '0 2 * * *'`（UTC 02:00 = 北京 10:00），比本地自动化晚 10 小时
+- 断更判断：以「内容文件最后一次 git 提交」（`git log -1 --format=%ct -- src/data/news ...`）
+  为基准，**不足 30 小时直接跳过**。不按「最新条目日期」判断——条目记的是事件日期，
+  天然比运行日期晚一天，会误判。
+- 官方源（8 个，全部实测可用）：
+
+| 源 | 类型 | 地址 |
+|---|---|---|
+| 欧盟委员会新闻中心 | RSS | `ec.europa.eu/commission/presscorner/api/rss?language=en` |
+| 欧盟委员会数字战略总司 | RSS | `digital-strategy.ec.europa.eu/en/rss.xml` |
+| 欧洲数据保护委员会(EDPB) | RSS | `www.edpb.europa.eu/rss.xml` |
+| 法国 CNIL | RSS | `www.cnil.fr/en/rss.xml`（英文版，法文版标题不可用于中文站点） |
+| 法国竞争管理局 | RSS | `www.autoritedelaconcurrence.fr/en/rss.xml` |
+| 英国 CMA | Atom | `www.gov.uk/search/news-and-communications.atom?organisations[]=competition-and-markets-authority` |
+| 英国 DSIT | Atom | 同上，organisations 换 `department-for-science-innovation-and-technology` |
+| 爱尔兰 DPC | HTML | `www.dataprotection.ie/en/news-media/latest-news`（无 RSS，需解析列表页 + 详情页） |
+
+- 收录形态：`[自动收录]` 前缀 + `source` 标注「官方公告·服务端自动收录」+
+  影响分析字段写明「待补写」，便于人工识别与替换
+- 三重去重：同链接 / 同标题（归一化）/ 同事件（大厂 + 法规主题指纹，±5 天窗口）。
+  指纹去重是实测需要——EDPB 会转发 DPC 的谷歌 4.03 亿罚单，链接不同但事件相同
+- 相关性过滤：要求标题命中 ≥2 个强信号词，或 ≥1 强信号词 + 正文提及关注企业；
+  另设超范围排除表（能源、零售、铁路、农业等无关公告）
+- 把关：`validate-links` 退出码非 0 或 `npm run build` 失败 → **不提交**
+- **落盘开关**：脚本不传 `--apply` 一律只预演。这个脚本会改仓库内容文件，
+  必须显式声明才能落盘（本人开发时曾因 `import()` 误触发写入一条，故加此开关）
+
+### 两个容易踩的坑
+
+1. **GITHUB_TOKEN 发起的 push 不会触发 `deploy.yml`**（GitHub 防止工作流递归的机制）。
+   所以兜底工作流必须**自带 Pages 部署步骤**，否则内容进库了站点却不更新。
+2. **DPC 详情页日期不能全文正则抓**。页面正文会提到「2018-05-25」（GDPR 生效日）等
+   历史日期，全文找第一个日期会把 2026-09-21 的新闻标成 2018-05-25。
+   正确做法是取 `class` 含 `date` 的元素（`<p class="date">21st September 2026</p>`），
+   退路也只看 `<h1>` 之后 700 字符。同时正则要支持序数后缀（`21st`）。
+
+### 尚未解决
+
+- 本次仅建立机制，**未补跑** 09-26/09-27/09-30 三个档期的内容缺口（用户指示暂不处理）
+- 兜底条目的标题/摘要是官方原文（多为英文），未做翻译；深度分析仍依赖本地/人工流程
+- 本地自动化本身仍依赖客户端在线。若想彻底摆脱，需把撰写环节也搬到服务端（需模型 API key）
+- 同一工作区另有 `每日收盘持仓分析` 自动化，因 `westock-mcp` 连接器授权失效，
+  2026-09-29、09-30 连续两天在启动后立即终止
