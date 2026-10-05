@@ -1031,6 +1031,38 @@ const dpaUpdates: NewsItem[] = [
     link: 'https://ppc.land/snap-faces-up-to-250-000-euros-per-breach-over-my-ai-chats-used-for-ads/',
     isNew: true,
   },
+  {
+    id: 'dpa-ie-014',
+    source: 'Data Protection Commission (爱尔兰数据保护委员会) 官方公告',
+    date: '2026-10-01',
+    heat: 7,
+    title: '爱尔兰DPC公布Children\'s Health Ireland (CHI)儿童健康档案安全调查最终决定：纸质儿童健康记录管理失控，违反GDPR第5(1)(f)与第32(1)条，训诫并责令整改（未罚款）',
+    summary:
+      '2026年10月1日，爱尔兰DPC公布对Children\'s Health Ireland (CHI)塔拉特大学医院院区的最终决定，源于2025年6-7月收到的受保护披露：DPC于2025年7月16日对该院区实施突击现场检查，8月11日立案调查，评估其是否依GDPR妥善保障NCHD（非顾问级医生）办公室内存留的儿童健康纸质记录的保密性与管理控制。调查查明两类问题：一是办公室内存放的儿童敏感与特殊类别数据记录安全保管失当；二是机密废纸箱满溢后儿童数据文件被随意移除、失控。决定（2026年9月10日送达CHI）认定CHI违反GDPR第5(1)(f)条（保密与安全原则）与第32(1)条（处理安全），对CHI处以训诫，并责令限期整改：完成并定稿健康记录处理与机密废弃物管理两份DPIA（数据保护影响评估）、全面落实现有的技术与组织措施及SOP、四周内向DPC提交定稿DPIA以供协商。DPC稍后将公布完整决定文本。',
+    overallImpact:
+      '本案是DPC"纸质记录+医疗机构"场景下安全义务执法的延续（继9月2日HSE 64.5万欧元罚单后），三点值得关注：一是数据主体为儿童、数据类型为健康档案，属于监管优先级最高的敏感组合；二是触发源为受保护披露（内部吹哨）而非投诉或泄露事件，DPC对医疗机构的主动监督能力在增强；三是本案未科处罚款而以训诫+DPIA整改令收尾，与HSE案形成对照，显示DPC在公共医疗系统案件中以"整改落实"优先于经济处罚的尺度选择。对依赖纸质与混合流程的行业，第5(1)(f)与第32条的"物理安全"维度再次被确认与网络安全同等重要。',
+    industryImpact:
+      '中国出海企业启示：1) GDPR第32条的安全义务覆盖物理与流程安全，混合办公、线下门店、仓储物流等场景中的纸质/实物载体记录同样在执法射程内，出海企业不应只做线上安全投入；2) DPIA不能停留在草稿状态——本案整改令直接针对"未定稿的DPIA"，高风险处理活动的影响评估须形成闭环并定期复核；3) 机密废弃物管理是容易被忽视的合规点，处置流程应有SOP、留痕与责任人；4) 内部吹哨可触发突击检查与正式调查，建立内部报告响应与整改机制比事后应对检查成本更低；5) 医疗健康类出海产品/服务在欧运营时，儿童数据+健康数据的叠加须按最高标准配置安全与留存控制。',
+    tags: ['爱尔兰DPC', 'CHI', '儿童数据', '健康数据', 'GDPR', '第32条', '物理安全', 'DPIA', '纸质记录', '出海合规'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-publishes-final-decision-following-inquiry-childrens-health-ireland-chi',
+    isNew: true,
+  },
+  {
+    id: 'dpa-uk-006',
+    source: 'ICO (英国信息专员办公室) 官方公告',
+    date: '2026-09-30',
+    heat: 7,
+    title: '英国ICO于9月30日正式转型为Information Commission：曼彻斯特新总部同步启用，英国数据保护监管进入新治理架构时代',
+    summary:
+      '2026年9月30日，英国信息专员办公室（ICO）按既定时间表正式转型为Information Commission（信息委员会），并在曼彻斯特启用新总部，将其定义为"演进新篇章"的起点。此为2026年9月15日政府确认的治理改革（dpa-uk-004所载）的落地节点：由单一信息专员领导转为委员会制治理架构，7名非执行董事已于7月获任命加入委员会。转型依据DUAA（《数据（使用与访问）法》）的改革框架，Information Commission将承接ICO全部职能——UK GDPR与DPA 2018执法、FOI、PECR/ePrivacy、儿童保护（儿童法典）与在线安全协同，并适用DUAA下提高的罚款上限（1750万英镑或全球营业额4%的较高者）。ICO同日（10月1日）宣布加入国家网络韧性中心集团（NCRCG）国家大使计划，延续其网络安全促进职能。',
+    overallImpact:
+      '英国数据保护监管机构完成由"专员个人负责制"向"委员会集体治理"的结构切换，是DUAA改革落地的标志性节点。对企业而言三重影响：一是治理多元化后执法立场的可预期性上升（不再系于单一专员的个人取向），但决策链条也可能更长；二是DUAA下的高罚款上限自2025年生效后已开始兑现（TikTok 1270万英镑罚单终局、推荐系统调查恢复推进），新架构执法预算与人力更有保障；三是ICO明确延续"数据保护+网络安全+在线安全"协同执法路线，曼彻斯特总部的设立也意味着监管重心部分北移、与伦敦中央政府的距离拉开。',
+    industryImpact:
+      '中国出海企业启示：1) 对英合规文件中的监管机构名称与联系方式应更新为Information Commission，注册、报告与投诉通道以新机构为准，避免程序瑕疵；2) 英国DUAA下的罚款上限已与GDPR看齐，且TikTok案显示执法威慑真实兑现，英国不应再被视为"欧盟执法的洼地"，对英数据合规投入应按欧盟同级配置；3) Information Commission延续儿童数据、网络安全、在线安全三线协同，出海短视频/社交/电商产品对英运营建议按"儿童法典+推荐算法+年龄核验"自查清单年度复核；4) 委员会制下执法口径趋于集体决策，个案沟通成本上升，重大产品变更前宜提前通过监管沙盒或正式咨询获取确定性。',
+    tags: ['ICO', 'Information Commission', '英国', 'DUAA', '监管改革', '治理架构', '罚款上限', '出海合规'],
+    link: 'https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/09/ico-welcomes-transition-to-new-information-commission-and-marks-new-chapter-with-manchester-head-office-opening/',
+    isNew: true,
+  },
 ];
 
 // 监管机构列表
