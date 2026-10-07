@@ -52,3 +52,16 @@
 - 核实排除：Shein 爱尔兰 DPC 数据跨境调查为 2026-04-30 决定/05-05 公布（站内已收录），近期英文转载属旧闻重发；德国 OLG Bamberg TikTok DSA 裁决（3 UKl 13/25 e）为 7/29 裁定且仅二手源；斯洛伐克 KInIT TikTok 影响者广告审计缺一手链接；特朗普就谷歌罚单威胁 301 调查属 7/24 旧事
 - DPC 最新仍为 10-01 CHI（已收录）；EDPB 09-23；ICO 10-01 为 NCRCG 大使计划（非平台合规，未单列）；CNIL 10-02 为科普内容；digital-strategy RSS 最新 09-29。执法统计卡未动
 - validate-links 最终 exit 0（238 有效 / 6 疑似受限 / 4 基线内失效 / 新增失效 0）；build 成功（1.69s，单 chunk 1.22MB）；HANDOVER 水位更新至 2026-243 / e102 / dpa-eu-033，新增第19节
+
+# 2026-10-07 执行记录
+
+- 覆盖窗口 2026-10-05~10-07（上次执行 10-06）；按"重大事件发现即收录"补录 09-23 决定 / 09-30 起诉；先 fetch 远程，本地与远程同为 52d9419，无双管道冲突
+- 新增 5 条：2026-244（意大利 Garante 对 IQVIA 罚 700 万欧元，约百万患者健康数据仅做"固定编码"未真正匿名化、Garante 认定自数据离开诊所起 IQVIA 即为控制者，10/2 公布 / 9/23 决定，Il Sole 24 Ore 英文版）/ 2026-245（谷歌就 DMA 搜索结果数据共享 + 安卓 AI 互操作性两项规范措施起诉欧盟普通法院并申请临时措施，9/30，中新网转载路透/彭博）/ 2026-246（欧委会就 EU KIDS Act 启动公众征询，11/26 截止，10/2，欧委会 digital-strategy 官方页）/ 2026-247（库克在欧洲议会称赞 EU KIDS Act，10/6，多伦多星报）/ 2026-248（欧委会披露 AI Act 执法产能：30+ RFI、AI Office 约 125 人、测试 Anthropic Mythos 耗时数月、承认责任规则存在"立法空白"，10/6，经济时报/路透）
+- 配套：e103–e106 + 监管日历 4 节点；dpa-eu-034；Laws.tsx DMA(id1)/AI Act(id2)/GDPR(id4)/EU KIDS Act(id12) 摘要刷新 → updateTime 分别为 2026-10-07 / 2026-10-07 / 2026-10-02 / 2026-10-07，EU KIDS Act status → 审议中（公众征询中）
+- **本轮核心：校验脚本第三轮加固（DNSSEC/ENOTFOUND）**。校验突然报 13 条"新增失效"，全部是 www.edpb.europa.eu / www.edps.europa.eu 的 getaddrinfo ENOTFOUND；实测同一域名浏览器可正常打开，dig（验证型：路由器/8.8.8.8/1.1.1.1）均 SERVFAIL，dig +cdflag 正常返回 IP，Cloudflare DoH 报 `EDE(9): DNSKEY Missing no SEP matching the DS found` → 判定为上游 DNSSEC 配置故障（父区有 DS、子区缺 DNSKEY），非死链
+- 加固方案：ENOTFOUND 不再直接硬失败，改为 DoH 二次核验（Google dns.google/resolve + Cloudflare cloudflare-dns.com/dns-query 双端点，任一给出结论即采用）。**必须带 `cd=1`（Checking Disabled，RFC 4035 §3.2.2）**——实测不带 cd 时验证型 DoH 同样 SERVFAIL 会把 www.edpb.europa.eu 误判为 false；带 cd=1 返回 Status:0 含 A 记录，不存在域名返回 Status:3（NXDOMAIN）。映射：存在→疑似受限（人工复核，不阻断）；确定不存在→硬失败；DoH 不可用→沿用硬失败兜底。目的是既不误杀有效链接、也不把有效链接写进 link-baseline.json
+- 链接换源：Garante 官网 docweb 页 curl 200 但正文不可读 → 改 Il Sole 24 Ore 英文版；谷歌 DMA 起诉 Reuters 401 / Yahoo Finance 404 / US News 000 / MarketScreener·Investing 403 → 中新网转载稿；EU KIDS Act eureporter 403 → 欧委会官方页
+- 核实排除：Meta DSA"成瘾性设计"初步认定（Benzinga 10/7）站内 2026-07-10 已收录；Temu 2 亿欧元 DSA 罚款 = 2026-05-28 已收录；Shein 法国 FRA 4000 万欧元仅 AI 生成来源（9/23 已排除）；苹果 App Store 新费率 10/1 生效为 8/18 事件延续（10/5 已收录）；苹果致函 DSA 未成年人条款仅律所/Enfo 二手摘要，要点并入 2026-247
+- DPC 最新仍为 10-01 CHI（已收录）；EDPB 09-23；ICO 为 NCRCG 大使计划等机构合作事务；CNIL 10/2 为科普内容；digital-strategy RSS 新公告已收录为 2026-246。执法统计卡未动（IQVIA 属健康数据非平台执法、谷歌 DMA 起诉非罚款、征询与 RFI 均无处罚决定）
+- validate-links 最终 exit 0（229 有效 / 20 疑似受限 / 4 基线内失效 / 新增失效 0）；build 成功（1.81s，单 chunk 1.26MB）；提交 976311e 并推送，Actions "Build and Deploy" success，线上 JS（index-CI8npPxI.js）已确认含 2026-244~248 / e103~e106 / dpa-eu-034 / IQVIA / KIDS Act 链接
+- HANDOVER.md 水位更新至 2026-248 / e106 / dpa-eu-034（另 dpa-ie-014 / dpa-uk-006 保持），新增 §11.1（校验脚本第三轮加固）与第 20 节，同步修正第 3 节条目数（执法 98→102、监管局 67→68）
