@@ -58,6 +58,86 @@ function log(color, message) {
   console.log(`${colors[color]}${message}${colors.reset}`);
 }
 
+// ---------- DNS 二次核验（DoH） ----------
+/**
+ * 本地解析返回 ENOTFOUND 并不等于「域名真的不存在」：
+ * 当某区的 DNSSEC 配置错误（父区发布了 DS，但子区缺少匹配的 DNSKEY）时，
+ * 所有「验证型解析器」都会返回 SERVFAIL，在 Node 里表现为 ENOTFOUND，
+ * 而域名与站点其实完全正常（2026-10-07 的 edpb.europa.eu / edps.europa.eu 即为此类）。
+ * 这类上游故障不应被误判为「链接失效」而阻断发布。
+ *
+ * 因此这里用 DNS-over-HTTPS 做一次独立核验：
+ *   - 域名确实存在（NOERROR 且有 A/AAAA 记录）→ 归入「疑似受限」，交人工复核
+ *   - 域名确实不存在（NXDOMAIN / NODATA）→ 维持硬失败
+ *   - DoH 本身不可用（网络受限等）→ 返回 null，调用方沿用原逻辑硬失败（安全兜底）
+ *
+ * 关键点：查询必须带 `cd=1`（Checking Disabled，见 RFC 4035 §3.2.2）。
+ * 否则验证型 DoH 解析器同样会因上游 DNSSEC 故障返回 SERVFAIL，
+ * 我们就无法把「DNSSEC 损坏但真实存在」与「真的不存在」区分开。
+ * 同时查询 Google 与 Cloudflare 两家，任一给出结论即可，避免单点误判。
+ */
+const dohCache = new Map();
+const DOH_ENDPOINTS = [
+  { hostname: 'dns.google', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A&cd=1` },
+  { hostname: 'cloudflare-dns.com', path: (h) => `/dns-query?name=${encodeURIComponent(h)}&type=A&cd=1` },
+];
+
+function dohQuery(endpoint, hostname) {
+  return new Promise((resolve) => {
+    const req = https.request(
+      {
+        hostname: endpoint.hostname,
+        path: endpoint.path(hostname),
+        method: 'GET',
+        timeout: CONFIG.timeout,
+        headers: { accept: 'application/dns-json', 'User-Agent': CONFIG.userAgent },
+      },
+      (res) => {
+        let body = '';
+        res.setEncoding('utf-8');
+        res.on('data', (c) => (body += c));
+        res.on('end', () => {
+          try {
+            resolve(JSON.parse(body));
+          } catch {
+            resolve(null);
+          }
+        });
+      }
+    );
+    req.on('error', () => resolve(null));
+    req.on('timeout', () => {
+      req.destroy();
+      resolve(null);
+    });
+    req.end();
+  });
+}
+
+function dnsExistsViaDoH(hostname) {
+  const cached = dohCache.get(hostname);
+  if (cached) return cached;
+  const p = (async () => {
+    let sawDefinitiveAbsence = false;
+    for (const ep of DOH_ENDPOINTS) {
+      const json = await dohQuery(ep, hostname);
+      if (!json || typeof json.Status !== 'number') continue; // 端点不可用，换下一个
+      if (json.Status === 0) {
+        const hasAddr =
+          Array.isArray(json.Answer) && json.Answer.some((a) => a.type === 1 || a.type === 28);
+        if (hasAddr) return true; // 域名真实存在（含 DNSSEC 损坏场景）
+        sawDefinitiveAbsence = true; // NOERROR 但无地址记录 = NODATA
+      } else if (json.Status === 3) {
+        sawDefinitiveAbsence = true; // NXDOMAIN
+      }
+      // 其余（SERVFAIL/REFUSED 等）非定论，继续尝试下一个端点
+    }
+    return sawDefinitiveAbsence ? false : null;
+  })();
+  dohCache.set(hostname, p);
+  return p;
+}
+
 // ---------- CLI 参数 ----------
 function parseArgs(argv) {
   const opts = { limit: Infinity, only: null, concurrency: CONFIG.concurrency, updateBaseline: false };
@@ -207,10 +287,36 @@ function request(url, method, retries) {
     req.on('error', (error) => {
       if (retries > 0) {
         setTimeout(() => request(url, method, retries - 1).then(done), CONFIG.retryDelay);
+      } else if (error.code === 'ENOTFOUND') {
+        // 本地解析失败未必等于域名不存在：DNSSEC 故障（DS/DNSKEY 不匹配会让验证型解析器返回 SERVFAIL）
+        // 同样表现为 ENOTFOUND。用 DoH 复核一次，避免把有效链接误判为失效。
+        let hostname = null;
+        try {
+          hostname = new URL(url).hostname;
+        } catch {
+          /* 非法 URL，直接硬失败 */
+        }
+        if (!hostname) {
+          done({ url, status: 0, isValid: false, suspect: false, message: error.message });
+          return;
+        }
+        dnsExistsViaDoH(hostname).then((exists) => {
+          if (exists === true) {
+            done({
+              url,
+              status: 0,
+              isValid: false,
+              suspect: true,
+              message: `DNS 解析失败，但域名经 DoH 确认存在（疑 DNSSEC/本地解析异常，需人工复核）: ${error.message}`,
+            });
+          } else {
+            // DoH 明确否定，或 DoH 不可用（null）→ 维持「域名不可解析 = 失效」
+            done({ url, status: 0, isValid: false, suspect: false, message: error.message });
+          }
+        });
       } else {
-        // 域名无法解析 = 站点确实不存在 → 失效；其余（连接被拒/重置等）可能是瞬时或网络限制 → 需复核
-        const gone = error.code === 'ENOTFOUND';
-        done({ url, status: 0, isValid: false, suspect: !gone, message: error.message });
+        // 其余（连接被拒/重置等）可能是瞬时或网络限制 → 需复核
+        done({ url, status: 0, isValid: false, suspect: true, message: error.message });
       }
     });
 

@@ -47,8 +47,8 @@ npm run dev     # 本地预览 :3000
 |---|---|---|---|
 | `/` | `src/pages/Home.tsx` | 首页：本月动态 + 全部新闻，按 2026/2025/2024 分组 | 见下方新闻流 |
 | `/laws` | `src/pages/Laws.tsx` | 法规库（15 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、CADA…） | 21（含 6 条行业动态） |
-| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 98（其中 `e46` 为历史重复 ID） |
-| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 67 |
+| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 102（其中 `e46` 为历史重复 ID） |
+| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 68 |
 
 首页另有 `dynamicCards`（`src/data/dynamicCards.ts`）作为四个板块的入口卡片。
 
@@ -67,11 +67,11 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-10-06） |
+| 数据源 | 格式 | 当前最大（2026-10-07） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-243**（10 月起新建 `2026-10.ts`，index.ts 已同步） |
-| 执法动态 | `eN` | **e102** |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-033 / dpa-ie-014 / dpa-de-004 / dpa-ch-004 / dpa-fr-002 / dpa-uk-006 / dpa-tr-003 |
+| 主新闻流 | `2026-NNN` | **2026-248**（10 月起新建 `2026-10.ts`，index.ts 已同步） |
+| 执法动态 | `eN` | **e106** |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-034 / dpa-ie-014 / dpa-de-004 / dpa-ch-004 / dpa-fr-002 / dpa-uk-006 / dpa-tr-003 |
 | 法规库 | `N` | **15** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
@@ -356,6 +356,41 @@ exit=0        ← 静默「通过」，质量门形同虚设
 
 > 每次提交前的强制动作不变：`node scripts/validate-links.js`，退出码非 0 不得提交。
 
+### 11.1 第三轮加固：ENOTFOUND 的 DoH 二次核验（2026-10-07）
+
+**起因**：2026-10-07 一轮校验突然报出 **13 条「新增失效」**，全部是
+`www.edpb.europa.eu` / `www.edps.europa.eu`，错误码 `getaddrinfo ENOTFOUND`。
+而这些链接在前几轮均为 200，短期不可能集体失效。
+
+**定位**：这是一次**上游 DNSSEC 故障**，不是死链——
+
+| 探测 | 结果 |
+|---|---|
+| `dig www.edpb.europa.eu`（默认，验证型） | SERVFAIL（路由器 192.168.100.1 / 8.8.8.8 / 1.1.1.1 均如此） |
+| `dig +cdflag www.edpb.europa.eu`（关闭校验） | 正常返回 63.180.151.205 / 52.28.182.88 |
+| Cloudflare DoH（带验证） | `EDE(9): DNSKEY Missing no SEP matching the DS found for edpb.europa.eu` |
+| 浏览器 / WebFetch 直接访问 EDPB 官网 | 正常打开 |
+
+即：父区发布了 DS 记录，但子区缺少匹配的 DNSKEY，导致所有**验证型解析器**
+返回 SERVFAIL（Node 表现为 ENOTFOUND），域名与站点其实完全正常。
+
+**修复**：在 `scripts/validate-links.js` 中，把 `ENOTFOUND` 从「直接硬失败」
+改为「先做 DNS-over-HTTPS 独立核验」：
+
+- 依次查询 **Google DoH**（`dns.google/resolve`）与 **Cloudflare DoH**（`cloudflare-dns.com/dns-query`），
+  任一给出结论即采用，避免单点误判；
+- **查询必须带 `cd=1`（Checking Disabled，RFC 4035 §3.2.2）** ——
+  否则验证型 DoH 同样返回 SERVFAIL，无法区分「DNSSEC 损坏但真实存在」与「真的不存在」。
+  这个细节是实测出来的：不带 `cd` 时 `www.edpb.europa.eu` 被误判为 false；
+  带 `cd=1` 后返回 `Status:0` 且含 A 记录，而不存在域名返回 `Status:3`（NXDOMAIN）；
+- 结论映射：**存在** → 归入「疑似受限（需人工复核）」，不阻断提交；
+  **确定不存在**（NXDOMAIN 或 NOERROR 无地址记录）→ 维持硬失败；
+  **DoH 不可用**（端点超时/拒绝）→ 返回 null，沿用原硬失败逻辑（安全兜底）。
+
+**效果**：本日起 EDPB/EDPS 的既有链接不再污染「新增失效」计数，
+也不会把有效链接写进 `scripts/link-baseline.json`；`exit 0` 恢复。
+若将来 EDPB 侧修复 DNSSEC，这些链接会自动回到「有效」。
+
 ---
 
 ## 12. 2026-09-22 每日更新记录（WorkBuddy 自动化）
@@ -545,3 +580,21 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 > 已核实排除（避免重复收录）：**Shein 爱尔兰 DPC 数据跨境调查**——经核为 2026-04-30 发出决定、05-05 公布，站内 `2026-05` 与 `Enforcement.tsx` 均已收录，近期出现的英文转载属旧闻重发，未收录；德国班贝格高等法院 TikTok DSA 裁决（OLG Bamberg, 29 July 2026 — 3 UKl 13/25 e，确立 DSA 义务可具消费者保护性质、德国消费者保护机制可据此执法）——裁定日期为 7 月，且仅见二手聚合源，未收录；斯洛伐克 KInIT 团队 TikTok 影响者营销算法审计（DSA 第 28 条漏洞）——事件时点为 9 月欧洲研究者之夜，缺一手链接，未收录。
 > 判定无新增的源：DPC（最新仍为 10-01 CHI 决定，已收录为 `dpa-ie-014`）、EDPB（最新 09-23 谷歌罚单转发）、ICO（最新 10-01 NCRCG 国家大使计划，属机构合作事务，与平台合规无实质关联，未单列；09-30 转型 Information Commission 已收录为 `dpa-uk-006`）、CNIL（10-02 数据泄露赔偿科普、10-01 网络安全月资源与全会日程，均为科普/程序性内容，无执法）、欧委会 digital-strategy RSS（最新 09-29 版权磋商）；特朗普就谷歌 DMA 罚单威胁加征关税与启动 301 调查属 2026-07-24 旧事，未收录。
 > 执法统计卡未动（口径为欧盟罚款/调查；波兰 UOKiK 立案属成员国新的进行中调查但沿用既有保守口径未计入，与美国法院裁决、标准化提案一并视为不改变「累计罚款 / 已完成调查」口径；如需纳入须先复核「进行中 15」的统计边界）。
+
+## 20. 2026-10-07 每日更新记录（WorkBuddy 自动化）
+
+覆盖窗口 2026-10-05 ~ 10-07（上次执行 10-06）；按「重大事件发现即收录」补录 09-23 决定 / 09-30 起诉。先 fetch 远程，本地与远程同为 `52d9419`，无双管道冲突；仓库 ID 水印与第 4 节一致（news 2026-243、e102、dpa-eu-033/dpa-uk-006/dpa-ie-014）。
+
+| 板块 | 新增 |
+|---|---|
+| 新闻流 | `2026-244`（意大利 Garante 对 IQVIA 罚款 700 万欧元：约百万患者健康数据仅做「固定编码」，未真正匿名化；Garante 认定自数据离开诊所起 IQVIA 即为控制者，2026-10-02 公布 / 09-23 决定）、`2026-245`（谷歌就 DMA 搜索结果数据共享与安卓 AI 互操作性两项规范措施向欧盟普通法院起诉并申请临时措施，2026-09-30）、`2026-246`（欧委会就《欧盟儿童法案》EU KIDS Act 启动公众意见征询，11-26 截止，2026-10-02）、`2026-247`（苹果 CEO 库克在欧洲议会称赞 EU KIDS Act，2026-10-06）、`2026-248`（欧委会披露 AI Act 执法产能：已发出 30+ 份 RFI、AI Office 约 125 人、测试 Anthropic Mythos 耗时数月、承认责任规则存在「立法空白」，2026-10-06） |
+| 执法动态 | `e103`（意大利 Garante 对 IQVIA 罚款 700 万欧元）、`e104`（谷歌就 DMA 两项规范措施起诉欧盟普通法院并申请临时措施）、`e105`（欧委会启动 EU KIDS Act 公众征询）、`e106`（欧委会披露 AI Act 执法产能与能力缺口）；监管日历新增 4 节点（10-02 ×2、09-30、11-26 征询截止） |
+| 各国监管局 | `dpa-eu-034`（欧委会就 EU KIDS Act 启动公众意见征询，11-26 截止） |
+| 法规库 | DMA（id 1）补入谷歌 09-29 起诉普通法院 + 09-30 临时措施申请，updateTime → 2026-10-07；AI Act（id 2）补入 10-06 路透/法新社关于执法产能的报道（30+ RFI、约 125 人、Mythos 测试、立法空白），updateTime → 2026-10-07；GDPR（id 4）补入 Garante IQVIA 700 万欧元罚款，updateTime → 2026-10-02；EU KIDS Act（id 12）补入公众征询（10-02 启动 / 11-26 截止）+ Social Media+ 适用范围 + 无中小企业豁免 + 库克表态，status → `审议中（公众征询中）`，updateTime → 2026-10-07 |
+
+> 新增 5 条链接（Il Sole 24 Ore 英文版 / 中新网 / 欧委会 digital-strategy 官方页 / 多伦多星报 / 经济时报）均先经 curl 验证 200 后写入。validate-links 最终 **exit 0**（229 有效 / 20 疑似受限 / 4 基线内失效，**新增失效 0**）；build 成功（1.81s，单 chunk 1.26 MB）。
+> **本轮核心动作是校验脚本的第三轮加固**（详见 §11.1）：13 条 EDPB/EDPS 链接因上游 DNSSEC 故障报 ENOTFOUND，经 `dig +cdflag` 与 DoH 交叉验证确认域名真实存在，遂为脚本加入「`cd=1` DoH 二次核验」，避免把有效链接误判为死链、也避免污染基线。修复后这些链接回落至「疑似受限（需人工复核）」，不计入新增失效。
+> 链接换源记录：IQVIA/Garante 事件最初尝试 Garante 官网 docweb 文档页（返回 200 但正文不可读），改用 Il Sole 24 Ore 英文版（正文可核实）；谷歌 DMA 起诉事件最初尝试 Reuters（401）、Yahoo Finance（404）、US News（000）、MarketScreener / Investing（403），最终采用中新网转载稿（200，含路透/彭博原始报道）。EU KIDS Act 官方源优先：`eureporter.co` 403，改用欧委会 digital-strategy 官方页（200）。
+> 已核实排除（避免重复收录）：Meta DSA「成瘾性设计」初步认定（Benzinga 10-07 聚合稿）——站内已于 2026-07-10 收录（`2026-07.ts`）；Temu 2 亿欧元 DSA 罚款 = 2026-05-28（已收录）；Shein 法国 FRA 4000 万欧元罚款——仅见 AI 生成来源，09-23 已判定排除；苹果欧盟 App Store 新费率 10-01 生效为 8/18 宣布事件的延续（10-05 已收录）；苹果就 DSA 未成年人条款致函——仅见律所/Enfo 二手摘要，无企业一手来源，其要点并入 `2026-247`。
+> 判定无新增的源：DPC（最新仍为 10-01 CHI 决定）、EDPB（最新 09-23 谷歌罚单转发）、ICO（最新为 NCRCG 大使计划等机构合作事务）、CNIL（10-02 数据泄露赔偿科普、网络安全月资源，无执法）、欧委会 digital-strategy RSS（窗口内新公告已收录为 `2026-246`）、presscorner（空页）。
+> 执法统计卡未动（口径为欧盟罚款/调查：IQVIA 属健康数据而非平台执法、谷歌 DMA 起诉并非罚款、EU KIDS Act 征询与 AI Act RFI 均无处罚决定，故不改动 €40.5 亿 / 52 / 15 三个数值；如需纳入 IQVIA 需先复核该口径是否包含成员国 DPA 的非平台类罚款）。
