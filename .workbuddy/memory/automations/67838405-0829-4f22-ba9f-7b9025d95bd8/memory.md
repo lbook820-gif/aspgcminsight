@@ -65,3 +65,15 @@
 - DPC 最新仍为 10-01 CHI（已收录）；EDPB 09-23；ICO 为 NCRCG 大使计划等机构合作事务；CNIL 10/2 为科普内容；digital-strategy RSS 新公告已收录为 2026-246。执法统计卡未动（IQVIA 属健康数据非平台执法、谷歌 DMA 起诉非罚款、征询与 RFI 均无处罚决定）
 - validate-links 最终 exit 0（229 有效 / 20 疑似受限 / 4 基线内失效 / 新增失效 0）；build 成功（1.81s，单 chunk 1.26MB）；提交 976311e 并推送，Actions "Build and Deploy" success，线上 JS（index-CI8npPxI.js）已确认含 2026-244~248 / e103~e106 / dpa-eu-034 / IQVIA / KIDS Act 链接
 - HANDOVER.md 水位更新至 2026-248 / e106 / dpa-eu-034（另 dpa-ie-014 / dpa-uk-006 保持），新增 §11.1（校验脚本第三轮加固）与第 20 节，同步修正第 3 节条目数（执法 98→102、监管局 67→68）
+
+# 2026-10-08 执行记录
+
+- 覆盖窗口 2026-10-07~10-08，另补录 10-01；先 fetch 远程，本地与远程同为 2c2431b，无双管道冲突；仓库实际水位与 HANDOVER §4 一致（news 2026-248 / e106 / dpa-eu-034·uk-006·ie-014）
+- 新增 5 条：2026-249（英国 ICO 基础模型监督收官：亚马逊/Anthropic/苹果/Cohere/DeepSeek/谷歌/Meta/微软/OpenAI/Stability AI 十家承诺整改，xAI 因 Grok 调查被暂停接触；同步启动 11-20 截止的 AI 智能体取证征询，已问询 OpenAI/Anthropic/Meta/英国 AI 安全研究所，10-08，ICO 官方）/ 2026-250（Ofcom 对 Meta 立案：Instagram「Instants」上线前疑未完成非法内容与儿童风险评估，10-06）/ 2026-251（意大利 AGCM 牵头、挪威丹麦协同，对微软系游戏公司（含动视暴雪）虚拟货币启动 EU CPC 联合调查，研判「广泛侵权」，10-08，路透）/ 2026-252（Meta/TikTok/X 挑战 Ofcom《在线安全法》信息索取开庭，X 称「史上最繁重」，10-05 开庭 10-07 结束）/ 2026-253（欧委会对保加利亚 DSA 补充正式通知 INFR(2024)2241，10-01 补录）
+- 配套：e107–e111 + 监管日历 7 节点；dpa-uk-007 / dpa-uk-008 / dpa-eu-035；Laws.tsx AI Act(id 2) 补入 ICO 十家整改与智能体征询、DSA(id 3) 补入保加利亚通知与英国侧对照 → updateTime 均 2026-10-08
+- 新增 5 链接先经 curl 200（ICO / 海峡时报转载路透 / 星报转载路透 / Silicon UK / 欧委会 digital-strategy 官方页）；validate-links exit 0（247 有效 / 7 疑似受限 / 4 基线内失效，新增失效 0）；build 成功（2.02s，单 chunk 1.31 MB）；提交 17e521e，Actions "Build and Deploy" success，线上 JS index-D3nq3Dp2.js 已确认含 2026-249~253 / e107~e111 / dpa-uk-007·008 / dpa-eu-035 / Instants / 取证征询
+- **Ofcom 官网（ofcom.org.uk）对校验脚本全站 403**（根域名亦 403，站点级反爬非死链；WebFetch 可读并确认页面存在且日期 10-06）。为避免疑似受限从 7 扩大，沿用 10-07 做法改用可校验转载源，source 仍标 Ofcom
+- 核实排除：欧盟对 X 的 1.2 亿欧元 DSA 罚单为 2025-12-05 决定（DOJ 介入 2026-09-24 已收录为 2026-231/e92），英文转载属旧闻重发；意大利 AGCM 对 Shein 100 万欧元环保宣传罚款为 2025-08 旧事，10-07 英文报道出自 londondaily/paristimes 等自述「AI 生成」站点，属旧闻重发已排除；《欧洲产品法》站内 09-21 已收录；EU PID/海关规费为 09-21 委任条例延续
+- 判定无新增：DPC（最新 10-01 CHI）、EDPB（09-23）、CNIL（10-08 FRANCE TRAVAIL 禁令结束通知属程序性收尾）、presscorner（Kingspan 合并信息不实罚款属非数字项）、digital-strategy（10-06 标准化条例已收录为 2026-242；.IA 公民倡议登记属程序性）、ENISA/AI Office（窗口内无新公告）
+- 执法统计卡未动（Ofcom/ICO 属英国非欧盟罚款；意大利 AGCM 牵头的 CPC 调查属消费者保护协调行动，沿用对波兰 UOKiK 立案的保守口径）
+- HANDOVER.md 水位更新至 2026-253 / e111 / dpa-eu-035 / dpa-uk-008，第 3 节条目数修正（执法 102→107、监管局 68→71），新增第 21 节
