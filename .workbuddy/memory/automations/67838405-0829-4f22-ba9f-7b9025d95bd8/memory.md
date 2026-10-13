@@ -104,3 +104,16 @@
 - validate-links exit 0（255 有效 / 12 疑似受限（新增的 4 条均为 finance.sina.cn 本地 DNS ENOTFOUND，脚本经 DoH 确认域名存在）/ 4 基线内失效 / 新增失效 0）；build 成功（1.89s，单 chunk 1.44 MB）
 - 提交 1335d55 已推送 main；**Actions「Build and Deploy」deploy 步骤失败（build 作业成功，疑 actions/deploy-pages 瞬时故障）**，已追加提交重触发重跑
 - HANDOVER.md 水位更新至 2026-266 / e122 / dpa-eu-039·dpa-tr-004，第 3 节条目数修正（执法 112→116、监管局 74→77），新增第 23 节
+
+# 2026-10-13 执行记录
+
+- 覆盖窗口 2026-10-12~10-13（上次执行 10-12）；先 fetch 远程，本地与远程同为 95d2300，无双管道冲突；仓库水位与 HANDOVER §4 一致（news 2026-266 / e122 / dpa-eu-039·uk-009·tr-004）
+- 新增 6 条：2026-267（欧委会就 AI Act 第75c/75d 条实施细则草案启动征询、11-09 截止，Ares(2026)9589403）/ 2026-268（EDPB 智能眼镜数据保护声明 + 《连通的目光》报告，10-13）/ 2026-269（欧委会依 DSA 警告平台不得直播美国枪决行刑，落点在"勤勉执行自身服务条款"，10-12）/ 2026-270（Meta 在伦敦高等法院挑战 Ofcom 按"合格全球营业额"计费与计罚，10-13）/ 2026-271（MOW 依 DMA 就苹果 iOS 27 域名级广告拦截向欧委会申请临时措施，并向英国 CMA 提平行请求，10-13）/ 2026-272（CEC 调查：SHEIN/Temu/AliExpress 鞋类 36% 未过 REACH、安全鞋 80% 不达 EN ISO，10-12/13）
+- 配套：e123–e128 + 监管日历 7 节点；dpa-eu-040 / dpa-eu-041 / dpa-uk-010；Laws 更新 id 1/2/3/4/14，updateTime 均 2026-10-13
+- **关键排除**：EDPB 10-12 转发的 Wind Tre 1670 万欧元罚单是 **2020-07-09 旧案重发**（GDPRhub 9435753、EDPB 自身 2020 年 National News 同事件），EDPB 页面所载"决定日 05/06/2026"为数据错误，未收录
+- **链接换源**：cec-footwearindustry.eu 官网在本环境 curl 与 Node fetch 均不可达（DNS 可解析、连接失败，WebFetch 可读）→ 改用同源 World Footwear；Meta/Ofcom 的 Guardian 404、MarketScreener 403、Reuters 401 → 用 Global Banking & Finance Review 转载路透原稿
+- validate-links **exit 0**（267 有效 / 6 疑似受限 / 4 基线内失效 / 新增 0）；疑似受限由上轮 12 条回落至 6 条，说明 EDPB/EDPS 上游 DNSSEC 故障已修复，本轮无需 DoH 兜底；build 成功（1.97s，单 chunk 1.50 MB）
+- 提交 eebe5b6（数据）+ 8bd3671（HANDOVER 与内存），已推送；Actions「Build and Deploy」success（8bd3671）；线上产物 index-BCVkojAA.js 已确认含 2026-267~272 / e123~e128 / dpa-eu-040·041·uk-010 / 智能眼镜 / 连通的目光 / World Footwear / movementforanopenweb / 75c
+- 判定无新增：DPC（最新 10-01 CHI）、EDPB 自身条目（除 10-13 智能眼镜外均为转发）、ICO（10-09 已收录）、CNIL（10-13 为转发 EDPB 稿、10-09 为活动回放）、ENISA、presscorner、digital-strategy RSS 窗口内均无新项
+- 执法统计卡未动（口径为欧盟罚款／调查；实施细则征询、EDPB 声明、英国程序争议、倡导组织投诉、行业协会调查均不改变 €40.5 亿／52／15）
+- 待跟进：10-14 普通法院 Technius 诉 Stripchat DSA 认定案判决；10-15 佐审官 Biondi 就字节跳动 DMA 上诉 C-627/24 P 发表意见；苹果 WebKit 动态封禁名单机制可能成为 DMA 下浏览器层级开放义务首案
