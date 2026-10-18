@@ -130,3 +130,16 @@
 - HANDOVER.md 水位更新至 2026-278 / e134 / dpa-eu-044，第 3 节条目数修正（执法 124→130、监管局 80→82），并补注 e 系列历史缺号 e33/e44/e60/e61/e62，新增第 25 节
 - 判定无新增：DPC（最新 10-01 CHI）、EDPB 自身条目（最新 10-13 智能眼镜；10-12 Wind Tre 为 2020 旧案重发）、ICO（10-09）、CNIL（程序性收尾）、ENISA（09-30）、presscorner（除维尔库宁演讲外非数字法规项）、digital-strategy RSS
 - 后续注意：①**10-15 AG Biondi 就字节跳动 DMA 上诉 C-627/24 P 发表意见**为首要跟踪项；②AI Office「研发测试豁免」扩张解释若被诉，将成 AI Act 射程标志性判例；③SHEIN 法国暂停程序与巴黎法院裁决的权威英文一手来源仍缺（Reuters/BBC），需待一手报道后再评估；④提防中文 AI 聚合站把 2025-11 的 SHEIN 事件当作 2026-10 新闻重发
+
+# 2026-10-16 执行记录
+
+- 覆盖窗口 2026-10-14~10-16（上次执行 10-14）；先 fetch 远程，本地与远程同为 9cc33f3，无双管道冲突；起始工作区干净
+- 新增 2 条：2026-279（欧盟法院佐审官 Biondi 就字节跳动挑战 TikTok DMA 守门人认定上诉发表意见，建议驳回、确立「认真挑战推定」举证标准，multi-homing 不构成有效抗辩，C-627/24 P，10-15，curia 官方新闻稿 PDF）／2026-280（苹果在 DMA 首次评估征询中正式要求废除 DMA 或改由独立机构执法，欧委会回应「绝无废除打算」，意见书 10-14 提交，10-15）+ e135 + 监管日历 3 节点；Laws.tsx DMA(id 1) 刷新 → updateTime 2026-10-16
+- **链接经验**：curia 新门户 PDF 真实路径为 `curia.europa.eu/site/jcms/upload/docs/application/pdf/...`（不带 `/site/jcms/` 前缀的旧式路径 404）；Euractiv 现整站 302 至 rapporteur.com 且 403，苹果事件改用法新社转载 Naharnet（m.naharnet.com，200）
+- **旧闻甄别（关键排除）**：意大利拟对 Temu/SHEIN 快时尚征税的中文聚合报道经核实为 2025-10-15 路透旧稿重发（squidsaccess URL 路径 /2025/10/15/、Zonebourse 版权行 © Reuters - 2025），未收录；OpenAI/Anthropic 调查 10-15 跟进报道为 10-14 已收录事件延续；CNIL 350 万欧元罚单为 2025-12-30 决定；苹果诉 OpenAI 为 2026-07-10 旧闻
+- 判定无新增：DPC（10-01 CHI）、EDPB（10-13 智能眼镜）、ICO（10-09，官网列表已核对）、CNIL、digital-strategy RSS（10-09）、presscorner、ENISA
+- validate-links exit 0（新增失效 0，新增 2 链接均正常解析；疑似受限 8 条均为既有项）；build 成功（1.90s，单 chunk 1.57MB）
+- 提交 b194156 已推送；Actions「Build and Deploy」success；线上产物 index-BrjykAzN.js 已确认含 2026-279/2026-280/e135/C-627/24 P/cp260151en/naharnet
+- HANDOVER.md 水位更新至 2026-280 / e135（第 3 节执法条数 130→131），新增第 26 节
+- 执法统计卡未动（佐审官意见与立法征询不属欧盟罚款/调查口径）
+- 待跟进：C-627/24 P 正式判决（数月内）；10-21 苹果 DMA 基本权利诉讼公开听证；欧委会 DMA 首次评估报告；AI Office 对 OpenAI/Anthropic 答复的评估
