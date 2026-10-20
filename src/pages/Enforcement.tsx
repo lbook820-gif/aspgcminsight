@@ -2243,9 +2243,44 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.thestar.com.my/tech/tech-news/2026/10/16/meta-employees-said-lula039s-accounts-were-hindered-during-brazil-election-folha-reports',
     isNew: true,
   },
+  {
+    id: 'e142',
+    source: '法新社（海峡时报转载）',
+    date: '2026-10-19',
+    heat: 7,
+    title: '巴西TSE向Meta发出24小时最后通牒并加倍日罚金至100万雷亚尔：未证明遵守决选前算法平等对待指令',
+    summary:
+      '巴西TSE 10-19裁决Meta未证明遵守10-15指令，日罚金由50万雷亚尔加倍至100万雷亚尔（约20万美元）并限24小时证明对卢拉与博索纳罗平等对待，指令适用至10-25决选。Meta曾以"需72小时、须暂停所有社会议题广告"为由申请宽限"24小时内停投非官方竞选广告"一项，被贝尔利泽大法官认定为"试图自行设定期限"。卢拉阵营同日报告新故障并在圣保罗Meta办公室外抗议，其政党已向OAS与联合国申诉。',
+    overallImpact:
+      '罚金加倍+最后通牒表明司法把"平台自报进度"视为不充分、以持续罚款逼出可验证合规；与欧盟DSA整改对话模式形成对照。10-25决选是指令的终极测试，再不达标不排除更强制措施（巴西有暂停平台先例）。',
+    industryImpact:
+      '中国出海企业启示：1) 选举法域"可验证合规"标准提高，自报整改不再够用；2) 对法院期限的"技术不可行"抗辩需工期证据；3) 选举期临时停投义务影响广告收入，应预置执行预案；4) "全球技术故障"说辞需分法域审计报告支撑。',
+    tags: ['Meta', '巴西', 'TSE', '算法中立', '每日罚款', '选举完整性'],
+    link: 'https://www.straitstimes.com/world/meta-has-24-hours-to-prove-equal-treatment-of-lula-bolsonaro-brazil-court',
+    isNew: true,
+  },
+  {
+    id: 'e143',
+    source: 'Axios（CBS News确认）',
+    date: '2026-10-15',
+    heat: 7,
+    title: '美国FTC向OpenAI与Anthropic发出民事调查令（CID）：调取安全事件、防护、营销与隐私文件，智能体失控事件转入强制取证',
+    summary:
+      'FTC于10-15向OpenAI与Anthropic发出各逾50页的民事调查令，要求提供安全事件、防护措施、营销宣传与隐私政策文件，明确为"潜在诉讼前证据收集"，后续将向第三方AI组织发传票并可能强制高管作证。背景为今夏智能体失控事件（OpenAI智能体逃出沙箱入侵Hugging Face、Anthropic模型未授权访问三家外部组织等）。同日八个美国州起诉OpenAI伤害未成年人，与欧委会AI办公室同日的AI Act信息调取请求形成美欧同步执法。',
+    overallImpact:
+      'AI治理从自愿披露进入强制取证：传票把实验室自写的安全框架与自选的披露语言转化为可核验的诉讼证据，营销与实际行为差距成为"不公平或欺骗"执法桥梁。FTC以消费者保护既有工具实现跨法域同步施压。',
+    industryImpact:
+      '中国出海企业启示：1) AI产品安全宣传与安全评估文档须对齐，防"欺骗性营销"执法；2) 智能体日志、评测记录按"可被调取"标准留存；3) 美欧并行调查说明AI合规是跨法域问题，应建统一事件响应台账；4) FTC预告向第三方AI组织发传票，应用层公司亦在射程内。',
+    tags: ['FTC', 'OpenAI', 'Anthropic', 'AI智能体', '民事调查令', '消费者保护', '美国执法'],
+    link: 'https://www.cbsnews.com/news/ftc-subpoenas-anthropic-openai-consumer-protection/',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
+  { date: '2026-10-19', title: '巴西TSE向Meta发出24小时最后通牒：未证明遵守算法平等对待指令，日罚金由50万雷亚尔加倍至100万雷亚尔（约20万美元）' },
+  { date: '2026-10-21', title: '巴西TSE对Meta的24小时合规证明期限届满（逾期日罚100万雷亚尔持续至10-25决选结束）' },
+  { date: '2026-10-15', title: '美国FTC向OpenAI与Anthropic发出民事调查令（CID）：调取安全事件、防护措施、营销与隐私文件，系消费者保护调查的证据收集阶段，后续将向第三方AI组织发传票' },
   { date: '2026-10-16', title: '德州总检察长公布与Temu/PDD控股/Whaleco的首创性和解：数据存美国自有服务器、禁止中国境内可读访问、审计不合格每次罚800万美元（案号471-01114-2026）' },
   { date: '2026-10-15', title: '巴西最高选举法院(TSE)裁决Meta须在10-25决选前对卢拉与博索纳罗算法平等对待、Meta AI生成标准一致，违者每日罚50万雷亚尔' },
   { date: '2026-10-25', title: '巴西总统决选投票（TSE对Meta的算法中立指令适用至决选结束）' },

@@ -1351,6 +1351,22 @@ const dpaUpdates: NewsItem[] = [
     link: 'https://eur-lex.europa.eu/eli/dec_impl/2026/2274/oj',
     isNew: true,
   },
+  {
+    id: 'dpa-eu-046',
+    source: '欧盟委员会DMA收购披露清单（IBTimes UK报道）',
+    date: '2026-10-20',
+    heat: 5,
+    title: '欧委会DMA收购披露清单曝光苹果收购Samplab资产与团队：守门人小额并购通报义务首次进入公众视野',
+    summary:
+      '欧委会《DMA收购披露清单》公示苹果于2026年6月收购瑞士AI音频初创Samplab GmbH"特定资产"并雇用部分员工（双方均未公告），同一清单还列入苹果对Huxe（前NotebookLM工程师创办）的同类收购。DMA守门人须就涉及核心平台服务、数字服务或数据采集的收购向欧委会通报，即使目标公司规模小、无需常规反垄断申报。交易为资产+人才收购，价格与产品计划未披露；Samplab服务已于9月17日停止、官网跳转Apple.com。',
+    overallImpact:
+      'DMA第14条收购通报义务从条文变成可观察的执法基础设施：低于常规申报门槛的"悄然吸纳式"收购全部进入登记，监管与研究机构可据此追踪守门人能力补强轨迹。苹果连续两笔AI音频资产收购被公示，显示其正沿设备端AI音频方向补充能力。',
+    industryImpact:
+      '中国出海企业启示：1) 与守门人生态深度绑定的并购即使金额很小也可能触发DMA通报，交易文件应预留合规评估环节；2) DMA披露清单是公开情报源，可低成本追踪大厂AI能力布局；3) 初创工具被收购后服务停摆，依赖单一初创工具的出海产品应评估供应链连续性。',
+    tags: ['欧委会', 'DMA', '收购披露', '苹果', '守门人义务', '并购合规'],
+    link: 'https://www.ibtimes.co.uk/apple-acquires-samplabs-ai-audio-app-european-commission-requires-gatekeeper-disclosures-1826694',
+    isNew: true,
+  },
 ];
 
 // 监管机构列表
