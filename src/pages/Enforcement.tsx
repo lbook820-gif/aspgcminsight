@@ -5,9 +5,8 @@ import type { NewsItem, RegulatoryEvent } from '@/types';
 const enforcementStats = [
   { value: '€ 40.5亿', label: '累计罚款金额 (2024-2026)' },
   { value: '52', label: '已完成调查案件' },
-  { value: '15', label: '正在进行中的调查' },
+  { value: '16', label: '正在进行中的调查' },
 ];
-
 const enforcementCases: NewsItem[] = [
   {
     id: 'e78',
@@ -2275,9 +2274,42 @@ const enforcementCases: NewsItem[] = [
     link: 'https://www.cbsnews.com/news/ftc-subpoenas-anthropic-openai-consumer-protection/',
     isNew: true,
   },
+  {
+    id: 'e144',
+    source: '欧盟委员会官方新闻稿（IP/26/2223）',
+    date: '2026-10-21',
+    heat: 9,
+    title: '欧委会对Booking.com启动DSA正式调查：虚假房源、钓鱼诈骗与付费排名广告标识三条线（最高可罚全球营业额6%）',
+    summary:
+      '欧委会10-21对Booking.com启动DSA正式程序：①未勤勉评估/缓解虚假房源相关系统性风险（不存在房源、冒充房东诈骗、不合规房源）；②利用预订与住客数据及站内消息系统实施的钓鱼诈骗；③住宿商付更高佣金换取搜索靠前时，付费房源是否按第26(1)条清晰标识为广告。基于近四年风险评估报告与2025-09/2026-05两轮RFI答复的初步审查，与荷兰数字服务协调员ACM协作。欧委会官员称其风险评估"absolutely substandard"。若坐实违规最高可罚全球营业额6%，可采取临时措施或接受约束性整改承诺。',
+    overallImpact:
+      'DSA正式执法首次覆盖在线旅游/交易型平台，执法理由从内容审核延伸到交易诈骗与消费者资金安全；第34/35条风险评估义务对所有VLOP同等适用。"RFI答复不充分→正式立案"的升级路径得到验证。',
+    industryImpact:
+      '中国出海企业启示：1) 电商/旅游/票务类平台应对标自查"平台被滥用实施诈骗"场景（假店铺、站内消息钓鱼、付款引导）；2) 付费排名必须可识别为广告并披露付款方；3) RFI答复须按证据标准对待，答复质量决定是否升级立案。',
+    tags: ['DSA', 'Booking.com', '欧委会', '正式调查', '钓鱼诈骗', '广告透明度'],
+    link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2223',
+    isNew: true,
+  },
+  {
+    id: 'e145',
+    source: '彭博社（爱尔兰考察者报Irish Examiner报道）',
+    date: '2026-10-21',
+    heat: 8,
+    title: '苹果DMA基本权利诉讼公开听证：互操作义务是否侵犯财产权成核心争点，欧委会称其"锁定超1/3欧洲智能手机用户"（T-1080/23）',
+    summary:
+      '苹果诉欧委会DMA案10-21在欧盟普通法院公开听证。苹果律师比尔德称DMA"施加极其繁重且具侵入性的负担"、无视财产权与隐私安全；苹果在三条战线进攻：互操作义务侵犯基本权利、App Store不应构成单一核心平台服务、iMessage调查程序瑕疵。欧委会律师洛文塔尔反击：苹果"绝对控制"带来超额利润，"只有苹果掌握围墙花园的钥匙……锁定了超过三分之一的欧洲智能手机用户"。FSFE作为唯一民间介入方支持互操作义务。判决预计数月内作出。',
+    overallImpact:
+      '继字节案后DMA第二场标志性司法审查：若互操作义务获背书，围墙花园开放获宪法级支持；若苹果胜诉，DMA第6(7)条与其他守门人开放义务的边界将全面重写。判决将与C-627/24 P共同构成DMA司法审查基准。',
+    industryImpact:
+      '中国出海企业启示：1) 互操作义务若获确认，中国硬件厂商的iOS互联产品（穿戴、音频、智能家居）在欧空间扩大；2) 跟踪本案与字节案判决确立的举证标准；3) 苹果"隐私与安全"抗辩若被采纳，可能被复制用于对抗开放义务。',
+    tags: ['苹果', 'DMA', '欧盟普通法院', '基本权利', '互操作义务', 'T-1080/23'],
+    link: 'https://www.irishexaminer.com/business/technology/arid-41728107.html',
+    isNew: true,
+  },
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
+  { date: '2026-10-21', title: '欧委会对Booking.com启动DSA正式调查：虚假房源、钓鱼诈骗与付费排名广告标识三条线（最高可罚全球营业额6%）' },
   { date: '2026-10-19', title: '巴西TSE向Meta发出24小时最后通牒：未证明遵守算法平等对待指令，日罚金由50万雷亚尔加倍至100万雷亚尔（约20万美元）' },
   { date: '2026-10-21', title: '巴西TSE对Meta的24小时合规证明期限届满（逾期日罚100万雷亚尔持续至10-25决选结束）' },
   { date: '2026-10-15', title: '美国FTC向OpenAI与Anthropic发出民事调查令（CID）：调取安全事件、防护措施、营销与隐私文件，系消费者保护调查的证据收集阶段，后续将向第三方AI组织发传票' },
