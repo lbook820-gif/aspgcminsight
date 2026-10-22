@@ -1383,6 +1383,22 @@ const dpaUpdates: NewsItem[] = [
     link: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2223',
     isNew: true,
   },
+  {
+    id: 'dpa-eu-048',
+    source: '欧盟理事会(Consilium)官方新闻稿（2eu.brussels 整理报道）',
+    date: '2026-10-21',
+    heat: 9,
+    title: '欧盟理事会就 GDPR/ePrivacy 简化方案定调：数据定义不退让、Cookie 规则不迁入 GDPR、事件通报改走成员国单一入口',
+    summary:
+      '欧盟理事会10-21以谈判授权形式确定其对《数字综合法案》数字半部的立场，在多个争议点上与欧委会提案分道而行：①个人数据定义维持现行文本，另设假名化与识别条款，欧委会“相对化”方案被放弃（EDPB 与 EDPS 在 2 月联合意见中即批评该方案会削弱保护水平）；②Cookie 与在线追踪回归 ePrivacy 第5(3)条，删除第88b条浏览器级同意信号，改为六类免同意目的＋一键拒绝＋四个月不重复询问；③事件通报以成员国国家级单一入口取代欧盟统一门户，ENISA 仅设信息点不接收通报；④泄露通报延至 96 小时、门槛提至“可能的高风险”；⑤公共部门可对被指定守门人收取更高数据复用费；⑥废除 P2B 条例相关条款。下一步待欧洲议会通过立场后进入三方会谈。',
+    overallImpact:
+      '监管机构视角看，这一立场把“简化”限定在流程与文书层面，而非实体保护水平的降低：数据定义与 Cookie 同意两个最敏感的实体规则均未被削弱，EDPB/EDPS 的核心关切得到回应；但“96 小时 + 高风险门槛”与“国家级入口”会改变 DPA 的受理结构与工作量分布，跨境案件的通报一致性将成为新的执行难点。',
+    industryImpact:
+      '出海企业应据理事会立场调整三件事：数据分类不按“假名化即匿名”处理；Cookie/追踪仍按 ePrivacy 与各国实施法从严准备，六类豁免的条件需逐条核对而非整体套用；泄露与安全事件通报流程按“96 小时 + 母国单一入口”设计，同时保留 72 小时能力以应对议会回退或成员国更严要求。',
+    tags: ['欧盟理事会', 'GDPR', 'ePrivacy', 'EDPB', '数据泄露通报', '数字综合法案', '立法进展'],
+    link: 'https://2eu.brussels/en/news/eu-council-seeks-fewer-cookie-banners-and-simpler-cyber-incident-reporting-while-preserving-gdpr-definition-of-personal-data',
+    isNew: true,
+  },
 ];
 
 // 监管机构列表
