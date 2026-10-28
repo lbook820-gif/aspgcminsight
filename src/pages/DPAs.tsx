@@ -1415,6 +1415,22 @@ const dpaUpdates: NewsItem[] = [
     link: 'https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act',
     isNew: true,
   },
+  {
+    id: 'dpa-de-005',
+    source: '柏林数据保护局（BlnBDI，经 noyb 公开决定摘录）',
+    date: '2026-10-21',
+    heat: 7,
+    title: '柏林 DPA 认定 CDU/SPD/绿党/左翼党政治微定向违法：基于政治敏感兴趣的个性化广告定向无合法基础，予训诫；AfD 案在办（其挑战调查权的行政诉讼已败）',
+    summary:
+      '柏林数据保护信息自由专员（Berliner Beauftragte für Datenschutz und Informationsfreiheit）就 noyb 2023 年基于 ZDF Magazin Royale「Target Leaks」实测项目提起的投诉作出决定：2021 年联邦选举期间，CDU、SPD、绿党与左翼党基于用户政治兴趣（GDPR 第 9 条特殊类别数据）投放个性化政治广告，缺乏同意等合法基础，处理违法，均已发出训诫（reprimand）。决定历时三年余，其间德国又经历一届联邦选举。针对 AfD 的投诉仍未结案：AfD 曾在法院挑战 DPA 调查权，柏林行政法院已裁定其必须配合提供所要求信息。noyb 表示希望机构在政党继续微定向时迅速采取禁令与罚款等进一步执法。',
+    overallImpact:
+      '德国主要法域首次系统性认定主流政党的政治微定向违反 GDPR 第 9 条，平台画像叠加特殊类别数据定向的合法性被正面否定；训诫留出升级空间（禁令/罚款），AfD 行政诉讼结果确认 DPA 对政党的调查权。欧洲选举执法口径（欧盟 TTPA、DSA 选举调查、罗马尼亚/巴西）与成员国 DPA 决定正在同向收敛。',
+    industryImpact:
+      '广告技术启示：欧盟区政治/议题定向行业包应默认下线；兴趣画像标签（含政治、宗教、健康等敏感类目）的输出方与使用方均可能被认定为共同控制者；选举周期前的定向广告合规审查将成为监管例行动作。',
+    tags: ['柏林数据保护局', 'BlnBDI', '政治微定向', 'GDPR 第9条', '特殊类别数据', '训诫', 'noyb', '德国政党'],
+    link: 'https://noyb.eu/en/noyb-win-german-dpa-finds-microtargeting-major-political-parties-illegal',
+    isNew: true,
+  },
 ];
 
 // 监管机构列表
