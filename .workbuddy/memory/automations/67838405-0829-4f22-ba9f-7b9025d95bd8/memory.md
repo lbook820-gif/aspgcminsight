@@ -213,3 +213,14 @@
 - 提交 7fd331c 已推送；Actions run 40005223044「Build and Deploy」success；线上 index-Ka_p4-_P.js 已确认含 2026-299~303 / e149/150 / Safe Screens / 2027-01-01
 - HANDOVER 水位更新至 2026-303 / e150，§3 条数 146（执法）/87（监管局），新增第 32 节
 - 经验：rapporteur.com（原 Euractiv）对 curl/脚本全站 403（WebFetch 可读）→ 用腾讯新闻同源编译稿；el-fondo 虽 200 但页面日期为 10-24（自动稿/时区），日期不可靠须弃用；marketScreener 403 → 环球邮报转载路透
+
+# 2026-10-28 执行记录
+
+- 覆盖窗口 2026-10-27~10-28（上次执行 10-26，commit a551d89，10-24~25 无执行；先 fetch 远程，本地与远程同为 a551d89，无双管道冲突）
+- **起始发现孤儿工作区**（10-27 档期执行中断遗留）：2026-307~311 + e152~e154 + dpa-de-005 + 日历 2 节点未提交；5 条链接全部 curl 200（noyb×2/hindustantimes/aol/dig.watch）后保留，未重编 ID（沿用 10-12 先例）。注意 10-26 跑批的 HANDOVER 水位更新（2026-306/e151/dpa-eu-049）也留在工作区未提交
+- 本批新增 2 条：2026-312/e155（韩国 KMCC 对谷歌罚 429 亿、苹果罚 208.1 亿韩元合计 637.1 亿≈$45M：强制支付方式/审核不公延迟/苹果对韩含税计佣歧视，2021 电信业务法修正案 App 市场条款全球首案，10-28，Yonhap en.yna.co.kr 200；korea.net 官方页 302 不可直链）+ 日历 11-28 KMCC 整改期限节点 + 11-20 Meta 节点补注 EBU 呼吁
+- 关键排除：Temu DSA 整改计划接受（10-26/27）=2026-304 已收录；欧盟 2 欧处理费（CNA 10-27）站内已覆盖；EBU 10-28 声明=2026-308 同事件仅并入日历；理事会 10-21 立场=2026-295/305 已收录；瑞典政府限制公务 ChatGPT 属内部管控、英国 asylum 工具无执法认定
+- 判定无新增：DPC（10-01 CHI）、EDPB、ICO、CNIL、ENISA/AI Office、presscorner、digital-strategy RSS
+- validate-links exit 0（306 有效/8 疑似受限/4 基线内失效/新增失效 0）；build 成功 1.94s；提交 97d2390 已推送；Actions run 40732411016 success；线上 index-BeSq0Avp.js 已确认含 2026-312/e155/KMCC/dpa-de-005/Outlier/637.1
+- HANDOVER 水位更新至 2026-312/e155/dpa-eu-049·de-005，条数执法 151/监管局 89，新增第 33 节；执法统计卡未动（KMCC 非欧盟口径）
+- 待跟进：11-20 Meta 条款生效+挪威禁令裁决；11-09 AI Act 细则征询截止；11-13 EDPB 罚款指南征询截止；11 月 KMCC 书面决定；11-26 EU KIDS Act 征询截止；C-627/24 P 判决；T-1080/23 苹果案

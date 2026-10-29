@@ -47,8 +47,8 @@ npm run dev     # 本地预览 :3000
 |---|---|---|---|
 | `/` | `src/pages/Home.tsx` | 首页：本月动态 + 全部新闻，按 2026/2025/2024 分组 | 见下方新闻流 |
 | `/laws` | `src/pages/Laws.tsx` | 法规库（15 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、CADA…） | 21（含 6 条行业动态） |
-| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 151（其中 `e46` 为历史重复 ID） |
-| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 89 |
+| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 153（其中 `e46` 为历史重复 ID） |
+| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 92 |
 
 首页另有 `dynamicCards`（`src/data/dynamicCards.ts`）作为四个板块的入口卡片。
 
@@ -67,11 +67,11 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-10-28） |
+| 数据源 | 格式 | 当前最大（2026-10-29） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-312**（10 月文件为 `2026-10.ts`，index.ts 已同步） |
-| 执法动态 | `eN` | **e155**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-049 / dpa-ie-014 / dpa-de-005 / dpa-ch-004 / dpa-fr-002 / dpa-uk-010 / dpa-tr-004 |
+| 主新闻流 | `2026-NNN` | **2026-318**（10 月文件为 `2026-10.ts`，index.ts 已同步） |
+| 执法动态 | `eN` | **e157**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-051 / dpa-ie-014 / dpa-de-005 / dpa-fr-003 / dpa-ch-004 / dpa-uk-010 / dpa-tr-004 |
 | 法规库 | `N` | **15** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
@@ -832,3 +832,17 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 - 判定无新增：DPC（最新 10-01 CHI）、EDPB（列表与上轮一致）、ICO（10-09 后无平台合规新项）、CNIL、ENISA/AI Office、presscorner、digital-strategy RSS（最新仍为 Temu 行动计划，已收录）。
 - 链接：本批新增 2 条链接（en.yna.co.kr 200；korea.net 官方发布页 302 不可直链，采用 Yonhap 链接并在 source 双标）。validate-links 需 exit 0；build 成功。
 - 执法统计卡未动（KMCC 属韩国非欧盟，沿用美国/巴西事件不改 EU 口径的先例；DPAs/Laws 本批无新增）。
+
+---
+
+## 34. 2026-10-29 每日更新记录（WorkBuddy 自动化）
+
+- 覆盖窗口 2026-10-28~10-29（上次执行 10-28，commit 97d2390）；先 fetch 远程，本地与远程同为 97d2390，无双管道冲突；起始工作区仅有自动化记忆改动。
+- 新增 6 条新闻：`2026-313`（CNIL 对 Fnac Darty 罚 700 万欧元：App 内未获同意即回传浏览记录做推荐与推荐算法训练，决定日 10-22、10-29 公开，附按日 1 万欧元 1 个月整改令）/ `2026-314`（欧委会对奥地利未满 14 岁视频平台禁令启动 12 个月 TRIS 冻结期，与 KIDS Act 重叠的国家立法一律暂缓，法国/希腊区别对待，10-29）/ `2026-315`（巴黎上诉法院驳回 Meta 上诉，维持法竞争管理局邻接权临时措施，认定付费计算方法"可能构成滥用市场支配地位"，10-29）/ `2026-318`（Meta 宣布无限期推迟新商业条款，现有条款继续有效，10-28）/ `2026-317`（30 余名欧洲议员致函维尔库宁要求依 DSA 调查抗议内容算法放大与广告变现、澄清第 36(2) 条 48 小时危机机制，信函 10-23、10-27 公开）/ `2026-316`（欧委会 Frontex 新授权草案设"在线监测与响应中心"、拟申请 DSA 可信举报者身份，10-27）。
+- 配套：`e156`（CNIL Fnac Darty）、`e157`（巴黎上诉法院 Meta）＋监管日历 3 个新节点（10-29 奥地利冻结期、10-27 Frontex、10-23 议员联名信），并把原 11-20 Meta 条款生效节点改写为 10-28"无限期推迟"；`dpa-fr-003`（CNIL）/`dpa-eu-050`（奥地利冻结期）/`dpa-eu-051`（Frontex）；Laws.tsx 刷新 id 3 (DSA，Frontex 可信举报者＋第 36 条危机机制)、id 4 (GDPR，App 追踪器执法＋数字综合法案游说调查)、id 12 (EU KIDS Act，奥地利冻结期)，updateTime 均 2026-10-29。
+- 判定无新增：DPC（最新仍 10-01 CHI）、EDPB（最新 10-16 Xandr）、ICO（10-09 后无平台合规新项）、AI Office/AI Act 页面、digital-strategy RSS（10-28 仅"第 12 次虚假信息行为准则全会"Digibyte，属例行）。
+- 排除（去重/旧闻甄别）：①欧委会接受 Temu 整改方案（10-28 中文编译稿）=`2026-304` 已收录；②Booking.com DSA 调查（eudigitallaw 10-28 回顾）=`2026-290`/`e144` 已收录；③DSA 金融诈骗研究（10-28 回归报道）=`2026-291` 已收录；④英国预算 10-28 起要求电商平台代收卖家 VAT（2027-10 实施，涉 Amazon/eBay/Temu/SHEIN/Alibaba）属税制而非数字法规，未单列；⑤马来西亚 10-28 拟对外国电商平台强制电子发票（Temu/拼多多）属单一市场准入政策，缺一手链接，未收录；⑥Mark Carney/AI 与美中期选举等评论稿非监管动作。
+- 链接：6 条新增链接（CNIL 官方、2eu.brussels、Business Day 转载路透、The Star 转载路透、dig.watch、Arab News 转载路透）均先 curl 200。换源记录：globalbankingandfinance 该文 404 → 改用 Business Day；informat.ro 对脚本 403 → 改用 2eu.brussels；lemonde.fr 返回 402（付费墙）→ 弃用。
+- validate-links **exit 0**（310 有效 / 10 疑似受限 / 4 基线内失效 / **新增失效 0**）；build 成功（1.91s，单 chunk 1.79MB）。
+- 执法统计卡未动（CNIL 700 万欧元不改 €40.5 亿显示值；巴黎上诉法院裁定与 Frontex 提案均非欧盟罚款/立案）。
+- 待跟进：①KIDS Act 公众征询 11-26 截止与议会/理事会谈判，冻结期是否延长至 18 个月；②欧委会是否就 DSA 第 36(2) 条危机机制发布指引；③Frontex 草案在欧洲议会审议（Strik/Benifei 反对扩权），可信举报者条款能否保留；④Meta 商业条款无限期推迟后的欧委会 DMA 审查与挪威奥斯陆法院临时禁令裁定；⑤C-627/24 P 判决、T-1080/23 苹果案。
