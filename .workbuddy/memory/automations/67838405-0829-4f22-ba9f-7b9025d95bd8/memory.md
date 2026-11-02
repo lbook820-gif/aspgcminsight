@@ -236,3 +236,14 @@
 - 判定无新增：DPC（10-01 CHI）、EDPB（10-16 Xandr）、ICO、AI Office、digital-strategy RSS（10-28 仅虚假信息准则全会 Digibyte）
 - 排除：Temu 整改方案 10-28 编译稿=2026-304；Booking 调查与金融诈骗研究=e144/2026-291；英国预算电商 VAT 代收（2027-10 实施）属税制未单列；马来西亚外国电商平台电子发票缺一手源
 - 注意：lemonde.fr 付费墙返回 402，脚本会归为疑似受限，选链接时避开；2eu.brussels 对脚本稳定 200，可作欧委会记者会内容的可校验替身
+
+# 2026-11-02 执行记录
+
+- 覆盖窗口 2026-11-01~11-02；fetch 后本地与远程同为 018af30，无双管道冲突
+- **起始发现孤儿工作区**：11-01 档期执行完成全部数据编辑（2026-319~324 + e158~e160 + dpa-uk-011/012/eu-052 + HANDOVER §35）但中断于提交前；6 条孤儿链接逐一 curl 核验后按先例保留、未重编 ID
+- 本批新增 2 条：2026-325（四大AI商共推 robots.txt 统一AI训练退出信号，Google 官方 10-30，与 AI Act GPAI 行为准则衔接）/ 2026-326（Meta 与洛杉矶成瘾标杆案两原告和解、庭审仅针对 Snap，10-31，路透/凤凰编译）；Laws.tsx AI Act(id2) 补入 GPAI 行为准则衔接 → updateTime 2026-11-02
+- validate-links exit 0（313有效/15疑似受限均既有/4基线内失效/新增失效0）；build 成功 2.09s
+- 提交 5249068 已推送；Actions run 41490343297「Build and Deploy」success；线上 index-DXsdQHnB.js 已确认含 2026-325/326、__usage_ai-training、dpa-uk-012、dpa-eu-052、e160
+- 排除：ANPD 罚 TikTok（2026-08-26 旧闻重发）、标普 Meta 评级下调（非监管）、欧盟-加拿大数字贸易协定、混动车保障措施调查、中国网信办通报
+- 判定无新增：DPC/EDPB/CNIL/ICO/presscorner/digital-strategy 窗口内均无新项
+- HANDOVER 水位更新至 2026-326 / e160 / dpa-eu-052 / dpa-uk-012，新增第 36 节
