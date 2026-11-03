@@ -275,7 +275,7 @@ export const news202608: NewsItem[] = [
   },
   {
     id: '2026-174',
-    source: '欧盟委员会/IT之家/网易',
+    source: '欧盟委员会/IT之家/中国能源网',
     date: '2026-07-31',
     heat: 8,
     title: '欧盟依据《外国补贴条例》指控Temu未配合突袭调查，最高可处全球年营收1%罚款',
@@ -286,7 +286,7 @@ export const news202608: NewsItem[] = [
     industryImpact:
       '对中国出海平台企业的直接影响：1) FSR合规已成为中国企业在欧运营不可忽视的维度——被FSR调查时全面配合是避免额外处罚的关键，未配合可单独处以最高年营收1%罚款；2) DSA+FSR的双重监管要求跨境平台同时建立非法商品风险管理体系和外国补贴合规档案；3) Temu需在8月28日前提交DSA整改方案，FSR调查叠加将对合规资源造成巨大压力；4) 建议在欧运营的跨境电商平台立即审查自身是否可能被认定为FSR调查对象，并准备合规文档（账簿、组织架构、IT系统、补贴记录等）。',
     tags: ['Temu', 'FSR', '外国补贴条例', '欧盟', '跨境电商', '拼多多', '调查', '合规'],
-    link: 'https://www.163.com/dy/article/L386HR9G05567I2C.html',
+    link: 'https://www.cnenergynews.cn/article/4Sc9qI9R4PJ',
     isNew: true,
   },
   {
