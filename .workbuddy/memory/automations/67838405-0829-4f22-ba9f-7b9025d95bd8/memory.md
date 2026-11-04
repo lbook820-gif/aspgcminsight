@@ -247,3 +247,13 @@
 - 排除：ANPD 罚 TikTok（2026-08-26 旧闻重发）、标普 Meta 评级下调（非监管）、欧盟-加拿大数字贸易协定、混动车保障措施调查、中国网信办通报
 - 判定无新增：DPC/EDPB/CNIL/ICO/presscorner/digital-strategy 窗口内均无新项
 - HANDOVER 水位更新至 2026-326 / e160 / dpa-eu-052 / dpa-uk-012，新增第 36 节
+
+# 2026-11-03 执行记录
+
+- 覆盖窗口 2026-11-02~11-03；fetch 后本地与远程同为 7b97f31，无双管道冲突；起始工作区干净
+- **跨月**：新建 2026-11.ts 并同步 index.ts；新增 4 条新闻 2026-327~330（土耳其RK对谷歌AI概览立案+临时措施 11-02 / CJEU AG C-250/25 Like Company诉谷歌意见 11-03 / 京东收购CECONOMY FSR附条件批准 FS.100253 11-03 / 欧委会超市冷链网络攻击协同会议 11-03）+ e161 + 日历4节点 + dpa-tr-005 / dpa-eu-053
+- 修复新增失效：2026-174 的 163.com 404 → 换中国能源网同源稿（200）；validate-links exit 0（新增失效0）
+- 关键排除：英国10-30 Ofcom判决=dpa-uk-012已收录；AI Act 75c/75d细则=2026-267同事件；EU KIDS Act 列表页11-03为页面更新戳非发布日
+- 提交 c9db10e，Actions success，线上 index-B7RMHMK_.js 已确认含全部新条目
+- HANDOVER 水位 2026-330 / e161 / dpa-eu-053 / dpa-tr-005，新增第37节；执法统计卡未动
+- 经验：163.com dy 文章会整篇 404，换源选央媒/垂直站；2eu.brussels 稳定200可作欧委会/CJEU 可校验替身；digital-strategy 列表页日期可能是页面更新时间戳，须以详情页 Publication 日期为准
