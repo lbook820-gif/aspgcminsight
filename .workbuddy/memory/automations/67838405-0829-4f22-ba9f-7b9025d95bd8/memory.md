@@ -267,3 +267,14 @@
 - build 成功；提交 65ff5c1（数据）+ e87200b（HANDOVER §38）；水位 2026-336 / e162 / dpa-eu-054，执法 158 / 监管局 98
 - 排除：京东FSR（2026-329）、2欧元处理费（10月已收录）、Digital Omnibus（2026-295）、Temu整改（2026-304）、荷兰成瘾性设计草案与社交关系可携带权（缺一手源）
 - 经验：presscorner 逐条抓取可用 RSS（/api/rss?language=en），比 detail 猜测可靠；EDPB 列表页可 curl 200、文章页 WebFetch 403 但 curl 200；ICO 全站 Cloudflare 403 无法程序化核验
+
+# 2026-11-06 执行记录
+
+- 覆盖窗口 2026-11-04~11-06（上次执行 11-04，commit b9b484c）；fetch 后本地与远程一致，无双管道冲突；起始工作区仅 11-04 记忆文件未跟踪
+- 新增 5 条新闻：2026-337（CJEU 佐审官 Szpunar C-654/25 Undelam 意见：动态 IP 属个人数据，但"明知＋自动化＋反复诱发"索赔者无第82条赔偿请求权，11-05，dig.watch）/2026-338（首尔行政法院中止 Coupang 2011 亿韩元非法收集罚款、维持 4235 亿泄露罚款，11-06，韩联社英文）/2026-339（捷克众议院 142:1 通过《数字经济法》配齐 DSA 执法框架，11-04，Expats.cz）/2026-340（AI 办公室委托凯捷联合体评估 GPAI 网络攻击能力，11-05，Capgemini 官方）/2026-341（苹果开放 Siri AI App Intents 预览、欧盟因 DMA 第6(7)条整体缺席，11-04，The Register）
+- 配套：e163（Coupang 罚款中止，韩国口径，统计卡不动）；Laws id4（GDPR，updateTime 11-05）/ id3（DSA，11-04）/ id1（DMA，11-04）；DPAs 本轮无新增（窗口内唯一官方动作为 EDPB 11-04 儿童中心＝dpa-eu-054）
+- 链接：5 条新增先 curl 200；validate-links exit 0（327 有效/16 疑似受限均既有/4 基线内/新增 0）；build 成功 6.18s，单 chunk 1.92MB
+- 提交 2d0207b 已推送；Actions「Build and Deploy」success；线上 index-CitiAaye.js 已确认含 2026-337~341 / e163 / Siri AI / Coupang / 捷克众议院 / Undelam
+- 水位更新至 2026-341 / e163 / dpa-eu-054，执法 159 / 监管局 98，新增 HANDOVER §39
+- 排除：苹果 ATT 欧盟改版（Apple 官方日期 2026-09-16，非本窗口）；英国 10-30 Ofcom 判决＝dpa-uk-012；广告库征询＝2026-332；Temu 整改＝2026-304；巴西 ANPD 六年评估与 FTC 6(b) 定价调令（非欧盟/取证阶段）；14 议员要求评估 BYD 联网汽车（无一手文书）
+- 经验：CJEU 意见类题材 dig.watch 编译稳定 200 且日期准（优于 mlex 付费墙）；韩联社英文站当天出稿、curl 200，是韩国 PIPC/KMCC 首选可校验源；expats.cz 可替代捷克语本地媒体
