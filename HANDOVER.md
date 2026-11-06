@@ -47,7 +47,7 @@ npm run dev     # 本地预览 :3000
 |---|---|---|---|
 | `/` | `src/pages/Home.tsx` | 首页：本月动态 + 全部新闻，按 2026/2025/2024 分组 | 见下方新闻流 |
 | `/laws` | `src/pages/Laws.tsx` | 法规库（15 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、CADA…） | 21（含 6 条行业动态） |
-| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 159（其中 `e46` 为历史重复 ID） |
+| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 160（其中 `e46` 为历史重复 ID） |
 | `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 98 |
 
 首页另有 `dynamicCards`（`src/data/dynamicCards.ts`）作为四个板块的入口卡片。
@@ -67,10 +67,10 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-11-03） |
+| 数据源 | 格式 | 当前最大（2026-11-06） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-341**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
-| 执法动态 | `eN` | **e163**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
+| 主新闻流 | `2026-NNN` | **2026-345**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
+| 执法动态 | `eN` | **e164**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
 | 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-054 / dpa-ie-014 / dpa-de-005 / dpa-fr-003 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
 | 法规库 | `N` | **15** |
 | 法规库行业动态 | `iN` | **i6** |
@@ -914,3 +914,18 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 - 经验补充：①Google Fonts 类"索赔工厂"题材，dig.watch 对 CJEU 意见的编译稳定 200 且日期准确，优于 mlex（付费墙）与 captaincompliance（营销站）；②韩联社英文站（en.yna.co.kr）对司法裁定类新闻当天即出稿、curl 稳定 200，是韩国 PIPC/KMCC 口径的首选可校验源；③expats.cz 对捷克立法进程报道含具体票数与生效路径，可替代捷克本地媒体（后者多为捷克语且反爬）
 - 待跟进：①11-09 AI Act 第 75c/75d 条实施细则征询截止；②11-13 EDPB 罚款指南征询截止；③11-16 苹果新描述符启用、11-19 EBDS 会议决定是否推进"反诈骗自愿行为准则"；④11-26 EU KIDS Act 征询截止；⑤C-654/25 正式判决（将决定 Google Fonts 类索赔的存废）；⑥Coupang 两案本诉一审（罚单最终命运）；⑦11 月内 AWS/Azure 守门人认定；⑧12-02 AI Act 标识义务过渡期届满与两项新禁令生效
 
+
+## 40. 2026-11-06（第二档）执行记录
+
+覆盖窗口 2026-11-04~11-06（当日第二次执行，上次为 2d0207b）；fetch 后本地与远程一致（efbefc0），无双管道冲突；起始工作区干净。
+
+- 新增 4 条新闻：2026-342（欧委会对 TikTok「信息茧房」rabbit hole 发布 DSA 初步违规认定：第34/35条缓解措施不相称且无效，要求显式偏好优先/停用观看时长指标/定期测试算法，属 2024 年 2 月正式程序、与 2 月成瘾性设计认定独立，digital-strategy 官方页＋IP/26/2361，11-06，heat 10）／2026-343（谷歌、Meta、TikTok 分头起诉加州总检察长阻止 AB 1709 生效：个性化推荐与自动播放被定性"心理剥削性功能"、每名违规未成年人最高 $5 万，第一修正案+230 条，路透经 Insurance Journal，诉状 11-04 提交/11-05 报道）／2026-344（FTC 与 22 州公开亚马逊广告拍卖案未删节起诉书：平日加价最高 50%、大促日 250%、2022 假日季多收 $8700 万，并指控对广告商谎称涨价源于竞争，11-05）／2026-345（波兰《电子服务提供法》修正案生效：UKE 局长任 DSC 受理 DSA 投诉+检查+罚款，三机构分权，RMF24 经 UA.NEWS，11-06）
+- 配套：e164（TikTok rabbit hole 认定，欧盟口径）；Laws.tsx id 3（DSA）追加 rabbit hole 认定与波兰 DSC 生效两段 → updateTime 2026-11-06
+- 执法统计卡未动（rabbit hole 属既有 TikTok 正式程序内的初步认定，非新开调查）
+- DPAs 本轮无新增：DPC（最新 10-01 CHI）、EDPB（最新 11-04 儿童中心）、CNIL session replay 指引（11-05，privacydesign.ch 佐证存在但 cnil.fr 官方页无法程序化核验，未收录待下轮）、波兰不在 dpa- 前缀清单
+- 排除：①hcmtimes「DPC 对 TikTok €5.3 亿罚款」——为 2025-05 旧案重发（DPC 官网无新决定），AI 生成站不收录；②Apple/DOJ 和解谈判——仅 macdigest/cnnbc 等 AI 生成站点，无路透/彭博一手确认，未收录；③印尼数据法、ETUC Quality Jobs 倡议、欧委会教育与技能包——非合规执法主线
+- 链接：4 条新增先 curl 200（digital-strategy / insurancejournal / relevantaudience / ua.news）；validate-links **exit 0**（新增失效 0，fdtc.gov 403 故 FTC 官方稿弃用改 Relevant Audience）；build 成功 2.05s，单 chunk 1.94MB
+- 提交 1fc2e73 已推送；Actions run 42261101778「Build and Deploy」success；线上 index-DEKgdwZB.js 已确认含 2026-342~345 / e164 / 信息茧房 / AB 1709
+- 水位更新至 **2026-345 / e164 / dpa-eu-054**，执法 160 / 监管局 98
+- 经验：①presscorner IP 编号可从 digital-strategy 文章页 grep `ip_26_` 提取，digital-strategy 页对 curl 稳定 200 且含发布日期，优先于 presscorner detail；②FTC 官网对脚本 403（Cloudflare），美国监管稿可用行业垂直站（relevantaudience 等）替代但须 grep 验证内容；③ua.news 为 RMF24 可校验转载源（200）
+- 待跟进：①TikTok rabbit hole 答辩与最终决定（预计 2027）；②Meta FB/IG 信息茧房调查走向；③加州 AB 1709 禁令裁定（2027-01-01 生效前）；④CNIL session replay 指引官方链接补录；⑤11-09 AI Act 细则征询截止、11-13 EDPB 罚款指南征询截止、11-26 KIDS Act 征询截止；⑥C-654/25 判决；⑦11 月内 AWS/Azure 守门人认定
