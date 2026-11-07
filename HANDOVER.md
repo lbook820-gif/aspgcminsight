@@ -67,11 +67,11 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-11-06） |
+| 数据源 | 格式 | 当前最大（2026-11-07） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-345**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
+| 主新闻流 | `2026-NNN` | **2026-347**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
 | 执法动态 | `eN` | **e164**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-054 / dpa-ie-014 / dpa-de-005 / dpa-fr-003 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-055 / dpa-ie-014 / dpa-de-005 / dpa-fr-004 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
 | 法规库 | `N` | **15** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
@@ -929,3 +929,18 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 - 水位更新至 **2026-345 / e164 / dpa-eu-054**，执法 160 / 监管局 98
 - 经验：①presscorner IP 编号可从 digital-strategy 文章页 grep `ip_26_` 提取，digital-strategy 页对 curl 稳定 200 且含发布日期，优先于 presscorner detail；②FTC 官网对脚本 403（Cloudflare），美国监管稿可用行业垂直站（relevantaudience 等）替代但须 grep 验证内容；③ua.news 为 RMF24 可校验转载源（200）
 - 待跟进：①TikTok rabbit hole 答辩与最终决定（预计 2027）；②Meta FB/IG 信息茧房调查走向；③加州 AB 1709 禁令裁定（2027-01-01 生效前）；④CNIL session replay 指引官方链接补录；⑤11-09 AI Act 细则征询截止、11-13 EDPB 罚款指南征询截止、11-26 KIDS Act 征询截止；⑥C-654/25 判决；⑦11 月内 AWS/Azure 守门人认定
+
+
+## 41. 2026-11-07 执行记录
+
+覆盖窗口 2026-11-06~11-07（上次执行 11-06 第二档，commit 1fc2e73）；fetch 后本地与远程一致（c36d6d8），无双管道冲突；起始工作区干净，仓库水位与第 4 节一致（2026-345 / e164 / dpa-eu-054 / dpa-fr-003）。
+
+- 新增 2 条新闻：2026-346（EDPS 证实对 Europol 进行数月"事实调查"：CFN 取证网络海量敏感数据存储＋"Pressure Cooker"工具合规性，15/150 项既有建议未落实，Computer Weekly/Correctiv/Solomon 联合调查后续报道，11-06，heat 7）／2026-347（CNIL 会话回放建议 Délibération 2026-114 在官方公报 JORF n°0259 刊登：全量捕获用户导航行为的合规要求系统化，10-08 通过、2026-02~05 征询，11-05，heat 5，补上 11-06 第二档遗留的待补录项）
+- 配套 DPAs：dpa-eu-055（EDPS 事实调查视角）／dpa-fr-004（CNIL session replay 建议视角）；Enforcement 与 Laws 无状态变化（指导建议类文本与对 EU 机构的监督调查不改变 €40.5亿/52/16 口径）
+- 判定无新增：DPC（最新 10-01 CHI）、EDPB（最新 11-04 儿童中心）、digital-strategy RSS（最新 11-06 TikTok rabbit hole＝2026-342 已收录）、presscorner（11-06 无数字法规项）、ICO（403 无法核验，检索无新公告）；欧洲多国超市冷链攻击的 11-07 回顾报道（Guardian/Independent）＝2026-330 已收录同事件的回顾，不重复
+- 排除：OPPO 泰国 PDPC 72 小时数据泄露核查令（仅 thaitimes 一个无日期聚合源，无法核实日期，待一手源后补录）；亚马逊 $309.5M 华盛顿州和解（The Sun 二手转述、批准日期无法核实）；比利时 DPA SCC 须逐次 TIA 的立场（律所博客二手、属既有原则适用）
+- 链接：2 条新增先 curl 200（cybernoz / taxxa.ai）；validate-links **exit 0**（334 有效 / 15 疑似受限均既有 / 4 基线内失效 / **新增 0**）；build 成功 2.15s，单 chunk 1.95MB
+- 提交 6ca6646 已推送
+- 水位更新至 **2026-347 / e164 / dpa-eu-055 / dpa-fr-004**
+- 经验：①cnil.fr 英文新闻页路径猜不出来且 404，法方官方动作可从 JORF 编号（Délibération n°）反查，经 taxxa.ai（200，含编号与日期）落地链接、source 标 CNIL；②thaitimes 这类无日期聚合源一律不收录，宁可留待跟进
+- 待跟进：①EDPS 对 Europol 事实调查走向与 NFE 迁移（2027 Q1）；②CNIL session replay 建议生效后的执法；③OPPO 泰国事件待一手源补录；④11-09 AI Act 细则征询截止、11-13 EDPB 罚款指南征询截止、11-16 苹果描述符启用、11-19 EBDS 反诈骗准则会议、11-26 KIDS Act 征询截止；⑤C-654/25 判决；⑥11 月内 AWS/Azure 守门人认定
