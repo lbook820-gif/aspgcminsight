@@ -5,6 +5,38 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-055',
+    source: '欧洲数据保护监督员（EDPS，经 Computer Weekly/Cybernoz 报道）',
+    date: '2026-11-06',
+    heat: 6,
+    title: 'EDPS 证实对 Europol 展开数月事实调查：CFN 取证网络敏感数据存储与"Pressure Cooker"工具合规性待评估，15/150 项既有建议未落实',
+    summary:
+      'EDPS 确认正对欧洲刑警组织（Europol）进行数月的事实调查，以决定"是否及需要何种监督行动"，焦点为计算机取证网络（CFN）的数据处理环境与互联网转介部门"Pressure Cooker"工具。联合调查披露 CFN 存储电话记录、金融交易、地理位置与身份证件等敏感数据（含从未涉嫌人员），2019 年内部文件显示其存在日志不足、访问不可追踪、软件安装不受限、密码管理薄弱等缺陷；EDPS 证实 Europol 仅在一份 ICT 工作计划文件中提及该工具并拒绝公开。Europol 否认"影子数据库"指控，称相关环境均受监督、承诺 2027 年一季度迁入新取证环境后退役 CFN。EDPS 今年 2 月曾宣布关闭多年监督，但 150 项建议中 15 项（含 CFN 核心安全措施）未落实。',
+    overallImpact:
+      'EU 机构侧数据保护监督的一个风向标：执法机构自身的数据仓库安全与最小化首次被媒体联合调查+FOI 推回监督程序，且发生在欧委会拟扩权 Europol 的政治背景下。"事实调查"措辞保留了从警告到正式监督措施的完整空间，NFE 迁移（2027 Q1）是硬性检验点。',
+    industryImpact:
+      '出海企业启示：1）审计/取数/反欺诈类内部数据仓库的安全措施与保留期限常低于业务库，须纳入 GDPR 第32条自查；2）公开渠道抓取数据入库前须独立评估合法性基础；3）"既有系统/项目术语"的改名不能豁免事先咨询与 DPIA 义务。',
+    tags: ['EDPS', 'Europol', '数据保留', '安全措施', 'FOI', 'EU机构监督'],
+    link: 'https://cybernoz.com/watchdog-investigates-europol-over-irregular-data-processing-claims/',
+    isNew: true,
+  },
+  {
+    id: 'dpa-fr-004',
+    source: '法国国家信息与自由委员会 CNIL（Délibération 2026-114，JORF 2026-11-05 刊登；经 Taxxa 报道）',
+    date: '2026-11-05',
+    heat: 5,
+    title: 'CNIL 会话回放工具建议在官方公报刊登：全量捕获用户导航行为（鼠标轨迹/点击/滚动/输入）的合规要求系统化，10-08 通过、2026-02~05 公开征询',
+    summary:
+      'CNIL 10 月 8 日通过的《会话回放工具建议》（Délibération n° 2026-114）11 月 5 日在法国官方公报（JORF n° 0259）刊登，附件以电子认证版为准。会话回放工具指捕获并重现网站/App 用户完整导航路径的工具（鼠标移动、点击、滚动、输入等），常替代或补充传统受众测量工具。建议以 GDPR 与法国《信息与自由法》第 8-I-2°.b 条为基础，定位"非规定性、非穷尽"的合规辅助文本，经行业与公民社会协商并于 2026 年 2-5 月公开征询。CNIL 同步发布公众解读，强调用户对被记录的导航行为享有数据权利。',
+    overallImpact:
+      '会话回放是点击流分析与隐私合规冲突最尖锐的领域，法国把要求系统化后欧盟主要监管口径开始收敛。虽"非规定性"，JORF 刊登使其成为 CNIL 稽查与处罚时的对照基准（参见 Fnac Darty 案对 App 内回传浏览记录的认定）：完整导航捕获须同意、最小化、限定保留。',
+    industryImpact:
+      '出海 App/网站：使用 Hotjar、Contentsquare 类会话回放产品须自查输入遮蔽与敏感字段拦截，把回放作为独立同意类别；回放数据保留期显著短于普通分析数据；用于 A/B 测试或模型训练时合法性基础单独评估。',
+    tags: ['CNIL', 'session replay', '会话回放', '同意', '数据最小化', '法国'],
+    link: 'https://www.taxxa.ai/news/2026/11/06/cnil-adopts-recommendation-on-session-replay-tools',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-054',
     source: '欧洲数据保护委员会（EDPB，官方发布）；法国CNIL同日转发',
     date: '2026-11-04',
