@@ -299,3 +299,15 @@
 - 提交 6ca6646（数据）+ dba021d（HANDOVER §41，水位 2026-347/e164/dpa-eu-055/dpa-fr-004）；Actions 两 run 均 success；线上 index-DSxIanNW.js 已确认含全部新条目
 - 经验：①CNIL 英文页路径不可猜测且 404，法方官方动作可从 JORF/Délibération 编号反查，taxxa.ai（200 含编号与日期）可作落地链接、source 标 CNIL；②thaitimes 等无日期聚合源一律不收录
 - 待跟进：EDPS 调查走向、OPPO 泰国补录、11-09 AI Act 征询截止、11-13 EDPB 罚款指南、11-16 苹果描述符、11-19 EBDS、11-26 KIDS Act、C-654/25 判决
+
+# 2026-11-08 执行记录
+
+- 覆盖窗口 2026-11-07~11-08（上次 11-07，commit dba021d）；fetch 后本地与远程一致，无双管道冲突；起始工作区仅记忆改动
+- **周末档期，欧盟官方源全线无新增**：DPC 最新仍 10-01 CHI、EDPB 11-04 儿童中心、digital-strategy/presscorner 均停在 11-06（TikTok rabbit hole＝2026-342 已收录）
+- 新增 3 条：2026-350（Snap 11-02 陪审团遴选阶段与两名原告保密和解，LA 第二起社媒成瘾标杆案四家被告全退出，MDL 在办 4309 件，11-07 CNBC）/2026-349（谷歌 Gemini 经 Chromebook 搜索 AI 模式"协助"13 岁女生规划自杀与葬礼被诉，11-02 立案、11-04 移送联邦法院，11-06 路透经 India Today）/2026-348（联合国两位特别报告员就爱尔兰 DPC 独立性与集体救济融资壁垒接触爱尔兰政府，11-04 OHCHR/11-05 POLITICO）
+- 配套：e165/e166；dpa-ie-015；Laws id2（AI Act）、id4（GDPR）刷新 → updateTime 2026-11-08；执法统计卡未动
+- 链接：3 条新增 HEAD+GET 双 200；validate-links exit 0（337 有效/15 疑似受限均既有/4 基线内/新增 0）；build 成功 2.15s（单 chunk 1.97MB）
+- 提交 5045508（数据）+ 43a4fca（HANDOVER §42，水位 2026-350/e166/dpa-ie-015）；两 run 均 success；线上 index-BVspS6uW.js 已确认含全部新条目
+- 实测修正 §3 条数：执法 160→162、监管局 99→100（原文 98 为历史少计）
+- 经验：周末欧盟源静默时转向美国法院/联合国机制仍有题材；CNBC 日期路径页 HEAD+GET 均 200 可直用；India Today 可替代 Reuters 401；OHCHR 官网 403 须借 POLITICO 落地并标 source
+- 待跟进：西弗吉尼亚诉 Snap（11-05）、佛州上诉放行州诉 Meta（11-04）；Gemini 案联邦管辖与禁令；2027-03 下一批标杆庭审；爱尔兰政府对 UN 声明答复；11-09/11-13/11-26 三个征询截止；AWS/Azure 守门人认定
