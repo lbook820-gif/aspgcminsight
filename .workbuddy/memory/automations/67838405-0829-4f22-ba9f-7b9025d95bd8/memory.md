@@ -278,3 +278,24 @@
 - 水位更新至 2026-341 / e163 / dpa-eu-054，执法 159 / 监管局 98，新增 HANDOVER §39
 - 排除：苹果 ATT 欧盟改版（Apple 官方日期 2026-09-16，非本窗口）；英国 10-30 Ofcom 判决＝dpa-uk-012；广告库征询＝2026-332；Temu 整改＝2026-304；巴西 ANPD 六年评估与 FTC 6(b) 定价调令（非欧盟/取证阶段）；14 议员要求评估 BYD 联网汽车（无一手文书）
 - 经验：CJEU 意见类题材 dig.watch 编译稳定 200 且日期准（优于 mlex 付费墙）；韩联社英文站当天出稿、curl 200，是韩国 PIPC/KMCC 首选可校验源；expats.cz 可替代捷克语本地媒体
+
+# 2026-11-06（第二档）执行记录
+
+- 覆盖窗口 2026-11-04~11-06（当日第二次执行，上次 2d0207b）；fetch 后本地与远程同为 efbefc0，无双管道冲突；起始工作区干净
+- 新增 4 条：2026-342（欧委会就 TikTok「信息茧房」发布 DSA 初步违规认定，11-06，digital-strategy 官方页+IP/26/2361，heat 10）/ 2026-343（谷歌/Meta/TikTok 起诉加州阻止 AB 1709，11-05，路透经 Insurance Journal）/ 2026-344（FTC 公开亚马逊广告拍卖案未删节细节：加价最高 250%、假日季多收 $8700 万，11-05，Relevant Audience）/ 2026-345（波兰 UKE 任 DSC 生效，11-06，RMF24 经 UA.NEWS）
+- 配套：e164（TikTok 认定）；Laws.tsx id3（DSA）刷新 → updateTime 2026-11-06；执法统计卡未动；DPAs 无新增（CNIL session replay 官方页无法程序化核验，待下轮补录）
+- 排除：hcmtimes「DPC €5.3 亿 TikTok 罚款」=2025-05 旧案重发；Apple/DOJ 和解谈判仅 AI 生成站点未确认；FTC 官网 403 弃用官方稿
+- validate-links exit 0（新增失效 0）；build 成功 2.05s；提交 1fc2e73+c36d6d8 推送；Actions run 42261101778 success；线上 index-DEKgdwZB.js 已确认含全部新条目
+- 水位 2026-345 / e164 / dpa-eu-054，HANDOVER §4 与 §40 已同步
+
+# 2026-11-07 执行记录
+
+- 覆盖窗口 2026-11-06~11-07（上次 11-06 第二档，1fc2e73）；fetch 后本地与远程一致（c36d6d8），无双管道冲突；起始工作区干净
+- 新增 2 条新闻：2026-346（EDPS 证实对 Europol 数月事实调查：CFN 取证网络敏感数据＋Pressure Cooker 工具，15/150 建议未落实，Computer Weekly 联合调查后续，11-06，heat 7）/ 2026-347（CNIL 会话回放建议 Délibération 2026-114 于 JORF n°0259 刊登，11-05，heat 5，补上 11-06 遗留待补录项）
+- 配套：dpa-eu-055 / dpa-fr-004；Enforcement 与 Laws 无变化（建议文本与 EU 机构监督调查不改 €40.5亿/52/16 口径）
+- 排除：OPPO 泰国 PDPC 72h 核查令（仅 thaitimes 无日期源，待一手源）；亚马逊 $309.5M 华盛顿州和解（The Sun 二手）；比利时 DPA SCC/TIA（律所博客二手）；冷链攻击 11-07 回顾报道＝2026-330 已收录
+- 判定无新增：DPC（10-01 CHI）、EDPB（11-04 儿童中心）、digital-strategy RSS（11-06 rabbit hole 已收录）、presscorner、ICO（403）
+- 链接：cybernoz / taxxa.ai 先 curl 200；validate-links exit 0（334 有效/15 疑似受限均既有/4 基线内/新增 0）；build 成功 2.15s
+- 提交 6ca6646（数据）+ dba021d（HANDOVER §41，水位 2026-347/e164/dpa-eu-055/dpa-fr-004）；Actions 两 run 均 success；线上 index-DSxIanNW.js 已确认含全部新条目
+- 经验：①CNIL 英文页路径不可猜测且 404，法方官方动作可从 JORF/Délibération 编号反查，taxxa.ai（200 含编号与日期）可作落地链接、source 标 CNIL；②thaitimes 等无日期聚合源一律不收录
+- 待跟进：EDPS 调查走向、OPPO 泰国补录、11-09 AI Act 征询截止、11-13 EDPB 罚款指南、11-16 苹果描述符、11-19 EBDS、11-26 KIDS Act、C-654/25 判决
