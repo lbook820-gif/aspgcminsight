@@ -5,6 +5,22 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-056',
+    source: '意大利数据保护局 Garante（决定 2026-05-14，docweb 10272004；EDPB 2026-11-10 公开）',
+    date: '2026-11-10',
+    heat: 5,
+    title: 'Garante 对 Wind Tre 罚 171.56 万欧元：社会工程入侵致 36.5 万客户数据泄露，数字证书/密钥管理与 API 安全缺陷违反 GDPR 第5/32条',
+    summary:
+      '意大利 Garante 对 Wind Tre S.p.A. 作出罚款决定（决定日 2026-05-14，EDPB 11-10 公开）：2025 年 2 月公司通报的两起泄露中，攻击者在零售门店冒充技术支持人员以社会工程话术诱导员工授予远程访问权限，累计影响超 36.5 万名客户，其中 41,359 人的 IBAN、邮政付款单与部分掩码卡号等支付信息亦被窃取。Garante 认定：数字证书、私钥与访问凭证存放管理严重不足（无加密存储库/专用密钥管理、无访问控制与导出防护、密码无复杂度与轮换要求），部分 API 安全控制薄弱致攻击者高频请求并批量抽取数据，公司安全评估未能发现本可检测的漏洞，违反 GDPR 第5(1)(f)条与第32(1)(b)条。罚款 171.56 万欧元并令整改（证书加密存储与密钥管理、门店密码管理系统、证书全生命周期形式化流程），30 日内报告整改情况；量刑考虑及时通报、事后补救与配合调查等减轻情节。',
+    overallImpact:
+      '延续 Garante 对"形式合规、实质可穿透"安全体系的执法取向：单点社会工程入侵经 API 批量抽取通道放大为 36.5 万人泄露，"安全评估未能发现本可发现的漏洞"被单列为认定要点，使渗透测试覆盖与整改闭环本身成为审查对象。',
+    industryImpact:
+      '出海企业启示：1）门店/代理网络的远程授权须设回拨验证、双人复核与权限时限；2）证书/私钥/凭证纳入集中密钥管理并定期轮换，自建目录+共享密码表已属违规配置；3）对外 API 设频率限制与异常监测，防止单点入侵放大为批量抽取；4）安全评估范围与深度记录在案，EDPB National News 存量转工会不定期补发，合规台账应按决定日维护。',
+    tags: ['意大利Garante', 'Wind Tre', '数据泄露', '社会工程', '数字证书管理', 'API安全', 'GDPR第32条'],
+    link: 'https://www.edpb.europa.eu/news/italian-dpa-fines-wind-tre-eur-17-million-for-data-security-failures-affecting-over-365-000_en',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-055',
     source: '欧洲数据保护监督员（EDPS，经 Computer Weekly/Cybernoz 报道）',
     date: '2026-11-06',

@@ -47,8 +47,8 @@ npm run dev     # 本地预览 :3000
 |---|---|---|---|
 | `/` | `src/pages/Home.tsx` | 首页：本月动态 + 全部新闻，按 2026/2025/2024 分组 | 见下方新闻流 |
 | `/laws` | `src/pages/Laws.tsx` | 法规库（15 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、CADA…） | 21（含 6 条行业动态） |
-| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 163（其中 `e46` 为历史重复 ID） |
-| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 100 |
+| `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 164（其中 `e46` 为历史重复 ID） |
+| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 101 |
 
 首页另有 `dynamicCards`（`src/data/dynamicCards.ts`）作为四个板块的入口卡片。
 
@@ -67,11 +67,11 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-11-09） |
+| 数据源 | 格式 | 当前最大（2026-11-10） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-353**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
-| 执法动态 | `eN` | **e167**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-055 / dpa-ie-015 / dpa-de-005 / dpa-fr-004 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
+| 主新闻流 | `2026-NNN` | **2026-356**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
+| 执法动态 | `eN` | **e168**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-056 / dpa-ie-015 / dpa-de-005 / dpa-fr-004 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
 | 法规库 | `N` | **15** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
@@ -971,3 +971,14 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 - 提交 8c25514 已推送；HANDOVER 水位更新至 **2026-353 / e167**（dpa 水位不变：dpa-eu-055/ie-015/de-005/fr-004/ch-004/uk-012/tr-005），§3 执法条数 162→163，新增第 43 节
 - 经验：①ec.europa.eu/newsroom 系列 RSS 本轮全 404（digital-strategy 与 presscorner 各变体均失败），官方动态改以搜索+详情页核实；②politico.eu 文章页 curl 无 UA 即 200 且含 datePublished 结构化数据，可直用；③AI 生成的聚合站（cnnbc/brusselspost/paristimes）常把 7 月旧案重发为"新罚单"，涉金额事件必须先查官方或权威媒体日期再决定收录
 - 待跟进：11-11 DFA 正式提案；11-13 都柏林 AI 峰会成果；谷歌 T-案与 DPC 答辩；16 国违法程序是否受理；11-13 EDPB 罚款指南征询截止、11-16 苹果描述符、11-20 Meta 磋商窗口与 ICO 智能体征询截止、11-26 KIDS Act 截止；AWS/Azure 守门人认定；C-627/24 P 与 C-654/25 判决
+
+## 44. 2026-11-10 执行记录
+
+- 覆盖窗口 2026-11-09~11-10（上次执行 11-09，commit 8c25514/cb23887）；fetch 后本地与远程一致（cb23887），无双管道冲突；起始工作区干净
+- 新增 3 条新闻：2026-354（韩国公平委 KFTC 11-09 对 Baemin 罚 3311 亿韩元、Coupang 罚 3008 亿韩元，合计 6319 亿≈4.6 亿美元——外卖平台史上最大"最惠待遇 MFN 条款"滥用支配地位案：强制餐厅跨平台价格对齐并以 Wow/Baemin Club 会员权益杠杆执行，含自优认定（压低 MP 曝光、配送时间呈现偏差），罚款暂定、书面决定 40 日内送达，韩联社官方源）/ 2026-355（Meta 11-09 宣布 AI 年龄估算全球推广：本月起 Instagram、年内 Facebook/Threads，填成人生日也自动置入青少年账户保护，美国州和解义务的产品化落地，Al Jazeera）/ 2026-356（Garante 对 Wind Tre 罚 171.56 万欧元：门店社会工程入侵致 36.5 万客户泄露、41,359 人支付数据被窃，数字证书/密钥管理与 API 安全缺陷违反 GDPR 第 5/32 条，决定日 2026-05-14、11-10 经 EDPB 公开）
+- 配套：e168（KFTC 案执法视角）+ 监管日历 1 节点（11-09 KFTC）；dpa-eu-056（Wind Tre）；Laws 无状态变化；执法统计卡未动（KFTC 属韩国口径、Wind Tre 属意大利国内罚单，不改 €40.5亿/52/16）
+- **判定无新增**：DPC（最新 10-01 CHI）、EDPB 自身条目（最新 11-04 儿童中心；11-10 三条意大利转发中仅 Wind Tre 为新决定，服装公司删除权案与 Poste Italiane+德银 €8.1 万合计金额过小未收录）、CNIL（最新 11-04）、ICO（403 无法程序化核对，搜索无窗口内新执法）、presscorner/newsroom RSS（本轮均 404/空，经搜索核实无新公告）
+- **排除（重要）**：①同花顺 11-10 快讯"欧委会对 Meta 罚 7.98 亿欧元（Facebook Marketplace 捆绑）"为 **2024-10 旧案**重发；②Meta 新墨西哥 $567M 整改基金为 **2026-08-06 旧令**（cnnbc 等无日期源重发，站内 2026-296 已覆盖该案脉络）；③《数字公平法案》11-10 中文跟进稿＝2026-352 同事件（11-11 才正式公布）；④TikTok rabbit hole 11-09/10 跟进稿＝2026-342；⑤Temu 整改获批＝2026-304；⑥Ribera "大科技=安全风险"演讲属政策辩论、无新程序；⑦EU PET 树脂保障措施调查属贸易救济非数字赛道；⑧mlex 报道的 Coupang/Baemin 已按韩联社官方源收录
+- 链接：3 条新增（en.yna.co.kr / aljazeera.com / edpb.europa.eu）先 curl 200 再入库；validate-links **exit 0**（343 有效 / 15 疑似受限均既有 / 4 基线内失效 / **新增 0**）；build 成功 1.98s，单 chunk 2.01MB（index-DAIvmfDR.js）
+- HANDOVER 水位更新至 **2026-356 / e168 / dpa-eu-056**，§3 条数执法 163→164、监管局 100→101，新增第 44 节
+- 待跟进：KFTC 书面决定送达（40 日内）与行政诉讼；Meta 年龄估算 Facebook/Threads 扩展节奏；11-11 DFA 正式提案；11-13 都柏林 AI 峰会与 EDPB 罚款指南征询截止；11-16 苹果描述符；11-20 Meta 磋商窗口与 ICO 智能体征询截止；11-26 KIDS Act 截止；AWS/Azure 守门人认定；C-627/24 P 与 C-654/25 判决

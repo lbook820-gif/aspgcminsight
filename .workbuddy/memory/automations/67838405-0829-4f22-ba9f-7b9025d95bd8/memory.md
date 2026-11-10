@@ -311,3 +311,14 @@
 - 实测修正 §3 条数：执法 160→162、监管局 99→100（原文 98 为历史少计）
 - 经验：周末欧盟源静默时转向美国法院/联合国机制仍有题材；CNBC 日期路径页 HEAD+GET 均 200 可直用；India Today 可替代 Reuters 401；OHCHR 官网 403 须借 POLITICO 落地并标 source
 - 待跟进：西弗吉尼亚诉 Snap（11-05）、佛州上诉放行州诉 Meta（11-04）；Gemini 案联邦管辖与禁令；2027-03 下一批标杆庭审；爱尔兰政府对 UN 声明答复；11-09/11-13/11-26 三个征询截止；AWS/Azure 守门人认定
+
+# 2026-11-09 执行记录
+
+- 覆盖窗口 2026-11-08~11-09；fetch 后本地与远程一致（952a817），无双管道冲突；起始工作区干净
+- 新增 3 条新闻：2026-353（谷歌就 DPC 4.03 亿欧元罚单向爱尔兰高等法院司法复核+挑战《数据保护法》合宪性，进商事法院快速通道，Irish Examiner 11-09）/ 2026-352（《数字公平法案》草案曝光：成人可关闭成瘾功能、AI 伴侣监管、10 类暗模式黑名单，11-11 公布，Bloomberg/财联社 11-09）/ 2026-351（欧委会确认 16/27 成员国未指定 AI Act 国家主管机关、Lagodinsky 请求正式程序、€30bn 算力中心二次延期、11-13 都柏林峰会，POLITICO 11-08）
+- 配套：e167 + 日历 4 节点；Laws id2（AI Act）刷新 updateTime 2026-11-09；DPAs 无新增；执法统计卡未动
+- 排除：谷歌 8.9 亿 DMA 罚单=7-23 旧案重发（brusselspost 等 AI 聚合站）；Puzder FT 专访仅 cnnbc 可循无日期，待一手源；SHEIN 上市/FTC 和解=旧事；presscorner/digital-strategy RSS 本轮全 404 改搜索核实
+- 3 新链接 curl 200；validate-links exit 0（339 有效/17 疑似均既有/3 基线内/新增 0）；build 成功 2.07s
+- 提交 8c25514（数据）+ cb23887（HANDOVER §43，水位 2026-353/e167，执法 163）；两 run 均 success；线上 index-D8D1NOCU.js 已确认含全部新条目
+- 经验：politico.eu 无 UA curl 200 且含 datePublished；ec.europa.eu/newsroom RSS 变体本轮全 404
+- 待跟进：11-11 DFA 提案、11-13 都柏林峰会、11-13 EDPB 罚款指南截止、11-16 苹果描述符、11-20 Meta 磋商/ICO 智能体征询、11-26 KIDS Act、AWS/Azure 守门人、C-627/24 P 与 C-654/25 判决
