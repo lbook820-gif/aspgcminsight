@@ -46,9 +46,9 @@ npm run dev     # 本地预览 :3000
 | 路由 | 文件 | 定位 | 条数 |
 |---|---|---|---|
 | `/` | `src/pages/Home.tsx` | 首页：本月动态 + 全部新闻，按 2026/2025/2024 分组 | 见下方新闻流 |
-| `/laws` | `src/pages/Laws.tsx` | 法规库（15 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、CADA…） | 21（含 6 条行业动态） |
+| `/laws` | `src/pages/Laws.tsx` | 法规库（16 部：DMA、AI Act、DSA、GDPR、NIS2、CRA、Data Act、DFA、CADA…） | 22（含 6 条行业动态） |
 | `/enforcement` | `src/pages/Enforcement.tsx` | 执法动态（含顶部统计卡 + 监管事件时间线） | 164（其中 `e46` 为历史重复 ID） |
-| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 101 |
+| `/dpas` | `src/pages/DPAs.tsx` | 各国监管局（支持关键词搜索 + 机构筛选） | 103 |
 
 首页另有 `dynamicCards`（`src/data/dynamicCards.ts`）作为四个板块的入口卡片。
 
@@ -67,12 +67,12 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-11-10） |
+| 数据源 | 格式 | 当前最大（2026-11-11） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-356**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
+| 主新闻流 | `2026-NNN` | **2026-359**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
 | 执法动态 | `eN` | **e168**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-056 / dpa-ie-015 / dpa-de-005 / dpa-fr-004 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
-| 法规库 | `N` | **15** |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-057 / dpa-ie-015 / dpa-de-005 / dpa-fr-004 / dpa-ch-004 / dpa-uk-012 / dpa-tr-005 |
+| 法规库 | `N` | **16** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
 
@@ -982,3 +982,15 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 - 链接：3 条新增（en.yna.co.kr / aljazeera.com / edpb.europa.eu）先 curl 200 再入库；validate-links **exit 0**（343 有效 / 15 疑似受限均既有 / 4 基线内失效 / **新增 0**）；build 成功 1.98s，单 chunk 2.01MB（index-DAIvmfDR.js）
 - HANDOVER 水位更新至 **2026-356 / e168 / dpa-eu-056**，§3 条数执法 163→164、监管局 100→101，新增第 44 节
 - 待跟进：KFTC 书面决定送达（40 日内）与行政诉讼；Meta 年龄估算 Facebook/Threads 扩展节奏；11-11 DFA 正式提案；11-13 都柏林 AI 峰会与 EDPB 罚款指南征询截止；11-16 苹果描述符；11-20 Meta 磋商窗口与 ICO 智能体征询截止；11-26 KIDS Act 截止；AWS/Azure 守门人认定；C-627/24 P 与 C-654/25 判决
+
+## 45. 2026-11-11 执行记录
+
+- 覆盖窗口 2026-11-10~11-11（上次执行 11-10，commit 9c8baa1）；fetch 后本地与远程一致，无双管道冲突；起始工作区仅自动化记忆改动
+- 新增 3 条新闻：2026-357（欧委会 **11-11 正式公布《数字公平法案》提案并同步提出 CPC 条例修订**：DFA 以条例取代/废止 UCPD，暗黑模式（含虚假售罄）"当然违法"、应用内虚拟货币与活动动态定价须透明、无限滚动/自动播放/持续弹窗须可逐项关闭、未成年禁 pay-to-win 与付费战利品箱、网红营销披露、订阅取消与人工客服、AI 购物代理首次立规；配套 CPC 修订授予欧委会对泛欧大规模案件的**直接调查与开罚权**（上限全球营业额 6%，彭博称门槛为影响覆盖约 2/3 欧盟人口、中小企业除外），并**要求非欧盟企业指定欧盟法律代表**；消费者年收益约 €13.7bn、企业年合规成本约 €678M；heat 10）/ 2026-358（EDPB 11-11 全会：韩国充分性首次审查声明——欢迎 PIPA 新增撤回同意权/暂停处理权/拒绝自动化决策与要求解释权、第 28-8 条传输工具、PIPC 权限强化，同意四年一审；BCR-P 最终建议，持有者须在申请期或 2028 年年度更新前对齐；**第六次协同执法行动主题＝招聘环节 ADM（含 AI 筛选）**，聚焦第 22 条与访问权，2027 年启动）/ 2026-359（欧委会 11-10 就修订 DSA 选举准则启动征询，截止 11-23：应对生成式 AI 与操纵风险、推荐系统更安全、强化对候选人保护，准则构成第 34/35 条"相称措施"评估基准）
+- 配套：dpa-eu-057（EDPB 全会三项决定）；Laws.tsx 新增 **id 16《数字公平法案》(DFA) 与 CPC 修订**（status 立法提案，updateTime 2026-11-11），id 3（DSA）补入选举准则征询 → updateTime 2026-11-10；Enforcement 无新增（窗口内无新的欧盟罚款/立案决定），统计卡未动
+- **判定无新增**：DPC（最新仍 10-01 CHI）、CNIL RSS（最新 11-10 为"市长与地方机构展"活动稿；11-09 十份地方机构网络安全处罚属公共部门、未单列）、ICO（JS 列表 + Cloudflare，搜索无窗口内平台执法）、digital-strategy（11-11 仅 EU-Ukraine 无人机联盟等非数字法规项）、presscorner RSS（本轮返回 404/"Not Found"，改以 digital-strategy 列表与搜索核实）
+- **排除（重要）**：①"欧洲议会呼吁更易暂停 Shein 等电商平台"经核实为 **2025-11 旧闻**（文中"希望 2026 年初取消 150 欧元免税"为未来时，squidapplication 等聚合站重发）；②"英国将非自愿 AI 脱衣图像入刑 + Ofcom 对 X/Grok 正式调查"为 **2026-01 旧闻**（yohrt 原文"新年才第 9 天"，australiatimes/bvi.org 等 AI 聚合站改写为"本周"）；③"欧委会对谷歌 8.9 亿欧元 DMA 罚单"仍为 2026-07-23 旧案重发；④DFA 11-10 中文跟进稿＝2026-352（草案曝光）；⑤欧盟 2 欧元处理费 11-01 已生效（brusselspost 属旧闻）
+- 链接：3 条新增（commission.europa.eu / edpb.europa.eu / digital-strategy.ec.europa.eu）先 curl 200 再入库；validate-links **exit 0**（351 有效 / 11 疑似受限均既有 / 3 基线内失效 / **新增 0**）；build 成功 2.06s，单 chunk 2.03MB（index-CGXEX0JQ.js）
+- HANDOVER 水位更新至 **2026-359 / e168 / dpa-eu-057 / 法规库 16**，§3 条数校正为执法 164、监管局 103（原文 101 为历史少计）、法规库 22，新增第 45 节
+- 经验：①commission.europa.eu 新闻页 URL 含 `-YYYY-MM-DD` 后缀，可直接作为 DFA 类 DG JUST 提案的官方可校验落地链接（digital-strategy 只覆盖 CONNECT 口径，按标题猜路径会命中 200 的"Page not found"页）；②CNIL 可用 `https://www.cnil.fr/fr/rss.xml`（10 条）程序化核对，绕开 JS 列表；ICO 列表为 JS + Cloudflare，`/api/search` POST 返回 null，仍只能靠搜索；③"本周/周三"类无日期表述 + 与 2025-11/2026-01 事件高度雷同的英文稿，一律视为旧闻重发，须回溯原站时间线再判定
+- 待跟进：DFA 与 CPC 修订的议会/理事会谈判（德国"改指令"立场）；11-13 都柏林 AI 峰会与 EDPB 罚款指南征询截止；11-16 苹果描述符；11-20 Meta 磋商窗口与 ICO 智能体征询截止；11-23 DSA 选举准则征询截止；11-26 KIDS Act 截止；2027 年 CEF 招聘 ADM 行动；AWS/Azure 守门人认定；C-627/24 P 与 C-654/25 判决

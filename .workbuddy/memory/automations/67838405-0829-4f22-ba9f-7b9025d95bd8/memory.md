@@ -322,3 +322,14 @@
 - 提交 8c25514（数据）+ cb23887（HANDOVER §43，水位 2026-353/e167，执法 163）；两 run 均 success；线上 index-D8D1NOCU.js 已确认含全部新条目
 - 经验：politico.eu 无 UA curl 200 且含 datePublished；ec.europa.eu/newsroom RSS 变体本轮全 404
 - 待跟进：11-11 DFA 提案、11-13 都柏林峰会、11-13 EDPB 罚款指南截止、11-16 苹果描述符、11-20 Meta 磋商/ICO 智能体征询、11-26 KIDS Act、AWS/Azure 守门人、C-627/24 P 与 C-654/25 判决
+
+# 2026-11-10 执行记录
+
+- 覆盖窗口 2026-11-09~11-10；fetch 后本地与远程一致（cb23887），无双管道冲突；起始工作区干净
+- 新增 3 条新闻：2026-354（韩国KFTC 11-09 对 Baemin 罚3311亿、Coupang 罚3008亿韩元合计6319亿≈$4.6亿：外卖平台史上最大 MFN 条款滥用支配地位案，含自优认定，罚款暂定书面决定40日内送达，韩联社官方源）/ 2026-355（Meta 11-09 AI 年龄估算全球推广：Instagram 本月起、Facebook/Threads 年内，美国州和解义务产品化，Al Jazeera）/ 2026-356（Garante 对 Wind Tre 罚171.56万欧：社会工程入侵36.5万客户+4.1万支付数据，证书/密钥/API 安全缺陷违反 GDPR 第5/32条，决定日 2026-05-14、11-10 EDPB 公开）
+- 配套：e168（KFTC）+ 日历1节点 + dpa-eu-056；Laws 无变化；执法统计卡未动（韩国/意大利国内罚单不改 €40.5亿/52/16）
+- 排除：同花顺"Meta 7.98亿 Marketplace 罚款"=2024-10 旧案；Meta 新墨西哥 $567M=2026-08-06 旧令（cnnbc 无日期重发）；DFA 11-10 中文跟进=2026-352；TikTok rabbit hole=2026-342；Temu 整改=2026-304；Ribera 演讲属政策辩论；EU PET 调查非数字赛道；EDPB 11-10 另两条意大利小额罚单（服装公司删除权、Poste Italiane+德银 €8.1万）金额过小未收录
+- 判定无新增：DPC（10-01 CHI）、EDPB（11-04）、CNIL（11-04）、ICO（403）、presscorner/newsroom RSS（404，改搜索核实）
+- validate-links exit 0（343有效/15疑似均既有/4基线内/新增0）；build 成功 1.98s；提交 9c8baa1 推送；Actions run 42862097200 success；线上 index-BsAL7IHi.js 已确认含全部新条目
+- HANDOVER 水位 2026-356/e168/dpa-eu-056，§3 条数执法164/监管局101，新增第44节
+- 待跟进：KFTC 书面决定与行政诉讼；Meta 年龄估算扩展节奏；11-11 DFA 提案、11-13 都柏林峰会+EDPB 罚款指南截止、11-16 苹果描述符、11-20 Meta 磋商+ICO 智能体征询、11-26 KIDS Act；AWS/Azure 守门人；C-627/24 P 与 C-654/25 判决
