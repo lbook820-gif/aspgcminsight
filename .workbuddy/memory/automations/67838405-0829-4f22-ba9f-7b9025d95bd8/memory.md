@@ -333,3 +333,13 @@
 - validate-links exit 0（343有效/15疑似均既有/4基线内/新增0）；build 成功 1.98s；提交 9c8baa1 推送；Actions run 42862097200 success；线上 index-BsAL7IHi.js 已确认含全部新条目
 - HANDOVER 水位 2026-356/e168/dpa-eu-056，§3 条数执法164/监管局101，新增第44节
 - 待跟进：KFTC 书面决定与行政诉讼；Meta 年龄估算扩展节奏；11-11 DFA 提案、11-13 都柏林峰会+EDPB 罚款指南截止、11-16 苹果描述符、11-20 Meta 磋商+ICO 智能体征询、11-26 KIDS Act；AWS/Azure 守门人；C-627/24 P 与 C-654/25 判决
+
+# 2026-11-11 执行记录
+
+- 覆盖窗口 2026-11-10~11-11；fetch 后本地与远程一致（9c8baa1），无双管道冲突；起始工作区仅记忆改动
+- 新增 3 条：2026-357（欧委会 11-11 正式公布 DFA 提案 + CPC 条例修订：暗黑模式当然违法、成瘾设计可关闭、未成年禁 pay-to-win/战利品箱、AI 购物代理立规；CPC 授予欧委会直接立案开罚权上限全球营业额 6%、非欧盟企业须指定欧盟法律代表）/ 2026-358（EDPB 11-11 全会：韩国充分性首次审查声明 + BCR-P 最终建议（2028 年度更新前对齐）+ 第六次协同执法行动主题＝招聘环节 ADM 含 AI 筛选，2027 启动）/ 2026-359（欧委会 11-10 就修订 DSA 选举准则征询，11-23 截止）
+- 配套：dpa-eu-057；Laws 新增 id 16（DFA+CPC）；Laws id 3（DSA）补选举准则 → 11-10；Enforcement 无新增、统计卡未动
+- 排除旧闻重发：欧洲议会"更易暂停 Shein"＝2025-11；英国 nudify 入刑 + Ofcom 查 X/Grok＝2026-01；谷歌 8.9 亿 DMA＝2026-07
+- validate-links exit 0（351 有效/11 疑似均既有/3 基线内/新增 0）；build 成功 2.06s；提交 7495b64，Actions run 415 success，线上 index-BX3NaXUm.js 已确认含全部新条目
+- HANDOVER 水位 2026-359/e168/dpa-eu-057/法规库 16，§3 校正执法 164、监管局 103（原文 101 少计）、法规库 22，新增第 45 节
+- 经验：commission.europa.eu 新闻页 `-YYYY-MM-DD` 后缀可作 DG JUST 类提案的可校验官方落地链接；digital-strategy 按标题猜路径会返回 200 的 Page not found；CNIL 可读 /fr/rss.xml；ICO 仍无法程序化核对
