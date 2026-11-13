@@ -5,6 +5,38 @@ import type { NewsItem } from '@/types';
 
 const dpaUpdates: NewsItem[] = [
   {
+    id: 'dpa-eu-058',
+    source: '欧洲数据保护委员会 EDPB（2026-11-13 全体会议新闻稿）',
+    date: '2026-11-13',
+    heat: 6,
+    title: 'EDPB通过声明认可欧洲理事会MCC与伊比利亚美洲RIPD MCC用于EU SCC项下再传输：GDPR跨境传输工具箱自2021年新版SCC以来首次实质扩容',
+    summary:
+      'EDPB 最新全体会议通过《关于使用其他合同条款模式进行个人数据再传输的声明》，欢迎欧委会对欧盟标准合同条款（EU SCC）FAQ 的更新，认可欧洲理事会108+框架下的示范合同条款（CoE MCC）与伊比利亚美洲数据保护网络示范条款（RIPD MCC）可用于对依 EU SCC 接收的个人数据进行再传输，条件以欧委会FAQ为准；EDPB 并为拟依赖这两套MCC的组织提供实务指引。该声明为 EDPB 与欧委会密切协作的成果。',
+    overallImpact:
+      'GDPR跨境传输工具箱首次向欧委会标准之外的条款文本开放：欧→拉美、欧→108+缔约国的再传输可采用当地法域直接承认的条款，减少"一条传输链挂三套合同"的摩擦；也是欧盟GDPR体系与欧洲理事会108+体系在实务工具层面的首次对接，制度融合信号意义大于即时合规影响。',
+    industryImpact:
+      '出海企业：1）对华传输无捷径——中国未加入108+、RIPD MCC不覆盖中国，欧中传输仍依赖EU SCC/BCR/充分性路径；2）以拉美或108+缔约国为第二站的业务可评估改用当地承认的MCC，减少条款冲突；3）采用时须逐项核对欧委会FAQ条件并留档所选条款与SCC的映射关系；4）关注EDPB是否将互认逻辑延伸至其他区域范本条款。',
+    tags: ['EDPB', 'SCC', '再传输', '跨境数据传输', '欧洲理事会MCC', 'RIPD', 'GDPR第46条'],
+    link: 'https://www.edpb.europa.eu/news/edpb-supports-use-of-other-models-of-contractual-clauses-for-onward-transfers-of-personal-data_en',
+    isNew: true,
+  },
+  {
+    id: 'dpa-ie-016',
+    source: '爱尔兰数据保护委员会 DPC（官方新闻稿，2026-11-13）',
+    date: '2026-11-13',
+    heat: 8,
+    title: 'DPC 对 Tinder 运营方 MTCH 罚 1100 万欧元并训诫：Download My Data 工具遗漏数据类别或仅给摘要，违反 GDPR 第15(3)条访问权，责令 3 个月整改',
+    summary:
+      'DPC 于 2020 年 1 月对 MTCH Technology Services（Match Group 旗下 Tinder 运营主体）主动立案，认定其"Download My Data"自助导出工具未提供完整个人数据副本：部分数据类别未告知用户即被省略、或仅以摘要形式交付，不满足 GDPR 第15(3)条访问权要求。处罚为 1100 万欧元罚款、训诫与 3 个月合规整改令。据 Match Group 10-Q，最终决定于 2026-10-13 作出（公司已计提 1260 万美元拨备并拟上诉），此次为公开宣布。',
+    overallImpact:
+      '确立"自助导出工具的完整性"为独立执法对象：界面合规不等于访问权合规。2020 年立案至 2026 年决定的六年时间线再度暴露 GDPR 一站式机制的迟滞；DPC 继谷歌 4.03 亿欧元罚单后连续出单，平台执法节奏回摆。',
+    industryImpact:
+      '出海产品凡提供数据导出功能，须逐类别核对导出内容与实际处理数据的一致性（画像标签、内部备注、行为日志等易遗漏类别）；"摘要式交付"不满足第15(3)条，导出接口应以结构化、常用电子格式交付完整副本；访问权、删除权与留存政策的请求处理须建立 SLA、日志与拒管理由文档。',
+    tags: ['DPC', 'Tinder', 'MTCH', 'Match Group', 'GDPR第15条', '数据访问权', '罚款'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-fines-mtch-eu11-million-following-inquiry-tinder-users-personal-data',
+    isNew: true,
+  },
+  {
     id: 'dpa-eu-057',
     source: '欧洲数据保护委员会 EDPB（2026-11-11 全体会议新闻稿）',
     date: '2026-11-11',

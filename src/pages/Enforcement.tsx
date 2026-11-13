@@ -9,6 +9,22 @@ const enforcementStats = [
 ];
 const enforcementCases: NewsItem[] = [
   {
+    id: 'e171',
+    source: '爱尔兰数据保护委员会 DPC（官方新闻稿；POLITICO/爱尔兰考察者报同日报道）',
+    date: '2026-11-13',
+    heat: 8,
+    title: '爱尔兰DPC对Tinder运营方MTCH罚1100万欧元并训诫：Download My Data导出工具遗漏数据类别或仅给摘要，违反GDPR第15(3)条访问权，责令3个月整改（最终决定10-13作出、Match Group拟上诉）',
+    summary:
+      'DPC 于2020年1月依主导监管机构职权对 MTCH Technology Services（Match Group 旗下 Tinder 运营主体）主动立案，聚焦其"Download My Data"自助导出工具：认定该工具未按 GDPR 第15(3)条提供完整个人数据副本——部分数据类别未告知用户即被省略、或仅以摘要形式提供，交付内容不满足访问权要求；副专员 Graham Doyle 强调自动化访问工具"必须就所提供数据的范围对个人公平透明"。处罚：1100万欧元罚款+训诫+责令3个月内使处理行为合规。据 Match Group 10-Q，最终决定于2026年10月13日作出（公司计提1260万美元拨备、拟上诉），此次为公开宣布。',
+    overallImpact:
+      '首次把"自助导出工具的完整性"作为独立执法对象："界面上看起来合规"不等于访问权合规，任何带数据下载按钮的产品均须审计按钮背后的真实交付范围。2020年立案至2026年决定的六年多时间线再度暴露GDPR一站式机制的迟滞；DPC 继谷歌4.03亿欧元罚单后连续出单，平台执法节奏明显回摆。',
+    industryImpact:
+      '对中国出海企业：1）凡提供"下载我的数据"功能的产品，须逐类别核对导出内容与实际处理数据的一致性（画像标签、内部备注、行为日志等易遗漏）；2）"摘要式交付"被认定不满足第15(3)条，导出接口应以结构化、常用电子格式交付完整副本；3）访问权、删除权与留存政策是DPC并行审查三大件，三类请求的SLA、日志与拒答理由应文档化；4）上市公司须按"决定日早于公告日"节奏同步财务拨备与披露流程。',
+    tags: ['DPC', 'Tinder', 'Match Group', 'MTCH', 'GDPR第15条', '数据访问权', '1100万欧元', '爱尔兰'],
+    link: 'https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-fines-mtch-eu11-million-following-inquiry-tinder-users-personal-data',
+    isNew: true,
+  },
+  {
     id: 'e170',
     source: '英国 Ofcom（经 Global Banking & Finance Review 报道路透社稿）',
     date: '2026-11-12',
@@ -2710,6 +2726,8 @@ const enforcementCases: NewsItem[] = [
 ]
 
 const regulatoryCalendar: RegulatoryEvent[] = [
+  { date: '2026-11-13', title: '爱尔兰DPC对Tinder运营方MTCH罚1100万欧元并训诫：Download My Data工具违反GDPR第15(3)条访问权，责令3个月整改；最终决定10-13已作出，Match Group拟上诉' },
+  { date: '2026-11-12', title: '欧盟法院就欧委会诉Meta/TikTok DSA监管费上诉（C-744/25 P、C-745/25 P）开庭听证：普通法院2025年9月废止2023年度费额决定，争点为AMAR用户数计算方法论是否须以授权法案规定；判决预计数月内作出' },
   { date: '2026-11-09', title: '韩国公平委（KFTC）对 Baemin 罚3311亿、Coupang 罚3008亿韩元（合计6319亿≈4.6亿美元，外卖平台史上最大）：MFN条款+自优行为滥用支配地位，书面决定40日内送达、异议期30日，两公司拟提异议或行政诉讼；Coupang Wow会员捆绑案发回重审' },
   { date: '2026-11-13', title: '欧盟27国领导人都柏林AI峰会：首次联合AI会议，议程含降低对美中AI技术依赖、AI安全与算力建设（€30bn七国算力中心计划二次延期后待重启）' },
   { date: '2026-11-11', title: '欧委会拟正式公布《数字公平法案》（Digital Fairness Act）：11-09彭博/Euronews披露草案——成人须可关闭成瘾性功能（自动播放/无关通知/打卡奖励）、AI伴侣聊天机器人纳入监管、10类操纵设计黑名单、未成年人禁付费战利品箱、AI购物代理须用户审批与赞助披露，最高罚全球营业额6%（德国主张改指令而非立新法）' },
