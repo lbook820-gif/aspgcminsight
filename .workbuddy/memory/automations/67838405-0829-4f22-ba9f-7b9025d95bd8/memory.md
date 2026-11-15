@@ -343,3 +343,22 @@
 - validate-links exit 0（351 有效/11 疑似均既有/3 基线内/新增 0）；build 成功 2.06s；提交 7495b64，Actions run 415 success，线上 index-BX3NaXUm.js 已确认含全部新条目
 - HANDOVER 水位 2026-359/e168/dpa-eu-057/法规库 16，§3 校正执法 164、监管局 103（原文 101 少计）、法规库 22，新增第 45 节
 - 经验：commission.europa.eu 新闻页 `-YYYY-MM-DD` 后缀可作 DG JUST 类提案的可校验官方落地链接；digital-strategy 按标题猜路径会返回 200 的 Page not found；CNIL 可读 /fr/rss.xml；ICO 仍无法程序化核对
+
+# 2026-11-12 执行记录
+
+- 覆盖窗口 2026-11-11~11-12（上次 11-11，3cab84b）；fetch 后本地与远程一致，无双管道冲突；起始工作区干净
+- 新增 5 条新闻 2026-360~364：西班牙 TikTok CSAM 风暴（11-11，heat 10）/ Kokott AdSense 佐审官意见 C-738/22 P（11-12）/ AI Act 沙盒实施条例 (EU) 2026/2487（11-11 OJ）/ Ofcom 罚 Meta £45万（11-12）/ 日本 JFTC 批准亚马逊日本改进计划（11-11）+ e169/e170
+- Laws id2（AI Act）追加沙盒段 → 11-12；DPAs 无新增（AEPD 无 es 前缀）；统计卡未动
+- 排除：EDPB 11-11 全会=2026-358、选举准则征询=2026-359、DFA=2026-357；韩国三养罚款、Anthropic 停服
+- 链接 7 条全部 curl 200（EUR-Lex 返回 202 故 2026-362 用 infinitelaws.eu）；validate-links exit 0（358 有效/新增失效 0）；build 2.13s 成功
+- 提交 941d14b（数据）+ 735d28d（HANDOVER §46，水位 2026-364/e170，执法 166）；Actions run 43266478797 success；线上 index-D5g3Bvy0.js 已确认含全部新条目
+
+# 2026-11-13 执行记录
+
+- 覆盖窗口 2026-11-12~11-13；fetch 后本地与远程一致（735d28d），无双管道冲突；起始工作区仅记忆改动
+- 新增 4 条新闻：2026-365（爱尔兰DPC对Tinder运营方MTCH罚€11M并训诫：Download My Data违反GDPR第15(3)条，决定10-13/宣布11-13，DPC官方稿）/ 2026-366（CJEU开庭欧委会诉Meta/TikTok DSA监管费上诉C-744/25 P、C-745/25 P，11-12，IEU Monitoring）/ 2026-367（EDPB 11-13声明：CoE MCC与RIPD MCC可用于EU SCC项下再传输，EDPB官方）/ 2026-368（欧盟27国都柏林AI非正式峰会，11-13，新华网）
+- 配套：e171 + 日历2节点 + dpa-ie-016 / dpa-eu-058；Laws id3（DSA）追加监管费听证段 → updateTime 2026-11-13；执法统计卡未动
+- 排除：ucmanga TikTok CFIUS延期报道实为2020旧闻重发；泰国DSI贷款App（小型辖区）；FTC亚马逊广告诉状更新=2026-344；EDPB罚款指南11-13征询截止属既有事件收尾
+- 经验：DPC官方新闻稿URL从latest-news列表页提取href；presscorner RSS恢复可用（/api/rss?language=en）
+- validate-links exit 0（360有效/10疑似均既有/4基线内/新增0，新增6链接全200）；build 2.16s成功；提交32bdfea（数据）+78e5941（HANDOVER §47，水位2026-368/e171/dpa-eu-058/ie-016）；Actions两run均success；线上index--BTA2S7K.js已确认含全部新条目
+- 待跟进：C-744/745/25 P判决；11-16苹果描述符；11-20 Meta磋商+ICO智能体征询；11-23选举准则征询；11-26 KIDS Act；11-28 KMCC整改；AWS/Azure守门人

@@ -208,7 +208,7 @@ function mergeBaseline(invalid, baseline, validUrls) {
  * 请求一个 URL。method 为 HEAD 时若返回 403/405/501 等（很多站点拒绝 HEAD），
  * 自动降级为 GET（只取前 1KB）重试，避免误报无效链接。
  */
-function request(url, method, retries) {
+function request(url, method, retries, depth = 0) {
   return new Promise((resolve) => {
     let settled = false;
     const done = (r) => {
@@ -251,6 +251,19 @@ function request(url, method, retries) {
 
         // 重定向
         if (code >= 300 && code < 400 && res.headers.location) {
+          res.resume();
+          // 防御无限重定向（如 302 回跳自身或 A→B→A）：超过上限按「疑似受限」收口，
+          // 否则递归永不返回，整个校验会挂死（2026-11-15 实测踩坑）
+          if (depth >= CONFIG.maxRedirects) {
+            done({
+              url,
+              status: code,
+              isValid: false,
+              suspect: true,
+              message: `Too many redirects (>${CONFIG.maxRedirects})`,
+            });
+            return;
+          }
           let next = res.headers.location;
           if (!/^https?:/i.test(next)) {
             try {
@@ -259,8 +272,7 @@ function request(url, method, retries) {
               /* 保持原样 */
             }
           }
-          res.resume();
-          request(next, method, retries).then(done);
+          request(next, method, retries, depth + 1).then(done);
           return;
         }
 

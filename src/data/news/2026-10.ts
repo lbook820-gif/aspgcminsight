@@ -115,7 +115,7 @@ export const news202610: NewsItem[] = [
   },
   {
     id: '2026-245',
-    source: '路透社/彭博社(经中新经纬)',
+    source: '路透社（经 Global Banking & Finance Review；MLex 首发临时措施消息）',
     date: '2026-09-30',
     heat: 9,
     title: '谷歌就DMA“搜索数据共享+安卓AI互操作”两项规范措施起诉欧盟普通法院并申请临时措施：称未经充分匿名化共享搜索历史将造成“不可逆伤害”',
@@ -126,7 +126,7 @@ export const news202610: NewsItem[] = [
     industryImpact:
       '对中国出海企业启示：1）依赖谷歌搜索流量或在欧提供搜索、AI助手/聊天机器人、内容分发的出海企业，应跟踪本案对搜索数据可得性的影响——若第三方（含AI搜索产品）可获取匿名化搜索数据，搜索与AI问答的竞争门槛结构将改变；2）DMA规范措施直接要求“向第三方AI服务平等开放安卓系统级能力”，出海手机厂商与AI助手可在欧盟设计支持多AI助手的系统架构，但须评估自身的DMA守门人认定风险（欧盟月活4500万等门槛）；3）本案确立“DMA可要求开放数据资产本身、而非仅罚款”的先例，出海平台在欧盟若被认定为守门人，其数据与算法资产可能成为结构性义务对象，须提前设计数据分层与合规架构；4）“隐私/安全”作为抗辩理由的实际说服力有限（DuckDuckGo的公开反驳即为示例），不能作为不履行开放义务的默认挡箭牌；5）临时措施与实体判决的时间表将影响2027年1月起的合规安排，建议纳入法务跟踪清单。',
     tags: ['谷歌', 'Alphabet', 'DMA', '欧盟普通法院', '搜索数据', '第6(11)条', '安卓', 'AI互操作', '临时措施', '隐私', '出海合规'],
-    link: 'https://m.chinanews.com/wap/detail/chs/zw/jw690841.shtml',
+    link: 'https://www.globalbankingandfinance.com/google-asks-eu-court-suspend-order-open-up-ai-chatbots/',
     isNew: true,
   },
   {
