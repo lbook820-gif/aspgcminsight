@@ -362,3 +362,13 @@
 - 经验：DPC官方新闻稿URL从latest-news列表页提取href；presscorner RSS恢复可用（/api/rss?language=en）
 - validate-links exit 0（360有效/10疑似均既有/4基线内/新增0，新增6链接全200）；build 2.16s成功；提交32bdfea（数据）+78e5941（HANDOVER §47，水位2026-368/e171/dpa-eu-058/ie-016）；Actions两run均success；线上index--BTA2S7K.js已确认含全部新条目
 - 待跟进：C-744/745/25 P判决；11-16苹果描述符；11-20 Meta磋商+ICO智能体征询；11-23选举准则征询；11-26 KIDS Act；11-28 KMCC整改；AWS/Azure守门人
+
+# 2026-11-15 执行记录
+
+- 覆盖窗口 2026-11-13~11-15（周末档期）；fetch 后本地与远程一致（78e5941），无双管道冲突；起始工作区仅记忆改动
+- 新增 3 条新闻：2026-369（意大利 Garante 对 Meta 爱尔兰罚 8.05 亿欧元，ePrivacy/隐私法典第122条，相册权限"一次通用授权+默认开启"，约2000万用户、0.47%全球营业额，60日整改，驳回爱尔兰一站式抗辩，heat 10）/ 2026-370（欧委会 DSA 第21条庭外争议解决研究报告，五类堵点，heat 5）/ 2026-371（Uber 司机驾照数据经 AI 供应商 Fireworks AI 外泄，三州约7870人，告警未触发，heat 6）+ e172 + dpa-eu-059 + 日历2节点；Laws id3/id4 刷新
+- **脚本第四轮加固**：validate-links.js 重定向分支未用 maxRedirects，遇环形跳转无限递归导致校验挂死（首次跑1小时无输出）。加 depth 计数、超5次按"疑似受限"收口后，377 个外链 1分17秒跑完
+- 修复新增失效：2026-245/e104 的 m.chinanews.com 移动版链接 404 → 换 GBFR 转载路透原稿
+- 排除旧闻：布雷顿签证禁令+马克龙"恐吓"言论实为 2025-12-23 事件（cnnbc/paristimes AI 聚合站重发）；Shein 法国/意大利旧罚单重发
+- validate-links exit 0（356 有效/16 疑似均既有/4 基线内/新增 0）；build 2.07s 成功；提交 846970c；Actions run 43748431369 success；线上 index-D-mA4SPI.js 已确认含全部新条目
+- 水位 2026-371 / e172 / dpa-eu-059，§3 执法167、监管局104，HANDOVER §48
