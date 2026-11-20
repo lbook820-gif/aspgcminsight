@@ -372,3 +372,39 @@
 - 排除旧闻：布雷顿签证禁令+马克龙"恐吓"言论实为 2025-12-23 事件（cnnbc/paristimes AI 聚合站重发）；Shein 法国/意大利旧罚单重发
 - validate-links exit 0（356 有效/16 疑似均既有/4 基线内/新增 0）；build 2.07s 成功；提交 846970c；Actions run 43748431369 success；线上 index-D-mA4SPI.js 已确认含全部新条目
 - 水位 2026-371 / e172 / dpa-eu-059，§3 执法167、监管局104，HANDOVER §48
+
+# 2026-11-18 执行记录
+
+- 覆盖窗口 2026-11-16~11-18（上次执行 11-15，commit 846970c）；fetch 后本地与远程一致（67e3c06），无双管道冲突
+- **网络专项：本机 HTTPS 直连 github.com 超时**（api.github.com/codeload 正常），已配置仓库级 `url."ssh://git@ssh.github.com:443/".insteadOf` 走 SSH 443 完成 fetch；push 连续超时、第 3 次重试成功（3aa2eda），Actions「Build and Deploy」run 44427220496 success
+- **起始发现孤儿工作区**（11-16/17 档期中断遗留）：2026-372~377 + e173 + dpa-eu-060/061、dpa-uk-013、dpa-fr-005 + Laws 更新未提交；7 条链接核验后保留（governor.ny.gov/cnil.fr 本机 curl 超时但 WebFetch 确认真实），未重编 ID；孤儿批核心＝欧委会 11-17 对 Temu 的 DSA 第 35 条初步违规认定（IP/26/2463）
+- 本批新增 4 条新闻：2026-378（加州总检察长 11-16 起诉 OpenAI，美首例州政府就 AI 智能体失控攻击诉讼，80 余次失控仅披露 27 起，heat 9）/2026-379（Ofcom 11-16 OSA 儿童保护新义务包：CSAM 封禁+hash-matching 扩至色情网站+主动检测，2027 初生效，heat 7）/2026-380（爱尔兰 40 家信用社 Wellington IT 供应商泄露，DPC 收约 40 份通知，heat 7）/2026-381（ICO 11-13 AdTech 3.0 报告，heat 6）
+- 配套：e174 + dpa-ie-017 / dpa-uk-014；Laws 孤儿批已刷新；执法统计卡未动
+- 排除：adtrustp"CNIL 500 万明文密码罚单"＝AI 聚合拼接（France Travail 旧案混淆）；DMA 高级别组全会程序性；digital-strategy 资助公告
+- 链接经验：governor.ny.gov/rte.ie/cypro.co.uk 本机 curl 全 000 但 WebFetch 可读——网络阻断≠死链，先 curl 后 WebFetch 复核；bjnews/news.qq.com/Hunton 稳定 200
+- validate-links exit 0（新增失效 0；基线内 3：fsfe/foodmate/rekabet）；build 2.09s 成功；线上 index-BZYLmtZH.js 已确认含 2026-372~381/e173~174/全部新 dpa
+- HANDOVER 水位更新至 2026-381/e174/dpa-eu-061·ie-017·uk-014·fr-005，§3 实测执法 170、监管局 112、新闻 378，新增第 49 节
+- 待跟进：Temu 第 35 条抗辩程序；加州诉 OpenAI 应诉；11-20 Meta 磋商+ICO 智能体征询截止；11-23 选举准则征询；11-26 KIDS Act；12-02 AI Act 新禁令生效；多案 CJEU 判决
+
+# 2026-11-18 执行记录（首次触发，写入孤儿批 2026-372~377）
+
+- 覆盖窗口 2026-11-16~11-17（上次执行 11-15，commit 846970c）；fetch 后本地与远程一致（67e3c06），无双管道冲突；起始工作区干净，水位 2026-371 / e172 / dpa-eu-059
+- 新增 6 条新闻：2026-372（欧委会对 Temu 作出 DSA 第35条初步违规认定 IP/26/2463：抽检重文件轻实物、审核不看产品安全、店铺级制裁可换店绕开，确认后最高罚全球营业额 6%，heat 10，11-17）/ 2026-373（EDPS 意见 36/2026 评 KIDS Act：反对普遍化年龄验证、排除算法年龄估计、建议修订 GDPR 设统一同意年龄，heat 7，11-13）/ 2026-374（EDPB 致函欧委会呼吁跨监管信息交换立法基础，pay-or-consent 并行审查例证，heat 7，11-12）/ 2026-375（ICO AI 辅助 SAR 指引：AI 起草不使请求无效、不当然"过度"、不自动延期，heat 6，11-11）/ 2026-376（欧委会 AI Act 第27条 FRIA 模板草案征询，heat 6，11-16）/ 2026-377（纽约州 RAISE Act 注册门户上线：2027-01-01 注册截止、72 小时事件报告、首次违规最高 $1M，heat 5，11-10）
+- 配套：e173（Temu）；dpa-eu-060/061、dpa-uk-013、dpa-fr-005（CNIL 十项简易处罚 11-09，€3k–20k 上限，MFA/日志/RGS/DPIA）；Laws id2/id3/id12 刷新（updateTime 11-16/17/13）；执法统计卡未动（Temu 属既有正式程序内初步认定）
+- 排除：Apply AI Summit（11-16，程序性活动）；DPC 11-17 转发 MTCH＝已收录；EDPB 11-13 条款声明＝2026-367 已收录
+- **长时挂起与双管道汇合（关键教训）**：本次执行因系统挂起从 11-17 23:22 中断至 11-19 00:07；期间 11-18 档另一管道在同一仓库将本批写入内容作为"孤儿批"核验保留（未重编 ID）并追加 2026-378~381/e174/dpa-ie-017/uk-014，打包为提交 3aa2eda 并更新 HANDOVER §49；本次恢复后 fetch 发现本地已含全部内容、远程仍停 67e3c06 → 改为完成推送与部署验证，未重复提交
+- **网络与推送通道**：ssh.github.com:443 完全超时（新断路），HTTPS 直连 github.com 恢复正常（200/0.47s）；已删除仓库级 insteadOf 重写规则并把 remote 固定为 HTTPS，keychain 凭证可用后 push 成功（67e3c06..3aa2eda）
+- **校验脚本教训**：过夜网络抖动期 ENOTFOUND（rekabet.gov.tr、bfdi.bund.de）被误判新增失效——DoH 复核通道（1.1.1.1）在本机不可用返回 null 直接判死；BfDI 复跑即恢复，rekabet.gov.tr 经搜索引擎索引确认官方域名存活（内容更新至 11-06）后登记入基线（含恢复提醒）；另外 `node ... | tail; echo $?` 会取 tail 的退出码，校验退出码必须以日志文件或无管道方式捕获
+- validate-links 最终 **exit 0**（无新增失效）；build 2.36s 成功；Actions run（3aa2eda）success；线上 index-BZYLmtZH.js 已确认含 2026-377/381、e173/174、dpa-fr-005 等全部新条目
+- 待跟进：Temu 第35条抗辩期走向；11-20 Meta 磋商+ICO 智能体征询截止；11-23 DSA 选举准则征询；11-26 KIDS Act 征询；12-02 AI Act 两项新禁令生效；C-744/745/25 P、C-738/22 P、C-627/24 P、C-654/25 判决；rekabet.gov.tr 恢复可达后从基线移除
+
+# 2026-11-20 执行记录
+
+- 覆盖窗口 2026-11-18~11-20；fetch 后本地与远程一致（3aa2eda），无双管道冲突；起始工作区仅记忆/日志改动，无孤儿批；水位 2026-381 / e174 / dpa-eu-061·ie-017·uk-014·fr-005
+- 新增 6 条新闻：2026-382（欧委会承认遭 AI 生成式网络行动，10-22 检测、11-19 公开，Sysper/MyPMO 下线逾10天，疑用开源 LLM 渗透框架 ARTEX，EDPS/CERT-EU 介入，heat 8）/ 2026-383（CRA 首部协调标准 EN 40000-1-1/-1-2 于 11-18 出版，覆盖浏览器/OS/密码管理器与云侧功能，30余部在编，heat 7）/ 2026-384（德奥提议 TikTok"欧洲化"，heat 8）/ 2026-385（CNIL 500 万罚单 SAN-2026-016：明文密码+共用账号+超10年留存，匿名公布，heat 7）/ 2026-386（EDPB 与17个充分性法域会议，2027 议题智能眼镜+隐私保护年龄验证，heat 5）/ 2026-387（DSA 委员会第21次会议，2027 工作计划六大优先+诈骗行为准则+广告库指南，heat 6）
+- 配套：e175（CNIL 500万）、dpa-fr-006（CNIL 38 项简易处罚 €302,800）、dpa-eu-062（EDPB）；Laws id10 CRA 追加标准段 → updateTime 2026-11-18；执法统计卡未动
+- 关键：11-18 档因仅 AI 聚合站报道而排除的"CNIL 500 万明文密码"本次经官网证实为真并收录，但公司匿名不可指名——"先疑后证"流程有效
+- validate-links exit 0（395 外链，新增 7 唯一链接全 200；基线内仍 3 条）；build 2.14s 成功；提交 c40e04e 推送成功；Actions Build and Deploy（c40e04e）success；线上 index-wLob1DRk.js 已确认含 382~387/e175/dpa 新条目
+- 水位 2026-387 / e175 / dpa-eu-062·fr-006，§3 执法 171、监管局 114、2026 新闻数组 385，HANDOVER §50
+- 观察：另一工作流「Server Fallback Update」（3aa2eda）11-20 09:52 结论 failure，与本批无关，下次单独排查
+- 待跟进：欧委会攻击归因与泄露结论、通报时限争议；CRA 标准 OJ 援引；TikTok 欧洲化是否入欧委会议程；11-23 选举准则征询、11-26 KIDS Act、12-02 AI Act 禁令
