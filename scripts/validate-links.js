@@ -74,12 +74,18 @@ function log(color, message) {
  * 关键点：查询必须带 `cd=1`（Checking Disabled，见 RFC 4035 §3.2.2）。
  * 否则验证型 DoH 解析器同样会因上游 DNSSEC 故障返回 SERVFAIL，
  * 我们就无法把「DNSSEC 损坏但真实存在」与「真的不存在」区分开。
- * 同时查询 Google 与 Cloudflare 两家，任一给出结论即可，避免单点误判。
+ * 同时查询 Google、Cloudflare 与阿里三家，任一给出结论即可，避免单点误判。
+ * 2026-11-23 增补：本机网络对 dns.google / cloudflare-dns.com 的 443 出口被阻断时，
+ * 前两个端点全部超时会让兜底失效（当日 politico.eu、indiatoday.in、asiaone.com、
+ * businessinsider.com 四个域名被本地解析器过滤，误报 6 条「新增失效」）。
+ * 阿里 DoH（dns.alidns.com）为递归型解析器，不参与 DNSSEC 验证，故不支持 cd=1，
+ * 仅作为前两者不可达时的第三顺位兜底，不改变「存在 → 疑似受限 / NXDOMAIN → 硬失败」的判定口径。
  */
 const dohCache = new Map();
 const DOH_ENDPOINTS = [
   { hostname: 'dns.google', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A&cd=1` },
   { hostname: 'cloudflare-dns.com', path: (h) => `/dns-query?name=${encodeURIComponent(h)}&type=A&cd=1` },
+  { hostname: 'dns.alidns.com', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A` },
 ];
 
 function dohQuery(endpoint, hostname) {
@@ -134,8 +140,13 @@ function dnsExistsViaDoH(hostname) {
     }
     return sawDefinitiveAbsence ? false : null;
   })();
+  // 只有「有定论」的结果才进缓存：null（端点全部不可用/瞬时 SERVFAIL）不缓存，
+  // 否则本批次后续引用同一域名的链接会被同一个 null 连带误判。
   dohCache.set(hostname, p);
-  return p;
+  return p.then((r) => {
+    if (r === null) dohCache.delete(hostname);
+    return r;
+  });
 }
 
 // ---------- CLI 参数 ----------
