@@ -408,3 +408,14 @@
 - 水位 2026-387 / e175 / dpa-eu-062·fr-006，§3 执法 171、监管局 114、2026 新闻数组 385，HANDOVER §50
 - 观察：另一工作流「Server Fallback Update」（3aa2eda）11-20 09:52 结论 failure，与本批无关，下次单独排查
 - 待跟进：欧委会攻击归因与泄露结论、通报时限争议；CRA 标准 OJ 援引；TikTok 欧洲化是否入欧委会议程；11-23 选举准则征询、11-26 KIDS Act、12-02 AI Act 禁令
+
+# 2026-11-23 执行记录
+
+- 覆盖窗口 2026-11-20~11-23；HTTPS 直连 github 超时，改用 SSH 443（remote 已固定）完成 fetch/push；本地与远程一致，无双管道冲突
+- 起始发现孤儿工作区（11-20/21 档中断遗留）：2026-388~393 + e176 + dpa-fr-007 + KIDS Act 段；6 链接 curl 200 后按先例保留、未重编 ID
+- 本批新增 4 条：2026-394（爱尔兰 DPC 要求 X 暂停用 Grok Bot 采集的"第三方数据"训练，11-16 确认执行，heat 9）/ 2026-395（YouTube 与全美学区约 30 亿美元成瘾性设计原则性和解，11-20，heat 9）/ 2026-396（CJEU 佐审官 C-643/25：以数据付费不得称"免费"，11-19，heat 8）/ 2026-397（AI Act 治理机构制度化：AI 委员会新议事规则、咨询论坛选主席并锁定 AI 伴侣/AI 智能体议题，11-20，heat 5）
+- 配套：e177~e179；dpa-ie-018 / dpa-eu-063；Laws id2（11-20）、id4（11-17）刷新；日历 2 节点；统计卡未动
+- **校验脚本第五轮加固**：本地解析器整域过滤 politico/indiatoday/asiaone/businessinsider，且 dns.google/cloudflare DoH 被阻断 → 新增第三顺位 DoH（dns.alidns.com）、不再缓存 null 结果；最终 exit 0（350 有效/50 疑似/5 基线内/新增 0）；build 成功
+- 提交 a676a0c 推送成功；Actions「Build and Deploy」success；线上 index-C5Nfvv7T.js 已确认含 394~397/e179/dpa-ie-018/Grok Bot/C-643/25
+- 排除：EDPB 11-19 挪威两笔与意大利三笔小额、ICO 11-16 GTA6 提示、CNIL 已收、presscorner 仅贸易议题、digital-strategy 已全量核对
+- 观察：「Server Fallback Update」工作流 11-22 仍为 failure，与本批无关，待单独排查
