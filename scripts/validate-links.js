@@ -80,12 +80,16 @@ function log(color, message) {
  * businessinsider.com 四个域名被本地解析器过滤，误报 6 条「新增失效」）。
  * 阿里 DoH（dns.alidns.com）为递归型解析器，不参与 DNSSEC 验证，故不支持 cd=1，
  * 仅作为前两者不可达时的第三顺位兜底，不改变「存在 → 疑似受限 / NXDOMAIN → 硬失败」的判定口径。
+ * 2026-11-24 增补：把 dns.alidns.com 调到第一顺位——本机网络下它是三者中最稳定可达的
+ * 递归解析器（11-23/11-24 两轮 ENOTFOUND 复核均靠它确认域名存在；dns.google 与
+ * cloudflare-dns.com 的 443 出口时常被阻断，放在前面只会白耗超时）。仍保持三家互备，
+ * 任一给出结论即可，不改变「存在 → 疑似受限 / NXDOMAIN → 硬失败」的判定口径。
  */
 const dohCache = new Map();
 const DOH_ENDPOINTS = [
+  { hostname: 'dns.alidns.com', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A` },
   { hostname: 'dns.google', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A&cd=1` },
   { hostname: 'cloudflare-dns.com', path: (h) => `/dns-query?name=${encodeURIComponent(h)}&type=A&cd=1` },
-  { hostname: 'dns.alidns.com', path: (h) => `/resolve?name=${encodeURIComponent(h)}&type=A` },
 ];
 
 function dohQuery(endpoint, hostname) {
