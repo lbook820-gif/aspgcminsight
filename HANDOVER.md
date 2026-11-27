@@ -67,11 +67,11 @@ src/data/dynamicCards.ts      ← 首页入口卡片
 
 ### ID 规则（全局唯一，新增必须递增）
 
-| 数据源 | 格式 | 当前最大（2026-11-24） |
+| 数据源 | 格式 | 当前最大（2026-11-27） |
 |---|---|---|
-| 主新闻流 | `2026-NNN` | **2026-399**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
-| 执法动态 | `eN` | **e180**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
-| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-063 / dpa-ie-018 / dpa-de-005 / dpa-fr-007 / dpa-ch-004 / dpa-uk-014 / dpa-tr-005 |
+| 主新闻流 | `2026-NNN` | **2026-406**（11 月文件为 `2026-11.ts`，index.ts 已同步） |
+| 执法动态 | `eN` | **e182**（注：`e33`/`e44`/`e60`/`e61`/`e62` 历史缺号） |
+| 各国监管局 | `dpa-{eu\|ie\|uk\|tr\|fr\|de\|ch}-NNN` | dpa-eu-064 / dpa-ie-018 / dpa-de-005 / dpa-fr-007 / dpa-ch-004 / dpa-uk-014 / dpa-tr-005 |
 | 法规库 | `N` | **16** |
 | 法规库行业动态 | `iN` | **i6** |
 | 首页卡片 | `N` | 1–6 |
@@ -1105,3 +1105,17 @@ OpenClaw Cron），提交时间戳一律是北京时间 `00:36` 前后、时区 
 **判定无新增**：DPC 官网最新仍 11-13 MTCH；EDPB 最新仍 11-19（挪威小额×2 + 2027 优先事项通报）；ICO 最新 11-13；CNIL 最新 11-18/20（均已收）；presscorner 11-22~23 无数字议题（反垄断调查为 Coca-Cola Europacific Partners，非数字平台赛道）；digital-strategy 窗口内仅 DSA 选举准则征询 11-23 截止（属 2026-359 收尾，非新事件）；ENISA/AI Office/EBA 无新公告；土耳其 KVKK/RK 窗口内无新决定；周末欧盟官方源静默。
 
 **待跟进**：11-26/27 欧盟特别峰会（MFF+数字税）谈判走向与美方反应；11-26 KIDS Act 征询截止；11-28 韩国 KMCC 整改；12-02 AI Act 第 5 条禁令与标识宽限期届满；C-643/25 判决；AWS/Azure 守门人认定；亚利桑那刑事调查进展与其他州跟进。
+
+## 2026-11-27（覆盖窗口 11-24 ~ 11-27）
+
+**新增 7 条新闻**：2026-400（欧盟 CPC 网络接受 Temu 八类整改承诺，欧委会 IP/26/2594，11-26）/ 2026-401（澳大利亚《数字注意义务法案》获议会通过，全球营业额 5% 罚则，11-25）/ 2026-402（俄勒冈与弗吉尼亚诉 SpaceX/xAI，Grok 生成 CSAM 与深度伪造，11-23）/ 2026-403（42 州总检察长介入 Character.AI 破产程序阻止聊天记录拍卖，11-26）/ 2026-404（欧盟法院 C-535/25 等裁定"配送安排决定权"定邮政服务身份，Amazon Italia，11-26）/ 2026-405（AI Act 科学专家组首次线下例会，问询清单并入对 OpenAI/Anthropic 调取，11-25）/ 2026-406（TikTok 首次系统回应德奥"欧洲化"要求，11-26）。
+
+**配套**：执法 e181（Temu CPC 承诺）/ e182（Grok 两州诉讼）+ 监管日历 3 节点（12-01 Character.AI 拍卖、12-02 欧盟电信部长会议、2027-11-25 澳洲 DDoC 过渡期届满）；dpa-eu-064（希腊 DPA 罚 Teleperformance Greece €10万，EDPB 转发）；Laws id2（AI Act）/ id3（DSA）/ id16（DFA+CPC）摘要刷新，id16 updateTime → 11-26。
+
+**修复历史失效**：2026-009 的 mofcom 链接失效 → 换 artificialintelligenceact.eu 实施时间线追踪页，source 标注换源说明。validate-links 首跑报该条为新增失效，修复后重跑 exit 0（遵循 11-24 教训：退出码以日志文件捕获，不用管道 tail 的 $?）。
+
+**结果**：validate-links exit 0（有效 390 / 疑似受限 20 / 历史基线内失效 4 / 新增失效 0）；build 成功（31.64s，单 chunk）；提交 201f00a 已推送；Actions run 45989407336「Build and Deploy」build + deploy 均 success；线上 bundle index-D3reMtmP.js 已确认含 Temu CPC、科学专家组第二次例会等新内容。备注：另一工作流「Server Fallback Update」run 45984209487（10-41，针对 77aed75）因链接校验失败而 failure，与本批无关。
+
+**判定无新增**：DPC 官网最新仍 11-13 MTCH；EDPB 除 dpa-eu-064 转发外无自身新公告；ICO 官网列表无法程序化核验、WebFetch 无新项；CNIL 最新仍 11-18/20；presscorner RSS 窗口内 Temu 承诺稿已收录为 2026-400；digital-strategy 科学专家组稿已收录为 2026-405；ENISA/AI Office/EBA 无新公告；土耳其 KVKK/RK 无新决定。
+
+**待跟进**：12-01 Character.AI 拍卖裁决、12-02 欧盟电信部长会议（TikTok 欧洲化站队 + AI Act 第5条 NCII/CSAM 禁令生效）、11-26/27 MFF 数字税峰会结果、11-28 韩国 KMCC 整改、C-643/25 判决、AWS/Azure 守门人认定；Fallback 工作流失败原因待单独排查。
