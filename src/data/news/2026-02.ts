@@ -83,7 +83,7 @@ export const news202602: NewsItem[] = [
   },
   {
     id: '2026-009',
-    source: 'FTA咨询网',
+    source: 'FTA咨询网（原链接失效，2026-11-27 更换为 AI Act 实施时间线权威追踪页）',
     date: '2026-02-10',
     heat: 8,
     title: '欧盟《人工智能法案》进入合规准备关键期,核心条款8月全面生效',
@@ -94,7 +94,7 @@ export const news202602: NewsItem[] = [
     industryImpact:
       '对AI企业的合规要求:\n\n**风险分级管理**:\n- 禁止类AI:社会评分、实时生物识别等\n- 高风险AI:医疗、教育、招聘等领域需严格合规\n- 生成式AI:需标注AI生成内容\n\n**合规准备清单**:\n1. 确定产品是否属于高风险AI系统\n2. 准备符合AI Act要求的技术文档\n3. 建立风险管理体系\n4. 设计人工监督机制\n5. 确保训练数据符合要求\n\n**时间节点**:\n- 2026年8月2日:核心条款生效\n- 2026年6月:内容标注行为准则定稿',
     tags: ['AI Act', '人工智能法', '欧盟', '高风险AI', '合规准备'],
-    link: 'http://chinawto.mofcom.gov.cn/article/jsbl/dtxx/202602/20260203618535.shtml',
+    link: 'https://artificialintelligenceact.eu/implementation-timeline/',
     isNew: true,
   },
   {
